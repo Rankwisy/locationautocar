@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Bus } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
 import { siteConfig } from '../../data/siteConfig';
 
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                 <span>{siteConfig.contact.email}</span>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-2">
               <MapPin className="w-4 h-4" />
               <span>{siteConfig.contact.address}</span>
             </div>
@@ -35,14 +35,12 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src={siteConfig.logo} 
-              alt={siteConfig.business.name}
-              className="h-12 w-auto"
-            />
+            <div className="bg-blue-600 p-2 rounded-lg">
+              <Bus className="h-8 w-8 text-white" />
+            </div>
             <div>
-              <h1 className="text-2xl font-bold text-blue-900">Location Auto Car</h1>
-              <p className="text-sm text-gray-600">Location de voitures en Belgique</p>
+              <h1 className="text-2xl font-bold text-blue-900">Location Autocar</h1>
+              <p className="text-sm text-gray-600">Bruxelles • Bus et Minibus avec chauffeur</p>
             </div>
           </Link>
 
@@ -74,10 +72,10 @@ const Header: React.FC = () => {
               </div>
             ))}
             <Link
-              to="/reservation"
+              to="/contactez-nous"
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
             >
-              Réserver Maintenant
+              Devis Gratuit
             </Link>
           </nav>
 
@@ -120,11 +118,11 @@ const Header: React.FC = () => {
                 </div>
               ))}
               <Link
-                to="/reservation"
+                to="/contactez-nous"
                 className="block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg text-center font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Réserver Maintenant
+                Devis Gratuit
               </Link>
             </div>
           </nav>

@@ -4,15 +4,12 @@ Allow: /
 # Sitemap
 Sitemap: https://www.locationautocar.be/sitemap.xml
 
-# Disallow admin areas (if any)
+# Disallow admin areas
 Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-includes/
 
 # Allow important pages
-Allow: /vehicules/
-Allow: /tarifs/
-Allow: /reservation/
-Allow: /contact/
+Allow: /nos-services/
+Allow: /notre-flotte/
+Allow: /destinations/
+Allow: /contactez-nous/
 Allow: /blog/
