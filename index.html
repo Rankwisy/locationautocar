@@ -1,13 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaskFlow - Modern Task Management Application</title>
+    <title>Location Auto Car - Location de voitures en Belgique</title>
+    <meta name="description" content="Service de location de voitures professionnel en Belgique. Véhicules récents, tarifs compétitifs, service client de qualité." />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Location Auto Car - Location de voitures en Belgique" />
+    <meta property="og:description" content="Service de location de voitures professionnel en Belgique. Véhicules récents, tarifs compétitifs, service client de qualité." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.locationautocar.be" />
+    <meta property="og:image" content="https://www.locationautocar.be/images/og-default.jpg" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Location Auto Car - Location de voitures en Belgique" />
+    <meta name="twitter:description" content="Service de location de voitures professionnel en Belgique. Véhicules récents, tarifs compétitifs, service client de qualité." />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.locationautocar.be" />
+    
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Netlify Identity Widget -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

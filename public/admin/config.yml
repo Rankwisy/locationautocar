@@ -1,0 +1,98 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Meta Title", name: "metaTitle", widget: "string", required: false}
+      - {label: "Meta Description", name: "metaDescription", widget: "text", required: false}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
+      - {label: "Featured Image Alt", name: "featuredImageAlt", widget: "string", required: false}
+      - {label: "Content", name: "content", widget: "markdown"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "No Index", name: "noindex", widget: "boolean", default: false}
+      - {label: "Publish Date", name: "publishedAt", widget: "datetime"}
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Meta Title", name: "metaTitle", widget: "string", required: false}
+      - {label: "Meta Description", name: "metaDescription", widget: "text", required: false}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
+      - {label: "Featured Image Alt", name: "featuredImageAlt", widget: "string", required: false}
+      - {label: "Content", name: "content", widget: "markdown"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "No Index", name: "noindex", widget: "boolean", default: false}
+      - {label: "Publish Date", name: "publishedAt", widget: "datetime"}
+
+  - name: "vehicles"
+    label: "Vehicles"
+    folder: "src/content/vehicles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Économique", "Familiale", "Luxe", "Utilitaire"]}
+      - {label: "Price per Day", name: "price", widget: "number"}
+      - {label: "Passengers", name: "passengers", widget: "number"}
+      - {label: "Transmission", name: "transmission", widget: "select", options: ["Manuelle", "Automatique"]}
+      - {label: "Fuel Type", name: "fuel", widget: "select", options: ["Essence", "Diesel", "Hybride", "Électrique"]}
+      - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1}
+      - {label: "Features", name: "features", widget: "list"}
+      - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Available", name: "available", widget: "boolean", default: true}
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Configuration"
+        name: "site"
+        file: "src/content/settings/site.yml"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Site Description", name: "description", widget: "text"}
+          - {label: "Site URL", name: "url", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Favicon", name: "favicon", widget: "image"}
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Address", name: "address", widget: "text"}
+          - label: "Business Information"
+            name: "business"
+            widget: "object"
+            fields:
+              - {label: "Business Name", name: "name", widget: "string"}
+              - {label: "Business Type", name: "type", widget: "string"}
+              - label: "Location"
+                name: "location"
+                widget: "object"
+                fields:
+                  - {label: "Street", name: "street", widget: "string"}
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "postalCode", widget: "string"}
+                  - {label: "Country", name: "country", widget: "string"}
