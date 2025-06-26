@@ -5,6 +5,8 @@ import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
             <Route path="notre-flotte/:type" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Flotte - Page en construction</h1></div>} />
             <Route path="destinations" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Destinations - Page en construction</h1></div>} />
             <Route path="destinations/:location" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Destination - Page en construction</h1></div>} />
-            <Route path="blog" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Blog - Page en construction</h1></div>} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:slug" element={<BlogPostPage />} />
             <Route path="contactez-nous" element={<ContactPage />} />
           </Route>
         </Routes>
