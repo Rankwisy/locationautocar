@@ -275,7 +275,7 @@ const FleetPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez notre flotte moderne de véhicules avec chauffeur professionnel. 
-              Du <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">minibus luxe</Link> à l'<Link to="/notre-flotte/autocars" className=\"text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>, nous avons le véhicule parfait pour vos besoins.
+              Du <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">minibus luxe</Link> à l'<Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>, nous avons le véhicule parfait pour vos besoins.
             </p>
           </div>
 
