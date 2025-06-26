@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin, Bus } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
 import { siteConfig } from '../../data/siteConfig';
 
@@ -34,11 +34,16 @@ const Header: React.FC = () => {
       {/* Main Header */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-blue-600 p-2 rounded-lg">
-              <Bus className="h-8 w-8 text-white" />
+          <Link to="/" className="flex items-center space-x-4">
+            <div className="flex-shrink-0">
+              <img 
+                src="https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png"
+                alt="Location Autocar Bruxelles - Logo"
+                className="h-12 w-auto object-contain"
+                loading="eager"
+              />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <h1 className="text-2xl font-bold text-blue-900">Location Autocar</h1>
               <p className="text-sm text-gray-600">Bruxelles • Bus et Minibus avec chauffeur</p>
             </div>

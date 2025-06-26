@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, Bus } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
 const Footer: React.FC = () => {
@@ -11,8 +11,13 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Bus className="h-8 w-8 text-white" />
+              <div className="flex-shrink-0">
+                <img 
+                  src="https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png"
+                  alt="Location Autocar Bruxelles - Logo"
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                  loading="lazy"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Location Autocar</h3>
