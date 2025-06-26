@@ -5,6 +5,12 @@ import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import FleetPage from './pages/FleetPage';
+import FleetBusPage from './pages/FleetBusPage';
+import FleetMinibusPage from './pages/FleetMinibusPage';
+import FleetAutocarsPage from './pages/FleetAutocarsPage';
+import DestinationBruxellesPage from './pages/DestinationBruxellesPage';
+import DestinationBelgiquePage from './pages/DestinationBelgiquePage';
+import DestinationEuropePage from './pages/DestinationEuropePage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -19,9 +25,13 @@ function App() {
             <Route path="nos-services" element={<ServicesPage />} />
             <Route path="nos-services/:category" element={<ServicesPage />} />
             <Route path="notre-flotte" element={<FleetPage />} />
-            <Route path="notre-flotte/:type" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Flotte - Page en construction</h1></div>} />
+            <Route path="notre-flotte/bus" element={<FleetBusPage />} />
+            <Route path="notre-flotte/minibus" element={<FleetMinibusPage />} />
+            <Route path="notre-flotte/autocars" element={<FleetAutocarsPage />} />
             <Route path="destinations" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Destinations - Page en construction</h1></div>} />
-            <Route path="destinations/:location" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Destination - Page en construction</h1></div>} />
+            <Route path="destinations/bruxelles" element={<DestinationBruxellesPage />} />
+            <Route path="destinations/belgique" element={<DestinationBelgiquePage />} />
+            <Route path="destinations/europe" element={<DestinationEuropePage />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog/:slug" element={<BlogPostPage />} />
             <Route path="contactez-nous" element={<ContactPage />} />
