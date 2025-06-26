@@ -95,7 +95,7 @@ const HomePage: React.FC = () => {
     "@type": "TouristInformationCenter",
     "name": "Location Autocar Bruxelles",
     "url": "https://www.locationautocar.be",
-    "logo": "https://www.locationautocar.be/images/logo-locationautocar.png",
+    "logo": "https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png",
     "description": "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe.",
     "address": {
       "@type": "PostalAddress",
@@ -126,38 +126,104 @@ const HomePage: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Responsive Optimization */}
+        <div className="absolute inset-0 z-0">
+          <picture>
+            <source 
+              media="(min-width: 1024px)"
+              srcSet="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?updatedAt=1750900171624&tr=w-1920,h-1080,c-maintain_ratio,f-webp,q-85"
+              type="image/webp"
+            />
+            <source 
+              media="(min-width: 768px)"
+              srcSet="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?updatedAt=1750900171624&tr=w-1200,h-800,c-maintain_ratio,f-webp,q-85"
+              type="image/webp"
+            />
+            <source 
+              media="(max-width: 767px)"
+              srcSet="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?updatedAt=1750900171624&tr=w-800,h-600,c-maintain_ratio,f-webp,q-85"
+              type="image/webp"
+            />
+            <img
+              src="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?updatedAt=1750900171624&tr=w-1920,h-1080,c-maintain_ratio,f-auto,q-85"
+              alt="Location Autocar Bruxelles - Bus et minibus avec chauffeur professionnel"
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+              fetchPriority="high"
+              style={{ backgroundColor: '#f5f5f5' }}
+            />
+          </picture>
+          
+          {/* Semi-transparent overlay */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30"
+            style={{
+              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%)'
+            }}
+          ></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <div className="max-w-5xl mx-auto">
+            {/* Main Heading */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
               Location Autocar Bruxelles
             </h1>
-            <p className="text-xl md:text-2xl mb-4 text-blue-100">
+            
+            {/* Subtitle */}
+            <p className="text-xl sm:text-2xl md:text-3xl mb-4 text-blue-100 font-medium">
               Bus et Minibus avec chauffeur depuis 2007
             </p>
-            <p className="text-lg mb-8 text-blue-200">
+            
+            {/* Services Description */}
+            <p className="text-base sm:text-lg md:text-xl mb-8 text-blue-200 max-w-4xl mx-auto leading-relaxed">
               Transferts • Excursions • Voyages d'affaires • Mise à disposition
-              <br />
+              <br className="hidden sm:block" />
               Service professionnel en Belgique et en Europe
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            {/* Call-to-Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 to="/contactez-nous"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
+                className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
               >
                 Devis Gratuit
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                 to="/nos-services"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200"
+                className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/10 min-w-[200px]"
               >
                 Nos Services
               </Link>
             </div>
-            <div className="mt-6 text-sm text-blue-200">
-              ✓ Pas de frais cachés • ✓ Vous ne payez que ce que vous utilisez • ✓ Support 24/7
+            
+            {/* Trust Indicators */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-blue-200 bg-black/20 backdrop-blur-sm rounded-2xl px-6 py-4 max-w-3xl mx-auto">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                <span>Pas de frais cachés</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                <span>Vous ne payez que ce que vous utilisez</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                <span>Support 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="animate-bounce">
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
             </div>
           </div>
         </div>
