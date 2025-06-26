@@ -55,17 +55,17 @@ const HomePage: React.FC = () => {
     {
       name: "Bruxelles",
       description: "Atomium, Grand-Place, Musées",
-      image: "/images/destinations/bruxelles.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg"
     },
     {
       name: "Paris",
       description: "Excursions depuis Bruxelles",
-      image: "/images/destinations/paris.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg"
     },
     {
       name: "Amsterdam",
       description: "Circuits touristiques",
-      image: "/images/destinations/amsterdam.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg"
     }
   ];
 
@@ -324,6 +324,7 @@ const HomePage: React.FC = () => {
                     src={destination.image} 
                     alt={`Excursion à ${destination.name}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">
