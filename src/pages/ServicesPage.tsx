@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle, Plane, Building, Camera } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
-import Breadcrumbs from '../components/common/Breadcrumbs';
-import RelatedContent from '../components/common/RelatedContent';
 
 const ServicesPage: React.FC = () => {
   const services = [
@@ -18,9 +16,7 @@ const ServicesPage: React.FC = () => {
         "Transferts hôtels",
         "Service 24/7"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?updatedAt=1750900171624&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Service de transfert aéroport avec autocar professionnel",
-      link: "/nos-services/transferts-aeroports"
+      image: "/images/services/transferts.jpg"
     },
     {
       icon: Camera,
@@ -33,9 +29,7 @@ const ServicesPage: React.FC = () => {
         "Circuits en Belgique",
         "Voyages en Europe"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/vication4.jpg?updatedAt=1750958134435&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Excursions touristiques et voyages de loisirs en autocar",
-      link: "/nos-services/excursions-tourisme"
+      image: "/images/services/excursions.jpg"
     },
     {
       icon: Building,
@@ -48,9 +42,7 @@ const ServicesPage: React.FC = () => {
         "Transferts VIP",
         "Service personnalisé"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/Tourisme.jpg?updatedAt=1750958114112&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Transport professionnel pour voyages d'affaires et événements corporate",
-      link: "/nos-services/voyages-affaires"
+      image: "/images/services/business.jpg"
     },
     {
       icon: Clock,
@@ -63,9 +55,7 @@ const ServicesPage: React.FC = () => {
         "Chauffeur expérimenté",
         "Tarification transparente"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Service de mise à disposition d'autocar avec chauffeur",
-      link: "/nos-services/mise-a-disposition"
+      image: "/images/services/disposition.jpg"
     }
   ];
 
@@ -98,51 +88,6 @@ const ServicesPage: React.FC = () => {
     "Autres destinations européennes"
   ];
 
-  const relatedFleetItems = [
-    {
-      title: "Minibus Mercedes Luxe",
-      description: "Parfait pour vos transferts aéroports et petits groupes (8-16 places)",
-      link: "/notre-flotte/minibus",
-      type: "internal" as const,
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-100,h-100,c-maintain_ratio,f-webp,q-85"
-    },
-    {
-      title: "Autocars Grand Tourisme",
-      description: "Idéal pour vos excursions et voyages d'affaires longue distance (40-55 places)",
-      link: "/notre-flotte/autocars",
-      type: "internal" as const,
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-100,h-100,c-maintain_ratio,f-webp,q-85"
-    },
-    {
-      title: "Bus Confort",
-      description: "Solution équilibrée pour groupes moyens et trajets régionaux (20-35 places)",
-      link: "/notre-flotte/bus",
-      type: "internal" as const,
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-100,h-100,c-maintain_ratio,f-webp,q-85"
-    }
-  ];
-
-  const relatedDestinationItems = [
-    {
-      title: "Découvrir Bruxelles",
-      description: "Explorez la capitale belge avec nos circuits locaux et transferts urbains",
-      link: "/destinations/bruxelles",
-      type: "internal" as const
-    },
-    {
-      title: "Circuits en Belgique",
-      description: "Visitez les plus belles villes de Belgique lors d'excursions organisées",
-      link: "/destinations/belgique",
-      type: "internal" as const
-    },
-    {
-      title: "Voyages en Europe",
-      description: "Découvrez les capitales européennes avec nos autocars grand tourisme",
-      link: "/destinations/europe",
-      type: "internal" as const
-    }
-  ];
-
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -165,8 +110,6 @@ const ServicesPage: React.FC = () => {
         schema={servicesSchema}
       />
 
-      <Breadcrumbs />
-
       <div className="py-12">
         <div className="container mx-auto px-4">
           {/* Header */}
@@ -174,9 +117,9 @@ const ServicesPage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Nos Services de Transport
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur 
-              pour particuliers et entreprises en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700 font-semibold">Europe</Link>.
+              pour particuliers et entreprises en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">Europe</Link>.
             </p>
           </div>
 
@@ -205,29 +148,11 @@ const ServicesPage: React.FC = () => {
             {services.map((service, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center`}>
                 <div className="lg:w-1/2">
-                  <div className="relative overflow-hidden rounded-xl shadow-lg group">
-                    <picture>
-                      <source 
-                        srcSet={`${service.image}&tr=f-webp`}
-                        type="image/webp"
-                      />
-                      <img 
-                        src={service.image}
-                        alt={service.imageAlt}
-                        className="w-full h-64 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ backgroundColor: '#f5f5f5' }}
-                      />
-                    </picture>
-                    
-                    {/* Overlay with service info on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <p className="text-sm font-medium">{service.imageAlt}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+                  />
                 </div>
                 <div className="lg:w-1/2">
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
@@ -236,32 +161,24 @@ const ServicesPage: React.FC = () => {
                   <h3 className="text-3xl font-bold text-gray-900 mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-lg text-gray-600 mb-6">
                     {service.description}
                   </p>
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link
-                      to={service.link}
-                      className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold group"
-                    >
-                      En Savoir Plus
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    </Link>
-                    <Link
-                      to="/contactez-nous"
-                      className="inline-flex items-center border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg transition-all duration-200 font-semibold"
-                    >
-                      Demander un Devis
-                    </Link>
-                  </div>
+                  <Link
+                    to="/contactez-nous"
+                    className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
+                  >
+                    Demander un Devis
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -272,30 +189,14 @@ const ServicesPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Nos Destinations
             </h2>
-            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              Nous desservons un large réseau de destinations en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700 font-semibold">Europe</Link> avec notre <Link to="/notre-flotte" className=\"text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>.
-            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {destinations.map((destination, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
                   <MapPin className="w-6 h-6 text-blue-600 mx-auto mb-2" />
                   <span className="text-gray-700 font-medium">{destination}</span>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Related Content Sections */}
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <RelatedContent
-              title="Véhicules Recommandés"
-              items={relatedFleetItems}
-            />
-            
-            <RelatedContent
-              title="Destinations Populaires"
-              items={relatedDestinationItems}
-            />
           </div>
 
           {/* Why Choose Us */}
@@ -333,7 +234,7 @@ const ServicesPage: React.FC = () => {
               Prêt à Réserver Votre Transport ?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Contactez-nous pour un <Link to="/contactez-nous" className="text-blue-600 hover:text-blue-700 font-semibold">devis gratuit et personnalisé</Link>
+              Contactez-nous pour un devis gratuit et personnalisé
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
