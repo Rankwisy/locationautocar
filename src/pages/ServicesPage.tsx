@@ -176,7 +176,7 @@ const ServicesPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur 
-              pour particuliers et entreprises en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">Europe</Link>.
+              pour particuliers et entreprises en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700 font-semibold">Europe</Link>.
             </p>
           </div>
 
@@ -273,7 +273,7 @@ const ServicesPage: React.FC = () => {
               Nos Destinations
             </h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              Nous desservons un large réseau de destinations en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">Europe</Link> avec notre <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>.
+              Nous desservons un large réseau de destinations en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700 font-semibold">Europe</Link> avec notre <Link to="/notre-flotte" className=\"text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {destinations.map((destination, index) => (
