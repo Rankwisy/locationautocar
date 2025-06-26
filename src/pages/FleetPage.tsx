@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import Breadcrumbs from '../components/common/Breadcrumbs';
+import RelatedContent from '../components/common/RelatedContent';
 
 const FleetPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +31,8 @@ const FleetPage: React.FC = () => {
       ],
       description: "Idéal pour les transferts VIP et excursions de petits groupes. Confort premium et finitions haut de gamme.",
       available: true,
-      rating: 4.9
+      rating: 4.9,
+      recommendedServices: ["/nos-services/transferts-aeroports", "/nos-services/voyages-affaires"]
     },
     {
       id: 2,
@@ -50,7 +53,8 @@ const FleetPage: React.FC = () => {
       ],
       description: "Solution économique pour vos déplacements de groupe. Fiabilité Mercedes et confort optimal.",
       available: true,
-      rating: 4.7
+      rating: 4.7,
+      recommendedServices: ["/nos-services/transferts-aeroports", "/nos-services/mise-a-disposition"]
     },
     {
       id: 3,
@@ -72,7 +76,8 @@ const FleetPage: React.FC = () => {
       ],
       description: "Le summum du confort pour vos voyages longue distance. Équipements haut de gamme et service premium.",
       available: true,
-      rating: 4.9
+      rating: 4.9,
+      recommendedServices: ["/nos-services/excursions-tourisme", "/nos-services/voyages-affaires"]
     },
     {
       id: 4,
@@ -93,7 +98,8 @@ const FleetPage: React.FC = () => {
       ],
       description: "Parfait équilibre entre confort et capacité. Idéal pour excursions et voyages d'affaires.",
       available: true,
-      rating: 4.8
+      rating: 4.8,
+      recommendedServices: ["/nos-services/excursions-tourisme", "/nos-services/mise-a-disposition"]
     },
     {
       id: 5,
@@ -114,7 +120,8 @@ const FleetPage: React.FC = () => {
       ],
       description: "Véhicule polyvalent pour tous vos voyages. Confort optimal et équipements modernes.",
       available: true,
-      rating: 4.6
+      rating: 4.6,
+      recommendedServices: ["/nos-services/excursions-tourisme", "/nos-services/voyages-affaires"]
     },
     {
       id: 6,
@@ -135,7 +142,8 @@ const FleetPage: React.FC = () => {
       ],
       description: "Solution écologique pour vos déplacements urbains. Respect de l'environnement et accessibilité.",
       available: true,
-      rating: 4.5
+      rating: 4.5,
+      recommendedServices: ["/nos-services/transferts-aeroports", "/nos-services/mise-a-disposition"]
     }
   ];
 
@@ -155,6 +163,48 @@ const FleetPage: React.FC = () => {
     
     return matchesSearch && matchesType && matchesCapacity && matchesPrice;
   });
+
+  const relatedServicesItems = [
+    {
+      title: "Transferts Aéroports",
+      description: "Service de navette professionnel avec nos minibus et bus confortables",
+      link: "/nos-services/transferts-aeroports",
+      type: "internal" as const
+    },
+    {
+      title: "Excursions Touristiques",
+      description: "Découvrez l'Europe avec nos autocars grand tourisme équipés",
+      link: "/nos-services/excursions-tourisme",
+      type: "internal" as const
+    },
+    {
+      title: "Voyages d'Affaires",
+      description: "Transport professionnel pour vos événements corporate",
+      link: "/nos-services/voyages-affaires",
+      type: "internal" as const
+    }
+  ];
+
+  const relatedDestinationItems = [
+    {
+      title: "Destinations Belgique",
+      description: "Explorez la Belgique avec notre flotte adaptée à tous les trajets",
+      link: "/destinations/belgique",
+      type: "internal" as const
+    },
+    {
+      title: "Voyages en Europe",
+      description: "Découvrez l'Europe en autocar avec nos véhicules longue distance",
+      link: "/destinations/europe",
+      type: "internal" as const
+    },
+    {
+      title: "Circuits Bruxelles",
+      description: "Visitez Bruxelles avec nos véhicules urbains et confortables",
+      link: "/destinations/bruxelles",
+      type: "internal" as const
+    }
+  ];
 
   const faqItems = [
     {
@@ -214,6 +264,8 @@ const FleetPage: React.FC = () => {
         schema={fleetSchema}
       />
 
+      <Breadcrumbs />
+
       <div className="py-12">
         <div className="container mx-auto px-4">
           {/* Header */}
@@ -223,7 +275,7 @@ const FleetPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez notre flotte moderne de véhicules avec chauffeur professionnel. 
-              Du minibus luxe à l'autocar grand tourisme, nous avons le véhicule parfait pour vos besoins.
+              Du <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">minibus luxe</Link> à l'<Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>, nous avons le véhicule parfait pour vos besoins.
             </p>
           </div>
 
@@ -382,6 +434,32 @@ const FleetPage: React.FC = () => {
                     )}
                   </div>
 
+                  {/* Recommended Services */}
+                  {vehicle.recommendedServices && (
+                    <div className="mb-4 p-3 bg-blue-50 rounded-lg">
+                      <h5 className="text-xs font-semibold text-blue-800 mb-2">Recommandé pour :</h5>
+                      <div className="flex flex-wrap gap-1">
+                        {vehicle.recommendedServices.map((serviceLink, index) => {
+                          const serviceNames: { [key: string]: string } = {
+                            '/nos-services/transferts-aeroports': 'Transferts',
+                            '/nos-services/excursions-tourisme': 'Excursions',
+                            '/nos-services/voyages-affaires': 'Business',
+                            '/nos-services/mise-a-disposition': 'Disposition'
+                          };
+                          return (
+                            <Link
+                              key={index}
+                              to={serviceLink}
+                              className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 transition-colors duration-200"
+                            >
+                              {serviceNames[serviceLink]}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex gap-2">
                     <Link
                       to="/contactez-nous"
@@ -396,6 +474,19 @@ const FleetPage: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Related Content Sections */}
+          <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <RelatedContent
+              title="Services Recommandés"
+              items={relatedServicesItems}
+            />
+            
+            <RelatedContent
+              title="Destinations Populaires"
+              items={relatedDestinationItems}
+            />
           </div>
 
           {/* Fleet Statistics */}
@@ -499,7 +590,7 @@ const FleetPage: React.FC = () => {
               Prêt à Réserver Votre Véhicule ?
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Contactez-nous pour un devis personnalisé et découvrez le véhicule parfait pour vos besoins. 
+              Contactez-nous pour un <Link to="/contactez-nous" className="text-blue-600 hover:text-blue-700 font-semibold">devis personnalisé</Link> et découvrez le véhicule parfait pour vos besoins. 
               Service professionnel garanti depuis 2007.
             </p>
             

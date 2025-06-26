@@ -8,22 +8,26 @@ const HomePage: React.FC = () => {
     {
       icon: MapPin,
       title: "Transferts & Navettes",
-      description: "Aéroports, gares, hôtels - Service de transfert professionnel avec chauffeur expérimenté"
+      description: "Aéroports, gares, hôtels - Service de transfert professionnel avec chauffeur expérimenté",
+      link: "/nos-services/transferts-aeroports"
     },
     {
       icon: Users,
       title: "Excursions & Tourisme",
-      description: "Découvrez Bruxelles, l'Atomium, les musées et l'Europe avec nos circuits organisés"
+      description: "Découvrez Bruxelles, l'Atomium, les musées et l'Europe avec nos circuits organisés",
+      link: "/nos-services/excursions-tourisme"
     },
     {
       icon: Calendar,
       title: "Voyages d'Affaires",
-      description: "Transport de groupes pour séminaires, conférences et événements d'entreprise"
+      description: "Transport de groupes pour séminaires, conférences et événements d'entreprise",
+      link: "/nos-services/voyages-affaires"
     },
     {
       icon: Clock,
       title: "Mise à Disposition",
-      description: "Location à l'heure selon vos besoins spécifiques - Flexibilité maximale"
+      description: "Location à l'heure selon vos besoins spécifiques - Flexibilité maximale",
+      link: "/nos-services/mise-a-disposition"
     }
   ];
 
@@ -61,17 +65,20 @@ const HomePage: React.FC = () => {
     {
       name: "Bruxelles",
       description: "Atomium, Grand-Place, Musées",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg",
+      link: "/destinations/bruxelles"
     },
     {
       name: "Paris",
       description: "Excursions depuis Bruxelles",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg",
+      link: "/blog/eiffel-tower-sunset-magic"
     },
     {
       name: "Amsterdam",
       description: "Circuits touristiques",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg",
+      link: "/blog/amsterdam-canaux-velo"
     }
   ];
 
@@ -185,9 +192,12 @@ const HomePage: React.FC = () => {
             
             {/* Services Description */}
             <p className="text-base sm:text-lg md:text-xl mb-8 text-blue-200 max-w-4xl mx-auto leading-relaxed">
-              Transferts • Excursions • Voyages d'affaires • Mise à disposition
+              <Link to="/nos-services/transferts-aeroports" className="hover:text-white transition-colors">Transferts</Link> • 
+              <Link to="/nos-services/excursions-tourisme" className="hover:text-white transition-colors ml-1">Excursions</Link> • 
+              <Link to="/nos-services/voyages-affaires" className="hover:text-white transition-colors ml-1">Voyages d'affaires</Link> • 
+              <Link to="/nos-services/mise-a-disposition" className="hover:text-white transition-colors ml-1">Mise à disposition</Link>
               <br className="hidden sm:block" />
-              Service professionnel en Belgique et en Europe
+              Service professionnel en <Link to="/destinations/belgique" className="hover:text-white transition-colors">Belgique</Link> et en <Link to="/destinations/europe" className="hover:text-white transition-colors">Europe</Link>
             </p>
             
             {/* Call-to-Action Buttons */}
@@ -243,23 +253,27 @@ const HomePage: React.FC = () => {
               Nos Services de Transport
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Depuis 2007, nous offrons des services de transport en autocar avec chauffeur 
+              Depuis 2007, nous offrons des <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">services de transport en autocar avec chauffeur</Link> 
               pour tous vos besoins : transferts, excursions, voyages d'affaires et mise à disposition.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <Link 
+                key={index} 
+                to={service.link}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 group"
+              >
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 transition-colors duration-200">
                   <service.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors duration-200">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 text-center">
                   {service.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -273,8 +287,8 @@ const HomePage: React.FC = () => {
               Notre Flotte
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Autocars, bus et minibus modernes avec chauffeurs expérimentés 
-              pour tous vos déplacements en Belgique et en Europe.
+              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">Autocars, bus et minibus</Link> modernes avec chauffeurs expérimentés 
+              pour tous vos déplacements en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700">Europe</Link>.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -316,10 +330,10 @@ const HomePage: React.FC = () => {
                   </p>
                   <Link
                     to={vehicle.link}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group"
                   >
                     Voir les détails
-                    <ArrowRight className="w-4 h-4 ml-1" />
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>
                 </div>
               </div>
@@ -336,29 +350,33 @@ const HomePage: React.FC = () => {
               Destinations Populaires
             </h2>
             <p className="text-xl text-gray-600">
-              Excursions et circuits organisés depuis Bruxelles
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">Excursions et circuits organisés</Link> depuis Bruxelles
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {destinations.map((destination, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                <div className="h-48 bg-gray-200 relative">
+              <Link 
+                key={index} 
+                to={destination.link}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
+              >
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
                   <img 
                     src={destination.image} 
                     alt={`Excursion à ${destination.name}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
                     {destination.name}
                   </h3>
                   <p className="text-gray-600">
                     {destination.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -441,6 +459,97 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Blog Preview Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Guides et Conseils de Voyage
+            </h2>
+            <p className="text-xl text-gray-600">
+              Découvrez nos <Link to="/blog" className="text-blue-600 hover:text-blue-700 font-semibold">guides de voyage</Link> et conseils d'experts
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Link 
+              to="/blog/eiffel-tower-sunset-magic"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
+            >
+              <div className="h-48 bg-gray-200 relative overflow-hidden">
+                <img 
+                  src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Guide Tour Eiffel au coucher de soleil"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+                  Guide Tour Eiffel au Coucher de Soleil
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Découvrez les meilleurs spots pour admirer la Tour Eiffel et organisez votre excursion à Paris depuis Bruxelles.
+                </p>
+              </div>
+            </Link>
+            
+            <Link 
+              to="/blog/amsterdam-canaux-velo"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
+            >
+              <div className="h-48 bg-gray-200 relative overflow-hidden">
+                <img 
+                  src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Guide Amsterdam en autocar"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+                  Amsterdam en Autocar
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Explorez Amsterdam et ses canaux lors d'une excursion organisée depuis Bruxelles avec nos autocars confortables.
+                </p>
+              </div>
+            </Link>
+            
+            <Link 
+              to="/blog/bruxelles-coeur-europe"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
+            >
+              <div className="h-48 bg-gray-200 relative overflow-hidden">
+                <img 
+                  src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Guide Bruxelles authentique"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+                  Bruxelles Authentique
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Découvrez les secrets de Bruxelles avec nos circuits locaux et nos services de transport dans la capitale.
+                </p>
+              </div>
+            </Link>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link
+              to="/blog"
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg group"
+            >
+              Voir tous nos articles
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -448,7 +557,7 @@ const HomePage: React.FC = () => {
             Besoin d'un Transport en Autocar ?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Contactez-nous pour un devis gratuit et personnalisé. Service disponible 24/7.
+            Contactez-nous pour un <Link to="/contactez-nous" className="text-white hover:text-blue-200 font-semibold underline">devis gratuit et personnalisé</Link>. Service disponible 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
