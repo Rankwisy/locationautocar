@@ -119,7 +119,7 @@ const ServicesPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur 
-              pour particuliers et entreprises en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700 font-semibold">Europe</Link>.
+              pour particuliers et entreprises en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">Europe</Link>.
             </p>
           </div>
 
