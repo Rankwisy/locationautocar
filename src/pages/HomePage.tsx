@@ -197,7 +197,7 @@ const HomePage: React.FC = () => {
               <Link to="/nos-services/voyages-affaires" className="hover:text-white transition-colors ml-1">Voyages d'affaires</Link> • 
               <Link to="/nos-services/mise-a-disposition" className="hover:text-white transition-colors ml-1">Mise à disposition</Link>
               <br className="hidden sm:block" />
-              Service professionnel en <Link to="/destinations/belgique" className="hover:text-white transition-colors">Belgique</Link> et en <Link to="/destinations/europe" className="hover:text-white transition-colors">Europe</Link>
+              Service professionnel en <Link to="/destinations/belgique" className="hover:text-white transition-colors">Belgique</Link> et en <Link to="/destinations/europe" className=\"hover:text-white transition-colors">Europe</Link>
             </p>
             
             {/* Call-to-Action Buttons */}
@@ -288,7 +288,7 @@ const HomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">Autocars, bus et minibus</Link> modernes avec chauffeurs expérimentés 
-              pour tous vos déplacements en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700">Europe</Link>.
+              pour tous vos déplacements en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700">Europe</Link>.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
