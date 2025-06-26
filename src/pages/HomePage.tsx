@@ -31,21 +31,27 @@ const HomePage: React.FC = () => {
     {
       name: "Minibus",
       description: "8 à 16 passagers",
-      image: "/images/fleet/minibus.jpg",
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
+      imageAlt: "Location minibus Mercedes luxe avec chauffeur en Belgique",
+      imageTitle: "Minibus Mercedes moderne pour transport de groupes",
       link: "/notre-flotte/minibus",
       capacity: "Idéal pour petits groupes"
     },
     {
       name: "Bus",
       description: "20 à 35 passagers",
-      image: "/images/fleet/bus.jpg",
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
+      imageAlt: "Location bus touristique confortable pour voyages en Europe",
+      imageTitle: "Bus de tourisme équipé pour trajets longue distance",
       link: "/notre-flotte/bus",
       capacity: "Parfait pour groupes moyens"
     },
     {
       name: "Autocars",
       description: "40 à 55 passagers",
-      image: "/images/fleet/autocar.jpg",
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
+      imageAlt: "Location autocar grand tourisme avec chauffeur professionnel",
+      imageTitle: "Autocar moderne pour excursions et voyages organisés",
       link: "/notre-flotte/autocars",
       capacity: "Grands groupes et voyages longue distance"
     }
@@ -274,12 +280,29 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {fleetTypes.map((vehicle, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                <div className="h-48 bg-gray-200 relative">
-                  <img 
-                    src={vehicle.image} 
-                    alt={`${vehicle.name} avec chauffeur`}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                  <picture>
+                    <source 
+                      srcSet={`${vehicle.image}&tr=f-webp`}
+                      type="image/webp"
+                    />
+                    <img 
+                      src={vehicle.image}
+                      alt={vehicle.imageAlt}
+                      title={vehicle.imageTitle}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ backgroundColor: '#f5f5f5' }}
+                    />
+                  </picture>
+                  
+                  {/* SEO-friendly overlay with vehicle info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="text-sm font-medium">{vehicle.imageTitle}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
