@@ -197,7 +197,7 @@ const HomePage: React.FC = () => {
               <Link to="/nos-services/voyages-affaires" className="hover:text-white transition-colors ml-1">Voyages d'affaires</Link> • 
               <Link to="/nos-services/mise-a-disposition" className="hover:text-white transition-colors ml-1">Mise à disposition</Link>
               <br className="hidden sm:block" />
-              Service professionnel en <Link to="/destinations/belgique" className="hover:text-white transition-colors">Belgique</Link> et en <Link to="/destinations/europe" className=\"hover:text-white transition-colors">Europe</Link>
+              Service professionnel en <Link to="/destinations/belgique" className="hover:text-white transition-colors">Belgique</Link> et en <Link to="/destinations/europe" className="hover:text-white transition-colors">Europe</Link>
             </p>
             
             {/* Call-to-Action Buttons */}
@@ -288,7 +288,7 @@ const HomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">Autocars, bus et minibus</Link> modernes avec chauffeurs expérimentés 
-              pour tous vos déplacements en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700">Belgique</Link> et en <Link to="/destinations/europe" className=\"text-blue-600 hover:text-blue-700">Europe</Link>.
+              pour tous vos déplacements en <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700">Belgique</Link> et en <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700">Europe</Link>.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -455,97 +455,6 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Preview Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Guides et Conseils de Voyage
-            </h2>
-            <p className="text-xl text-gray-600">
-              Découvrez nos <Link to="/blog" className="text-blue-600 hover:text-blue-700 font-semibold">guides de voyage</Link> et conseils d'experts
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link 
-              to="/blog/eiffel-tower-sunset-magic"
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
-            >
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Guide Tour Eiffel au coucher de soleil"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
-                  Guide Tour Eiffel au Coucher de Soleil
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Découvrez les meilleurs spots pour admirer la Tour Eiffel et organisez votre excursion à Paris depuis Bruxelles.
-                </p>
-              </div>
-            </Link>
-            
-            <Link 
-              to="/blog/amsterdam-canaux-velo"
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
-            >
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Guide Amsterdam en autocar"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
-                  Amsterdam en Autocar
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Explorez Amsterdam et ses canaux lors d'une excursion organisée depuis Bruxelles avec nos autocars confortables.
-                </p>
-              </div>
-            </Link>
-            
-            <Link 
-              to="/blog/bruxelles-coeur-europe"
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
-            >
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Guide Bruxelles authentique"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
-                  Bruxelles Authentique
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Découvrez les secrets de Bruxelles avec nos circuits locaux et nos services de transport dans la capitale.
-                </p>
-              </div>
-            </Link>
-          </div>
-          
-          <div className="text-center mt-8">
-            <Link
-              to="/blog"
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg group"
-            >
-              Voir tous nos articles
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
           </div>
         </div>
       </section>
