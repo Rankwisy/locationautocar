@@ -180,7 +180,7 @@ const HomePage: React.FC = () => {
         metaTitle="Location Autocar Bruxelles | Bus Minibus Chauffeur | Devis Gratuit"
         description="Location autocar avec chauffeur Bruxelles depuis 2007. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7. Devis gratuit."
         keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires"
-        canonical="https://www.locationautocar.be"
+        canonical="https://www.locationautocar.be/"
         schema={homeSchema}
         faqSchema={faqSchema}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
