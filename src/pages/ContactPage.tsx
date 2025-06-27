@@ -16,14 +16,14 @@ const ContactPage: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
     try {
-      // Netlify Forms gère automatiquement la soumission
-      // Le formulaire sera traité par Netlify et envoyé aux emails configurés
       const form = e.target as HTMLFormElement;
       const formDataToSend = new FormData(form);
 
@@ -47,11 +47,11 @@ const ContactPage: React.FC = () => {
           message: ''
         });
       } else {
-        throw new Error('Erreur lors de l\'envoi');
+        throw new Error(`Server error: ${response.status} ${response.statusText}`);
       }
     } catch (error) {
-      console.error('Erreur:', error);
-      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+      console.error('Form submission error:', error);
+      setError('Une erreur est survenue lors de l\'envoi du formulaire. Veuillez réessayer ou nous contacter directement par téléphone.');
     } finally {
       setIsSubmitting(false);
     }
@@ -204,6 +204,18 @@ const ContactPage: React.FC = () => {
                   Demande de Devis Gratuit
                 </h2>
 
+                {error && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-700 text-sm">{error}</p>
+                    <p className="text-red-600 text-sm mt-2">
+                      En cas de problème persistant, contactez-nous directement au{' '}
+                      <a href="tel:+3225800325" className="font-semibold underline">
+                        +32 2 580 03 25
+                      </a>
+                    </p>
+                  </div>
+                )}
+
                 {isSubmitted ? (
                   <div className="text-center py-8">
                     <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
@@ -231,14 +243,16 @@ const ContactPage: React.FC = () => {
                     method="POST"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
+                    netlify
                   >
-                    {/* Champ caché pour Netlify */}
+                    {/* Hidden fields for Netlify */}
                     <input type="hidden" name="form-name" value="contact" />
                     
-                    {/* Honeypot pour éviter le spam */}
+                    {/* Honeypot field */}
                     <div style={{ display: 'none' }}>
                       <label>
-                        Don't fill this out if you're human: <input name="bot-field" />
+                        Don't fill this out if you're human: 
+                        <input name="bot-field" tabIndex={-1} autoComplete="off" />
                       </label>
                     </div>
 
@@ -255,6 +269,7 @@ const ContactPage: React.FC = () => {
                           value={formData.name}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          disabled={isSubmitting}
                         />
                       </div>
                       <div>
@@ -269,6 +284,7 @@ const ContactPage: React.FC = () => {
                           value={formData.email}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          disabled={isSubmitting}
                         />
                       </div>
                     </div>
@@ -285,6 +301,7 @@ const ContactPage: React.FC = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          disabled={isSubmitting}
                         />
                       </div>
                       <div>
@@ -298,6 +315,7 @@ const ContactPage: React.FC = () => {
                           value={formData.service}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          disabled={isSubmitting}
                         >
                           <option value="">Sélectionnez un service</option>
                           <option value="transfert">Transfert aéroport/gare</option>
@@ -320,6 +338,7 @@ const ContactPage: React.FC = () => {
                           value={formData.date}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          disabled={isSubmitting}
                         />
                       </div>
                       <div>
@@ -334,6 +353,7 @@ const ContactPage: React.FC = () => {
                           value={formData.passengers}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          disabled={isSubmitting}
                         />
                       </div>
                     </div>
@@ -350,6 +370,7 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         placeholder="Ex: Aéroport de Bruxelles, Paris, Amsterdam..."
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -365,6 +386,7 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         placeholder="Décrivez vos besoins spécifiques..."
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                        disabled={isSubmitting}
                       />
                     </div>
 
