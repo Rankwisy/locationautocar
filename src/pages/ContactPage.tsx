@@ -15,12 +15,46 @@ const ContactPage: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      // Netlify Forms gère automatiquement la soumission
+      // Le formulaire sera traité par Netlify et envoyé aux emails configurés
+      const form = e.target as HTMLFormElement;
+      const formDataToSend = new FormData(form);
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          date: '',
+          passengers: '',
+          destination: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -176,12 +210,38 @@ const ContactPage: React.FC = () => {
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       Demande Envoyée !
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 mb-4">
                       Nous vous contacterons dans les plus brefs délais pour établir votre devis personnalisé.
                     </p>
+                    <p className="text-sm text-gray-500">
+                      Vous recevrez également un email de confirmation à l'adresse indiquée.
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+                    >
+                      Envoyer une nouvelle demande
+                    </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form 
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                  >
+                    {/* Champ caché pour Netlify */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    
+                    {/* Honeypot pour éviter le spam */}
+                    <div style={{ display: 'none' }}>
+                      <label>
+                        Don't fill this out if you're human: <input name="bot-field" />
+                      </label>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -310,14 +370,26 @@ const ContactPage: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold flex items-center justify-center gap-2"
+                      disabled={!formData.name || !formData.email || !formData.service || isSubmitting}
+                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-semibold flex items-center justify-center gap-2"
                     >
-                      <Send className="w-5 h-5" />
-                      Envoyer la Demande
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                          Envoi en cours...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5" />
+                          Envoyer la Demande
+                        </>
+                      )}
                     </button>
 
                     <p className="text-sm text-gray-500 text-center">
                       * Champs obligatoires. Nous vous contacterons dans les 24h pour établir votre devis personnalisé.
+                      <br />
+                      Vos données sont protégées et ne seront jamais partagées avec des tiers.
                     </p>
                   </form>
                 )}
