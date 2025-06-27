@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { fleetFAQ } from '../data/faqData';
 
 const FleetPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +18,7 @@ const FleetPage: React.FC = () => {
       capacity: 16,
       year: 2023,
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Minibus Mercedes Sprinter luxe 16 places avec chauffeur professionnel",
+      imageAlt: "Minibus Mercedes Sprinter luxe 16 places avec chauffeur professionnel climatisation WiFi sièges cuir",
       priceRange: "€€",
       features: [
         "Climatisation automatique",
@@ -38,7 +39,7 @@ const FleetPage: React.FC = () => {
       capacity: 12,
       year: 2022,
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Minibus Mercedes Sprinter 12 places pour transport de groupe",
+      imageAlt: "Minibus Mercedes Sprinter 12 places économique transport groupe climatisation système audio",
       priceRange: "€",
       features: [
         "Climatisation",
@@ -59,7 +60,7 @@ const FleetPage: React.FC = () => {
       capacity: 55,
       year: 2023,
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Autocar grand tourisme 55 places pour voyages longue distance",
+      imageAlt: "Autocar grand tourisme 55 places premium toilettes WiFi kitchenette voyages longue distance Europe",
       priceRange: "€€€",
       features: [
         "Sièges inclinables cuir",
@@ -81,7 +82,7 @@ const FleetPage: React.FC = () => {
       capacity: 35,
       year: 2022,
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Bus touristique 35 places confortable pour excursions",
+      imageAlt: "Bus touristique 35 places confortable excursions climatisation vitres panoramiques soute bagages",
       priceRange: "€€",
       features: [
         "Sièges ergonomiques",
@@ -102,7 +103,7 @@ const FleetPage: React.FC = () => {
       capacity: 49,
       year: 2021,
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Autocar 49 places pour voyages de groupe en Europe",
+      imageAlt: "Autocar 49 places grand tourisme voyages groupe Europe climatisation réfrigérateur multimédia",
       priceRange: "€€",
       features: [
         "Sièges inclinables",
@@ -123,7 +124,7 @@ const FleetPage: React.FC = () => {
       capacity: 25,
       year: 2023,
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Bus écologique 25 places pour transport urbain",
+      imageAlt: "Bus écologique 25 places moteur Euro 6 plancher bas accessible PMR transport urbain",
       priceRange: "€",
       features: [
         "Moteur Euro 6",
@@ -156,33 +157,6 @@ const FleetPage: React.FC = () => {
     return matchesSearch && matchesType && matchesCapacity && matchesPrice;
   });
 
-  const faqItems = [
-    {
-      question: "Quels sont les équipements inclus dans nos véhicules ?",
-      answer: "Tous nos véhicules sont équipés de climatisation, système audio, sièges confortables et ceintures de sécurité. Les équipements spécifiques varient selon le type de véhicule (WiFi, toilettes, kitchenette pour les autocars)."
-    },
-    {
-      question: "Nos chauffeurs sont-ils qualifiés ?",
-      answer: "Absolument ! Tous nos chauffeurs possèdent les permis requis (D, D1, D1E selon le véhicule), une formation continue en sécurité routière et une excellente connaissance des destinations européennes."
-    },
-    {
-      question: "Quelle est la politique d'annulation ?",
-      answer: "Annulation gratuite jusqu'à 48h avant le départ. Entre 24h et 48h : 50% du montant. Moins de 24h : 100% du montant (sauf cas de force majeure)."
-    },
-    {
-      question: "Proposez-vous des services supplémentaires ?",
-      answer: "Oui : guide accompagnateur, restauration à bord, WiFi premium, prises électriques, système de sonorisation pour guide, assistance 24/7 pendant le voyage."
-    },
-    {
-      question: "Quelles sont les destinations couvertes ?",
-      answer: "Nous couvrons toute la Belgique et l'Europe : France, Pays-Bas, Allemagne, Luxembourg, Suisse, Autriche, République Tchèque, et bien d'autres destinations sur demande."
-    },
-    {
-      question: "Comment obtenir un devis personnalisé ?",
-      answer: "Contactez-nous par téléphone, email ou via notre formulaire en ligne. Nous vous répondons sous 24h avec un devis détaillé adapté à vos besoins spécifiques."
-    }
-  ];
-
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const fleetSchema = {
@@ -209,9 +183,13 @@ const FleetPage: React.FC = () => {
     <>
       <SEOHead
         title="Notre Flotte - Location Autocar Bruxelles"
-        description="Découvrez notre flotte moderne d'autocars, bus et minibus avec chauffeur. Véhicules récents, équipements premium, chauffeurs expérimentés pour vos voyages en Europe."
+        metaTitle="Flotte Autocar Bus Minibus Bruxelles | Chauffeur | Devis Gratuit"
+        description="Flotte moderne autocar bus minibus avec chauffeur Bruxelles. Véhicules récents climatisés WiFi pour transferts excursions Europe. Réservation 24/7."
+        keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique"
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
+        faqSchema={fleetFAQ}
+        ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
 
       <div className="py-12">
@@ -319,9 +297,12 @@ const FleetPage: React.FC = () => {
                     <img
                       src={vehicle.image}
                       alt={vehicle.imageAlt}
+                      title={`${vehicle.name} - Location avec chauffeur Bruxelles`}
                       className="w-full h-48 object-cover"
                       loading="lazy"
                       decoding="async"
+                      width="600"
+                      height="400"
                     />
                   </picture>
                   
@@ -386,10 +367,14 @@ const FleetPage: React.FC = () => {
                     <Link
                       to="/contactez-nous"
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200 text-center text-sm"
+                      title={`Réserver ${vehicle.name} avec chauffeur`}
                     >
                       Réserver
                     </Link>
-                    <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm">
+                    <button 
+                      className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm"
+                      title={`Voir détails ${vehicle.name}`}
+                    >
                       Détails
                     </button>
                   </div>
@@ -463,17 +448,17 @@ const FleetPage: React.FC = () => {
           {/* FAQ Section */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Questions Fréquentes
+              Questions Fréquentes sur Notre Flotte
             </h2>
             <div className="max-w-4xl mx-auto space-y-4">
-              {faqItems.map((item, index) => (
+              {fleetFAQ.mainEntity.map((item, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <button
                     onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                     className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                   >
                     <h3 className="text-lg font-semibold text-gray-900">
-                      {item.question}
+                      {item.name}
                     </h3>
                     <ArrowRight 
                       className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
@@ -484,7 +469,7 @@ const FleetPage: React.FC = () => {
                   {openFaqIndex === index && (
                     <div className="px-6 pb-4">
                       <p className="text-gray-600 leading-relaxed">
-                        {item.answer}
+                        {item.acceptedAnswer.text}
                       </p>
                     </div>
                   )}
@@ -531,6 +516,7 @@ const FleetPage: React.FC = () => {
               <Link
                 to="/contactez-nous"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+                title="Demander devis gratuit location véhicule avec chauffeur"
               >
                 Demander un Devis Gratuit
                 <ArrowRight className="w-5 h-5" />
@@ -538,6 +524,7 @@ const FleetPage: React.FC = () => {
               <a
                 href="tel:+3225800325"
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
+                title="Appeler Location Autocar Bruxelles"
               >
                 <Phone className="w-5 h-5" />
                 Appeler Maintenant

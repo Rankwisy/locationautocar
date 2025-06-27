@@ -32,8 +32,8 @@ const HomePage: React.FC = () => {
       name: "Minibus",
       description: "8 à 16 passagers",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Location minibus Mercedes luxe avec chauffeur en Belgique",
-      imageTitle: "Minibus Mercedes moderne pour transport de groupes",
+      imageAlt: "Location minibus Mercedes luxe avec chauffeur professionnel à Bruxelles - 8 à 16 places pour transferts VIP et excursions",
+      imageTitle: "Minibus Mercedes moderne équipé climatisation WiFi pour transport groupes Bruxelles Europe",
       link: "/notre-flotte/minibus",
       capacity: "Idéal pour petits groupes"
     },
@@ -41,8 +41,8 @@ const HomePage: React.FC = () => {
       name: "Bus",
       description: "20 à 35 passagers",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Location bus touristique confortable pour voyages en Europe",
-      imageTitle: "Bus de tourisme équipé pour trajets longue distance",
+      imageAlt: "Location bus touristique confortable 20-35 places avec chauffeur pour voyages Europe excursions Belgique",
+      imageTitle: "Bus tourisme équipé climatisation WiFi sièges ergonomiques trajets longue distance",
       link: "/notre-flotte/bus",
       capacity: "Parfait pour groupes moyens"
     },
@@ -50,8 +50,8 @@ const HomePage: React.FC = () => {
       name: "Autocars",
       description: "40 à 55 passagers",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Location autocar grand tourisme avec chauffeur professionnel",
-      imageTitle: "Autocar moderne pour excursions et voyages organisés",
+      imageAlt: "Location autocar grand tourisme 40-55 places avec chauffeur professionnel circuits Europe voyages organisés",
+      imageTitle: "Autocar grand tourisme équipements premium toilettes WiFi pour voyages longue distance Europe",
       link: "/notre-flotte/autocars",
       capacity: "Grands groupes et voyages longue distance"
     }
@@ -61,17 +61,20 @@ const HomePage: React.FC = () => {
     {
       name: "Bruxelles",
       description: "Atomium, Grand-Place, Musées",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
+      imageAlt: "Excursions Bruxelles Grand-Place Atomium avec autocar chauffeur guide francophone"
     },
     {
       name: "Paris",
       description: "Excursions depuis Bruxelles",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
+      imageAlt: "Voyages Paris Tour Eiffel en autocar depuis Bruxelles circuits organisés guide"
     },
     {
       name: "Amsterdam",
       description: "Circuits touristiques",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
+      imageAlt: "Excursions Amsterdam canaux vélos autocar confortable depuis Belgique"
     }
   ];
 
@@ -95,6 +98,53 @@ const HomePage: React.FC = () => {
       comment: "Partenaire de confiance pour nos transferts aéroport. Service 24/7 très apprécié."
     }
   ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels types de véhicules proposez-vous ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nous proposons une flotte complète : minibus 8-16 places, bus 20-35 places et autocars grand tourisme 40-55 places, tous avec chauffeur professionnel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Couvrez-vous toute l'Europe ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous organisons des voyages dans toute l'Europe : France, Pays-Bas, Allemagne, République Tchèque, Autriche et bien d'autres destinations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vos chauffeurs sont-ils qualifiés ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tous nos chauffeurs possèdent les permis requis (D, D1, D1E), une formation continue en sécurité routière et une excellente connaissance des destinations européennes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Proposez-vous un service 24/7 ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, notre service client est disponible 24h/24 et 7j/7 pour vos urgences et réservations de dernière minute."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment obtenir un devis ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contactez-nous par téléphone au +32 2 580 03 25, par email à info@locationautocar.be ou via notre formulaire en ligne. Devis gratuit sous 24h."
+        }
+      }
+    ]
+  };
 
   const homeSchema = {
     "@context": "https://schema.org",
@@ -126,9 +176,14 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Location Autocar Bruxelles - Bus et Minibus avec chauffeur"
-        description="Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe. Devis gratuit 24/7."
+        title="Location Autocar Bruxelles - Bus Minibus avec Chauffeur"
+        metaTitle="Location Autocar Bruxelles | Bus Minibus Chauffeur | Devis Gratuit"
+        description="Location autocar avec chauffeur Bruxelles depuis 2007. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7. Devis gratuit."
+        keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires"
+        canonical="https://www.locationautocar.be"
         schema={homeSchema}
+        faqSchema={faqSchema}
+        ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
 
       {/* Hero Section */}
@@ -153,7 +208,8 @@ const HomePage: React.FC = () => {
             />
             <img
               src="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?updatedAt=1750900171624&tr=w-1920,h-1080,c-maintain_ratio,f-auto,q-85"
-              alt="Location Autocar Bruxelles - Bus et minibus avec chauffeur professionnel"
+              alt="Location Autocar Bruxelles - Bus et minibus avec chauffeur professionnel pour transferts excursions voyages Europe"
+              title="Service location autocar bus minibus chauffeur Bruxelles depuis 2007 - Devis gratuit"
               className="w-full h-full object-cover object-center"
               loading="eager"
               fetchPriority="high"
@@ -195,6 +251,7 @@ const HomePage: React.FC = () => {
               <Link
                 to="/contactez-nous"
                 className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
+                title="Demander devis gratuit location autocar bus minibus Bruxelles"
               >
                 Devis Gratuit
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -202,6 +259,7 @@ const HomePage: React.FC = () => {
               <Link
                 to="/nos-services"
                 className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/10 min-w-[200px]"
+                title="Découvrir services transport autocar transferts excursions"
               >
                 Nos Services
               </Link>
@@ -317,6 +375,7 @@ const HomePage: React.FC = () => {
                   <Link
                     to={vehicle.link}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                    title={`Découvrir notre flotte ${vehicle.name.toLowerCase()} avec chauffeur`}
                   >
                     Voir les détails
                     <ArrowRight className="w-4 h-4 ml-1" />
@@ -345,7 +404,8 @@ const HomePage: React.FC = () => {
                 <div className="h-48 bg-gray-200 relative">
                   <img 
                     src={destination.image} 
-                    alt={`Excursion à ${destination.name}`}
+                    alt={destination.imageAlt}
+                    title={`Excursions ${destination.name} en autocar avec guide depuis Bruxelles`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -454,6 +514,7 @@ const HomePage: React.FC = () => {
             <Link
               to="/contactez-nous"
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+              title="Demander devis gratuit transport autocar bus minibus"
             >
               Demander un Devis
               <ArrowRight className="w-5 h-5" />
@@ -461,6 +522,7 @@ const HomePage: React.FC = () => {
             <a
               href="tel:+3225800325"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
+              title="Appeler Location Autocar Bruxelles service 24/7"
             >
               <Clock className="w-5 h-5" />
               +32 2 580 03 25

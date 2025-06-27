@@ -16,11 +16,23 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>{siteConfig.contact.phone}</span>
+                <a 
+                  href="tel:+3225800325" 
+                  className="hover:text-blue-200 transition-colors"
+                  title="Appeler Location Autocar Bruxelles"
+                >
+                  {siteConfig.contact.phone}
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>{siteConfig.contact.email}</span>
+                <a 
+                  href="mailto:info@locationautocar.be" 
+                  className="hover:text-blue-200 transition-colors"
+                  title="Email Location Autocar Bruxelles"
+                >
+                  {siteConfig.contact.email}
+                </a>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-2">
@@ -34,13 +46,16 @@ const Header: React.FC = () => {
       {/* Main Header */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-4">
+          <Link to="/" className="flex items-center space-x-4" title="Location Autocar Bruxelles - Accueil">
             <div className="flex-shrink-0">
               <img 
                 src="https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png"
-                alt="Location Autocar Bruxelles - Logo"
+                alt="Location Autocar Bruxelles - Logo entreprise transport bus minibus chauffeur"
+                title="Location Autocar Bruxelles - Service transport depuis 2007"
                 className="h-12 w-auto object-contain"
                 loading="eager"
+                width="120"
+                height="48"
               />
             </div>
             <div className="hidden sm:block">
@@ -56,6 +71,7 @@ const Header: React.FC = () => {
                 <Link
                   to={item.url}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                  title={`${item.label} - Location Autocar Bruxelles`}
                 >
                   {item.label}
                 </Link>
@@ -67,6 +83,7 @@ const Header: React.FC = () => {
                           key={child.url}
                           to={child.url}
                           className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                          title={`${child.label} - Location Autocar Bruxelles`}
                         >
                           {child.label}
                         </Link>
@@ -79,6 +96,7 @@ const Header: React.FC = () => {
             <Link
               to="/contactez-nous"
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+              title="Demander devis gratuit Location Autocar Bruxelles"
             >
               Devis Gratuit
             </Link>
@@ -88,6 +106,8 @@ const Header: React.FC = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 text-gray-700 hover:text-blue-600"
+            aria-label="Menu navigation mobile"
+            title="Ouvrir menu navigation"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -103,6 +123,7 @@ const Header: React.FC = () => {
                     to={item.url}
                     className="block py-2 text-gray-700 hover:text-blue-600 font-medium"
                     onClick={() => setIsMenuOpen(false)}
+                    title={`${item.label} - Location Autocar Bruxelles`}
                   >
                     {item.label}
                   </Link>
@@ -114,6 +135,7 @@ const Header: React.FC = () => {
                           to={child.url}
                           className="block py-1 text-sm text-gray-600 hover:text-blue-600"
                           onClick={() => setIsMenuOpen(false)}
+                          title={`${child.label} - Location Autocar Bruxelles`}
                         >
                           {child.label}
                         </Link>
@@ -126,6 +148,7 @@ const Header: React.FC = () => {
                 to="/contactez-nous"
                 className="block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg text-center font-medium"
                 onClick={() => setIsMenuOpen(false)}
+                title="Demander devis gratuit Location Autocar Bruxelles"
               >
                 Devis Gratuit
               </Link>
