@@ -18,25 +18,34 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  const encode = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
 
+    // Validate required fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.service) {
+      setError('Veuillez remplir tous les champs obligatoires.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError('Veuillez entrer une adresse email valide.');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "contact",
-          ...formData
-        })
+      // Method 1: Direct form submission (recommended for Netlify)
+      const formElement = e.target as HTMLFormElement;
+      const formDataToSubmit = new FormData(formElement);
+      
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formDataToSubmit
       });
 
       if (response.ok) {
@@ -53,11 +62,26 @@ const ContactPage: React.FC = () => {
           message: ''
         });
       } else {
-        throw new Error(`Erreur serveur: ${response.status} ${response.statusText}`);
+        // Get more detailed error information
+        const responseText = await response.text();
+        console.error('Response error:', response.status, responseText);
+        
+        if (response.status === 404) {
+          throw new Error('Formulaire non trouvé. Veuillez actualiser la page et réessayer.');
+        } else if (response.status >= 500) {
+          throw new Error('Erreur serveur temporaire. Veuillez réessayer dans quelques minutes.');
+        } else {
+          throw new Error(`Erreur ${response.status}: ${response.statusText}`);
+        }
       }
     } catch (error) {
       console.error('Erreur envoi formulaire:', error);
-      setError('Une erreur est survenue lors de l\'envoi du formulaire. Veuillez réessayer ou nous contacter directement par téléphone.');
+      
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        setError('Problème de connexion réseau. Vérifiez votre connexion internet et réessayez.');
+      } else {
+        setError(error instanceof Error ? error.message : 'Une erreur inattendue est survenue.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -68,6 +92,8 @@ const ContactPage: React.FC = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Clear error when user starts typing
+    if (error) setError('');
   };
 
   const contactSchema = {
@@ -210,6 +236,7 @@ const ContactPage: React.FC = () => {
                   Demande de Devis Gratuit
                 </h2>
 
+                {/* Error Display */}
                 {error && (
                   <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                     <p className="text-red-700 text-sm">{error}</p>
@@ -242,7 +269,26 @@ const ContactPage: React.FC = () => {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form 
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    netlify
+                  >
+                    {/* Hidden fields for Netlify */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    
+                    {/* Honeypot field */}
+                    <div style={{ display: 'none' }}>
+                      <label>
+                        Don't fill this out if you're human: 
+                        <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                      </label>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -256,7 +302,7 @@ const ContactPage: React.FC = () => {
                           value={formData.name}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                         />
                       </div>
                       <div>
@@ -271,7 +317,7 @@ const ContactPage: React.FC = () => {
                           value={formData.email}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                         />
                       </div>
                     </div>
@@ -288,7 +334,7 @@ const ContactPage: React.FC = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                         />
                       </div>
                       <div>
@@ -302,7 +348,7 @@ const ContactPage: React.FC = () => {
                           value={formData.service}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                         >
                           <option value="">Sélectionnez un service</option>
                           <option value="transfert">Transfert aéroport/gare</option>
@@ -325,7 +371,8 @@ const ContactPage: React.FC = () => {
                           value={formData.date}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                          min={new Date().toISOString().split('T')[0]}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                         />
                       </div>
                       <div>
@@ -337,10 +384,11 @@ const ContactPage: React.FC = () => {
                           id="passengers"
                           name="passengers"
                           min="1"
+                          max="55"
                           value={formData.passengers}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                         />
                       </div>
                     </div>
@@ -357,7 +405,7 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         disabled={isSubmitting}
                         placeholder="Ex: Aéroport de Bruxelles, Paris, Amsterdam..."
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                       />
                     </div>
 
@@ -373,7 +421,7 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         disabled={isSubmitting}
                         placeholder="Décrivez vos besoins spécifiques..."
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none disabled:bg-gray-100"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                       />
                     </div>
 
