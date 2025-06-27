@@ -8,6 +8,7 @@ import FleetPage from './pages/FleetPage';
 import FleetBusPage from './pages/FleetBusPage';
 import FleetMinibusPage from './pages/FleetMinibusPage';
 import FleetAutocarsPage from './pages/FleetAutocarsPage';
+import DestinationsPage from './pages/DestinationsPage';
 import DestinationBruxellesPage from './pages/DestinationBruxellesPage';
 import DestinationBelgiquePage from './pages/DestinationBelgiquePage';
 import DestinationEuropePage from './pages/DestinationEuropePage';
@@ -28,7 +29,7 @@ function App() {
             <Route path="notre-flotte/bus" element={<FleetBusPage />} />
             <Route path="notre-flotte/minibus" element={<FleetMinibusPage />} />
             <Route path="notre-flotte/autocars" element={<FleetAutocarsPage />} />
-            <Route path="destinations" element={<div className="py-20 text-center"><h1 className="text-4xl font-bold">Destinations - Page en construction</h1></div>} />
+            <Route path="destinations" element={<DestinationsPage />} />
             <Route path="destinations/bruxelles" element={<DestinationBruxellesPage />} />
             <Route path="destinations/belgique" element={<DestinationBelgiquePage />} />
             <Route path="destinations/europe" element={<DestinationEuropePage />} />
