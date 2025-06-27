@@ -18,19 +18,25 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
 
     try {
-      const form = e.target as HTMLFormElement;
-      const formData = new FormData(form);
-
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData
+        })
       });
 
       if (response.ok) {
@@ -47,7 +53,7 @@ const ContactPage: React.FC = () => {
           message: ''
         });
       } else {
-        throw new Error(`Erreur serveur: ${response.status}`);
+        throw new Error(`Erreur serveur: ${response.status} ${response.statusText}`);
       }
     } catch (error) {
       console.error('Erreur envoi formulaire:', error);
@@ -236,25 +242,7 @@ const ContactPage: React.FC = () => {
                     </button>
                   </div>
                 ) : (
-                  <form 
-                    onSubmit={handleSubmit} 
-                    className="space-y-6"
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-                  >
-                    {/* Hidden fields for Netlify */}
-                    <input type="hidden" name="form-name" value="contact" />
-                    
-                    {/* Honeypot field */}
-                    <div style={{ display: 'none' }}>
-                      <label>
-                        Don't fill this out if you're human: 
-                        <input name="bot-field" tabIndex={-1} autoComplete="off" />
-                      </label>
-                    </div>
-
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">

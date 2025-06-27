@@ -39,3 +39,10 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Form handling
+[[plugins]]
+  package = "@netlify/plugin-functions"
+
+[functions]
+  directory = "netlify/functions"
