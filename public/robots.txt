@@ -1,15 +1,35 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://www.locationautocar.be/sitemap.xml
 
-# Disallow admin areas
+# Disallow admin and private areas
 Disallow: /admin/
+Disallow: /_netlify/
+Disallow: /api/
 
-# Allow important pages
+# Allow important pages for SEO
 Allow: /nos-services/
 Allow: /notre-flotte/
 Allow: /destinations/
 Allow: /contactez-nous/
 Allow: /blog/
+
+# Crawl delay (optional - be respectful to search engines)
+Crawl-delay: 1
+
+# Specific rules for different search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block any temporary or development URLs
+Disallow: /test/
+Disallow: /dev/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*
+Disallow: /*?*gclid*
