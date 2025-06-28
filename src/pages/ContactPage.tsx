@@ -39,14 +39,26 @@ const ContactPage: React.FC = () => {
     }
 
     try {
-      // Method 1: Direct form submission (recommended for Netlify)
-      const formElement = e.target as HTMLFormElement;
-      const formDataToSubmit = new FormData(formElement);
+      // Create form data with proper encoding for Netlify
+      const formDataToSubmit = new FormData();
       
+      // Add the form name (CRITICAL for Netlify)
+      formDataToSubmit.append('form-name', 'contact');
+      
+      // Add all form fields
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSubmit.append(key, value);
+      });
+
+      console.log('Submitting form data:', Object.fromEntries(formDataToSubmit));
+
       const response = await fetch('/', {
         method: 'POST',
         body: formDataToSubmit
       });
+
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
 
       if (response.ok) {
         setIsSubmitted(true);
@@ -61,17 +73,20 @@ const ContactPage: React.FC = () => {
           destination: '',
           message: ''
         });
+        console.log('Form submitted successfully');
       } else {
         // Get more detailed error information
         const responseText = await response.text();
         console.error('Response error:', response.status, responseText);
         
         if (response.status === 404) {
-          throw new Error('Formulaire non trouvé. Veuillez actualiser la page et réessayer.');
+          throw new Error('Formulaire non trouvé. La page doit être redéployée pour activer les formulaires Netlify.');
+        } else if (response.status === 400) {
+          throw new Error('Données du formulaire invalides. Vérifiez que tous les champs requis sont remplis.');
         } else if (response.status >= 500) {
           throw new Error('Erreur serveur temporaire. Veuillez réessayer dans quelques minutes.');
         } else {
-          throw new Error(`Erreur ${response.status}: ${response.statusText}`);
+          throw new Error(`Erreur ${response.status}: Le formulaire n'a pas pu être envoyé.`);
         }
       }
     } catch (error) {
@@ -276,12 +291,11 @@ const ContactPage: React.FC = () => {
                     method="POST"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
-                    netlify
                   >
-                    {/* Hidden fields for Netlify */}
+                    {/* Hidden fields for Netlify - CRITICAL */}
                     <input type="hidden" name="form-name" value="contact" />
                     
-                    {/* Honeypot field */}
+                    {/* Honeypot field - CRITICAL for spam protection */}
                     <div style={{ display: 'none' }}>
                       <label>
                         Don't fill this out if you're human: 

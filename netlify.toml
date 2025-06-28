@@ -5,6 +5,11 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Form processing configuration
+[forms]
+  # Enable form detection
+  enabled = true
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -39,3 +44,15 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Form submission handling
+[[redirects]]
+  from = "/contact-success"
+  to = "/contactez-nous?success=true"
+  status = 302
+
+# Ensure form submissions are processed correctly
+[[headers]]
+  for = "/"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
