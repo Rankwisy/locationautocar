@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Phone } from 'lucide-react';
-import NetlifyFormHandler, { ContactFormData, FormSubmissionResult } from '../../utils/formHandler';
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  date: string;
+  passengers: string;
+  destination: string;
+  message: string;
+}
 
 interface ContactFormProps {
   onSubmissionSuccess?: () => void;
@@ -23,8 +33,11 @@ const ContactForm: React.FC<ContactFormProps> = ({
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState<FormSubmissionResult | null>(null);
-  const [showDebugInfo, setShowDebugInfo] = useState(false);
+  const [submissionResult, setSubmissionResult] = useState<{
+    success: boolean;
+    message: string;
+    error?: string;
+  } | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -39,16 +52,61 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
   };
 
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmissionResult(null);
 
-    try {
-      const result = await NetlifyFormHandler.submitForm(formData);
-      setSubmissionResult(result);
+    // Validate required fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.service) {
+      setSubmissionResult({
+        success: false,
+        message: 'Veuillez remplir tous les champs obligatoires.',
+        error: 'Champs requis manquants'
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
-      if (result.success) {
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmissionResult({
+        success: false,
+        message: 'Veuillez entrer une adresse email valide.',
+        error: 'Format email invalide'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      console.log('Submitting form data:', formData);
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData
+        })
+      });
+
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
+      if (response.ok) {
+        setSubmissionResult({
+          success: true,
+          message: 'Formulaire envoyé avec succès !'
+        });
+        
         // Reset form on success
         setFormData({
           name: '',
@@ -63,25 +121,45 @@ const ContactForm: React.FC<ContactFormProps> = ({
         
         onSubmissionSuccess?.();
       } else {
-        onSubmissionError?.(result.error || result.message);
+        const responseText = await response.text();
+        console.error('Form submission failed:', {
+          status: response.status,
+          statusText: response.statusText,
+          body: responseText
+        });
+
+        let errorMessage = 'Une erreur est survenue lors de l\'envoi du formulaire.';
+        
+        if (response.status === 404) {
+          errorMessage = 'Formulaire non trouvé. Veuillez contacter le support.';
+        } else if (response.status === 400) {
+          errorMessage = 'Données du formulaire invalides. Vérifiez vos informations.';
+        } else if (response.status >= 500) {
+          errorMessage = 'Erreur serveur temporaire. Veuillez réessayer dans quelques minutes.';
+        }
+
+        setSubmissionResult({
+          success: false,
+          message: errorMessage,
+          error: `Erreur ${response.status}: ${responseText || 'Erreur inconnue'}`
+        });
+        
+        onSubmissionError?.(errorMessage);
       }
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Erreur inconnue';
+      console.error('Network error:', error);
+      
+      const errorMessage = 'Problème de connexion réseau. Vérifiez votre connexion internet et réessayez.';
       setSubmissionResult({
         success: false,
-        message: 'Erreur lors de l\'envoi',
-        error: errorMessage
+        message: errorMessage,
+        error: error instanceof Error ? error.message : 'Erreur réseau inconnue'
       });
+      
       onSubmissionError?.(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const checkConfiguration = async () => {
-    const config = await NetlifyFormHandler.checkFormConfiguration();
-    console.log('Form configuration check:', config);
-    setShowDebugInfo(true);
   };
 
   return (
@@ -89,24 +167,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
       <h2 className="text-3xl font-bold text-gray-900 mb-6">
         Demande de Devis Gratuit
       </h2>
-
-      {/* Debug Information (Development only) */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <button
-            type="button"
-            onClick={checkConfiguration}
-            className="text-yellow-800 underline text-sm"
-          >
-            Vérifier la configuration du formulaire
-          </button>
-          {showDebugInfo && (
-            <div className="mt-2 text-xs text-yellow-700">
-              Voir la console pour les détails de configuration
-            </div>
-          )}
-        </div>
-      )}
 
       {/* Submission Result */}
       {submissionResult && (
@@ -127,23 +187,22 @@ const ContactForm: React.FC<ContactFormProps> = ({
               }`}>
                 {submissionResult.message}
               </p>
-              {submissionResult.error && (
+              {submissionResult.error && process.env.NODE_ENV === 'development' && (
                 <p className="text-red-700 text-sm mt-1">
-                  {submissionResult.error}
+                  Debug: {submissionResult.error}
                 </p>
               )}
               {!submissionResult.success && (
                 <div className="mt-3 text-red-700 text-sm">
                   <p className="font-medium">Pour une assistance immédiate :</p>
-                  <ul className="list-disc list-inside mt-1 space-y-1">
-                    <li>Vérifiez votre connexion internet</li>
-                    <li>Assurez-vous que tous les champs obligatoires sont remplis</li>
-                    <li>Réessayez dans quelques minutes</li>
-                  </ul>
-                  <p className="mt-2">
-                    Ou contactez-nous directement au{' '}
+                  <p className="mt-1">
+                    Contactez-nous directement au{' '}
                     <a href="tel:+3225800325" className="font-semibold underline">
                       +32 2 580 03 25
+                    </a>
+                    {' '}ou par email à{' '}
+                    <a href="mailto:info@locationautocar.be" className="font-semibold underline">
+                      info@locationautocar.be
                     </a>
                   </p>
                 </div>
@@ -153,7 +212,25 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit} 
+        className="space-y-6"
+      >
+        {/* Honeypot field - hidden from users */}
+        <div style={{ display: 'none' }}>
+          <label>
+            Don't fill this out if you're human: 
+            <input name="bot-field" tabIndex={-1} autoComplete="off" />
+          </label>
+        </div>
+
+        {/* Hidden form name field */}
+        <input type="hidden" name="form-name" value="contact" />
+
         {/* Form fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
