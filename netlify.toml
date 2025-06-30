@@ -56,3 +56,9 @@
   for = "/"
   [headers.values]
     X-Robots-Tag = "index, follow"
+
+# Form debugging headers (remove in production)
+[[headers]]
+  for = "/contactez-nous"
+  [headers.values]
+    X-Netlify-Forms = "enabled"
