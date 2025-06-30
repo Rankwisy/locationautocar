@@ -79,24 +79,22 @@ const ContactPage: React.FC = () => {
         const responseText = await response.text();
         console.error('Response error:', response.status, responseText);
         
-        if (response.status === 404) {
-          throw new Error('Formulaire non trouvé. La page doit être redéployée pour activer les formulaires Netlify.');
-        } else if (response.status === 400) {
-          throw new Error('Données du formulaire invalides. Vérifiez que tous les champs requis sont remplis.');
-        } else if (response.status >= 500) {
-          throw new Error('Erreur serveur temporaire. Veuillez réessayer dans quelques minutes.');
-        } else {
-          throw new Error(`Erreur ${response.status}: Le formulaire n'a pas pu être envoyé.`);
-        }
+        throw new Error('Form submission failed');
       }
     } catch (error) {
       console.error('Erreur envoi formulaire:', error);
       
-      if (error instanceof TypeError && error.message.includes('fetch')) {
-        setError('Problème de connexion réseau. Vérifiez votre connexion internet et réessayez.');
-      } else {
-        setError(error instanceof Error ? error.message : 'Une erreur inattendue est survenue.');
-      }
+      // Set the detailed French error message
+      setError(`Demande de Devis Gratuit
+
+Une erreur est survenue lors de l'envoi du formulaire. Veuillez vérifier vos informations et réessayer. Si le problème persiste, n'hésitez pas à nous contacter directement par téléphone au +32 2 580 03 25.
+
+Pour une assistance immédiate:
+- Vérifiez votre connexion internet
+- Assurez-vous que tous les champs obligatoires sont remplis
+- Réessayez dans quelques minutes
+
+Notre équipe est disponible du lundi au vendredi, de 9h à 17h, pour vous aider.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -253,14 +251,13 @@ const ContactPage: React.FC = () => {
 
                 {/* Error Display */}
                 {error && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                    <p className="text-red-700 text-sm">{error}</p>
-                    <p className="text-red-600 text-sm mt-2">
-                      En cas de problème persistant, contactez-nous directement au{' '}
-                      <a href="tel:+3225800325" className="font-semibold underline">
-                        +32 2 580 03 25
-                      </a>
-                    </p>
+                  <div className="mb-6 p-6 bg-red-50 border border-red-200 rounded-lg">
+                    <div className="text-red-700">
+                      <div className="font-semibold text-lg mb-3">Demande de Devis Gratuit</div>
+                      <div className="whitespace-pre-line text-sm leading-relaxed">
+                        {error}
+                      </div>
+                    </div>
                   </div>
                 )}
 
