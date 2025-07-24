@@ -40,6 +40,27 @@
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- CRITICAL: Static form for Netlify build-time detection -->
+    <!-- This form MUST be present in the HTML for Netlify to detect it -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden style="display: none;">
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service">
+        <option value="transfert">Transfert aéroport/gare</option>
+        <option value="excursion">Excursion touristique</option>
+        <option value="business">Voyage d'affaires</option>
+        <option value="disposition">Mise à disposition</option>
+      </select>
+      <input type="date" name="date" />
+      <input type="number" name="passengers" />
+      <input type="text" name="destination" />
+      <textarea name="message"></textarea>
+      <!-- CRITICAL: This hidden field is required -->
+      <input type="hidden" name="form-name" value="contact" />
+    </form>
+    
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Netlify Identity Widget -->
