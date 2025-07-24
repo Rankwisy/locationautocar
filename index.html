@@ -74,7 +74,7 @@
       setTimeout(() => {
         if (!document.querySelector('#root').hasChildNodes()) {
           console.error('React app failed to mount after 5 seconds');
-          document.getElementById('root').innerHTML = '<div style="padding: 20px; color: red; font-family: Arial;">Application failed to load. Please refresh the page or contact support.</div>';
+          document.getElementById('root').innerHTML = '<div style="padding: 20px; color: red; font-family: Arial;">Application failed to load. Please open your browser\'s developer console (F12) to see detailed error information, then refresh the page or contact support.</div>';
         }
       }, 5000);
     </script>
