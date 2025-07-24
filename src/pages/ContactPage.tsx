@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
-import ContactForm from '../components/Forms/ContactForm';
+import EnhancedContactForm from '../components/Forms/EnhancedContactForm';
 
 const ContactPage: React.FC = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -171,7 +171,7 @@ const ContactPage: React.FC = () => {
 
             {/* Contact Form */}
             <div>
-              <ContactForm 
+              <EnhancedContactForm 
                 onSubmissionSuccess={handleSubmissionSuccess}
                 onSubmissionError={handleSubmissionError}
               />

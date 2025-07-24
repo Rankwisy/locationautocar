@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Phone } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { EncodingAwareFormHandler, EncodingUtils } from '../../utils/encodingUtils';
 
 interface ContactFormData {
   name: string;
@@ -17,7 +18,7 @@ interface ContactFormProps {
   onSubmissionError?: (error: string) => void;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ 
+const EnhancedContactForm: React.FC<ContactFormProps> = ({ 
   onSubmissionSuccess, 
   onSubmissionError 
 }) => {
@@ -41,9 +42,13 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    
+    // Normalize the input value to handle encoding properly
+    const normalizedValue = EncodingUtils.normalizeText(value);
+    
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: normalizedValue
     }));
     
     // Clear previous submission result when user starts typing
@@ -52,10 +57,35 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
   };
 
-  const encode = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
+  const validateForm = (): string | null => {
+    if (!formData.name.trim()) {
+      return 'Le nom est obligatoire.';
+    }
+    
+    if (!formData.email.trim()) {
+      return 'L\'email est obligatoire.';
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      return 'Veuillez entrer une adresse email valide.';
+    }
+    
+    if (!formData.service) {
+      return 'Veuillez sélectionner un service.';
+    }
+
+    // Validate encoding of text fields
+    const textFields = ['name', 'destination', 'message'];
+    for (const field of textFields) {
+      const value = formData[field as keyof ContactFormData];
+      if (value && !EncodingUtils.isValidUTF8(value)) {
+        return `Le champ "${field}" contient des caractères non valides. Veuillez vérifier votre saisie.`;
+      }
+    }
+
+    return null;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,40 +93,29 @@ const ContactForm: React.FC<ContactFormProps> = ({
     setIsSubmitting(true);
     setSubmissionResult(null);
 
-    // Validate required fields
-    if (!formData.name.trim() || !formData.email.trim() || !formData.service) {
+    // Validate form
+    const validationError = validateForm();
+    if (validationError) {
       setSubmissionResult({
         success: false,
-        message: 'Veuillez remplir tous les champs obligatoires.',
-        error: 'Champs requis manquants'
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setSubmissionResult({
-        success: false,
-        message: 'Veuillez entrer une adresse email valide.',
-        error: 'Format email invalide'
+        message: validationError,
+        error: 'Validation failed'
       });
       setIsSubmitting(false);
       return;
     }
 
     try {
-      console.log('Submitting form data:', formData);
+      console.log('Submitting form with encoding-aware handler...');
+      
+      // Prepare form data with proper encoding
+      const submissionData = {
+        "form-name": "contact",
+        ...formData
+      };
 
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "contact",
-          ...formData
-        })
-      });
+      // Use the encoding-aware form handler
+      const response = await EncodingAwareFormHandler.submitForm(submissionData);
 
       console.log('Response status:', response.status);
       console.log('Response headers:', Object.fromEntries(response.headers.entries()));
@@ -104,7 +123,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       if (response.ok) {
         setSubmissionResult({
           success: true,
-          message: 'Formulaire envoyé avec succès !'
+          message: 'Formulaire envoyé avec succès ! Nous vous contacterons bientôt.'
         });
         
         // Reset form on success
@@ -246,6 +265,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formData.name}
               onChange={handleChange}
               disabled={isSubmitting}
+              placeholder="Votre nom complet"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
@@ -262,6 +282,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formData.email}
               onChange={handleChange}
               disabled={isSubmitting}
+              placeholder="votre@email.com"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
@@ -279,6 +300,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formData.phone}
               onChange={handleChange}
               disabled={isSubmitting}
+              placeholder="+32 X XX XX XX XX"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
@@ -335,6 +357,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formData.passengers}
               onChange={handleChange}
               disabled={isSubmitting}
+              placeholder="Ex: 25"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
@@ -367,7 +390,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             value={formData.message}
             onChange={handleChange}
             disabled={isSubmitting}
-            placeholder="Décrivez vos besoins spécifiques..."
+            placeholder="Décrivez vos besoins spécifiques, horaires préférés, équipements souhaités..."
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
         </div>
@@ -400,4 +423,4 @@ const ContactForm: React.FC<ContactFormProps> = ({
   );
 };
 
-export default ContactForm;
+export default EnhancedContactForm;
