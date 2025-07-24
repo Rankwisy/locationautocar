@@ -17,6 +17,8 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
+  console.log('App component rendering...');
+  
   return (
     <HelmetProvider>
       <Router>
