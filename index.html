@@ -11,6 +11,10 @@
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="preconnect" href="https://ik.imagekit.io">
     
     <!-- Preload critical images -->
@@ -45,6 +49,10 @@
     <script>
       console.log('HTML loaded successfully');
       console.log('Root element exists:', !!document.getElementById('root'));
+      console.log('Checking stylesheets...');
+      document.querySelectorAll('link[rel="stylesheet"]').forEach((link, index) => {
+        console.log(`Stylesheet ${index + 1}:`, link.href);
+      });
     </script>
     
     <!-- CRITICAL: Static form for Netlify build-time detection -->
