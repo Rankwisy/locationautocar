@@ -1,38 +1,80 @@
 [build]
   publish = "dist"
   command = "npm run build"
+  
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--production=false"
 
 # Form processing configuration
 [forms]
   # Enable form detection
   enabled = true
 
+# Performance and caching headers
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Type = "text/html; charset=UTF-8"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 [[headers]]
-  for = "/images/*"
+  for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Content-Type = "text/html; charset=UTF-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css; charset=UTF-8"
 
 [[headers]]
   for = "*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript; charset=UTF-8"
+
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "font/woff2"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=UTF-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=UTF-8"
+    Cache-Control = "public, max-age=3600"
 
 # CMS configuration
 [[redirects]]
@@ -40,20 +82,29 @@
   to = "/admin/index.html"
   status = 200
 
+# Form submission success redirect
+[[redirects]]
+  from = "/contact-success"
+  to = "/contactez-nous?success=true"
+  status = 302
+
 # SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Form submission handling
+# Error pages
 [[redirects]]
-  from = "/contact-success"
-  to = "/contactez-nous?success=true"
-  status = 302
+  from = "/404"
+  to = "/index.html"
+  status = 404
 
-# Ensure form submissions are processed correctly
-[[headers]]
-  for = "/"
-  [headers.values]
-    X-Robots-Tag = "index, follow"
+[[redirects]]
+  from = "/500"
+  to = "/index.html"
+  status = 500
+
+# Performance optimizations
+[build.processing.images]
+  compress = true

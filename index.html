@@ -11,11 +11,11 @@
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Load Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="preconnect" href="https://ik.imagekit.io">
+    
+    <!-- Load Google Fonts with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Preload critical images -->
     <link rel="preload" as="image" href="https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png" fetchpriority="high">
@@ -79,10 +79,65 @@
     
     <!-- Fallback error handling -->
     <script>
-      setTimeout(() => {
+      // Enhanced fallback error handling with better UX
+      window.fallbackErrorTimeout = setTimeout(() => {
         if (!document.querySelector('#root').hasChildNodes()) {
           console.error('React app failed to mount after 5 seconds');
-          document.getElementById('root').innerHTML = '<div style="padding: 20px; color: red; font-family: Arial;">Application failed to load. Please open your browser\'s developer console (F12) to see detailed error information, then refresh the page or contact support.</div>';
+          
+          const errorDiv = document.createElement('div');
+          errorDiv.style.cssText = 'padding: 40px 20px; font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; text-align: center; border: 2px solid #e53e3e; border-radius: 10px; background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);';
+          errorDiv.innerHTML = `
+            <div style="color: #e53e3e; font-size: 48px; margin-bottom: 20px;">⚠️</div>
+            <h1 style="color: #2d3748; margin-bottom: 16px; font-size: 24px;">Application Loading Failed</h1>
+            <p style="color: #4a5568; margin-bottom: 24px; line-height: 1.6;">
+              We're experiencing technical difficulties. Our team has been notified and is working to resolve this issue.
+            </p>
+            
+            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: left;">
+              <h3 style="color: #2d3748; margin-bottom: 12px; font-size: 16px;">Quick Solutions:</h3>
+              <ul style="color: #4a5568; margin: 0; padding-left: 20px;">
+                <li style="margin-bottom: 8px;">Refresh the page (Ctrl+F5 or Cmd+Shift+R)</li>
+                <li style="margin-bottom: 8px;">Clear your browser cache and cookies</li>
+                <li style="margin-bottom: 8px;">Try a different browser or incognito mode</li>
+                <li style="margin-bottom: 8px;">Check your internet connection</li>
+              </ul>
+            </div>
+            
+            <div style="margin: 24px 0;">
+              <button onclick="window.location.reload()" style="background: #3182ce; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; margin-right: 12px;">
+                🔄 Refresh Page
+              </button>
+              <button onclick="window.open('https://status.netlify.com', '_blank')" style="background: #38a169; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer;">
+                📊 Check Status
+              </button>
+            </div>
+            
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 24px;">
+              <p style="color: #4a5568; margin-bottom: 12px; font-size: 14px;">Need immediate assistance?</p>
+              <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+                <a href="tel:+3225800325" style="color: #3182ce; text-decoration: none; font-weight: bold;">
+                  📞 +32 2 580 03 25
+                </a>
+                <a href="mailto:info@locationautocar.be" style="color: #3182ce; text-decoration: none; font-weight: bold;">
+                  📧 info@locationautocar.be
+                </a>
+              </div>
+            </div>
+            
+            <details style="margin-top: 24px; text-align: left;">
+              <summary style="cursor: pointer; color: #4a5568; font-size: 14px;">🔧 Technical Information</summary>
+              <div style="background: #f7fafc; padding: 16px; margin-top: 12px; border-radius: 6px; font-family: monospace; font-size: 12px; color: #2d3748;">
+                <p><strong>Error:</strong> React application failed to mount within 5 seconds</p>
+                <p><strong>URL:</strong> ${window.location.href}</p>
+                <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+                <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
+                <p><strong>Viewport:</strong> ${window.innerWidth}x${window.innerHeight}</p>
+              </div>
+            </details>
+          `;
+          
+          document.getElementById('root').innerHTML = '';
+          document.getElementById('root').appendChild(errorDiv);
         }
       }, 5000);
     </script>
