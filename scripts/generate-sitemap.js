@@ -2,13 +2,14 @@ import fs from 'fs';
 import path from 'path';
 
 const baseUrl = 'https://www.locationautocar.be';
+const currentDate = new Date().toISOString();
 
-// Define all pages with their specific configurations
+// Define all live pages with their configurations
 const pages = [
   // Homepage - Highest priority
   {
     url: '/',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '1.0'
   },
@@ -16,65 +17,65 @@ const pages = [
   // Main navigation pages - High priority
   {
     url: '/nos-services',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '0.9'
   },
   {
     url: '/notre-flotte',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'monthly',
     priority: '0.9'
   },
   {
     url: '/destinations',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '0.9'
   },
   {
     url: '/contactez-nous',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'monthly',
     priority: '0.8'
   },
 
-  // Fleet category pages
+  // Fleet category pages - Important for SEO
   {
     url: '/notre-flotte/minibus',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'monthly',
     priority: '0.7'
   },
   {
     url: '/notre-flotte/bus',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'monthly',
     priority: '0.7'
   },
   {
     url: '/notre-flotte/autocars',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'monthly',
     priority: '0.7'
   },
 
-  // Destination pages
+  // Destination pages - High value content
   {
     url: '/destinations/bruxelles',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '0.7'
   },
   {
     url: '/destinations/belgique',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '0.7'
   },
   {
     url: '/destinations/europe',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '0.7'
   },
@@ -82,34 +83,34 @@ const pages = [
   // Blog section
   {
     url: '/blog',
-    lastmod: '2024-01-30T15:00:00+01:00',
+    lastmod: currentDate,
     changefreq: 'weekly',
     priority: '0.6'
   },
 
-  // Blog posts
+  // Blog posts - Content marketing
   {
     url: '/blog/eiffel-tower-sunset-magic',
-    lastmod: '2024-01-20T10:00:00+01:00',
+    lastmod: '2024-01-20T10:00:00.000Z',
     changefreq: 'monthly',
     priority: '0.6'
   },
   {
     url: '/blog/amsterdam-canaux-velo',
-    lastmod: '2024-01-30T10:00:00+01:00',
+    lastmod: '2024-01-30T10:00:00.000Z',
     changefreq: 'monthly',
     priority: '0.6'
   },
   {
     url: '/blog/bruxelles-coeur-europe',
-    lastmod: '2024-01-25T09:00:00+01:00',
+    lastmod: '2024-01-25T09:00:00.000Z',
     changefreq: 'monthly',
     priority: '0.6'
   }
 ];
 
 function generateSitemap() {
-  console.log('🚀 Generating XML sitemap...');
+  console.log('🚀 Generating comprehensive XML sitemap...');
   
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
@@ -132,13 +133,21 @@ function generateSitemap() {
   sitemap += `
 </urlset>`;
 
+  // Ensure public directory exists
+  const publicDir = path.join(process.cwd(), 'public');
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+
   // Write the sitemap to the public directory
-  const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+  const sitemapPath = path.join(publicDir, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemap, 'utf8');
   
   console.log('✅ Sitemap generated successfully!');
   console.log(`📍 Location: ${sitemapPath}`);
   console.log(`📊 Total URLs: ${pages.length}`);
+  
+  return sitemap;
 }
 
 function generateSitemapIndex() {
@@ -149,7 +158,7 @@ function generateSitemapIndex() {
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>${baseUrl}/sitemap.xml</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${currentDate}</lastmod>
   </sitemap>
 </sitemapindex>`;
 
@@ -157,8 +166,15 @@ function generateSitemapIndex() {
   fs.writeFileSync(sitemapIndexPath, sitemapIndex, 'utf8');
   
   console.log('✅ Sitemap index generated successfully!');
+  console.log(`📍 Location: ${sitemapIndexPath}`);
 }
 
-// Run the sitemap generation
-generateSitemap();
-generateSitemapIndex();
+// Generate both files
+try {
+  generateSitemap();
+  generateSitemapIndex();
+  console.log('🎉 All sitemap files generated successfully!');
+} catch (error) {
+  console.error('❌ Error generating sitemap:', error);
+  process.exit(1);
+}
