@@ -201,6 +201,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Language */}
       <html lang="fr" />
       
+      {/* Sitemap reference for search engines */}
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+      
     </Helmet>
   );
 };

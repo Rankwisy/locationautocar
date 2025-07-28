@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations - Primary discovery method for search engines
 Sitemap: https://www.locationautocar.be/sitemap_index.xml
 Sitemap: https://www.locationautocar.be/sitemap.xml
 
@@ -9,28 +9,35 @@ Sitemap: https://www.locationautocar.be/sitemap.xml
 Disallow: /admin/
 Disallow: /_netlify/
 Disallow: /api/
+Disallow: /.netlify/
 
-# Allow important pages for SEO
+# Allow important pages for SEO crawling
 Allow: /nos-services/
 Allow: /notre-flotte/
 Allow: /destinations/
 Allow: /contactez-nous/
 Allow: /blog/
 
-# Crawl delay (optional - be respectful to search engines)
-Crawl-delay: 1
-
-# Specific rules for different search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Block any temporary or development URLs
+# Block temporary or development URLs
 Disallow: /test/
 Disallow: /dev/
 Disallow: /*.json$
 Disallow: /*?*utm_*
 Disallow: /*?*fbclid*
 Disallow: /*?*gclid*
+
+# Crawl delay - be respectful to search engines
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
