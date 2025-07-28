@@ -159,6 +159,7 @@ function generateSitemap() {
   console.log('🚀 Generating comprehensive XML sitemap...');
   
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -237,9 +238,29 @@ function detectBlogPosts() {
   return [];
 }
 
+// Generate sitemap index
+function generateSitemapIndex() {
+  console.log('📋 Generating sitemap index...');
+  
+  const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${baseUrl}/sitemap.xml</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+
+  const sitemapIndexPath = path.join(process.cwd(), 'public', 'sitemap_index.xml');
+  fs.writeFileSync(sitemapIndexPath, sitemapIndex, 'utf8');
+  
+  console.log('✅ Sitemap index generated successfully!');
+}
+
 // Run the sitemap generation
 if (import.meta.url === `file://${process.argv[1]}`) {
   generateSitemap();
+  generateSitemapIndex();
 }
 
-export { generateSitemap, pages };
+export { generateSitemap, generateSitemapIndex, pages };
