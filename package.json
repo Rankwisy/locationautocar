@@ -10,7 +10,6 @@
     "lint": "eslint .",
     "sitemap": "node scripts/generate-sitemap.js",
     "build:sitemap": "npm run sitemap && npm run build"
-    "sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "react": "^18.3.1",
