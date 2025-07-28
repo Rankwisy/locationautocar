@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
+Sitemap: https://www.locationautocar.be/sitemap_index.xml
 Sitemap: https://www.locationautocar.be/sitemap.xml
 
 # Disallow admin and private areas
