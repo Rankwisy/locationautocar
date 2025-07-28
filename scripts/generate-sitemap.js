@@ -150,30 +150,10 @@ function generateSitemap() {
   return sitemap;
 }
 
-function generateSitemapIndex() {
-  console.log('📋 Generating sitemap index...');
-  
-  const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>${baseUrl}/sitemap.xml</loc>
-    <lastmod>${currentDate}</lastmod>
-  </sitemap>
-</sitemapindex>`;
-
-  const sitemapIndexPath = path.join(process.cwd(), 'public', 'sitemap_index.xml');
-  fs.writeFileSync(sitemapIndexPath, sitemapIndex, 'utf8');
-  
-  console.log('✅ Sitemap index generated successfully!');
-  console.log(`📍 Location: ${sitemapIndexPath}`);
-}
-
 // Generate both files
 try {
   generateSitemap();
-  generateSitemapIndex();
-  console.log('🎉 All sitemap files generated successfully!');
+  console.log('🎉 Sitemap generated successfully!');
 } catch (error) {
   console.error('❌ Error generating sitemap:', error);
   process.exit(1);
