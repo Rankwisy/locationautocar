@@ -1,28 +1,16 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { EncodingAwareFormHandler, EncodingUtils } from '../../utils/encodingUtils';
+import { Send, User, Mail, Phone, Calendar, Users, MapPin, MessageSquare, Loader } from 'lucide-react';
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  phone: string;
-  service: string;
-  date: string;
-  passengers: string;
-  destination: string;
-  message: string;
-}
-
-interface ContactFormProps {
+interface EnhancedContactFormProps {
   onSubmissionSuccess?: () => void;
   onSubmissionError?: (error: string) => void;
 }
 
-const EnhancedContactForm: React.FC<ContactFormProps> = ({ 
-  onSubmissionSuccess, 
-  onSubmissionError 
+const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
+  onSubmissionSuccess,
+  onSubmissionError
 }) => {
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -34,99 +22,65 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState<{
-    success: boolean;
-    message: string;
-    error?: string;
-  } | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    
-    // Normalize the input value to handle encoding properly
-    const normalizedValue = EncodingUtils.normalizeText(value);
-    
-    setFormData(prev => ({
-      ...prev,
-      [name]: normalizedValue
-    }));
-    
-    // Clear previous submission result when user starts typing
-    if (submissionResult) {
-      setSubmissionResult(null);
-    }
-  };
+  const services = [
+    { value: 'transfert', label: 'Transfert aéroport/gare' },
+    { value: 'excursion', label: 'Excursion touristique' },
+    { value: 'business', label: 'Voyage d\'affaires' },
+    { value: 'disposition', label: 'Mise à disposition' }
+  ];
 
-  const validateForm = (): string | null => {
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
     if (!formData.name.trim()) {
-      return 'Le nom est obligatoire.';
+      newErrors.name = 'Le nom est requis';
     }
-    
+
     if (!formData.email.trim()) {
-      return 'L\'email est obligatoire.';
+      newErrors.email = 'L\'email est requis';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Format d\'email invalide';
     }
-    
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      return 'Veuillez entrer une adresse email valide.';
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Le téléphone est requis';
     }
-    
+
     if (!formData.service) {
-      return 'Veuillez sélectionner un service.';
+      newErrors.service = 'Veuillez sélectionner un service';
     }
 
-    // Validate encoding of text fields
-    const textFields = ['name', 'destination', 'message'];
-    for (const field of textFields) {
-      const value = formData[field as keyof ContactFormData];
-      if (value && !EncodingUtils.isValidUTF8(value)) {
-        return `Le champ "${field}" contient des caractères non valides. Veuillez vérifier votre saisie.`;
-      }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Le message est requis';
     }
 
-    return null;
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmissionResult(null);
-
-    // Validate form
-    const validationError = validateForm();
-    if (validationError) {
-      setSubmissionResult({
-        success: false,
-        message: validationError,
-        error: 'Validation failed'
-      });
-      setIsSubmitting(false);
+    
+    if (!validateForm()) {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
-      console.log('Submitting form with encoding-aware handler...');
-      
-      // Prepare form data with proper encoding
-      const submissionData = {
-        "form-name": "contact",
-        ...formData
-      };
-
-      // Use the encoding-aware form handler
-      const response = await EncodingAwareFormHandler.submitForm(submissionData);
-
-      console.log('Response status:', response.status);
-      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData
+        }).toString()
+      });
 
       if (response.ok) {
-        setSubmissionResult({
-          success: true,
-          message: 'Formulaire envoyé avec succès ! Nous vous contacterons bientôt.'
-        });
-        
-        // Reset form on success
+        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -137,286 +91,228 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
           destination: '',
           message: ''
         });
-        
+        setErrors({});
         onSubmissionSuccess?.();
       } else {
-        const responseText = await response.text();
-        console.error('Form submission failed:', {
-          status: response.status,
-          statusText: response.statusText,
-          body: responseText
-        });
-
-        let errorMessage = 'Une erreur est survenue lors de l\'envoi du formulaire.';
-        
-        if (response.status === 404) {
-          errorMessage = 'Formulaire non trouvé. Veuillez contacter le support.';
-        } else if (response.status === 400) {
-          errorMessage = 'Données du formulaire invalides. Vérifiez vos informations.';
-        } else if (response.status >= 500) {
-          errorMessage = 'Erreur serveur temporaire. Veuillez réessayer dans quelques minutes.';
-        }
-
-        setSubmissionResult({
-          success: false,
-          message: errorMessage,
-          error: `Erreur ${response.status}: ${responseText || 'Erreur inconnue'}`
-        });
-        
-        onSubmissionError?.(errorMessage);
+        throw new Error('Erreur lors de l\'envoi du formulaire');
       }
     } catch (error) {
-      console.error('Network error:', error);
-      
-      const errorMessage = 'Problème de connexion réseau. Vérifiez votre connexion internet et réessayez.';
-      setSubmissionResult({
-        success: false,
-        message: errorMessage,
-        error: error instanceof Error ? error.message : 'Erreur réseau inconnue'
-      });
-      
+      const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue';
       onSubmissionError?.(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
   return (
-    <div className="bg-white p-8 rounded-xl shadow-lg">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">
+    <div className="bg-white rounded-2xl shadow-lg p-8">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">
         Demande de Devis Gratuit
       </h2>
-
-      {/* Submission Result */}
-      {submissionResult && (
-        <div className={`mb-6 p-4 rounded-lg border ${
-          submissionResult.success 
-            ? 'bg-green-50 border-green-200' 
-            : 'bg-red-50 border-red-200'
-        }`}>
-          <div className="flex items-start gap-3">
-            {submissionResult.success ? (
-              <CheckCircle className="w-5 h-5 text-green-500 mt-0.5" />
-            ) : (
-              <AlertCircle className="w-5 h-5 text-red-500 mt-0.5" />
-            )}
-            <div>
-              <p className={`font-medium ${
-                submissionResult.success ? 'text-green-800' : 'text-red-800'
-              }`}>
-                {submissionResult.message}
-              </p>
-              {submissionResult.error && process.env.NODE_ENV === 'development' && (
-                <p className="text-red-700 text-sm mt-1">
-                  Debug: {submissionResult.error}
-                </p>
-              )}
-              {!submissionResult.success && (
-                <div className="mt-3 text-red-700 text-sm">
-                  <p className="font-medium">Pour une assistance immédiate :</p>
-                  <p className="mt-1">
-                    Contactez-nous directement au{' '}
-                    <a href="tel:+3225800325" className="font-semibold underline">
-                      +32 2 580 03 25
-                    </a>
-                    {' '}ou par email à{' '}
-                    <a href="mailto:info@locationautocar.be" className="font-semibold underline">
-                      info@locationautocar.be
-                    </a>
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      <form 
-        name="contact" 
-        method="POST" 
-        acceptCharset="UTF-8"
-        data-netlify="true" 
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit} 
-        className="space-y-6"
-      >
-        {/* Honeypot field - hidden from users */}
-        <div style={{ display: 'none' }}>
-          <label>
-            Don't fill this out if you're human: 
-            <input name="bot-field" tabIndex={-1} autoComplete="off" />
+      
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Name */}
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            Nom complet *
           </label>
-        </div>
-
-        {/* Hidden form name field */}
-        <input type="hidden" name="form-name" value="contact" />
-
-        {/* Form fields */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              Nom complet *
-            </label>
+          <div className="relative">
+            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
               id="name"
               name="name"
-              required
               value={formData.name}
               onChange={handleChange}
-              disabled={isSubmitting}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                errors.name ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="Votre nom complet"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email *
-            </label>
+          {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+        </div>
+
+        {/* Email */}
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            Email *
+          </label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="email"
               id="email"
               name="email"
-              required
               value={formData.email}
               onChange={handleChange}
-              disabled={isSubmitting}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                errors.email ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="votre@email.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
+          {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-              Téléphone
-            </label>
+        {/* Phone */}
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            Téléphone *
+          </label>
+          <div className="relative">
+            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              disabled={isSubmitting}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                errors.phone ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="+32 X XX XX XX XX"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
-          
-          <div>
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-              Type de service *
-            </label>
-            <select
-              id="service"
-              name="service"
-              required
-              value={formData.service}
-              onChange={handleChange}
-              disabled={isSubmitting}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-            >
-              <option value="">Sélectionnez un service</option>
-              <option value="transfert">Transfert aéroport/gare</option>
-              <option value="excursion">Excursion touristique</option>
-              <option value="business">Voyage d'affaires</option>
-              <option value="disposition">Mise à disposition</option>
-            </select>
-          </div>
+          {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
         </div>
 
+        {/* Service */}
+        <div>
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+            Type de service *
+          </label>
+          <select
+            id="service"
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              errors.service ? 'border-red-500' : 'border-gray-300'
+            }`}
+          >
+            <option value="">Sélectionnez un service</option>
+            {services.map(service => (
+              <option key={service.value} value={service.value}>
+                {service.label}
+              </option>
+            ))}
+          </select>
+          {errors.service && <p className="mt-1 text-sm text-red-600">{errors.service}</p>}
+        </div>
+
+        {/* Date and Passengers Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
               Date souhaitée
             </label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              disabled={isSubmitting}
-              min={new Date().toISOString().split('T')[0]}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-            />
+            <div className="relative">
+              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
           </div>
-          
+
           <div>
             <label htmlFor="passengers" className="block text-sm font-medium text-gray-700 mb-2">
               Nombre de passagers
             </label>
+            <div className="relative">
+              <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="number"
+                id="passengers"
+                name="passengers"
+                value={formData.passengers}
+                onChange={handleChange}
+                min="1"
+                max="55"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Ex: 25"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Destination */}
+        <div>
+          <label htmlFor="destination" className="block text-sm font-medium text-gray-700 mb-2">
+            Destination
+          </label>
+          <div className="relative">
+            <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
-              type="number"
-              id="passengers"
-              name="passengers"
-              min="1"
-              max="55"
-              value={formData.passengers}
+              type="text"
+              id="destination"
+              name="destination"
+              value={formData.destination}
               onChange={handleChange}
-              disabled={isSubmitting}
-              placeholder="Ex: 25"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="Ex: Aéroport de Bruxelles, Paris, Amsterdam..."
             />
           </div>
         </div>
 
-        <div>
-          <label htmlFor="destination" className="block text-sm font-medium text-gray-700 mb-2">
-            Destination ou itinéraire
-          </label>
-          <input
-            type="text"
-            id="destination"
-            name="destination"
-            value={formData.destination}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            placeholder="Ex: Aéroport de Bruxelles, Paris, Amsterdam..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-          />
-        </div>
-
+        {/* Message */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message ou détails supplémentaires
+            Message *
           </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            placeholder="Décrivez vos besoins spécifiques, horaires préférés, équipements souhaités..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-          />
+          <div className="relative">
+            <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={4}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none ${
+                errors.message ? 'border-red-500' : 'border-gray-300'
+              }`}
+              placeholder="Décrivez votre besoin en détail : horaires, points de départ/arrivée, services spéciaux..."
+            />
+          </div>
+          {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
         </div>
 
+        {/* Submit Button */}
         <button
           type="submit"
-          disabled={!formData.name || !formData.email || !formData.service || isSubmitting}
-          className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-semibold flex items-center justify-center gap-2"
+          disabled={isSubmitting}
+          className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
             <>
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+              <Loader className="w-5 h-5 animate-spin" />
               Envoi en cours...
             </>
           ) : (
             <>
               <Send className="w-5 h-5" />
-              Envoyer la Demande
+              Envoyer ma demande
             </>
           )}
         </button>
 
         <p className="text-sm text-gray-500 text-center">
-          * Champs obligatoires. Nous vous contacterons dans les 24h pour établir votre devis personnalisé.
-          <br />
-          Vos données sont protégées et ne seront jamais partagées avec des tiers.
+          * Champs obligatoires. Réponse sous 24h garantie.
         </p>
       </form>
     </div>
