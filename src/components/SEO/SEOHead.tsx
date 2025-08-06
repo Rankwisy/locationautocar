@@ -11,6 +11,7 @@ interface SEOHeadProps {
   ogType?: string;
   schema?: object;
   faqSchema?: object;
+  breadcrumbSchema?: object;
   publishedTime?: string;
   modifiedTime?: string;
 }
@@ -25,6 +26,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   ogType = "website",
   schema,
   faqSchema,
+  breadcrumbSchema,
   publishedTime,
   modifiedTime
 }) => {
@@ -81,6 +83,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {faqSchema && (
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
+        </script>
+      )}
+      
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
     </Helmet>

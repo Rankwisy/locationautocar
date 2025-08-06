@@ -214,6 +214,25 @@ const DestinationsPage: React.FC = () => {
     ]
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.locationautocar.be/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Destinations",
+        "item": "https://www.locationautocar.be/destinations"
+      }
+    ]
+  };
+
   return (
     <>
       <SEOHead
@@ -224,6 +243,7 @@ const DestinationsPage: React.FC = () => {
         canonical="https://www.locationautocar.be/destinations"
         schema={destinationsSchema}
         faqSchema={faqSchema}
+        breadcrumbSchema={breadcrumbSchema}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
 

@@ -201,6 +201,10 @@ const BlogPage: React.FC = () => {
                     src={post.featuredImage}
                     alt={post.title}
                     className="w-full h-48 object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="300"
                   />
                   <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {post.category}

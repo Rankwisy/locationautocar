@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Star, CheckCircle, ArrowRight, Phone, Mail, Clock, MapPin, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
 
 const FleetMinibusPage: React.FC = () => {
   const minibusModels = [
@@ -138,15 +139,12 @@ const FleetMinibusPage: React.FC = () => {
       <div className="py-12">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm">
-            <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link to="/" className="hover:text-blue-600">Accueil</Link></li>
-              <li>/</li>
-              <li><Link to="/notre-flotte" className="hover:text-blue-600">Notre Flotte</Link></li>
-              <li>/</li>
-              <li className="text-gray-900">Minibus</li>
-            </ol>
-          </nav>
+          <BreadcrumbComponent 
+            items={[
+              { name: "Notre Flotte", href: "/notre-flotte" },
+              { name: "Minibus" }
+            ]}
+          />
 
           {/* Header */}
           <div className="text-center mb-12">

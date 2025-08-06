@@ -179,6 +179,25 @@ const FleetPage: React.FC = () => {
     }))
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.locationautocar.be/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Notre Flotte",
+        "item": "https://www.locationautocar.be/notre-flotte"
+      }
+    ]
+  };
+
   return (
     <>
       <SEOHead
@@ -189,6 +208,7 @@ const FleetPage: React.FC = () => {
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
         faqSchema={fleetFAQ}
+        breadcrumbSchema={breadcrumbSchema}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
 

@@ -454,7 +454,15 @@ const HomePage: React.FC = () => {
               Notre Flotte
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Autocars, bus et minibus modernes avec chauffeurs expérimentés 
+              <a 
+                href="https://fr.wikipedia.org/wiki/Autocar" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+                title="En savoir plus sur les autocars - Wikipédia"
+              >
+                Autocars
+              </a>, bus et minibus modernes avec chauffeurs expérimentés 
               pour tous vos déplacements en Belgique et en Europe.
             </p>
           </div>
@@ -518,7 +526,16 @@ const HomePage: React.FC = () => {
               Destinations Populaires
             </h2>
             <p className="text-xl text-gray-600">
-              Excursions et circuits organisés depuis Bruxelles
+              Excursions et circuits organisés depuis{' '}
+              <a 
+                href="https://fr.wikipedia.org/wiki/Bruxelles" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+                title="Découvrir Bruxelles - Wikipédia"
+              >
+                Bruxelles
+              </a>
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -530,7 +547,12 @@ const HomePage: React.FC = () => {
                     alt={destination.imageAlt}
                     title={`Excursions ${destination.name} en autocar avec guide depuis Bruxelles`}
                     className="w-full h-full object-cover"
-                    loading="lazy"
+                    width="400"
+                    decoding="async"
+                    width="400"
+                    height="300"
+                    height="300"
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 </div>
                 <div className="p-6">

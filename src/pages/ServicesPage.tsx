@@ -152,6 +152,10 @@ const ServicesPage: React.FC = () => {
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
                   />
                 </div>
                 <div className="lg:w-1/2">

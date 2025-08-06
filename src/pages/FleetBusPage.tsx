@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star, Clock, MapPin } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
 
 const FleetBusPage: React.FC = () => {
   const busModels = [
@@ -138,15 +139,12 @@ const FleetBusPage: React.FC = () => {
       <div className="py-12">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm">
-            <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link to="/" className="hover:text-blue-600">Accueil</Link></li>
-              <li>/</li>
-              <li><Link to="/notre-flotte" className="hover:text-blue-600">Notre Flotte</Link></li>
-              <li>/</li>
-              <li className="text-gray-900">Bus</li>
-            </ol>
-          </nav>
+          <BreadcrumbComponent 
+            items={[
+              { name: "Notre Flotte", href: "/notre-flotte" },
+              { name: "Bus" }
+            ]}
+          />
 
           {/* Header */}
           <div className="text-center mb-12">
@@ -225,6 +223,17 @@ const FleetBusPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Pourquoi Choisir Nos Bus ?
             </h2>
+            <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+              Nos bus modernes offrent le parfait équilibre entre capacité et confort pour tous vos{' '}
+              <Link 
+                to="/nos-services" 
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+                title="Découvrir tous nos services de transport"
+              >
+                besoins de transport professionnel
+              </Link>{' '}
+              en Belgique et en Europe.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {advantages.map((advantage, index) => (
                 <div key={index} className="text-center">

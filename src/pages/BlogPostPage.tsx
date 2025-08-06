@@ -26,7 +26,7 @@ const BlogPostPage: React.FC = () => {
       
       <p>Le secret d'une visite réussie réside dans le timing. Une heure avant le coucher du soleil, Paris commence sa métamorphose. L'air se charge d'une électricité particulière, les photographes sortent leurs objectifs, et une anticipation palpable envahit les jardins du Trocadéro.</p>
       
-      <p>En hiver, cette magie opère dès 16h30, tandis qu'en été, il faut patienter jusqu'à 20h30. Mais cette attente fait partie du rituel. J'observe toujours les visages des voyageurs que j'accompagne : l'impatience cède progressivement place à l'émerveillement.</p>
+      <p>En hiver, cette magie opère dès 16h30, tandis qu'en été, il faut patienter jusqu'à 20h30. Mais cette attente fait partie du rituel. J'observe toujours les visages des voyageurs que j'accompagne lors de nos <a href="/destinations/europe" class="text-blue-600 hover:text-blue-700 font-semibold" title="Découvrir nos circuits Europe">circuits européens</a> : l'impatience cède progressivement place à l'émerveillement.</p>
 
       <h2>Les Meilleurs Points de Vue : Mes Spots Secrets</h2>
 

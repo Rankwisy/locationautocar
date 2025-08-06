@@ -37,6 +37,25 @@ const ContactPage: React.FC = () => {
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.locationautocar.be/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://www.locationautocar.be/contactez-nous"
+      }
+    ]
+  };
+
   return (
     <>
       <SEOHead
@@ -44,6 +63,7 @@ const ContactPage: React.FC = () => {
         description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Bruxelles."
         canonical="https://www.locationautocar.be/contactez-nous"
         schema={contactSchema}
+        breadcrumbSchema={breadcrumbSchema}
       />
 
       <div className="py-12">
