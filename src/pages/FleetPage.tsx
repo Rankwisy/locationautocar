@@ -174,8 +174,7 @@ const FleetPage: React.FC = () => {
       "category": vehicle.type,
       "offers": {
         "@type": "Offer",
-        "availability": vehicle.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
-      }
+        "availability": vehicle.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
         "lowPrice": "150",
         "highPrice": "400",
         "hasMerchantReturnPolicy": {
@@ -186,6 +185,9 @@ const FleetPage: React.FC = () => {
           "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
           "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
         }
+      }
+    }))
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
