@@ -71,7 +71,15 @@ const VehiclesPage: React.FC = () => {
         "@type": "Offer",
         "price": vehicle.price,
         "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "BE",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 0,
+          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
+        }
       }
     }))
   };
