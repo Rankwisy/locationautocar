@@ -118,7 +118,15 @@ const FleetBusPage: React.FC = () => {
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
       "lowPrice": "150",
-      "highPrice": "400"
+      "highPrice": "400",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "BE",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 0,
+        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+        "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",

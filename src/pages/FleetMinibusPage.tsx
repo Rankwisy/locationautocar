@@ -118,7 +118,15 @@ const FleetMinibusPage: React.FC = () => {
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
       "lowPrice": "120",
-      "highPrice": "300"
+      "highPrice": "300",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "BE",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 0,
+        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+        "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
