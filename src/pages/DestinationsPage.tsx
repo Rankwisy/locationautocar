@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar, Globe, Plane } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { destinationSchemas } from '../data/enhancedSchemas';
 
 const DestinationsPage: React.FC = () => {
   const mainDestinations = [
@@ -118,53 +119,27 @@ const DestinationsPage: React.FC = () => {
 
   const destinationsSchema = {
     "@context": "https://schema.org",
-    "@type": "TouristDestination",
+    "@type": "ItemList",
     "name": "Destinations Touristiques - Location Autocar Bruxelles",
     "description": "Découvrez nos destinations en autocar avec chauffeur : Bruxelles, Belgique, Europe. Circuits organisés, guides francophones, transport confortable depuis Bruxelles.",
-    "image": "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bruxelles",
-      "addressCountry": "BE"
-    },
-    "touristType": ["Cultural Tourism", "City Break", "Heritage Tourism", "Educational Tourism"],
-    "availableLanguage": ["fr", "nl", "en", "de"],
-    "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "45",
-      "highPrice": "320",
-      "priceCurrency": "EUR"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Circuits Touristiques",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "TouristTrip",
-            "name": "Excursions Bruxelles",
-            "description": "Visites guidées de Bruxelles avec transport en autocar"
-          }
-        },
-        {
-          "@type": "Offer", 
-          "itemOffered": {
-            "@type": "TouristTrip",
-            "name": "Circuits Belgique",
-            "description": "Découverte des villes belges : Bruges, Gand, Anvers"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "TouristTrip", 
-            "name": "Voyages Europe",
-            "description": "Circuits européens : Paris, Amsterdam, Prague"
-          }
-        }
-      ]
-    }
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": destinationSchemas.bruxelles
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": destinationSchemas.belgique
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": destinationSchemas.europe
+      }
+    ]
   };
 
   const faqSchema = {
@@ -237,8 +212,10 @@ const DestinationsPage: React.FC = () => {
     <>
       <SEOHead
         title="Destinations Excursions Autocar | Bruxelles, Belgique, Europe | Guide Francophone"
+        metaTitle="Destinations Autocar | Excursions Bruxelles Belgique Europe | Circuits Organisés"
         metaTitle="Destinations Autocar Bruxelles | Excursions Belgique Europe | Guide"
         description="Découvrez nos destinations en autocar avec chauffeur et guide francophone : Bruxelles Grand-Place Atomium, Belgique Bruges Gand, Europe Paris Amsterdam. Circuits organisés depuis Bruxelles."
+        keywords="destinations autocar, excursions bruxelles belgique europe, circuits organises, guide francophone, transport confortable"
         keywords="destinations autocar bruxelles, excursions belgique, circuits europe, guide francophone, bruges gand anvers, paris amsterdam prague"
         canonical="https://www.locationautocar.be/destinations"
         schema={destinationsSchema}
@@ -257,7 +234,10 @@ const DestinationsPage: React.FC = () => {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explorez <strong>Bruxelles, la Belgique et l'Europe</strong> avec nos circuits en autocar. 
               Guides francophones expérimentés, transport confortable et itinéraires soigneusement élaborés 
-              pour découvrir les <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">plus beaux sites</Link> européens.
+              pour découvrir les plus beaux sites européens. Notre{' '}
+              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte d'autocars grand tourisme</Link>{' '}
+              vous emmène vers toutes nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">excursions organisées</Link>.
             </p>
           </div>
 
@@ -411,9 +391,9 @@ const DestinationsPage: React.FC = () => {
           {/* External Links Section */}
           <div className="mb-16 bg-blue-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Touristiques Officielles
+              Ressources Touristiques et Voyage
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <h3 className="text-lg font-semibold mb-3">Tourisme Bruxelles</h3>
                 <p className="text-gray-600 mb-4 text-sm">
@@ -456,6 +436,21 @@ const DestinationsPage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 text-sm"
                 >
                   Visit Europe
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Conseils Voyage UE</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Conseils officiels pour voyager en sécurité dans l'Union européenne.
+                </p>
+                <a 
+                  href="https://re-open.europa.eu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 text-sm"
+                >
+                  Re-open EU
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

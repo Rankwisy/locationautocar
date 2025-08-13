@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar, Castle } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { destinationSchemas } from '../data/enhancedSchemas';
 
 const DestinationBelgiquePage: React.FC = () => {
   const destinations = [
@@ -131,9 +132,11 @@ const DestinationBelgiquePage: React.FC = () => {
     <>
       <SEOHead
         title="Circuits Belgique en Autocar | Bruges, Gand, Anvers | Guide Francophone"
+        metaTitle="Circuits Belgique Autocar | Bruges Gand Anvers | Transport Confortable"
         description="Découvrez la Belgique avec nos circuits en autocar : Bruges UNESCO, Gand médiéval, Anvers diamantaire. Transport confortable avec guide francophone. Réservez votre excursion."
+        keywords="circuits belgique, bruges gand anvers, autocar belgique, patrimoine unesco, guide francophone"
         canonical="https://www.locationautocar.be/destinations/belgique"
-        schema={belgiqueSchema}
+        schema={destinationSchemas.belgique}
       />
 
       <div className="py-12">
@@ -156,9 +159,10 @@ const DestinationBelgiquePage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explorez les <strong>trésors de la Belgique</strong> avec nos circuits en autocar. 
-              De <Link to="/destinations/bruxelles" className="text-blue-600 hover:text-blue-700 font-semibold">Bruges la médiévale</Link> aux 
-              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold"> vallées wallonnes</Link>, 
-              découvrez un patrimoine exceptionnel avec nos guides francophones expérimentés.
+              De Bruges la médiévale aux vallées wallonnes, découvrez un patrimoine exceptionnel avec nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">guides francophones expérimentés</Link>{' '}
+              et notre{' '}
+              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte d'autocars confortables</Link>.
             </p>
           </div>
 
@@ -297,9 +301,9 @@ const DestinationBelgiquePage: React.FC = () => {
           {/* External Links Section */}
           <div className="mb-16 bg-blue-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Officielles
+              Ressources Patrimoine et Culture
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <h3 className="text-lg font-semibold mb-3">Tourisme Belgique</h3>
                 <p className="text-gray-600 mb-4">
@@ -327,6 +331,21 @@ const DestinationBelgiquePage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   UNESCO Belgique
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Fédération Wallonie-Bruxelles</h3>
+                <p className="text-gray-600 mb-4">
+                  Culture et patrimoine de la Wallonie et de Bruxelles.
+                </p>
+                <a 
+                  href="https://www.cfwb.be" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Culture Wallonie-Bruxelles
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

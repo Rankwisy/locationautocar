@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { destinationSchemas } from '../data/enhancedSchemas';
 
 const DestinationBruxellesPage: React.FC = () => {
   const attractions = [
@@ -103,9 +104,11 @@ const DestinationBruxellesPage: React.FC = () => {
     <>
       <SEOHead
         title="Excursions Bruxelles avec Chauffeur | Atomium, Grand-Place | Devis Gratuit"
+        metaTitle="Excursions Bruxelles Autocar | Grand-Place Atomium | Guide Francophone"
         description="Découvrez Bruxelles avec nos excursions guidées en autocar : Grand-Place UNESCO, Atomium, quartier européen. Transport avec chauffeur professionnel. Réservez maintenant."
+        keywords="excursions bruxelles, visite guidée bruxelles, grand-place atomium, autocar bruxelles, guide francophone"
         canonical="https://www.locationautocar.be/destinations/bruxelles"
-        schema={bruxellesSchema}
+        schema={destinationSchemas.bruxelles}
       />
 
       <div className="py-12">
@@ -128,9 +131,10 @@ const DestinationBruxellesPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez la <strong>capitale de l'Europe</strong> avec nos excursions guidées en autocar. 
-              De la <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">Grand-Place UNESCO</Link> au 
-              <Link to="/notre-flotte/bus" className="text-blue-600 hover:text-blue-700 font-semibold"> quartier européen</Link>, 
-              explorez Bruxelles avec nos guides expérimentés et notre transport confortable.
+              De la Grand-Place UNESCO au quartier européen, explorez Bruxelles avec nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">guides expérimentés</Link>{' '}
+              et notre{' '}
+              <Link to="/notre-flotte/bus" className="text-blue-600 hover:text-blue-700 font-semibold">transport confortable</Link>.
             </p>
           </div>
 
@@ -250,9 +254,9 @@ const DestinationBruxellesPage: React.FC = () => {
           {/* External Links Section */}
           <div className="mb-16 bg-blue-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Officielles
+              Ressources Bruxelles et Institutions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <h3 className="text-lg font-semibold mb-3">Office de Tourisme</h3>
                 <p className="text-gray-600 mb-4">
@@ -280,6 +284,21 @@ const DestinationBruxellesPage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   Brussels Museums
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Parlement Européen</h3>
+                <p className="text-gray-600 mb-4">
+                  Visitez le Parlement européen et découvrez les institutions de l'UE.
+                </p>
+                <a 
+                  href="https://www.europarl.europa.eu/visiting/fr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Visiter le Parlement UE
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

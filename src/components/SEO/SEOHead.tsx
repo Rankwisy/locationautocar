@@ -12,6 +12,7 @@ interface SEOHeadProps {
   schema?: object;
   faqSchema?: object;
   breadcrumbSchema?: object;
+  additionalSchemas?: object[];
   publishedTime?: string;
   modifiedTime?: string;
 }
@@ -27,6 +28,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   schema,
   faqSchema,
   breadcrumbSchema,
+  additionalSchemas = [],
   publishedTime,
   modifiedTime
 }) => {
@@ -76,7 +78,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Structured Data */}
       {schema && (
         <script type="application/ld+json">
-          {JSON.stringify(schema)}
+          {JSON.stringify(Array.isArray(schema) ? schema : [schema])}
         </script>
       )}
       
@@ -91,6 +93,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
+      
+      {additionalSchemas.map((additionalSchema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(additionalSchema)}
+        </script>
+      ))}
     </Helmet>
   );
 };

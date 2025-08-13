@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Star, CheckCircle, ArrowRight, Phone, Mail, Clock, MapPin, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
+import { vehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetMinibusPage: React.FC = () => {
   const minibusModels = [
@@ -139,9 +140,11 @@ const FleetMinibusPage: React.FC = () => {
     <>
       <SEOHead
         title="Location Minibus avec Chauffeur Bruxelles | 8-16 Places | Service VIP"
+        metaTitle="Minibus Mercedes Chauffeur | 8-16 Places | Transferts VIP Bruxelles"
         description="Location de minibus avec chauffeur professionnel à Bruxelles. Flotte Mercedes moderne 8-16 places pour transferts VIP, excursions et voyages d'affaires. Devis gratuit."
+        keywords="minibus mercedes chauffeur, transferts vip bruxelles, 8-16 places, excursions petits groupes"
         canonical="https://www.locationautocar.be/notre-flotte/minibus"
-        schema={minibusSchema}
+        schema={vehicleSchemas.minibus}
       />
 
       <div className="py-12">
@@ -161,8 +164,10 @@ const FleetMinibusPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez notre flotte de <strong>minibus Mercedes de 8 à 16 places</strong> avec chauffeur professionnel. 
-              Idéaux pour vos <Link to="/nos-services/transferts-aeroports" className="text-blue-600 hover:text-blue-700 font-semibold">transferts VIP</Link> et 
-              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold"> excursions de prestige</Link> en Belgique et en Europe.
+              Idéaux pour vos transferts VIP et excursions de prestige vers nos{' '}
+              <Link to="/destinations/bruxelles" className="text-blue-600 hover:text-blue-700 font-semibold">excursions à Bruxelles</Link>{' '}
+              et{' '}
+              <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">circuits en Belgique</Link>.
             </p>
           </div>
 

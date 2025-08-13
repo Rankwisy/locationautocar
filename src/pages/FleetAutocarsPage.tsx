@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star, Clock, MapPin, Plane } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
+import { vehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetAutocarsPage: React.FC = () => {
   const autocarModels = [
@@ -148,9 +149,11 @@ const FleetAutocarsPage: React.FC = () => {
     <>
       <SEOHead
         title="Location Autocar avec Chauffeur Bruxelles | 40-55 Places | Grand Tourisme"
+        metaTitle="Autocar Grand Tourisme | 40-55 Places | Voyages Longue Distance Europe"
         description="Location d'autocar grand tourisme avec chauffeur professionnel à Bruxelles. Flotte moderne 40-55 places pour voyages longue distance et circuits en Europe. Devis gratuit."
+        keywords="autocar grand tourisme, 40-55 places, voyages longue distance, circuits europe, chauffeur professionnel"
         canonical="https://www.locationautocar.be/notre-flotte/autocars"
-        schema={autocarSchema}
+        schema={vehicleSchemas.autocar}
       />
 
       <div className="py-12">
@@ -170,8 +173,10 @@ const FleetAutocarsPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez notre flotte d'<strong>autocars grand tourisme de 40 à 55 places</strong> avec chauffeur professionnel. 
-              Parfaits pour vos <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">circuits touristiques</Link> et 
-              <Link to="/nos-services/voyages-affaires" className="text-blue-600 hover:text-blue-700 font-semibold"> voyages d'affaires</Link> longue distance en Europe.
+              Parfaits pour vos circuits touristiques vers nos{' '}
+              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>{' '}
+              et voyages d'affaires avec notre{' '}
+              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">service premium</Link>.
             </p>
           </div>
 

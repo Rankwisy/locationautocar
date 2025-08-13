@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { blogSchema } from '../data/enhancedSchemas';
 
 const BlogPage: React.FC = () => {
   // Sample blog posts - in a real app, these would come from your CMS or API
@@ -83,23 +84,14 @@ const BlogPage: React.FC = () => {
     });
   };
 
-  const blogSchema = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Blog - Location Autocar Bruxelles",
-    "description": "Conseils, guides et actualités sur le transport en autocar, les destinations touristiques et les voyages de groupe.",
-    "url": "https://www.locationautocar.be/blog",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Location Autocar Bruxelles"
-    }
-  };
 
   return (
     <>
       <SEOHead
         title="Blog - Location Autocar Bruxelles"
+        metaTitle="Blog Voyage Autocar | Guides Destinations | Conseils Transport Groupe"
         description="Découvrez nos guides de voyage, conseils pratiques et actualités sur le transport en autocar. Destinations, itinéraires et astuces pour vos voyages de groupe."
+        keywords="blog voyage autocar, guides destinations, conseils transport groupe, excursions europe, circuits belgique"
         canonical="https://www.locationautocar.be/blog"
         schema={blogSchema}
       />
@@ -113,7 +105,10 @@ const BlogPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Découvrez nos guides de voyage, conseils pratiques et actualités sur le transport en autocar. 
-              Inspirez-vous pour vos prochaines aventures !
+              Inspirez-vous pour vos prochaines aventures ! Explorez notre{' '}
+              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>{' '}
+              et découvrez toutes nos{' '}
+              <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
             </p>
           </div>
 
@@ -266,6 +261,44 @@ const BlogPage: React.FC = () => {
           </div>
 
           {/* Newsletter Signup */}
+          <div className="mt-16 bg-green-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Ressources Voyage et Tourisme
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Office de Tourisme Belgique</h3>
+                <p className="text-gray-600 mb-4">
+                  Guide officiel du tourisme belge avec événements et attractions.
+                </p>
+                <a 
+                  href="https://www.visitbelgium.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Visit Belgium - Site Officiel
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Patrimoine UNESCO</h3>
+                <p className="text-gray-600 mb-4">
+                  Découvrez les sites belges et européens classés au patrimoine mondial.
+                </p>
+                <a 
+                  href="https://whc.unesco.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  UNESCO Patrimoine Mondial
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
             <h2 className="text-3xl font-bold mb-4">
               Restez Informé de Nos Derniers Articles

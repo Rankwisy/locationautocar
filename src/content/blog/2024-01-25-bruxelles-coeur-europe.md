@@ -95,7 +95,7 @@ content: |
 
   ---
 
-  *Envie de découvrir Bruxelles avec un regard d'expert ? Location Autocar Bruxelles organise des visites guidées personnalisées de la capitale. Nos guides locaux vous feront découvrir les secrets les mieux gardés de notre belle ville !*
+  *Envie de découvrir Bruxelles avec un regard d'expert ? <a href="/nos-services/excursions-tourisme" class="text-blue-600 hover:text-blue-700 font-semibold">Location Autocar Bruxelles organise des visites guidées personnalisées</a> de la capitale. <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Nos guides locaux</a> vous feront découvrir les secrets les mieux gardés de notre belle ville !*
 category: "Destinations"
 tags: ["Bruxelles", "Grand-Place", "Atomium", "Gastronomie belge", "Europe"]
 author: "Location Autocar Bruxelles"

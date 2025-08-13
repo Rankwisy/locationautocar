@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { fleetFAQ } from '../data/faqData';
+import { vehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -165,28 +166,23 @@ const FleetPage: React.FC = () => {
     "name": "Flotte de véhicules - Location Autocar Bruxelles",
     "description": "Découvrez notre flotte moderne d'autocars, bus et minibus avec chauffeur pour tous vos besoins de transport en Belgique et en Europe.",
     "numberOfItems": vehicles.length,
-    "itemListElement": vehicles.map((vehicle, index) => ({
-      "@type": "Product",
-      "position": index + 1,
-      "name": vehicle.name,
-      "description": vehicle.description,
-      "image": vehicle.image,
-      "category": vehicle.type,
-      "offers": {
-        "@type": "Offer",
-        "availability": vehicle.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-        "lowPrice": "150",
-        "highPrice": "400",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "BE",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 0,
-          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
-          "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
-        }
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": vehicleSchemas.minibus
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": vehicleSchemas.bus
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": vehicleSchemas.autocar
       }
-    }))
+    ]
   };
 
   const breadcrumbSchema = {
@@ -212,8 +208,10 @@ const FleetPage: React.FC = () => {
     <>
       <SEOHead
         title="Notre Flotte - Location Autocar Bruxelles"
+        metaTitle="Flotte Autocar Bus Minibus | Véhicules Modernes | Chauffeur Expérimenté"
         metaTitle="Flotte Autocar Bus Minibus Bruxelles | Chauffeur | Devis Gratuit"
         description="Flotte moderne autocar bus minibus avec chauffeur Bruxelles. Véhicules récents climatisés WiFi pour transferts excursions Europe. Réservation 24/7."
+        keywords="flotte autocar bruxelles, bus minibus moderne, vehicules climatises wifi, chauffeur experimente"
         keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique"
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
@@ -231,7 +229,10 @@ const FleetPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez notre flotte moderne de véhicules avec chauffeur professionnel. 
-              Du minibus luxe à l'autocar grand tourisme, nous avons le véhicule parfait pour vos besoins.
+              Du <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">minibus luxe</Link> à 
+              l'<Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>, 
+              nous avons le véhicule parfait pour tous vos{' '}
+              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">besoins de transport</Link>.
             </p>
           </div>
 
@@ -471,6 +472,44 @@ const FleetPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Service Complet</h3>
                 <p className="text-gray-600 text-sm">Assistance 24/7, devis gratuit, service personnalisé</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-16 bg-green-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Ressources Véhicules et Sécurité
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Sécurité Routière Belgique</h3>
+                <p className="text-gray-600 mb-4">
+                  Informations officielles sur la sécurité routière et les réglementations belges.
+                </p>
+                <a 
+                  href="https://www.vias.be" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  VIAS Institute - Sécurité Routière
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Normes Véhicules UE</h3>
+                <p className="text-gray-600 mb-4">
+                  Standards européens pour les véhicules de transport de passagers.
+                </p>
+                <a 
+                  href="https://ec.europa.eu/transport/modes/road/vehicles_en" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Standards UE Véhicules
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

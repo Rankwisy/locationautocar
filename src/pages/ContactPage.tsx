@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import EnhancedContactForm from '../components/Forms/EnhancedContactForm';
+import { contactSchema } from '../data/enhancedSchemas';
 
 const ContactPage: React.FC = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -17,25 +18,6 @@ const ContactPage: React.FC = () => {
     // Error handling is done within the ContactForm component
   };
 
-  const contactSchema = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact - Location Autocar Bruxelles",
-    "description": "Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit 24/7.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Location Autocar Bruxelles",
-      "telephone": "+32 2 580 03 25",
-      "email": "info@locationautocar.be",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Bd Industriel 9",
-        "addressLocality": "Bruxelles",
-        "postalCode": "1070",
-        "addressCountry": "BE"
-      }
-    }
-  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -60,7 +42,9 @@ const ContactPage: React.FC = () => {
     <>
       <SEOHead
         title="Contactez Nous - Location Autocar Bruxelles"
+        metaTitle="Contact Location Autocar Bruxelles | Devis Gratuit | Service 24/7"
         description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Bruxelles."
+        keywords="contact autocar bruxelles, devis gratuit transport, service 24/7, bd industriel bruxelles"
         canonical="https://www.locationautocar.be/contactez-nous"
         schema={contactSchema}
         breadcrumbSchema={breadcrumbSchema}
@@ -75,7 +59,10 @@ const ContactPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Demandez votre devis gratuit pour nos services de transport en autocar avec chauffeur. 
-              Notre équipe est disponible 24/7 pour répondre à vos besoins.
+              Notre équipe est disponible 24/7 pour répondre à vos besoins. Consultez notre{' '}
+              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte complète</Link>{' '}
+              et découvrez nos{' '}
+              <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
             </p>
           </div>
 
@@ -212,6 +199,45 @@ const ContactPage: React.FC = () => {
                 <p className="text-sm text-gray-500 mt-2">
                   Carte interactive disponible prochainement
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* External Resources Section */}
+          <div className="mt-16 bg-blue-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Informations Utiles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Protection Consommateur</h3>
+                <p className="text-gray-600 mb-4">
+                  Vos droits en tant que consommateur pour les services de transport.
+                </p>
+                <a 
+                  href="https://economie.fgov.be/fr/themes/services-financiers/protection-du-consommateur" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  SPF Économie - Protection Consommateur
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Assurance Voyage</h3>
+                <p className="text-gray-600 mb-4">
+                  Informations sur l'assurance voyage et la couverture en Europe.
+                </p>
+                <a 
+                  href="https://www.assuralia.be" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Assuralia - Assurance Voyage
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

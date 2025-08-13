@@ -265,7 +265,15 @@ const BlogPostPage: React.FC = () => {
                 lineHeight: '1.8',
                 fontSize: '18px'
               }}
-              dangerouslySetInnerHTML={{ __html: blogPost.content }}
+              dangerouslySetInnerHTML={{ 
+                __html: blogPost.content.replace(
+                  /nos circuits européens/g, 
+                  '<a href="/destinations/europe" class="text-blue-600 hover:text-blue-700 font-semibold">nos circuits européens</a>'
+                ).replace(
+                  /notre flotte/g,
+                  '<a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">notre flotte</a>'
+                )
+              }}
             />
           </div>
 
@@ -340,6 +348,44 @@ const BlogPostPage: React.FC = () => {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto mt-16 bg-blue-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Ressources Complémentaires
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Office de Tourisme Paris</h3>
+                <p className="text-gray-600 mb-4">
+                  Guide officiel du tourisme parisien avec événements et attractions.
+                </p>
+                <a 
+                  href="https://www.parisinfo.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Paris Info - Guide Officiel
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Monuments de Paris</h3>
+                <p className="text-gray-600 mb-4">
+                  Informations officielles sur les monuments et musées parisiens.
+                </p>
+                <a 
+                  href="https://www.monuments-nationaux.fr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Monuments Nationaux
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
 

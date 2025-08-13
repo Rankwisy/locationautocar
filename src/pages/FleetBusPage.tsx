@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star, Clock, MapPin } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
+import { vehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetBusPage: React.FC = () => {
   const busModels = [
@@ -139,9 +140,11 @@ const FleetBusPage: React.FC = () => {
     <>
       <SEOHead
         title="Location Bus avec Chauffeur Bruxelles | 20-35 Places | Devis Gratuit"
+        metaTitle="Bus Touristique Chauffeur | 20-35 Places | Excursions Confortables"
         description="Location de bus avec chauffeur professionnel à Bruxelles. Flotte moderne 20-35 places pour excursions, voyages d'affaires et transferts en Europe. Devis gratuit 24/7."
+        keywords="bus touristique chauffeur, 20-35 places, excursions confortables, voyages affaires europe"
         canonical="https://www.locationautocar.be/notre-flotte/bus"
-        schema={busSchema}
+        schema={vehicleSchemas.bus}
       />
 
       <div className="py-12">
@@ -161,8 +164,10 @@ const FleetBusPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez notre flotte de <strong>bus modernes de 20 à 35 places</strong> avec chauffeur professionnel. 
-              Parfaits pour vos <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">excursions touristiques</Link> et 
-              <Link to="/nos-services/voyages-affaires" className="text-blue-600 hover:text-blue-700 font-semibold"> voyages d'affaires</Link> en Belgique et en Europe.
+              Parfaits pour vos excursions touristiques vers nos{' '}
+              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>{' '}
+              et voyages d'affaires avec notre{' '}
+              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">service professionnel</Link>.
             </p>
           </div>
 

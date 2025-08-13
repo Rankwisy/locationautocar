@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bus, Shield, Clock, Star, CheckCircle, ArrowRight, Users, MapPin, Calendar } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { organizationSchema, websiteSchema } from '../data/enhancedSchemas';
 
 const HomePage: React.FC = () => {
   const services = [
@@ -304,7 +305,7 @@ const HomePage: React.FC = () => {
         description="Location autocar avec chauffeur Bruxelles depuis 2007. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7. Devis gratuit."
         keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires"
         canonical="https://www.locationautocar.be/"
-        schema={homeSchema}
+        schema={[organizationSchema, websiteSchema, homeSchema]}
         faqSchema={faqSchema}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
@@ -425,7 +426,10 @@ const HomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Depuis 2007, nous offrons des services de transport en autocar avec chauffeur 
-              pour tous vos besoins : transferts, excursions, voyages d'affaires et mise à disposition.
+              pour tous vos besoins : <Link to="/nos-services/transferts-aeroports" className="text-blue-600 hover:text-blue-700 font-semibold">transferts aéroports</Link>, 
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">excursions touristiques</Link>, 
+              voyages d'affaires et mise à disposition. Découvrez également nos{' '}
+              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link> populaires.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -535,7 +539,16 @@ const HomePage: React.FC = () => {
                 title="Découvrir Bruxelles - Wikipédia"
               >
                 Bruxelles
-              </a>
+              </a>{' '}vers les plus belles capitales européennes. Consultez le{' '}
+              <a 
+                href="https://www.visiteurope.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+                title="Guide officiel du tourisme européen"
+              >
+                guide officiel du tourisme européen
+              </a>{' '}pour plus d'inspiration.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

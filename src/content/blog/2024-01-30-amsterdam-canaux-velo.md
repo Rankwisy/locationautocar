@@ -19,6 +19,8 @@ content: |
 
   En pédalant le long de ces voies d'eau, on comprend immédiatement pourquoi Amsterdam fut surnommée la "Venise du Nord". Mais contrairement à sa cousine italienne, Amsterdam a su préserver son authenticité. Ici, pas de gondoles touristiques, mais des péniches où vivent de vraies familles, des jardins flottants, et cette atmosphère décontractée si typiquement hollandaise.
 
+  Pour découvrir Amsterdam avec notre <a href="/notre-flotte/autocars" class="text-blue-600 hover:text-blue-700 font-semibold">service d'autocar grand tourisme</a>, consultez nos <a href="/destinations/europe" class="text-blue-600 hover:text-blue-700 font-semibold">circuits européens organisés</a>.
+
   ### L'Art de Vivre sur l'Eau
 
   Ce qui frappe le visiteur, c'est cette harmonie parfaite entre l'eau et la vie quotidienne. Les Amsterdamois ont apprivoisé leur environnement aquatique avec un génie particulier. Les péniches-habitations, véritables maisons flottantes, abritent familles, artistes, et même des restaurants gastronomiques. Certaines, transformées en cafés ou en galeries d'art, offrent une perspective unique sur la ville.
@@ -131,7 +133,7 @@ content: |
 
   ---
 
-  *Tentés par une escapade amsterdamoise ? Location Autocar Bruxelles organise des week-ends découverte à Amsterdam avec guide francophone. Transport confortable, itinéraires personnalisés et immersion garantie dans l'art de vivre hollandais !*
+  *Tentés par une escapade amsterdamoise ? <a href="/nos-services/excursions-tourisme" class="text-blue-600 hover:text-blue-700 font-semibold">Location Autocar Bruxelles organise des week-ends découverte à Amsterdam</a> avec guide francophone. <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">Transport confortable</a>, itinéraires personnalisés et immersion garantie dans l'art de vivre hollandais !*
 category: "Destinations"
 tags: ["Amsterdam", "Vélo", "Canaux", "Culture hollandaise", "Week-end"]
 author: "Location Autocar Bruxelles"

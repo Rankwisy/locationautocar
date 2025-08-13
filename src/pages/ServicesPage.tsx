@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle, Plane, Building, Camera } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { serviceSchemas } from '../data/enhancedSchemas';
 
 const ServicesPage: React.FC = () => {
   const services = [
@@ -90,22 +91,49 @@ const ServicesPage: React.FC = () => {
 
   const servicesSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": "ItemList",
     "name": "Services de Location d'Autocar avec Chauffeur",
-    "provider": {
-      "@type": "Organization",
-      "name": "Location Autocar Bruxelles"
-    },
     "description": "Services complets de transport en autocar : transferts, excursions, voyages d'affaires et mise à disposition",
-    "areaServed": ["Brussels", "Belgium", "Europe"],
-    "serviceType": ["Bus Rental", "Coach Rental", "Airport Transfer", "Tourism", "Business Travel"]
+    "numberOfItems": 4,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": serviceSchemas.transferts
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": serviceSchemas.excursions
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "Voyages d'Affaires",
+          "description": "Transport de groupes pour séminaires et événements d'entreprise"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Service",
+          "name": "Mise à Disposition",
+          "description": "Location d'autocar avec chauffeur selon vos besoins spécifiques"
+        }
+      }
+    ]
   };
 
   return (
     <>
       <SEOHead
         title="Nos Services - Location Autocar Bruxelles"
+        metaTitle="Services Transport Autocar | Transferts Excursions | Chauffeur Professionnel"
         description="Services complets de transport en autocar avec chauffeur : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition."
+        keywords="services transport autocar, transferts aeroports, excursions touristiques, voyages affaires, chauffeur professionnel"
         canonical="https://www.locationautocar.be/nos-services"
         schema={servicesSchema}
       />
@@ -119,7 +147,10 @@ const ServicesPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur 
-              pour particuliers et entreprises en Belgique et en Europe.
+              pour particuliers et entreprises en Belgique et en Europe. Notre{' '}
+              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>{' '}
+              dessert toutes nos{' '}
+              <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
             </p>
           </div>
 
@@ -200,6 +231,44 @@ const ServicesPage: React.FC = () => {
                   <span className="text-gray-700 font-medium">{destination}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mb-16 bg-blue-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Ressources Utiles pour Vos Voyages
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Réglementation Transport UE</h3>
+                <p className="text-gray-600 mb-4">
+                  Informations officielles sur la réglementation du transport de voyageurs en Europe.
+                </p>
+                <a 
+                  href="https://transport.ec.europa.eu/transport-modes/road/road-passenger-transport_en" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Commission Européenne Transport
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Droits des Passagers</h3>
+                <p className="text-gray-600 mb-4">
+                  Connaissez vos droits lors de voyages en autocar dans l'Union européenne.
+                </p>
+                <a 
+                  href="https://europa.eu/youreurope/citizens/travel-in-eu/passenger-rights/index_fr.htm" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Droits des Passagers UE
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
 

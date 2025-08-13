@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Plane, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar, Globe } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import { destinationSchemas } from '../data/enhancedSchemas';
 
 const DestinationEuropePage: React.FC = () => {
   const destinations = [
@@ -130,9 +131,11 @@ const DestinationEuropePage: React.FC = () => {
     <>
       <SEOHead
         title="Voyages Europe en Autocar | Paris, Amsterdam, Prague | Circuits Organisés"
+        metaTitle="Voyages Europe Autocar | Paris Amsterdam Prague | Grand Tourisme"
         description="Découvrez l'Europe avec nos circuits en autocar grand tourisme : Paris, Amsterdam, Prague, Allemagne. Voyages organisés avec guide francophone depuis Bruxelles. Réservez maintenant."
+        keywords="voyages europe autocar, paris amsterdam prague, circuits organises, autocar grand tourisme, guide francophone"
         canonical="https://www.locationautocar.be/destinations/europe"
-        schema={europeSchema}
+        schema={destinationSchemas.europe}
       />
 
       <div className="py-12">
@@ -155,9 +158,10 @@ const DestinationEuropePage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explorez l'<strong>Europe en autocar grand tourisme</strong> avec nos circuits organisés. 
-              De <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">Paris romantique</Link> à 
-              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold"> Prague magique</Link>, 
-              découvrez les capitales européennes avec nos guides francophones expérimentés.
+              De Paris romantique à Prague magique, découvrez les capitales européennes avec nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">guides francophones expérimentés</Link>{' '}
+              et notre{' '}
+              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte d'autocars grand tourisme</Link>.
             </p>
           </div>
 
@@ -304,9 +308,9 @@ const DestinationEuropePage: React.FC = () => {
           {/* External Links Section */}
           <div className="mb-16 bg-blue-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Voyage Europe
+              Ressources Voyage et Culture Européenne
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <h3 className="text-lg font-semibold mb-3">Union Européenne</h3>
                 <p className="text-gray-600 mb-4">
@@ -334,6 +338,21 @@ const DestinationEuropePage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   Eurail - Voyages Train Europe
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-3">Capitales Européennes</h3>
+                <p className="text-gray-600 mb-4">
+                  Réseau officiel des capitales européennes de la culture.
+                </p>
+                <a 
+                  href="https://www.ecoc-doc-athens.eu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
+                >
+                  Capitales Culture Europe
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
