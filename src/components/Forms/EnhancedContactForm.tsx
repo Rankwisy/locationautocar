@@ -127,7 +127,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             Nom complet *
           </label>
           <div className="relative">
-            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
             <input
               type="text"
               id="name"
@@ -149,7 +149,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             Email *
           </label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
             <input
               type="email"
               id="email"
@@ -171,7 +171,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             Téléphone *
           </label>
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
             <input
               type="tel"
               id="phone"
@@ -218,7 +218,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
               Date souhaitée
             </label>
             <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
               <input
                 type="date"
                 id="date"
@@ -235,7 +235,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
               Nombre de passagers
             </label>
             <div className="relative">
-              <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
               <input
                 type="number"
                 id="passengers"
@@ -257,7 +257,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             Destination
           </label>
           <div className="relative">
-            <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
             <input
               type="text"
               id="destination"
@@ -276,7 +276,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             Message *
           </label>
           <div className="relative">
-            <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
+            <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" aria-hidden="true" />
             <textarea
               id="message"
               name="message"
@@ -300,12 +300,12 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
         >
           {isSubmitting ? (
             <>
-              <Loader className="w-5 h-5 animate-spin" />
+              <Loader className="w-5 h-5 animate-spin" aria-hidden="true" />
               Envoi en cours...
             </>
           ) : (
             <>
-              <Send className="w-5 h-5" />
+              <Send className="w-5 h-5" aria-hidden="true" />
               Envoyer ma demande
             </>
           )}

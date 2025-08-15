@@ -95,7 +95,7 @@ const ContactPage: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <Phone className="w-6 h-6 text-blue-600" />
+                    <Phone className="w-6 h-6 text-blue-600" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Téléphone</h3>
@@ -110,7 +110,7 @@ const ContactPage: React.FC = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                    <Mail className="w-6 h-6 text-blue-600" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
@@ -125,7 +125,7 @@ const ContactPage: React.FC = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <MapPin className="w-6 h-6 text-blue-600" />
+                    <MapPin className="w-6 h-6 text-blue-600" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Adresse</h3>
@@ -139,7 +139,7 @@ const ContactPage: React.FC = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <Clock className="w-6 h-6 text-blue-600" />
+                    <Clock className="w-6 h-6 text-blue-600" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Horaires</h3>
@@ -157,19 +157,19 @@ const ContactPage: React.FC = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Nos Services</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" aria-hidden="true" />
                     <span>Transferts aéroports et gares</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" aria-hidden="true" />
                     <span>Excursions touristiques</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" aria-hidden="true" />
                     <span>Voyages d'affaires</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" aria-hidden="true" />
                     <span>Mise à disposition</span>
                   </li>
                 </ul>
@@ -192,7 +192,7 @@ const ContactPage: React.FC = () => {
             </h2>
             <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
               <div className="text-center">
-                <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+                <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
                 <p className="text-gray-600">
                   Bd Industriel 9, 1070 Bruxelles
                 </p>
@@ -221,7 +221,7 @@ const ContactPage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   SPF Économie - Protection Consommateur
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
               <div className="bg-white p-6 rounded-xl">
@@ -236,7 +236,7 @@ const ContactPage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   Assuralia - Assurance Voyage
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </div>

@@ -191,7 +191,7 @@ const BlogPostPage: React.FC = () => {
               to="/blog"
               className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
             >
-              <ArrowLeft className="w-5 h-5 mr-2" />
+              <ArrowLeft className="w-5 h-5 mr-2" aria-hidden="true" />
               Retour au blog
             </Link>
           </div>
@@ -204,11 +204,11 @@ const BlogPostPage: React.FC = () => {
                   {blogPost.category}
                 </span>
                 <div className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-4 h-4" aria-hidden="true" />
                   {formatDate(blogPost.publishedAt)}
                 </div>
                 <div className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
+                  <Clock className="w-4 h-4" aria-hidden="true" />
                   {blogPost.readTime}
                 </div>
               </div>
@@ -223,11 +223,11 @@ const BlogPostPage: React.FC = () => {
               
               <div className="flex items-center justify-center gap-6 text-sm text-gray-500 mb-8">
                 <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
+                  <User className="w-4 h-4" aria-hidden="true" />
                   {blogPost.author}
                 </div>
                 <button className="flex items-center gap-2 hover:text-blue-600 transition-colors duration-200">
-                  <Share2 className="w-4 h-4" />
+                  <Share2 className="w-4 h-4" aria-hidden="true" />
                   Partager
                 </button>
               </div>
@@ -238,7 +238,7 @@ const BlogPostPage: React.FC = () => {
                     key={index}
                     className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm flex items-center gap-1"
                   >
-                    <Tag className="w-3 h-3" />
+                    <Tag className="w-3 h-3" aria-hidden="true" />
                     {tag}
                   </span>
                 ))}
@@ -301,7 +301,7 @@ const BlogPostPage: React.FC = () => {
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                 >
                   Contactez-nous pour votre prochain voyage
-                  <ArrowLeft className="w-4 h-4 ml-1 rotate-180" />
+                  <ArrowLeft className="w-4 h-4 ml-1 rotate-180" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -400,10 +400,10 @@ const BlogPostPage: React.FC = () => {
             </p>
             <Link
               to="/contactez-nous"
-              className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 gap-2"
+              className="inline-flex items-center bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 gap-2"
             >
               Demander un Devis Gratuit
-              <ArrowLeft className="w-5 h-5 rotate-180" />
+              <ArrowLeft className="w-5 h-5 rotate-180" aria-hidden="true" />
             </Link>
           </div>
         </div>
