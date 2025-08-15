@@ -179,7 +179,7 @@ const BlogPage: React.FC = () => {
                       className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold group"
                     >
                       Lire l'article
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -209,11 +209,11 @@ const BlogPage: React.FC = () => {
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                     <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4" aria-hidden="true" />
                       {formatDate(post.publishedAt)}
                     </div>
                     <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-4 h-4" aria-hidden="true" />
                       {post.readTime}
                     </div>
                   </div>
@@ -244,7 +244,7 @@ const BlogPage: React.FC = () => {
                   
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <User className="w-4 h-4" />
+                      <User className="w-4 h-4" aria-hidden="true" />
                       {post.author}
                     </div>
                     <Link
@@ -252,7 +252,7 @@ const BlogPage: React.FC = () => {
                       className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1 group"
                     >
                       Lire plus
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -278,7 +278,7 @@ const BlogPage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   Visit Belgium - Site Officiel
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
               <div className="bg-white p-6 rounded-xl">
@@ -293,7 +293,7 @@ const BlogPage: React.FC = () => {
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
                   UNESCO Patrimoine Mondial
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -313,6 +313,7 @@ const BlogPage: React.FC = () => {
                 className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               />
               <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+              <button className="bg-orange-700 hover:bg-orange-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
                 S'abonner
               </button>
             </div>
@@ -328,10 +329,10 @@ const BlogPage: React.FC = () => {
             </p>
             <Link
               to="/contactez-nous"
-              className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 gap-2"
+              className="inline-flex items-center bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 gap-2"
             >
               Demander un Devis
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
           </div>
         </div>
