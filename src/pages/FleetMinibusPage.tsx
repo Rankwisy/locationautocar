@@ -240,7 +240,7 @@ const FleetMinibusPage: React.FC = () => {
               {advantages.map((advantage, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <advantage.icon className="w-8 h-8 text-blue-600" />
+                    <advantage.icon className="w-8 h-8 text-blue-600" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{advantage.title}</h3>
                   <p className="text-gray-600 text-sm">{advantage.description}</p>
@@ -257,7 +257,7 @@ const FleetMinibusPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {useCases.map((useCase, index) => (
                 <div key={index} className="flex items-center gap-3 bg-white p-4 rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" aria-hidden="true" />
                   <span className="text-gray-700">{useCase}</span>
                 </div>
               ))}
@@ -339,21 +339,21 @@ const FleetMinibusPage: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center justify-center gap-3">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Téléphone</div>
                   <div className="text-sm text-blue-100">+32 2 580 03 25</div>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3">
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Email</div>
                   <div className="text-sm text-blue-100">info@locationautocar.be</div>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3">
-                <Clock className="w-5 h-5" />
+                <Clock className="w-5 h-5" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Disponibilité</div>
                   <div className="text-sm text-blue-100">Service 24/7</div>
@@ -364,16 +364,16 @@ const FleetMinibusPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contactez-nous"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+                className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
               >
                 Demander un Devis Gratuit
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <a
                 href="tel:+3225800325"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 Appeler Maintenant
               </a>
             </div>

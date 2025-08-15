@@ -170,13 +170,13 @@ const DestinationBruxellesPage: React.FC = () => {
                       {attraction.description}
                     </p>
                     <div className="flex items-center gap-2 text-sm text-blue-600 mb-3">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-4 h-4" aria-hidden="true" />
                       <span>Durée : {attraction.duration}</span>
                     </div>
                     <div className="space-y-1">
                       {attraction.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle className="w-3 h-3 text-green-500" />
+                          <CheckCircle className="w-3 h-3 text-green-500" aria-hidden="true" />
                           <span>{highlight}</span>
                         </div>
                       ))}
@@ -200,7 +200,7 @@ const DestinationBruxellesPage: React.FC = () => {
                   </h3>
                   <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-4 h-4" aria-hidden="true" />
                       <span>{circuit.duration}</span>
                     </div>
                     <div className="text-blue-600 font-semibold">
@@ -215,7 +215,7 @@ const DestinationBruxellesPage: React.FC = () => {
                     <div className="space-y-1">
                       {circuit.includes.map((item, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle className="w-3 h-3 text-green-500" />
+                          <CheckCircle className="w-3 h-3 text-green-500" aria-hidden="true" />
                           <span>{item}</span>
                         </div>
                       ))}
@@ -336,21 +336,21 @@ const DestinationBruxellesPage: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center justify-center gap-3">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Réservations</div>
                   <div className="text-sm text-blue-100">+32 2 580 03 25</div>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3">
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Email</div>
                   <div className="text-sm text-blue-100">info@locationautocar.be</div>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3">
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-5 h-5" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Disponibilité</div>
                   <div className="text-sm text-blue-100">Toute l'année</div>
@@ -361,16 +361,16 @@ const DestinationBruxellesPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contactez-nous"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+                className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
               >
                 Demander un Devis
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <a
                 href="tel:+3225800325"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 Appeler Maintenant
               </a>
             </div>

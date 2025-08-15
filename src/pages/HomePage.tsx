@@ -374,11 +374,11 @@ const HomePage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 to="/contactez-nous"
-                className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
+                className="group bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
                 title="Demander devis gratuit location autocar bus minibus Bruxelles"
               >
                 Devis Gratuit
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
               </Link>
               <Link
                 to="/nos-services"
@@ -392,15 +392,15 @@ const HomePage: React.FC = () => {
             {/* Trust Indicators */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-blue-200 bg-black/20 backdrop-blur-sm rounded-2xl px-6 py-4 max-w-3xl mx-auto">
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+                <CheckCircle className="w-5 h-5 text-green-400" aria-hidden="true" />
                 <span>Pas de frais cachés</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+                <CheckCircle className="w-5 h-5 text-green-400" aria-hidden="true" />
                 <span>Vous ne payez que ce que vous utilisez</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+                <CheckCircle className="w-5 h-5 text-green-400" aria-hidden="true" />
                 <span>Support 24/7</span>
               </div>
             </div>
@@ -513,7 +513,7 @@ const HomePage: React.FC = () => {
                     title={`Découvrir notre flotte ${vehicle.name.toLowerCase()} avec chauffeur`}
                   >
                     Voir les détails
-                    <ArrowRight className="w-4 h-4 ml-1" />
+                    <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -593,28 +593,28 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <CheckCircle className="w-8 h-8 text-green-600" />
+                <CheckCircle className="w-8 h-8 text-green-600" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Depuis 2007</h3>
               <p className="text-gray-600">Plus de 15 ans d'expérience dans le transport de groupes</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <Shield className="w-8 h-8 text-blue-600" />
+                <Shield className="w-8 h-8 text-blue-600" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Pas de Frais Cachés</h3>
               <p className="text-gray-600">Tarification transparente - vous ne payez que ce que vous utilisez</p>
             </div>
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <Clock className="w-8 h-8 text-orange-600" />
+                <Clock className="w-8 h-8 text-orange-600" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Service 24/7</h3>
               <p className="text-gray-600">Support et assistance disponibles à tout moment</p>
             </div>
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <Star className="w-8 h-8 text-purple-600" />
+                <Star className="w-8 h-8 text-purple-600" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Devis Gratuit</h3>
               <p className="text-gray-600">Estimation personnalisée sans engagement</p>
@@ -639,7 +639,7 @@ const HomePage: React.FC = () => {
               <div key={index} className="bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" aria-hidden="true" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">
@@ -671,18 +671,18 @@ const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contactez-nous"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+              className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
               title="Demander devis gratuit transport autocar bus minibus"
             >
               Demander un Devis
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <a
               href="tel:+3225800325"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
               title="Appeler Location Autocar Bruxelles service 24/7"
             >
-              <Clock className="w-5 h-5" />
+              <Clock className="w-5 h-5" aria-hidden="true" />
               +32 2 580 03 25
             </a>
           </div>

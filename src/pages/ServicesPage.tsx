@@ -191,7 +191,7 @@ const ServicesPage: React.FC = () => {
                 </div>
                 <div className="lg:w-1/2">
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <service.icon className="w-8 h-8 text-blue-600" />
+                    <service.icon className="w-8 h-8 text-blue-600" aria-hidden="true" />
                   </div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-4">
                     {service.title}
@@ -212,7 +212,7 @@ const ServicesPage: React.FC = () => {
                     className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
                   >
                     Demander un Devis
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -227,7 +227,7 @@ const ServicesPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {destinations.map((destination, index) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
-                  <MapPin className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                  <MapPin className="w-6 h-6 text-blue-600 mx-auto mb-2" aria-hidden="true" />
                   <span className="text-gray-700 font-medium">{destination}</span>
                 </div>
               ))}
@@ -279,22 +279,22 @@ const ServicesPage: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-lg font-semibold mb-2">Pas de Frais Cachés</h3>
                 <p className="text-blue-100">Vous ne payez que ce que vous utilisez</p>
               </div>
               <div className="text-center">
-                <Users className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <Users className="w-12 h-12 text-blue-400 mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-lg font-semibold mb-2">Chauffeurs Expérimentés</h3>
                 <p className="text-blue-100">Professionnels qualifiés et courtois</p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-orange-400 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-orange-400 mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-lg font-semibold mb-2">Service 24/7</h3>
                 <p className="text-blue-100">Disponible à tout moment</p>
               </div>
               <div className="text-center">
-                <Calendar className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <Calendar className="w-12 h-12 text-purple-400 mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-lg font-semibold mb-2">Depuis 2007</h3>
                 <p className="text-blue-100">Plus de 15 ans d'expérience</p>
               </div>
@@ -312,16 +312,16 @@ const ServicesPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contactez-nous"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+                className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
               >
                 Demander un Devis
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <a
                 href="tel:+3225800325"
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
               >
-                <Clock className="w-5 h-5" />
+                <Clock className="w-5 h-5" aria-hidden="true" />
                 +32 2 580 03 25
               </a>
             </div>

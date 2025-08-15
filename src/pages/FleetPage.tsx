@@ -239,7 +239,7 @@ const FleetPage: React.FC = () => {
           {/* Filters Section */}
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-12">
             <div className="flex items-center gap-2 mb-6">
-              <Filter className="w-5 h-5 text-blue-600" />
+              <Filter className="w-5 h-5 text-blue-600" aria-hidden="true" />
               <h2 className="text-xl font-semibold text-gray-900">Filtrer par :</h2>
             </div>
             
@@ -250,7 +250,7 @@ const FleetPage: React.FC = () => {
                   Recherche
                 </label>
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" aria-hidden="true" />
                   <input
                     type="text"
                     value={searchTerm}
@@ -364,11 +364,11 @@ const FleetPage: React.FC = () => {
                   
                   <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
+                      <Users className="w-4 h-4" aria-hidden="true" />
                       {vehicle.capacity} places
                     </div>
                     <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4" aria-hidden="true" />
                       {vehicle.year}
                     </div>
                   </div>
@@ -382,7 +382,7 @@ const FleetPage: React.FC = () => {
                     <div className="grid grid-cols-2 gap-1">
                       {vehicle.features.slice(0, 4).map((feature, index) => (
                         <div key={index} className="flex items-center gap-1 text-xs text-gray-600">
-                          <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
+                          <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" aria-hidden="true" />
                           <span className="truncate">{feature}</span>
                         </div>
                       ))}
@@ -447,28 +447,28 @@ const FleetPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Shield className="w-8 h-8 text-green-600" />
+                  <Shield className="w-8 h-8 text-green-600" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Sécurité Maximale</h3>
                 <p className="text-gray-600 text-sm">Véhicules récents, entretien rigoureux, chauffeurs expérimentés</p>
               </div>
               <div className="text-center">
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Award className="w-8 h-8 text-blue-600" />
+                  <Award className="w-8 h-8 text-blue-600" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Confort Premium</h3>
                 <p className="text-gray-600 text-sm">Équipements modernes, sièges ergonomiques, climatisation</p>
               </div>
               <div className="text-center">
                 <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Clock className="w-8 h-8 text-orange-600" />
+                  <Clock className="w-8 h-8 text-orange-600" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Ponctualité</h3>
                 <p className="text-gray-600 text-sm">Respect des horaires, planification optimisée, suivi en temps réel</p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <CheckCircle className="w-8 h-8 text-purple-600" />
+                  <CheckCircle className="w-8 h-8 text-purple-600" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Service Complet</h3>
                 <p className="text-gray-600 text-sm">Assistance 24/7, devis gratuit, service personnalisé</p>
@@ -533,6 +533,7 @@ const FleetPage: React.FC = () => {
                       className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
                         openFaqIndex === index ? 'rotate-90' : ''
                       }`}
+                      aria-hidden="true"
                     />
                   </button>
                   {openFaqIndex === index && (
@@ -559,21 +560,21 @@ const FleetPage: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center justify-center gap-3 text-gray-700">
-                <Phone className="w-5 h-5 text-blue-600" />
+                <Phone className="w-5 h-5 text-blue-600" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Téléphone</div>
                   <div className="text-sm">+32 2 580 03 25</div>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 text-gray-700">
-                <Mail className="w-5 h-5 text-blue-600" />
+                <Mail className="w-5 h-5 text-blue-600" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Email</div>
                   <div className="text-sm">info@locationautocar.be</div>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 text-gray-700">
-                <MapPin className="w-5 h-5 text-blue-600" />
+                <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Adresse</div>
                   <div className="text-sm">Bd Industriel 9, 1070 Bruxelles</div>
@@ -584,18 +585,18 @@ const FleetPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contactez-nous"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+                className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
                 title="Demander devis gratuit location véhicule avec chauffeur"
               >
                 Demander un Devis Gratuit
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <a
                 href="tel:+3225800325"
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2"
                 title="Appeler Location Autocar Bruxelles"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 Appeler Maintenant
               </a>
             </div>
