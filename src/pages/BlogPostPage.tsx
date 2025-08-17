@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Calendar, User, Tag, ArrowLeft, Clock, Share2 } from 'lucide-react';
+import { Calendar, User, Tag, ArrowLeft, Clock, Share2, ArrowRight } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { getBlogPostBySlug, type BlogPost } from '../data/blogContentData';
 
