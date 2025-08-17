@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import EnhancedContactForm from '../components/Forms/EnhancedContactForm';
 import { contactSchema } from '../data/enhancedSchemas';
@@ -18,7 +18,6 @@ const ContactPage: React.FC = () => {
     console.error('Form submission error:', error);
     // Error handling is done within the ContactForm component
   };
-
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
