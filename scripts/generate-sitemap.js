@@ -106,6 +106,12 @@ const pages = [
     lastmod: '2024-01-25T09:00:00.000Z',
     changefreq: 'monthly',
     priority: '0.6'
+  },
+  {
+    url: '/blog/location-autocar-avec-chauffeur-bruxelles-prix',
+    lastmod: '2025-01-28T10:00:00.000Z',
+    changefreq: 'monthly',
+    priority: '0.6'
   }
 ];
 

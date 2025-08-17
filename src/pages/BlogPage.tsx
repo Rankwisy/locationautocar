@@ -45,6 +45,18 @@ const BlogPage: React.FC = () => {
     },
     {
       id: 4,
+      title: "Location autocar avec chauffeur Bruxelles prix : Guide complet 2025",
+      excerpt: "La location d'autocar avec chauffeur à Bruxelles est la solution idéale pour les groupes. Découvrez les prix, services disponibles et comment réserver facilement en 2025.",
+      featuredImage: "https://ik.imagekit.io/by733ltn6/locationautocar/autocar-bruxelles-scaled.jpeg?updatedAt=1750900410371",
+      publishedAt: "2025-01-28",
+      author: "Location Autocar Bruxelles",
+      category: "Conseils",
+      tags: ["Bruxelles", "Autocar", "Prix", "Location", "Chauffeur", "Devis"],
+      readTime: "10 min",
+      slug: "location-autocar-avec-chauffeur-bruxelles-prix"
+    },
+    {
+      id: 4,
       title: "Organiser un Voyage d'Affaires en Autocar : Guide Pratique",
       excerpt: "Tous nos conseils pour organiser un voyage d'affaires réussi en autocar : planification, confort, productivité et gestion de groupe.",
       featuredImage: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg",
