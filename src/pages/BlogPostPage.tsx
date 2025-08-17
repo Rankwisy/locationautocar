@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowLeft, Clock, Share2 } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
-import { getBlogPostBySlug } from '../data/blogContentData';
+import { getBlogPostBySlug, type BlogPost } from '../data/blogContentData';
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -68,7 +68,7 @@ const BlogPostPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={blogPost.metaTitle}
+        title={blogPost.metaTitle || blogPost.title}
         description={blogPost.metaDescription}
         canonical={`https://www.locationautocar.be/blog/${slug}`}
         ogImage={blogPost.featuredImage}
@@ -147,6 +147,7 @@ const BlogPostPage: React.FC = () => {
                 src={blogPost.featuredImage}
                 alt={blogPost.title}
                 className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-xl"
+                loading="eager"
               />
             </div>
           </div>
@@ -154,7 +155,7 @@ const BlogPostPage: React.FC = () => {
           {/* Article Content */}
           <div className="max-w-4xl mx-auto">
             <div 
-              className="prose prose-lg prose-blue max-w-none"
+              className="prose prose-lg prose-blue max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-700 prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700"
               style={{
                 lineHeight: '1.8',
                 fontSize: '18px'
@@ -193,103 +194,22 @@ const BlogPostPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Related Articles */}
-          <div className="max-w-6xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Articles Similaires
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Sample related articles */}
-              {[
-                {
-                  title: "Amsterdam en Autocar : Itinéraire Parfait pour un Week-end",
-                  image: "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg",
-                  slug: "amsterdam-weekend-guide"
-                },
-                {
-                  title: "Les Plus Beaux Châteaux de Belgique à Visiter en Groupe",
-                  image: "https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg",
-                  slug: "chateaux-belgique-guide"
-                },
-                {
-                  title: "Organiser un Voyage d'Affaires en Autocar : Guide Pratique",
-                  image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg",
-                  slug: "business-travel-guide"
-                }
-              ].map((article, index) => (
-                <Link
-                  key={index}
-                  to={`/blog/${article.slug}`}
-                  className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
-                >
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-200"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
-                      {article.title}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto mt-16 bg-blue-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Complémentaires
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl">
-                <h3 className="text-lg font-semibold mb-3">Office de Tourisme Paris</h3>
-                <p className="text-gray-600 mb-4">
-                  Guide officiel du tourisme parisien avec événements et attractions.
-                </p>
-                <a 
-                  href="https://www.parisinfo.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
-                >
-                  Paris Info - Guide Officiel
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-              <div className="bg-white p-6 rounded-xl">
-                <h3 className="text-lg font-semibold mb-3">Monuments de Paris</h3>
-                <p className="text-gray-600 mb-4">
-                  Informations officielles sur les monuments et musées parisiens.
-                </p>
-                <a 
-                  href="https://www.monuments-nationaux.fr" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
-                >
-                  Monuments Nationaux
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
 
           {/* CTA Section */}
           <div className="max-w-4xl mx-auto mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
             <h2 className="text-3xl font-bold mb-4">
-              Envie de Découvrir Paris ?
+              Prêt à Vivre Ces Expériences ?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Organisez votre excursion à Paris avec Location Autocar Bruxelles. 
-              Transport confortable, guide expérimenté, et souvenirs inoubliables garantis !
+              Organisez votre prochaine excursion avec Location Autocar Bruxelles. 
+              Transport confortable, guides expérimentés, et souvenirs inoubliables garantis !
             </p>
             <Link
               to="/contactez-nous"
               className="inline-flex items-center bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 gap-2"
             >
               Demander un Devis Gratuit
-              <ArrowLeft className="w-5 h-5 rotate-180" aria-hidden="true" />
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
           </div>
         </div>

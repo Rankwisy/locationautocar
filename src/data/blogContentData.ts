@@ -406,6 +406,8 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
+  console.log('Looking for blog post with slug:', slug);
+  console.log('Available slugs:', blogPosts.map(post => post.slug));
   return blogPosts.find(post => post.slug === slug);
 };
 

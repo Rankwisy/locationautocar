@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { blogSchema } from '../data/enhancedSchemas';
-import { getAllBlogPosts, getBlogPostsByCategory } from '../data/blogContentData';
+import { getAllBlogPosts, getBlogPostsByCategory, type BlogPost } from '../data/blogContentData';
 
 const BlogPage: React.FC = () => {
   // Get all blog posts from the data source
