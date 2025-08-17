@@ -3,90 +3,16 @@ import { Link } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { blogSchema } from '../data/enhancedSchemas';
+import { getAllBlogPosts, getBlogPostsByCategory } from '../data/blogContentData';
 
 const BlogPage: React.FC = () => {
-  // Sample blog posts - in a real app, these would come from your CMS or API
-  const blogPosts = [
-    {
-      id: 1,
-      title: "La Magie du Coucher de Soleil à la Tour Eiffel : Un Guide Complet",
-      excerpt: "Une expérience sensorielle complète pour découvrir la Tour Eiffel dans toute sa splendeur dorée, avec des conseils d'initiés pour une visite parfaite.",
-      featuredImage: "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg",
-      publishedAt: "2024-01-30",
-      author: "Location Autocar Bruxelles",
-      category: "Destinations",
-      tags: ["Paris", "Tour Eiffel", "Excursions", "Photographie"],
-      readTime: "8 min",
-      slug: "eiffel-tower-sunset-magic"
-    },
-    {
-      id: 2,
-      title: "Amsterdam à Vélo : Entre Canaux et Liberté, l'Art de Vivre Hollandais",
-      excerpt: "Enfourchez un vélo et laissez-vous porter par l'esprit libre d'Amsterdam. Entre canaux centenaires et culture avant-gardiste, découvrez une ville où tradition et modernité dansent au rythme des sonnettes de bicyclettes.",
-      featuredImage: "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg",
-      publishedAt: "2024-01-30",
-      author: "Location Autocar Bruxelles",
-      category: "Destinations",
-      tags: ["Amsterdam", "Vélo", "Canaux", "Culture hollandaise"],
-      readTime: "7 min",
-      slug: "amsterdam-canaux-velo"
-    },
-    {
-      id: 3,
-      title: "Bruxelles, Cœur Battant de l'Europe : Découverte d'une Capitale Authentique",
-      excerpt: "Plongez au cœur de Bruxelles, où l'histoire européenne se mêle à l'art de vivre belge. Entre Grand-Place majestueuse et quartiers bohèmes, découvrez une capitale qui sait allier tradition et modernité.",
-      featuredImage: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg",
-      publishedAt: "2024-01-25",
-      author: "Location Autocar Bruxelles",
-      category: "Destinations",
-      tags: ["Bruxelles", "Grand-Place", "Atomium", "Gastronomie belge"],
-      readTime: "6 min",
-      slug: "bruxelles-coeur-europe"
-    },
-    {
-      id: 4,
-      title: "Location autocar avec chauffeur Bruxelles prix : Guide complet 2025",
-      excerpt: "La location d'autocar avec chauffeur à Bruxelles est la solution idéale pour les groupes. Découvrez les prix, services disponibles et comment réserver facilement en 2025.",
-      featuredImage: "https://ik.imagekit.io/by733ltn6/locationautocar/autocar-bruxelles-scaled.jpeg?updatedAt=1750900410371",
-      publishedAt: "2025-01-28",
-      author: "Location Autocar Bruxelles",
-      category: "Conseils",
-      tags: ["Bruxelles", "Autocar", "Prix", "Location", "Chauffeur", "Devis"],
-      readTime: "10 min",
-      slug: "location-autocar-avec-chauffeur-bruxelles-prix"
-    },
-    {
-      id: 4,
-      title: "Organiser un Voyage d'Affaires en Autocar : Guide Pratique",
-      excerpt: "Tous nos conseils pour organiser un voyage d'affaires réussi en autocar : planification, confort, productivité et gestion de groupe.",
-      featuredImage: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg",
-      publishedAt: "2024-01-20",
-      author: "Location Autocar Bruxelles",
-      category: "Conseils",
-      tags: ["Voyage d'affaires", "Organisation", "Productivité"],
-      readTime: "5 min",
-      slug: "business-travel-guide"
-    },
-    {
-      id: 5,
-      title: "Les Plus Beaux Châteaux de Belgique à Visiter en Groupe",
-      excerpt: "Partez à la découverte du patrimoine belge avec notre sélection des plus beaux châteaux accessibles en autocar depuis Bruxelles.",
-      featuredImage: "https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg",
-      publishedAt: "2024-01-15",
-      author: "Location Autocar Bruxelles",
-      category: "Patrimoine",
-      tags: ["Belgique", "Châteaux", "Patrimoine", "Histoire"],
-      readTime: "7 min",
-      slug: "chateaux-belgique-guide"
-    }
-  ];
+  // Get all blog posts from the data source
+  const allBlogPosts = getAllBlogPosts();
 
-  const categories = ["Tous", "Destinations", "Conseils", "Patrimoine"];
+  const categories = ["Tous", "Destinations", "Conseils"];
   const [selectedCategory, setSelectedCategory] = React.useState("Tous");
 
-  const filteredPosts = selectedCategory === "Tous" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  const filteredPosts = getBlogPostsByCategory(selectedCategory);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('fr-FR', {
