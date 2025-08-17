@@ -402,12 +402,13 @@ const FleetPage: React.FC = () => {
                     >
                       Réserver
                     </Link>
-                    <button 
+                    <Link
+                      to={`/notre-flotte/${vehicle.type.toLowerCase()}`}
                       className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm"
                       title={`Voir détails ${vehicle.name}`}
                     >
                       Détails
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
