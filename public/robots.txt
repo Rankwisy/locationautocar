@@ -24,6 +24,7 @@ Disallow: /*.json$
 Disallow: /*?*utm_*
 Disallow: /*?*fbclid*
 Disallow: /*?*gclid*
+Disallow: /*?l=*
 
 # Crawl delay - be respectful to search engines
 Crawl-delay: 1

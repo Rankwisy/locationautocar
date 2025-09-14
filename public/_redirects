@@ -1,4 +1,8 @@
 # Netlify redirects file for SPA routing
+
+# Clean URL redirects - Remove tracking parameters
+/*?l=* / 301!
+
 /*    /index.html   200
 
 # WordPress to new structure redirects (if needed)
