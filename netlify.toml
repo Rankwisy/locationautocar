@@ -65,6 +65,12 @@
     Content-Type = "font/woff2"
 
 [[headers]]
+  for = "*.xsl"
+  [headers.values]
+    Content-Type = "application/xml; charset=UTF-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml; charset=UTF-8"
