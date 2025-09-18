@@ -1,7 +1,7 @@
 # Netlify redirects file for SPA routing
 
 # Clean URL redirects - Remove tracking parameters
-/*?l=* / 301!
+/*   /   301!   Query=l=*
 
 /*    /index.html   200
 

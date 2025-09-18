@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /*?l=*
 
 # Sitemap location - Primary discovery method for search engines
 Sitemap: https://www.locationautocar.be/sitemap.xml
