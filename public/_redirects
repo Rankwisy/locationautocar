@@ -1,14 +1,7 @@
 # Netlify redirects file for SPA routing
 
-# Clean URL redirects - Remove tracking parameters
-/*   /   301!   Query=l=*
+# Remove tracking parameters (specific query params only)
+/  /  301  Query=l=*
 
-/*    /index.html   200
-
-# WordPress to new structure redirects (if needed)
-# /old-page-slug    /new-page-slug    301
-# /wp-content/uploads/*    /images/:splat    301
-
-# Ensure www redirect (if needed)
-# http://locationautocar.be/*    https://www.locationautocar.be/:splat    301!
-# https://locationautocar.be/*    https://www.locationautocar.be/:splat    301!
+# SPA routing - serve index.html for all routes
+/*  /index.html  200
