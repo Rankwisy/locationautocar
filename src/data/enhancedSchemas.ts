@@ -218,17 +218,13 @@ export const vehicleSchemas = {
     "fuelType": "Diesel",
     "vehicleTransmission": "Automatic",
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
-      "price": "200",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "120",
-        "maxPrice": "300",
-        "priceCurrency": "EUR",
-        "unitText": "per day"
-      }
+      "lowPrice": "120",
+      "highPrice": "300",
+      "offerCount": "1",
+      "url": "https://www.locationautocar.be/notre-flotte/minibus"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -253,17 +249,13 @@ export const vehicleSchemas = {
     "fuelType": "Diesel",
     "vehicleTransmission": "Automatic",
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
-      "price": "250",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "150",
-        "maxPrice": "400",
-        "priceCurrency": "EUR",
-        "unitText": "per day"
-      }
+      "lowPrice": "150",
+      "highPrice": "400",
+      "offerCount": "1",
+      "url": "https://www.locationautocar.be/notre-flotte/bus"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -288,17 +280,13 @@ export const vehicleSchemas = {
     "fuelType": "Diesel",
     "vehicleTransmission": "Automatic",
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
-      "price": "400",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "300",
-        "maxPrice": "800",
-        "priceCurrency": "EUR",
-        "unitText": "per day"
-      }
+      "lowPrice": "300",
+      "highPrice": "800",
+      "offerCount": "1",
+      "url": "https://www.locationautocar.be/notre-flotte/autocars"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
