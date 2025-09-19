@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star, Clock, MapPin, Plane } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
-import { vehicleSchemas } from '../data/enhancedSchemas';
+import { serviceVehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetAutocarsPage: React.FC = () => {
   const autocarModels = [
@@ -115,33 +115,37 @@ const FleetAutocarsPage: React.FC = () => {
 
   const autocarSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Location Autocar avec Chauffeur - Bruxelles",
+    "@type": "Service",
+    "name": "Service de Location Autocar avec Chauffeur - Bruxelles",
     "description": "Location d'autocar grand tourisme 40-55 places avec chauffeur professionnel pour voyages longue distance, circuits touristiques et voyages d'affaires en Europe.",
-    "category": "Coach Rental Service",
-    "brand": {
+    "serviceType": "Coach Rental Service",
+    "provider": {
       "@type": "Organization",
-      "name": "Location Autocar Bruxelles"
+      "name": "Location Autocar Bruxelles",
+      "url": "https://www.locationautocar.be"
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Brussels"
+      },
+      {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      }
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
       "lowPrice": "300",
       "highPrice": "800",
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "BE",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 0,
-        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
-        "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "203"
+      "offerCount": "1",
+      "url": "https://www.locationautocar.be/notre-flotte/autocars"
     }
   };
 
@@ -153,7 +157,7 @@ const FleetAutocarsPage: React.FC = () => {
         description="Location d'autocar grand tourisme avec chauffeur professionnel à Bruxelles. Flotte moderne 40-55 places pour voyages longue distance et circuits en Europe. Devis gratuit."
         keywords="autocar grand tourisme, 40-55 places, voyages longue distance, circuits europe, chauffeur professionnel"
         canonical="https://www.locationautocar.be/notre-flotte/autocars"
-        schema={vehicleSchemas.autocar}
+        schema={serviceVehicleSchemas.autocar}
       />
 
       <div className="py-12">

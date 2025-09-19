@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { fleetFAQ } from '../data/faqData';
-import { vehicleSchemas } from '../data/enhancedSchemas';
+import { serviceVehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -170,17 +170,17 @@ const FleetPage: React.FC = () => {
       {
         "@type": "ListItem",
         "position": 1,
-        "item": vehicleSchemas.minibus
+        "item": serviceVehicleSchemas.minibus
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "item": vehicleSchemas.bus
+        "item": serviceVehicleSchemas.bus
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "item": vehicleSchemas.autocar
+        "item": serviceVehicleSchemas.autocar
       }
     ]
   };

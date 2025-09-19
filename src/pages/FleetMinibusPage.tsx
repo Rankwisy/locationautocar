@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Star, CheckCircle, ArrowRight, Phone, Mail, Clock, MapPin, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
-import { vehicleSchemas } from '../data/enhancedSchemas';
+import { serviceVehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetMinibusPage: React.FC = () => {
   const minibusModels = [
@@ -106,33 +106,37 @@ const FleetMinibusPage: React.FC = () => {
 
   const minibusSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Location Minibus avec Chauffeur - Bruxelles",
+    "@type": "Service",
+    "name": "Service de Location Minibus avec Chauffeur - Bruxelles",
     "description": "Location de minibus 8-16 places avec chauffeur professionnel pour transferts VIP, excursions et voyages d'affaires en Belgique et Europe.",
-    "category": "Minibus Rental Service",
-    "brand": {
+    "serviceType": "Minibus Rental Service",
+    "provider": {
       "@type": "Organization",
-      "name": "Location Autocar Bruxelles"
+      "name": "Location Autocar Bruxelles",
+      "url": "https://www.locationautocar.be"
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Brussels"
+      },
+      {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      }
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
       "lowPrice": "120",
       "highPrice": "300",
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "BE",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 0,
-        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
-        "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "124"
+      "offerCount": "1",
+      "url": "https://www.locationautocar.be/notre-flotte/minibus"
     }
   };
 
@@ -144,7 +148,7 @@ const FleetMinibusPage: React.FC = () => {
         description="Location de minibus avec chauffeur professionnel à Bruxelles. Flotte Mercedes moderne 8-16 places pour transferts VIP, excursions et voyages d'affaires. Devis gratuit."
         keywords="minibus mercedes chauffeur, transferts vip bruxelles, 8-16 places, excursions petits groupes"
         canonical="https://www.locationautocar.be/notre-flotte/minibus"
-        schema={vehicleSchemas.minibus}
+        schema={serviceVehicleSchemas.minibus}
       />
 
       <div className="py-12">

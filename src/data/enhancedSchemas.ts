@@ -201,22 +201,32 @@ export const serviceSchemas = {
   }
 };
 
-export const vehicleSchemas = {
+export const serviceVehicleSchemas = {
   minibus: {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Location Minibus avec Chauffeur",
+    "@type": "Service",
+    "name": "Service de Location Minibus avec Chauffeur",
     "description": "Minibus Mercedes 8-16 places avec chauffeur professionnel pour transferts VIP et excursions",
-    "category": "Vehicle Rental",
-    "brand": {
-      "@type": "Brand",
-      "name": "Mercedes-Benz"
+    "serviceType": "Minibus Rental Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "Location Autocar Bruxelles",
+      "url": "https://www.locationautocar.be"
     },
-    "model": "Sprinter",
-    "vehicleConfiguration": "Minibus",
-    "seatingCapacity": "16",
-    "fuelType": "Diesel",
-    "vehicleTransmission": "Automatic",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Brussels"
+      },
+      {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      }
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
@@ -225,29 +235,33 @@ export const vehicleSchemas = {
       "highPrice": "300",
       "offerCount": "1",
       "url": "https://www.locationautocar.be/notre-flotte/minibus"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   },
   bus: {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Location Bus avec Chauffeur",
+    "@type": "Service",
+    "name": "Service de Location Bus avec Chauffeur",
     "description": "Bus touristique 20-35 places avec chauffeur professionnel pour excursions et voyages d'affaires",
-    "category": "Vehicle Rental",
-    "brand": {
-      "@type": "Brand",
-      "name": "Mercedes-Benz"
+    "serviceType": "Bus Rental Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "Location Autocar Bruxelles",
+      "url": "https://www.locationautocar.be"
     },
-    "vehicleConfiguration": "Bus",
-    "seatingCapacity": "35",
-    "fuelType": "Diesel",
-    "vehicleTransmission": "Automatic",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Brussels"
+      },
+      {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      }
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
@@ -256,29 +270,33 @@ export const vehicleSchemas = {
       "highPrice": "400",
       "offerCount": "1",
       "url": "https://www.locationautocar.be/notre-flotte/bus"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "89",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   },
   autocar: {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Location Autocar Grand Tourisme",
+    "@type": "Service",
+    "name": "Service de Location Autocar Grand Tourisme",
     "description": "Autocar grand tourisme 40-55 places avec chauffeur professionnel pour voyages longue distance",
-    "category": "Vehicle Rental",
-    "brand": {
-      "@type": "Brand",
-      "name": "Mercedes-Benz"
+    "serviceType": "Coach Rental Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "Location Autocar Bruxelles",
+      "url": "https://www.locationautocar.be"
     },
-    "vehicleConfiguration": "Coach",
-    "seatingCapacity": "55",
-    "fuelType": "Diesel",
-    "vehicleTransmission": "Automatic",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Brussels"
+      },
+      {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      }
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
@@ -287,13 +305,6 @@ export const vehicleSchemas = {
       "highPrice": "800",
       "offerCount": "1",
       "url": "https://www.locationautocar.be/notre-flotte/autocars"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "203",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
 };

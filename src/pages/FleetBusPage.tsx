@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star, Clock, MapPin } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
-import { vehicleSchemas } from '../data/enhancedSchemas';
+import { serviceVehicleSchemas } from '../data/enhancedSchemas';
 
 const FleetBusPage: React.FC = () => {
   const busModels = [
@@ -106,33 +106,37 @@ const FleetBusPage: React.FC = () => {
 
   const busSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Location Bus avec Chauffeur - Bruxelles",
+    "@type": "Service",
+    "name": "Service de Location Bus avec Chauffeur - Bruxelles",
     "description": "Location de bus 20-35 places avec chauffeur professionnel pour excursions, voyages d'affaires et transferts en Belgique et Europe.",
-    "category": "Bus Rental Service",
-    "brand": {
+    "serviceType": "Bus Rental Service",
+    "provider": {
       "@type": "Organization",
-      "name": "Location Autocar Bruxelles"
+      "name": "Location Autocar Bruxelles",
+      "url": "https://www.locationautocar.be"
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Brussels"
+      },
+      {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      }
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "EUR",
       "lowPrice": "150",
       "highPrice": "400",
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "BE",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 0,
-        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
-        "merchantReturnLink": "https://www.locationautocar.be/contactez-nous"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "89"
+      "offerCount": "1",
+      "url": "https://www.locationautocar.be/notre-flotte/bus"
     }
   };
 
@@ -144,7 +148,7 @@ const FleetBusPage: React.FC = () => {
         description="Location de bus avec chauffeur professionnel à Bruxelles. Flotte moderne 20-35 places pour excursions, voyages d'affaires et transferts en Europe. Devis gratuit 24/7."
         keywords="bus touristique chauffeur, 20-35 places, excursions confortables, voyages affaires europe"
         canonical="https://www.locationautocar.be/notre-flotte/bus"
-        schema={vehicleSchemas.bus}
+        schema={serviceVehicleSchemas.bus}
       />
 
       <div className="py-12">
