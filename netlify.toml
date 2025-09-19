@@ -100,13 +100,7 @@
   to = "/contactez-nous?success=true"
   status = 302
 
-# SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Error pages
+# Error pages (must come before catch-all)
 [[redirects]]
   from = "/404"
   to = "/index.html"
@@ -116,6 +110,12 @@
   from = "/500"
   to = "/index.html"
   status = 500
+
+# SPA routing - MUST be last (catch-all)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 # Performance optimizations
 [build.processing.images]
