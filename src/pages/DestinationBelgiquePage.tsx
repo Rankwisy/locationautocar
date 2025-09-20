@@ -169,8 +169,8 @@ const DestinationBelgiquePage: React.FC = () => {
           {/* Hero Image */}
           <div className="mb-16">
             <img
-              src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Bruges - Canaux et architecture médiévale flamande"
+              src="https://ik.imagekit.io/by733ltn6/locationautocar/locationautocar-image-logo-1.jpg?updatedAt=1750900561845&tr=w-1200,h-600,c-maintain_ratio,f-webp,q-85"
+              alt="Location Autocar Bruxelles - Circuits découverte Belgique avec transport confortable"
               className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-xl"
               loading="eager"
             />
