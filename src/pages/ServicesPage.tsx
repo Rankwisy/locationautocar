@@ -17,7 +17,7 @@ const ServicesPage: React.FC = () => {
         "Transferts hôtels",
         "Service 24/7"
       ],
-      image: "/images/services/transferts.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-aeroport-bruxelles-scaled.jpeg?updatedAt=1750900457571&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
     },
     {
       icon: Camera,
@@ -30,7 +30,7 @@ const ServicesPage: React.FC = () => {
         "Circuits en Belgique",
         "Voyages en Europe"
       ],
-      image: "/images/services/excursions.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
     },
     {
       icon: Building,
@@ -43,7 +43,7 @@ const ServicesPage: React.FC = () => {
         "Transferts VIP",
         "Service personnalisé"
       ],
-      image: "/images/services/business.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
     },
     {
       icon: Clock,
@@ -56,7 +56,7 @@ const ServicesPage: React.FC = () => {
         "Chauffeur expérimenté",
         "Tarification transparente"
       ],
-      image: "/images/services/disposition.jpg"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
     }
   ];
 
