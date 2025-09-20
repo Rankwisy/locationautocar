@@ -34,7 +34,7 @@ const DestinationsPage: React.FC = () => {
       name: "Europe",
       subtitle: "Capitales et Merveilles",
       description: "Voyagez vers les plus belles capitales européennes : Paris romantique, Amsterdam canaux, Prague magique.",
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/locationautocar-image-logo-1.jpg?updatedAt=1750900561845&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Tour Eiffel Paris coucher soleil Seine voyages Europe autocar grand tourisme",
       duration: "2-7 jours",
       distance: "200-1000 km",
