@@ -11,8 +11,8 @@ const DestinationBelgiquePage: React.FC = () => {
       region: "Flandre Occidentale",
       distance: "100 km de Bruxelles",
       duration: "1 jour",
-      image: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=600",
-      highlights: ["Centre historique UNESCO", "Canaux romantiques", "Beffroi médiéval", "Musée Groeninge"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bruegge_View_from_Rozenhoedkaai.jpg/800px-Bruegge_View_from_Rozenhoedkaai.jpg",
+      highlights: ["Centre historique UNESCO", "Canaux romantiques", "Beffroi médiéval", "Rozenhoedkaai"],
       description: "Ville médiévale parfaitement préservée avec ses canaux, beffroi et architecture gothique."
     },
     {
