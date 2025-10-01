@@ -131,9 +131,9 @@ const ServicesPage: React.FC = () => {
     <>
       <SEOHead
         title="Nos Services - Location Autocar Bruxelles"
-        metaTitle="Services Transport Autocar | Transferts Excursions | Chauffeur Professionnel"
-        description="Services complets de transport en autocar avec chauffeur : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition."
-        keywords="services transport autocar, transferts aeroports, excursions touristiques, voyages affaires, chauffeur professionnel"
+        metaTitle="Services Transport Autocar Bruxelles | Transferts Excursions | Chauffeur Professionnel"
+        description="Services complets de transport en autocar avec chauffeur à Bruxelles : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition en Belgique."
+        keywords="services transport autocar bruxelles, transferts aeroports bruxelles, excursions touristiques bruxelles, voyages affaires belgique, chauffeur professionnel bruxelles"
         canonical="https://www.locationautocar.be/nos-services"
         schema={servicesSchema}
       />
