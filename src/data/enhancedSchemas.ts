@@ -97,6 +97,156 @@ export const organizationSchema = {
   ]
 };
 
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Location Autocar Bruxelles",
+  "url": "https://www.locationautocar.be",
+  "logo": "https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png",
+  "description": "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bd Industriel 9",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1070",
+    "addressCountry": "BE"
+  },
+  "telephone": "+32 2 580 03 25",
+  "email": "info@locationautocar.be",
+  "foundingDate": "2007",
+  "openingHours": ["Mo-Fr 08:00-22:00", "Sa-Su 10:00-22:00"],
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "50.8503",
+      "longitude": "4.3517"
+    },
+    "geoRadius": "1000000"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "50.8503",
+    "longitude": "4.3517"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Brussels"
+    },
+    {
+      "@type": "Country",
+      "name": "Belgium"
+    },
+    {
+      "@type": "Place",
+      "name": "Europe"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de Transport",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Location Minibus avec Chauffeur",
+          "description": "Service de location de minibus 8-16 places avec chauffeur professionnel"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Location Bus avec Chauffeur",
+          "description": "Service de location de bus 20-35 places avec chauffeur professionnel"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Location Autocar avec Chauffeur",
+          "description": "Service de location d'autocar 40-55 places avec chauffeur professionnel"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Transferts Aéroports",
+          "description": "Service de transfert professionnel vers tous les aéroports"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Excursions Touristiques",
+          "description": "Circuits organisés avec guide francophone en Belgique et Europe"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Voyages d'Affaires",
+          "description": "Transport de groupes pour séminaires et événements d'entreprise"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "156",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Marie Dubois"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Service impeccable pour notre séminaire d'entreprise. Chauffeur professionnel et ponctuel."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Jean Martin"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Excellent service pour nos excursions. Véhicules confortables et chauffeurs expérimentés."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sophie Laurent"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Partenaire de confiance pour nos transferts aéroport. Service 24/7 très apprécié."
+    }
+  ]
+};
+
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -117,10 +267,6 @@ export const websiteSchema = {
       "urlTemplate": "https://www.locationautocar.be/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
-  },
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "name": "Location Autocar Bruxelles"
   }
 };
 

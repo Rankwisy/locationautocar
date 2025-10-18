@@ -208,10 +208,8 @@ const FleetPage: React.FC = () => {
     <>
       <SEOHead
         title="Notre Flotte - Location Autocar Bruxelles"
-        metaTitle="Flotte Autocar Bus Minibus | Véhicules Modernes | Chauffeur Expérimenté"
         metaTitle="Flotte Autocar Bus Minibus Bruxelles | Chauffeur | Devis Gratuit"
         description="Flotte moderne autocar bus minibus avec chauffeur Bruxelles. Véhicules récents climatisés WiFi pour transferts excursions Europe. Réservation 24/7."
-        keywords="flotte autocar bruxelles, bus minibus moderne, vehicules climatises wifi, chauffeur experimente"
         keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique"
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}

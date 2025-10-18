@@ -212,10 +212,8 @@ const DestinationsPage: React.FC = () => {
     <>
       <SEOHead
         title="Destinations Excursions Autocar | Bruxelles, Belgique, Europe | Guide Francophone"
-        metaTitle="Destinations Autocar | Excursions Bruxelles Belgique Europe | Circuits Organisés"
         metaTitle="Destinations Autocar Bruxelles | Excursions Belgique Europe | Guide"
         description="Découvrez nos destinations en autocar avec chauffeur et guide francophone : Bruxelles Grand-Place Atomium, Belgique Bruges Gand, Europe Paris Amsterdam. Circuits organisés depuis Bruxelles."
-        keywords="destinations autocar, excursions bruxelles belgique europe, circuits organises, guide francophone, transport confortable"
         keywords="destinations autocar bruxelles, excursions belgique, circuits europe, guide francophone, bruges gand anvers, paris amsterdam prague"
         canonical="https://www.locationautocar.be/destinations"
         schema={destinationsSchema}
