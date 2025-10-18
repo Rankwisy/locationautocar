@@ -410,8 +410,8 @@ export const blogPosts: BlogPost[] = [
     metaDescription: "Profitez des événements majeurs à Bruxelles (Plaisirs d'Hiver, festivals, concerts) avec notre service de location d'autocar avec chauffeur. Confort, sécurité et tarifs compétitifs garantis.",
     slug: "location-autocar-evenements-bruxelles-2025",
     excerpt: "Découvrez comment profiter pleinement des événements bruxellois d'automne et hiver 2025 avec un transport en autocar confortable et sécurisé. Plaisirs d'Hiver, festivals et concerts vous attendent.",
-    featuredImage: "https://images.pexels.com/photos/3061171/pexels-photo-3061171.jpeg",
-    featuredImageAlt: "Marché de Noël illuminé à Bruxelles avec décoration festive",
+    featuredImage: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?updatedAt=1750904881878",
+    featuredImageAlt: "Touristes visitant Bruxelles en autocar confortable",
     publishedAt: "2025-02-05T09:00:00.000Z",
     author: "Location Autocar Bruxelles",
     category: "Événements",
@@ -452,7 +452,7 @@ export const blogPosts: BlogPost[] = [
       <p>Organiser le transport de groupe en autocar avec chauffeur est un atout majeur pour profiter de la richesse des événements bruxellois. Voici quelques temps forts à ne pas manquer, parfaits pour une sortie en autocar :</p>
 
       <h3>Plaisirs d'Hiver – Marché de Noël (28 novembre 2025 – 4 janvier 2026)</h3>
-      <p>Plus de 200 chalets et nombreuses animations égayent la <strong>Grand-Place</strong> et ses alentours. Le marché de Noël de Bruxelles est l'un des plus beaux d'Europe, avec sa patinoire géante, sa grande roue et ses spectacles de lumière.</p>
+      <p>Plus de 200 chalets et nombreuses animations égayent la <strong>Grand-Place</strong> et ses alentours. Le <a href="https://www.plaisirsdhiver.be/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 font-semibold">marché de Noël de Bruxelles</a> est l'un des plus beaux d'Europe, avec sa patinoire géante, sa grande roue et ses spectacles de lumière.</p>
       <p><strong>Notre service LOCATIONAUTOCAR :</strong> Nous vous déposons au cœur de la fête et vous ramenons en toute sécurité, même tard le soir. Profitez du vin chaud et des spécialités belges sans vous soucier du retour !</p>
 
       <h3>Fifty Lab Music Festival (12-14 novembre 2025)</h3>
@@ -595,6 +595,8 @@ export const blogPosts: BlogPost[] = [
       <h2>L'engagement LOCATIONAUTOCAR : Votre satisfaction avant tout</h2>
 
       <p>Depuis 2007, LOCATIONAUTOCAR s'impose comme le référent du <strong>transport de groupe en Belgique</strong>. Notre mission : transformer chaque déplacement en expérience agréable et sans stress. Pour les événements d'automne et hiver 2025 à Bruxelles, faites confiance à notre expertise et notre passion du service.</p>
+
+      <p>Pour plus d'informations sur les événements culturels et festivités à Bruxelles, consultez le site officiel <a href="https://visit.brussels/fr" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 font-semibold">Visit Brussels</a> qui regroupe tous les événements de la capitale.</p>
 
       <div style="background-color: #1e40af; color: white; padding: 30px; border-radius: 10px; margin: 30px 0; text-align: center;">
         <h3 style="color: white; margin-bottom: 15px;">Contactez LOCATIONAUTOCAR dès aujourd'hui</h3>
