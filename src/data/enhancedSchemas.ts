@@ -6,6 +6,11 @@ export const organizationSchema = {
   "alternateName": ["Location Autocar", "Autocar Bruxelles"],
   "url": "https://www.locationautocar.be",
   "logo": "https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png",
+  "image": [
+    "https://ik.imagekit.io/by733ltn6/locationautocar/Location-Autocar-Bruxelles_Post_21.png?updatedAt=1750900578933",
+    "https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png",
+    "https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg"
+  ],
   "description": "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe.",
   "foundingDate": "2007",
   "address": {
@@ -103,6 +108,11 @@ export const localBusinessSchema = {
   "name": "Location Autocar Bruxelles",
   "url": "https://www.locationautocar.be",
   "logo": "https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png",
+  "image": [
+    "https://ik.imagekit.io/by733ltn6/locationautocar/Location-Autocar-Bruxelles_Post_21.png?updatedAt=1750900578933",
+    "https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png",
+    "https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg"
+  ],
   "description": "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe.",
   "address": {
     "@type": "PostalAddress",
