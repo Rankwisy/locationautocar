@@ -96,6 +96,22 @@ export const fleetFAQ = {
         "@type": "Answer",
         "text": "Nous attribuons le véhicule le mieux adapté à vos besoins (nombre de passagers, distance, type de voyage). Vous pouvez exprimer des préférences lors de la réservation, nous ferons notre possible pour les satisfaire selon disponibilité."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Vos véhicules sont-ils conformes à la Zone de Basses Émissions (LEZ) de Bruxelles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, 100% de notre flotte est conforme aux normes Euro 6 ou supérieures, garantissant un accès illimité à la Zone de Basses Émissions (LEZ) de Bruxelles. Vous pouvez circuler au centre-ville sans risque d'amende de 350€ ni de restriction, conformément aux réglementations 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que la norme Euro 6 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La norme Euro 6 est la norme d'émission européenne la plus stricte pour les véhicules diesel. Elle limite drastiquement les émissions de polluants. Depuis janvier 2025, seuls les véhicules Euro 6 peuvent circuler dans la LEZ de Bruxelles. Notre flotte entière répond à cette exigence."
+      }
     }
   ]
 };

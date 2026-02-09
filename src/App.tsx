@@ -9,6 +9,7 @@ import FleetPage from './pages/FleetPage';
 import FleetBusPage from './pages/FleetBusPage';
 import FleetMinibusPage from './pages/FleetMinibusPage';
 import FleetAutocarsPage from './pages/FleetAutocarsPage';
+import LEZBruxellesPage from './pages/LEZBruxellesPage';
 import DestinationsPage from './pages/DestinationsPage';
 import DestinationBruxellesPage from './pages/DestinationBruxellesPage';
 import DestinationBelgiquePage from './pages/DestinationBelgiquePage';
@@ -31,6 +32,7 @@ function App() {
               <Route path="notre-flotte/bus" element={<FleetBusPage />} />
               <Route path="notre-flotte/minibus" element={<FleetMinibusPage />} />
               <Route path="notre-flotte/autocars" element={<FleetAutocarsPage />} />
+              <Route path="lez-bruxelles" element={<LEZBruxellesPage />} />
               <Route path="destinations" element={<DestinationsPage />} />
               <Route path="destinations/bruxelles" element={<DestinationBruxellesPage />} />
               <Route path="destinations/belgique" element={<DestinationBelgiquePage />} />

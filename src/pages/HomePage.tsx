@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bus, Shield, Clock, Star, CheckCircle, ArrowRight, Users, MapPin, Calendar } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import EnvironmentalCompliance from '../components/EnvironmentalCompliance';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '../data/enhancedSchemas';
 
 const HomePage: React.FC = () => {
@@ -143,6 +144,14 @@ const HomePage: React.FC = () => {
           "@type": "Answer",
           "text": "Contactez-nous par téléphone au +32 2 580 03 25, par email à info@locationautocar.be ou via notre formulaire en ligne. Devis gratuit sous 24h."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Vos véhicules sont-ils conformes à la Zone de Basses Émissions (LEZ) de Bruxelles ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, 100% de notre flotte est conforme aux normes Euro 6 ou supérieures, garantissant un accès illimité à la Zone de Basses Émissions (LEZ) de Bruxelles. Vous pouvez circuler au centre-ville sans risque d'amende ni de restriction, conformément aux réglementations 2026."
+        }
       }
     ]
   };
@@ -152,8 +161,8 @@ const HomePage: React.FC = () => {
       <SEOHead
         title="Location Autocar Bruxelles - Bus Minibus avec Chauffeur"
         metaTitle="Location Autocar Bruxelles | Bus Minibus Chauffeur | Devis Gratuit"
-        description="Location autocar avec chauffeur Bruxelles depuis 2007. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7. Devis gratuit."
-        keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires"
+        description="Location autocar avec chauffeur Bruxelles depuis 2007. Flotte 100% conforme LEZ Euro 6. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7."
+        keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires, autocar euro 6, lez bruxelles, transport ecologique bruxelles, autocar acces centre-ville bruxelles, bus conforme zone basse emission"
         canonical="https://www.locationautocar.be/"
         schema={[organizationSchema, websiteSchema, localBusinessSchema]}
         faqSchema={faqSchema}
@@ -369,6 +378,13 @@ const HomePage: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Environmental Compliance LEZ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <EnvironmentalCompliance />
         </div>
       </section>
 

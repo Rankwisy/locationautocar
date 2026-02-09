@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import LEZBadge from '../components/LEZBadge';
 import { fleetFAQ } from '../data/faqData';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
 
@@ -18,8 +19,9 @@ const FleetPage: React.FC = () => {
       type: "Minibus",
       capacity: 16,
       year: 2023,
+      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Minibus Mercedes Sprinter luxe 16 places avec chauffeur professionnel climatisation WiFi sièges cuir",
+      imageAlt: "Minibus Mercedes Sprinter luxe 16 places Euro 6 conforme LEZ Bruxelles avec chauffeur professionnel climatisation WiFi sièges cuir",
       priceRange: "€€",
       features: [
         "Climatisation automatique",
@@ -39,8 +41,9 @@ const FleetPage: React.FC = () => {
       type: "Minibus",
       capacity: 12,
       year: 2022,
+      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Minibus Mercedes Sprinter 12 places économique transport groupe climatisation système audio",
+      imageAlt: "Minibus Mercedes Sprinter 12 places Euro 6 conforme LEZ économique transport groupe climatisation système audio",
       priceRange: "€",
       features: [
         "Climatisation",
@@ -60,8 +63,9 @@ const FleetPage: React.FC = () => {
       type: "Autocar",
       capacity: 55,
       year: 2023,
+      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Autocar grand tourisme 55 places premium toilettes WiFi kitchenette voyages longue distance Europe",
+      imageAlt: "Autocar grand tourisme 55 places Euro 6 LEZ Bruxelles premium toilettes WiFi kitchenette voyages longue distance Europe",
       priceRange: "€€€",
       features: [
         "Sièges inclinables cuir",
@@ -82,8 +86,9 @@ const FleetPage: React.FC = () => {
       type: "Bus",
       capacity: 35,
       year: 2022,
+      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Bus touristique 35 places confortable excursions climatisation vitres panoramiques soute bagages",
+      imageAlt: "Bus touristique 35 places Euro 6 conforme LEZ Bruxelles confortable excursions climatisation vitres panoramiques soute bagages",
       priceRange: "€€",
       features: [
         "Sièges ergonomiques",
@@ -103,8 +108,9 @@ const FleetPage: React.FC = () => {
       type: "Autocar",
       capacity: 49,
       year: 2021,
+      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Autocar 49 places grand tourisme voyages groupe Europe climatisation réfrigérateur multimédia",
+      imageAlt: "Autocar 49 places Euro 6 LEZ compliant grand tourisme voyages groupe Europe climatisation réfrigérateur multimédia",
       priceRange: "€€",
       features: [
         "Sièges inclinables",
@@ -124,8 +130,9 @@ const FleetPage: React.FC = () => {
       type: "Bus",
       capacity: 25,
       year: 2023,
+      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Bus écologique 25 places moteur Euro 6 plancher bas accessible PMR transport urbain",
+      imageAlt: "Bus écologique 25 places moteur Euro 6 conforme LEZ Bruxelles plancher bas accessible PMR transport urbain",
       priceRange: "€",
       features: [
         "Moteur Euro 6",
@@ -209,8 +216,8 @@ const FleetPage: React.FC = () => {
       <SEOHead
         title="Notre Flotte - Location Autocar Bruxelles"
         metaTitle="Flotte Autocar Bus Minibus Bruxelles | Chauffeur | Devis Gratuit"
-        description="Flotte moderne autocar bus minibus avec chauffeur Bruxelles. Véhicules récents climatisés WiFi pour transferts excursions Europe. Réservation 24/7."
-        keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique"
+        description="Flotte moderne autocar bus minibus Euro 6 conforme LEZ Bruxelles avec chauffeur. Véhicules récents climatisés WiFi pour transferts excursions Europe. Accès centre-ville garanti. Réservation 24/7."
+        keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique, autocar euro 6, lez bruxelles, transport ecologique, autocar acces centre-ville bruxelles, bus conforme zone basse emission"
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
         faqSchema={fleetFAQ}
@@ -371,6 +378,10 @@ const FleetPage: React.FC = () => {
                     </div>
                   </div>
 
+                  <div className="mb-4">
+                    <LEZBadge standard={vehicle.euroStandard} variant="compact" />
+                  </div>
+
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                     {vehicle.description}
                   </p>
@@ -414,26 +425,30 @@ const FleetPage: React.FC = () => {
           </div>
 
           {/* Fleet Statistics */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white mb-16">
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">
               Notre Flotte en Chiffres
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">25+</div>
-                <div className="text-blue-100">Véhicules</div>
+                <div className="text-green-100">Véhicules</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">2023</div>
-                <div className="text-blue-100">Année moyenne</div>
+                <div className="text-green-100">Année moyenne</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-blue-100">Avec chauffeur</div>
+                <div className="text-green-100">Euro 6+ LEZ</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2">100%</div>
+                <div className="text-green-100">Avec chauffeur</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">24/7</div>
-                <div className="text-blue-100">Service disponible</div>
+                <div className="text-green-100">Service disponible</div>
               </div>
             </div>
           </div>
