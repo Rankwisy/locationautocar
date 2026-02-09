@@ -1,12 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle, Plane, Building, Camera } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { serviceSchemas } from '../data/enhancedSchemas';
 
 const ServicesPage: React.FC = () => {
+  const { category } = useParams<{ category?: string }>();
+
   const services = [
     {
+      id: 'transferts-aeroports',
       icon: Plane,
       title: "Transferts Aéroports & Gares",
       description: "Service de navette professionnel entre aéroports, gares et votre destination",
@@ -17,9 +20,12 @@ const ServicesPage: React.FC = () => {
         "Transferts hôtels",
         "Service 24/7"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-aeroport-bruxelles-scaled.jpeg?updatedAt=1750900457571&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-aeroport-bruxelles-scaled.jpeg?updatedAt=1750900457571&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
+      seoTitle: "Transferts Aéroports Bruxelles",
+      seoDescription: "Service de navette professionnelle depuis l'aéroport de Bruxelles-National et Charleroi vers toutes destinations en Belgique."
     },
     {
+      id: 'excursions-tourisme',
       icon: Camera,
       title: "Excursions & Tourisme",
       description: "Découvrez Bruxelles, la Belgique et l'Europe avec nos circuits organisés",
@@ -30,9 +36,12 @@ const ServicesPage: React.FC = () => {
         "Circuits en Belgique",
         "Voyages en Europe"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
+      seoTitle: "Excursions Touristiques Bruxelles",
+      seoDescription: "Circuits touristiques organisés à Bruxelles, en Belgique et en Europe avec autocar et chauffeur professionnel."
     },
     {
+      id: 'voyages-affaires',
       icon: Building,
       title: "Voyages d'Affaires",
       description: "Transport de groupes pour événements professionnels et séminaires",
@@ -43,9 +52,12 @@ const ServicesPage: React.FC = () => {
         "Transferts VIP",
         "Service personnalisé"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
+      seoTitle: "Voyages d'Affaires Bruxelles",
+      seoDescription: "Transport en autocar pour séminaires, conférences et événements d'entreprise en Belgique et en Europe."
     },
     {
+      id: 'mise-a-disposition',
       icon: Clock,
       title: "Mise à Disposition",
       description: "Location d'autocar avec chauffeur selon vos besoins spécifiques",
@@ -56,9 +68,21 @@ const ServicesPage: React.FC = () => {
         "Chauffeur expérimenté",
         "Tarification transparente"
       ],
-      image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85"
+      image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
+      seoTitle: "Mise à Disposition Autocar Bruxelles",
+      seoDescription: "Location d'autocar avec chauffeur à l'heure pour vos déplacements personnalisés en Belgique et Europe."
     }
   ];
+
+  const activeService = category ? services.find(s => s.id === category) : null;
+  const displayedServices = activeService ? [activeService] : services;
+  const relatedServices = activeService ? services.filter(s => s.id !== category) : [];
+
+  useEffect(() => {
+    if (category) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [category]);
 
   const tripTypes = [
     {
@@ -127,30 +151,64 @@ const ServicesPage: React.FC = () => {
     ]
   };
 
+  const pageTitle = activeService
+    ? `${activeService.seoTitle} - Location Autocar Bruxelles`
+    : "Nos Services - Location Autocar Bruxelles";
+
+  const pageMetaTitle = activeService
+    ? `${activeService.seoTitle} | Chauffeur Professionnel Belgique`
+    : "Services Transport Autocar Bruxelles | Transferts Excursions | Chauffeur Professionnel";
+
+  const pageDescription = activeService
+    ? activeService.seoDescription
+    : "Services complets de transport en autocar avec chauffeur à Bruxelles : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition en Belgique.";
+
+  const pageCanonical = activeService
+    ? `https://www.locationautocar.be/nos-services/${category}`
+    : "https://www.locationautocar.be/nos-services";
+
   return (
     <>
       <SEOHead
-        title="Nos Services - Location Autocar Bruxelles"
-        metaTitle="Services Transport Autocar Bruxelles | Transferts Excursions | Chauffeur Professionnel"
-        description="Services complets de transport en autocar avec chauffeur à Bruxelles : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition en Belgique."
+        title={pageTitle}
+        metaTitle={pageMetaTitle}
+        description={pageDescription}
         keywords="services transport autocar bruxelles, transferts aeroports bruxelles, excursions touristiques bruxelles, voyages affaires belgique, chauffeur professionnel bruxelles"
-        canonical="https://www.locationautocar.be/nos-services"
+        canonical={pageCanonical}
         schema={servicesSchema}
       />
 
       <div className="py-12">
         <div className="container mx-auto px-4">
+          {/* Breadcrumb for category pages */}
+          {activeService && (
+            <nav className="mb-6">
+              <ol className="flex items-center space-x-2 text-sm text-gray-600">
+                <li><Link to="/" className="hover:text-blue-600">Accueil</Link></li>
+                <li>/</li>
+                <li><Link to="/nos-services" className="hover:text-blue-600">Services</Link></li>
+                <li>/</li>
+                <li className="text-gray-900 font-semibold">{activeService.title}</li>
+              </ol>
+            </nav>
+          )}
+
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Nos Services de Transport
+              {activeService ? activeService.title : "Nos Services de Transport"}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur 
-              pour particuliers et entreprises en Belgique et en Europe. Notre{' '}
-              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>{' '}
-              dessert toutes nos{' '}
-              <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
+              {activeService
+                ? activeService.description
+                : <>
+                    Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur
+                    pour particuliers et entreprises en Belgique et en Europe. Notre{' '}
+                    <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>{' '}
+                    dessert toutes nos{' '}
+                    <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
+                  </>
+              }
             </p>
           </div>
 
@@ -176,11 +234,11 @@ const ServicesPage: React.FC = () => {
 
           {/* Main Services */}
           <div className="space-y-16">
-            {services.map((service, index) => (
+            {displayedServices.map((service, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center`}>
                 <div className="lg:w-1/2">
-                  <img 
-                    src={service.image} 
+                  <img
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
                     loading="lazy"
@@ -193,9 +251,9 @@ const ServicesPage: React.FC = () => {
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
                     <service.icon className="w-8 h-8 text-blue-600" aria-hidden="true" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
                     {service.title}
-                  </h3>
+                  </h2>
                   <p className="text-lg text-gray-600 mb-6">
                     {service.description}
                   </p>
@@ -218,6 +276,49 @@ const ServicesPage: React.FC = () => {
               </div>
             ))}
           </div>
+
+          {/* Related Services (shown on category pages) */}
+          {activeService && relatedServices.length > 0 && (
+            <div className="mt-20">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Découvrez nos autres services
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {relatedServices.map((service) => (
+                  <Link
+                    key={service.id}
+                    to={`/nos-services/${service.id}`}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
+                  >
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="300"
+                    />
+                    <div className="p-6">
+                      <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <service.icon className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {service.description}
+                      </p>
+                      <span className="text-blue-600 font-semibold inline-flex items-center gap-2">
+                        En savoir plus
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Destinations */}
           <div className="mt-16 bg-gray-50 rounded-2xl p-8">

@@ -22,6 +22,30 @@ const pages = [
     priority: '0.9'
   },
   {
+    url: '/nos-services/transferts-aeroports',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  },
+  {
+    url: '/nos-services/excursions-tourisme',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  },
+  {
+    url: '/nos-services/voyages-affaires',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  },
+  {
+    url: '/nos-services/mise-a-disposition',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  },
+  {
     url: '/notre-flotte',
     lastmod: currentDate,
     changefreq: 'monthly',
