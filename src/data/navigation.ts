@@ -21,7 +21,8 @@ export const mainNavigation: NavigationItem[] = [
     children: [
       { label: "Autocars", url: "/notre-flotte/autocars" },
       { label: "Minibus", url: "/notre-flotte/minibus" },
-      { label: "Bus", url: "/notre-flotte/bus" }
+      { label: "Bus", url: "/notre-flotte/bus" },
+      { label: "Conformité LEZ", url: "/lez-bruxelles" }
     ]
   },
   {

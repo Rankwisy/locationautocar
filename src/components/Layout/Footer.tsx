@@ -76,6 +76,11 @@ const Footer: React.FC = () => {
                   Autocars (40-55 places)
                 </Link>
               </li>
+              <li>
+                <Link to="/lez-bruxelles" className="text-green-400 hover:text-green-300 font-semibold">
+                  Conformité LEZ Bruxelles
+                </Link>
+              </li>
             </ul>
           </div>
 

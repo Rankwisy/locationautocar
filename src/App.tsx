@@ -17,6 +17,8 @@ import DestinationEuropePage from './pages/DestinationEuropePage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
+import MentionsLegalesPage from './pages/MentionsLegalesPage';
+import PolitiqueConfidentialitePage from './pages/PolitiqueConfidentialitePage';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
               <Route path="blog" element={<BlogPage />} />
               <Route path="blog/:slug" element={<BlogPostPage />} />
               <Route path="contactez-nous" element={<ContactPage />} />
+              <Route path="mentions-legales" element={<MentionsLegalesPage />} />
+              <Route path="politique-confidentialite" element={<PolitiqueConfidentialitePage />} />
               {/* Catch-all route - redirects any unmatched URLs to homepage */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>

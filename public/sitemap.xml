@@ -3,138 +3,115 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.locationautocar.be/</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/nos-services</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/nos-services"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/nos-services"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/nos-services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/nos-services"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/notre-flotte</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/notre-flotte"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/notre-flotte"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/notre-flotte"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/notre-flotte"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/destinations</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/destinations"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/destinations"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/destinations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/destinations"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/contactez-nous</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/contactez-nous"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/contactez-nous"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/contactez-nous"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/contactez-nous"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/lez-bruxelles</loc>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/lez-bruxelles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/lez-bruxelles"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/notre-flotte/minibus</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/notre-flotte/minibus"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/notre-flotte/minibus"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/notre-flotte/minibus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/notre-flotte/minibus"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/notre-flotte/bus</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/notre-flotte/bus"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/notre-flotte/bus"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/notre-flotte/bus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/notre-flotte/bus"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/notre-flotte/autocars</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/notre-flotte/autocars"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/notre-flotte/autocars"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/notre-flotte/autocars"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/notre-flotte/autocars"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/destinations/bruxelles</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/destinations/bruxelles"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/destinations/bruxelles"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/destinations/bruxelles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/destinations/bruxelles"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/destinations/belgique</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/destinations/belgique"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/destinations/belgique"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/destinations/belgique"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/destinations/belgique"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/destinations/europe</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/destinations/europe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/destinations/europe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/destinations/europe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/destinations/europe"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/blog</loc>
-    <lastmod>2026-01-26T01:18:19.900Z</lastmod>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog"/>
   </url>
   <url>
-    <loc>https://www.locationautocar.be/blog/eiffel-tower-sunset-magic</loc>
-    <lastmod>2024-01-20T10:00:00+00:00</lastmod>
+    <loc>https://www.locationautocar.be/blog/lez-bruxelles-2026-guide-complet-normes-euro-6</loc>
+    <lastmod>2026-02-01T09:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/eiffel-tower-sunset-magic"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/blog/eiffel-tower-sunset-magic"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/blog/eiffel-tower-sunset-magic"/>
-  </url>
-  <url>
-    <loc>https://www.locationautocar.be/blog/amsterdam-canaux-velo</loc>
-    <lastmod>2024-01-30T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/amsterdam-canaux-velo"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/blog/amsterdam-canaux-velo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/blog/amsterdam-canaux-velo"/>
-  </url>
-  <url>
-    <loc>https://www.locationautocar.be/blog/bruxelles-coeur-europe</loc>
-    <lastmod>2024-01-25T09:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/bruxelles-coeur-europe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/blog/bruxelles-coeur-europe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/blog/bruxelles-coeur-europe"/>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/lez-bruxelles-2026-guide-complet-normes-euro-6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog/lez-bruxelles-2026-guide-complet-normes-euro-6"/>
   </url>
   <url>
     <loc>https://www.locationautocar.be/blog/location-autocar-avec-chauffeur-bruxelles-prix</loc>
@@ -142,7 +119,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/location-autocar-avec-chauffeur-bruxelles-prix"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.locationautocar.be/nl/blog/location-autocar-avec-chauffeur-bruxelles-prix"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.locationautocar.be/en/blog/location-autocar-avec-chauffeur-bruxelles-prix"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog/location-autocar-avec-chauffeur-bruxelles-prix"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/blog/bruxelles-coeur-europe</loc>
+    <lastmod>2024-01-25T09:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/bruxelles-coeur-europe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog/bruxelles-coeur-europe"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/blog/amsterdam-canaux-velo</loc>
+    <lastmod>2024-01-30T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/amsterdam-canaux-velo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog/amsterdam-canaux-velo"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/blog/eiffel-tower-sunset-magic</loc>
+    <lastmod>2024-01-20T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/eiffel-tower-sunset-magic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog/eiffel-tower-sunset-magic"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/mentions-legales</loc>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/mentions-legales"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/politique-confidentialite</loc>
+    <lastmod>2026-02-09T11:59:25.727Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/politique-confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/politique-confidentialite"/>
   </url>
 </urlset>

@@ -4,13 +4,6 @@ import path from 'path';
 const baseUrl = 'https://www.locationautocar.be';
 const currentDate = new Date().toISOString();
 
-// Supported languages
-const languages = [
-  { code: 'fr', prefix: '' },
-  { code: 'nl', prefix: '/nl' },
-  { code: 'en', prefix: '/en' }
-];
-
 // Define all live pages with their configurations
 const pages = [
   // Homepage - Highest priority
@@ -42,6 +35,14 @@ const pages = [
   },
   {
     url: '/contactez-nous',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  },
+
+  // LEZ Compliance page - Important regulatory content
+  {
+    url: '/lez-bruxelles',
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: '0.8'
@@ -97,14 +98,14 @@ const pages = [
 
   // Blog posts - Content marketing
   {
-    url: '/blog/eiffel-tower-sunset-magic',
-    lastmod: '2024-01-20T10:00:00+00:00',
+    url: '/blog/lez-bruxelles-2026-guide-complet-normes-euro-6',
+    lastmod: '2026-02-01T09:00:00+00:00',
     changefreq: 'monthly',
-    priority: '0.6'
+    priority: '0.7'
   },
   {
-    url: '/blog/amsterdam-canaux-velo',
-    lastmod: '2024-01-30T10:00:00+00:00',
+    url: '/blog/location-autocar-avec-chauffeur-bruxelles-prix',
+    lastmod: '2025-01-28T10:00:00+00:00',
     changefreq: 'monthly',
     priority: '0.6'
   },
@@ -115,22 +116,40 @@ const pages = [
     priority: '0.6'
   },
   {
-    url: '/blog/location-autocar-avec-chauffeur-bruxelles-prix',
-    lastmod: '2025-01-28T10:00:00+00:00',
+    url: '/blog/amsterdam-canaux-velo',
+    lastmod: '2024-01-30T10:00:00+00:00',
     changefreq: 'monthly',
     priority: '0.6'
+  },
+  {
+    url: '/blog/eiffel-tower-sunset-magic',
+    lastmod: '2024-01-20T10:00:00+00:00',
+    changefreq: 'monthly',
+    priority: '0.6'
+  },
+
+  // Legal pages
+  {
+    url: '/mentions-legales',
+    lastmod: currentDate,
+    changefreq: 'yearly',
+    priority: '0.3'
+  },
+  {
+    url: '/politique-confidentialite',
+    lastmod: currentDate,
+    changefreq: 'yearly',
+    priority: '0.3'
   }
 ];
 
 function generateHreflangLinks(url) {
-  return languages.map(lang => {
-    const langUrl = `${baseUrl}${lang.prefix}${url}`;
-    return `\n    <xhtml:link rel="alternate" hreflang="${lang.code}" href="${langUrl}"/>`;
-  }).join('');
+  const fullUrl = `${baseUrl}${url}`;
+  return `\n    <xhtml:link rel="alternate" hreflang="fr" href="${fullUrl}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${fullUrl}"/>`;
 }
 
 function generateSitemap() {
-  console.log('🚀 Generating comprehensive multilingual XML sitemap...');
+  console.log('🚀 Generating comprehensive XML sitemap...');
 
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -163,7 +182,7 @@ function generateSitemap() {
   console.log('✅ Sitemap generated successfully!');
   console.log(`📍 Location: ${sitemapPath}`);
   console.log(`📊 Total URLs: ${pages.length}`);
-  console.log(`🌍 Languages: ${languages.map(l => l.code).join(', ')}`);
+  console.log(`🌍 Language: fr (with x-default fallback)`);
 
   return sitemap;
 }
