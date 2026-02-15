@@ -18,7 +18,7 @@ const MentionsLegalesPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Mentions Légales
+              Mentions Légales - Location Autocar Bruxelles
             </h1>
 
             <div className="prose prose-lg max-w-none">

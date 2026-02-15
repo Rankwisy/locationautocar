@@ -39,14 +39,19 @@ const BlogPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Notre Blog
+              Blog Location Autocar Bruxelles
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
               Découvrez nos guides de voyage, conseils pratiques et actualités sur le transport en autocar. 
               Inspirez-vous pour vos prochaines aventures ! Explorez notre{' '}
               <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>{' '}
               et découvrez toutes nos{' '}
               <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
+            </p>
+            <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Location Autocar Bruxelles partage ici son expertise sur les transferts aéroports, les excursions 
+              à Bruxelles et en Europe, la conformité LEZ et l'organisation de voyages en groupe. Chaque article 
+              vise à vous aider à préparer votre prochain déplacement en autocar ou minibus avec chauffeur.
             </p>
           </div>
 

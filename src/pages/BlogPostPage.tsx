@@ -10,22 +10,38 @@ const BlogPostPage: React.FC = () => {
   // Get blog post data based on slug
   const blogPost = slug ? getBlogPostBySlug(slug) : null;
 
-  // If no blog post found, show 404
+  // If no blog post found, show 404 with clear exit links and enough content for SEO (50+ words)
   if (!blogPost) {
     return (
       <div className="py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Article non trouvé</h1>
-          <p className="text-xl text-gray-600 mb-8">
-            L'article que vous recherchez n'existe pas ou a été déplacé.
-          </p>
-          <Link
-            to="/blog"
-            className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" aria-hidden="true" />
-            Retour au blog
-          </Link>
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Article non trouvé | Blog Bruxelles</h1>
+            <p className="text-xl text-gray-600 mb-4">
+              L'article que vous recherchez n'existe pas ou a été déplacé.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-8">
+              Le blog de Location Autocar Bruxelles propose des guides voyage, conseils pratiques et actualités 
+              sur le transport en autocar avec chauffeur à Bruxelles et en Europe. Découvrez nos articles sur 
+              les excursions, la LEZ bruxelloise, nos destinations et notre flotte pour préparer vos prochains 
+              déplacements de groupe. Consultez la liste de nos articles ci-dessous ou revenez à l'accueil.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/blog"
+                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
+                <ArrowLeft className="w-5 h-5 mr-2" aria-hidden="true" />
+                Retour au blog
+              </Link>
+              <Link
+                to="/"
+                className="inline-flex items-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+              >
+                Accueil
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );

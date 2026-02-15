@@ -173,7 +173,7 @@ const FleetAutocarsPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Location Autocar Grand Tourisme
+              Location Autocar Grand Tourisme à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez notre flotte d'<strong>autocars grand tourisme de 40 à 55 places</strong> avec chauffeur professionnel. 

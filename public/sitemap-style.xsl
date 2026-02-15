@@ -5,7 +5,7 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title>Sitemap - Location Autocar Bruxelles</title>
+        <title>Sitemap - Location Autocar à Bruxelles</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
           body {
@@ -99,7 +99,7 @@
       </head>
       <body>
         <div class="header">
-          <h1>Sitemap - Location Autocar Bruxelles</h1>
+          <h1>Sitemap - Location Autocar à Bruxelles</h1>
           <p>Plan du site pour les moteurs de recherche et les visiteurs</p>
         </div>
         

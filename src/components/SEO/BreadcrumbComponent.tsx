@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
+import { ROUTES } from '../../data/canonicalRoutes';
 
 interface BreadcrumbItem {
   name: string;
@@ -21,7 +22,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbComponentProps> = ({
       <ol className="flex items-center space-x-2 text-gray-500">
         <li>
           <Link 
-            to="/" 
+            to={ROUTES.HOME} 
             className="flex items-center hover:text-blue-600 transition-colors duration-200"
             title="Retour à l'accueil"
           >

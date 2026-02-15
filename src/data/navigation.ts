@@ -1,45 +1,46 @@
 import { NavigationItem } from '../types/content';
+import { ROUTES } from './canonicalRoutes';
 
 export const mainNavigation: NavigationItem[] = [
   {
     label: "Accueil",
-    url: "/"
+    url: ROUTES.HOME
   },
   {
     label: "Nos Services",
-    url: "/nos-services",
+    url: ROUTES.SERVICES,
     children: [
-      { label: "Transferts Aéroports", url: "/nos-services/transferts-aeroports" },
-      { label: "Excursions & Tourisme", url: "/nos-services/excursions-tourisme" },
-      { label: "Voyages d'Affaires", url: "/nos-services/voyages-affaires" },
-      { label: "Mise à Disposition", url: "/nos-services/mise-a-disposition" }
+      { label: "Transferts Aéroports", url: ROUTES.SERVICE_TRANSFERTS },
+      { label: "Excursions & Tourisme", url: ROUTES.SERVICE_EXCURSIONS },
+      { label: "Voyages d'Affaires", url: ROUTES.SERVICE_VOYAGES_AFFAIRES },
+      { label: "Mise à Disposition", url: ROUTES.SERVICE_MISE_A_DISPOSITION }
     ]
   },
   {
     label: "Notre Flotte",
-    url: "/notre-flotte",
+    url: ROUTES.FLOTTE,
     children: [
-      { label: "Autocars", url: "/notre-flotte/autocars" },
-      { label: "Minibus", url: "/notre-flotte/minibus" },
-      { label: "Bus", url: "/notre-flotte/bus" },
-      { label: "Conformité LEZ", url: "/lez-bruxelles" }
+      { label: "Autocars", url: ROUTES.FLOTTE_AUTOCARS },
+      { label: "Minibus", url: ROUTES.FLOTTE_MINIBUS },
+      { label: "Bus", url: ROUTES.FLOTTE_BUS },
+      { label: "Conformité LEZ", url: ROUTES.LEZ }
     ]
   },
   {
     label: "Destinations",
-    url: "/destinations",
+    url: ROUTES.DESTINATIONS,
     children: [
-      { label: "Bruxelles & Région", url: "/destinations/bruxelles" },
-      { label: "Belgique", url: "/destinations/belgique" },
-      { label: "Europe", url: "/destinations/europe" }
+      { label: "Bruxelles & Région", url: ROUTES.DESTINATION_BRUXELLES },
+      { label: "Belgique", url: ROUTES.DESTINATION_BELGIQUE },
+      { label: "Europe", url: ROUTES.DESTINATION_EUROPE }
     ]
   },
   {
     label: "Blog",
-    url: "/blog"
+    url: ROUTES.BLOG
   },
   {
     label: "Contactez Nous",
-    url: "/contactez-nous"
+    url: ROUTES.CONTACT
   }
 ];

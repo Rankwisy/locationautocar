@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight, Home } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import EnhancedContactForm from '../components/Forms/EnhancedContactForm';
 import { contactSchema } from '../data/enhancedSchemas';
+import { ROUTES } from '../data/canonicalRoutes';
 
 const ContactPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  useEffect(() => {
+    if (searchParams.get('success') === 'true') {
+      setShowSuccessMessage(true);
+      setTimeout(() => setShowSuccessMessage(false), 10000);
+    }
+  }, [searchParams]);
 
   const handleSubmissionSuccess = () => {
     setShowSuccessMessage(true);
-    // Hide success message after 5 seconds
-    setTimeout(() => setShowSuccessMessage(false), 5000);
+    setTimeout(() => setShowSuccessMessage(false), 10000);
   };
 
   const handleSubmissionError = (error: string) => {
@@ -55,7 +63,7 @@ const ContactPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Contactez Nous
+              Contactez-nous à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Demandez votre devis gratuit pour nos services de transport en autocar avec chauffeur. 
@@ -70,8 +78,8 @@ const ContactPage: React.FC = () => {
           {showSuccessMessage && (
             <div className="mb-8 max-w-4xl mx-auto">
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-500" />
+                <div className="flex items-center gap-3 mb-4">
+                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-green-800">
                       Demande envoyée avec succès !
@@ -80,6 +88,28 @@ const ContactPage: React.FC = () => {
                       Nous vous contacterons dans les plus brefs délais pour établir votre devis personnalisé.
                     </p>
                   </div>
+                </div>
+                <p className="text-sm text-green-700 mb-3">Continuez à explorer :</p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    to={ROUTES.HOME}
+                    className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition-colors text-sm font-medium"
+                  >
+                    <Home className="w-4 h-4" />
+                    Accueil
+                  </Link>
+                  <Link
+                    to={ROUTES.SERVICES}
+                    className="inline-flex items-center gap-2 border border-green-700 text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
+                  >
+                    Nos services
+                  </Link>
+                  <Link
+                    to={ROUTES.FLOTTE}
+                    className="inline-flex items-center gap-2 border border-green-700 text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
+                  >
+                    Notre flotte
+                  </Link>
                 </div>
               </div>
             </div>

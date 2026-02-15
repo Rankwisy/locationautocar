@@ -164,7 +164,7 @@ const FleetMinibusPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Location Minibus avec Chauffeur
+              Location Minibus avec Chauffeur à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez notre flotte de <strong>minibus Mercedes de 8 à 16 places</strong> avec chauffeur professionnel. 

@@ -164,7 +164,7 @@ const FleetBusPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Location Bus avec Chauffeur
+              Location Bus avec Chauffeur à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez notre flotte de <strong>bus modernes de 20 à 35 places</strong> avec chauffeur professionnel. 

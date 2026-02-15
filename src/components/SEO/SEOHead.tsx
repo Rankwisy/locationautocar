@@ -50,7 +50,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:site_name" content="Location Autocar Bruxelles" />
+      <meta property="og:site_name" content="Location Autocar à Bruxelles" />
       <meta property="og:locale" content="fr_BE" />
 
       {/* Twitter Card */}

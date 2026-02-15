@@ -23,7 +23,7 @@ const PolitiqueConfidentialitePage: React.FC = () => {
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-                  Politique de Confidentialité
+                  Politique de Confidentialité - Location Autocar Bruxelles
                 </h1>
                 <p className="text-gray-600 mt-2">Dernière mise à jour : Février 2026</p>
               </div>

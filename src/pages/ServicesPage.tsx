@@ -75,6 +75,7 @@ const ServicesPage: React.FC = () => {
   ];
 
   const activeService = category ? services.find(s => s.id === category) : null;
+  const invalidCategory = category && !activeService;
   const displayedServices = activeService ? [activeService] : services;
   const relatedServices = activeService ? services.filter(s => s.id !== category) : [];
 
@@ -180,23 +181,37 @@ const ServicesPage: React.FC = () => {
 
       <div className="py-12">
         <div className="container mx-auto px-4">
-          {/* Breadcrumb for category pages */}
-          {activeService && (
-            <nav className="mb-6">
-              <ol className="flex items-center space-x-2 text-sm text-gray-600">
+          {/* Breadcrumb for category pages or invalid category (no dead end) */}
+          {(activeService || invalidCategory) && (
+            <nav className="mb-6" aria-label="Fil d'Ariane">
+              <ol className="flex flex-wrap items-center gap-x-2 text-sm text-gray-600">
                 <li><Link to="/" className="hover:text-blue-600">Accueil</Link></li>
                 <li>/</li>
                 <li><Link to="/nos-services" className="hover:text-blue-600">Services</Link></li>
-                <li>/</li>
-                <li className="text-gray-900 font-semibold">{activeService.title}</li>
+                {activeService && (
+                  <>
+                    <li>/</li>
+                    <li className="text-gray-900 font-semibold">{activeService.title}</li>
+                  </>
+                )}
               </ol>
             </nav>
+          )}
+          {invalidCategory && (
+            <div className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+              <p className="text-amber-800">
+                Cette catégorie n'existe pas. Voici l'ensemble de nos services ci-dessous.
+              </p>
+              <Link to="/nos-services" className="text-amber-700 font-semibold hover:underline mt-2 inline-block">
+                Voir la page Nos services →
+              </Link>
+            </div>
           )}
 
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              {activeService ? activeService.title : "Nos Services de Transport"}
+              {activeService ? activeService.seoTitle : "Nos Services de Transport à Bruxelles"}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {activeService

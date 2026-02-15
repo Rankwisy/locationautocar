@@ -154,7 +154,7 @@ const DestinationEuropePage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Voyages en Europe
+              Voyages en Europe au départ de Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explorez l'<strong>Europe en autocar grand tourisme</strong> avec nos circuits organisés. 

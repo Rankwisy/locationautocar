@@ -155,7 +155,7 @@ const DestinationBelgiquePage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Circuits en Belgique
+              Circuits en Belgique au départ de Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explorez les <strong>trésors de la Belgique</strong> avec nos circuits en autocar. 

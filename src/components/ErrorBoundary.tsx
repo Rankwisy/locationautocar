@@ -50,10 +50,6 @@ class ErrorBoundary extends Component<Props, State> {
     window.location.reload();
   };
 
-  private handleGoHome = () => {
-    window.location.href = '/';
-  };
-
   public render() {
     if (this.state.hasError) {
       return (
@@ -77,13 +73,12 @@ class ErrorBoundary extends Component<Props, State> {
                 <RefreshCw className="w-5 h-5" />
                 Recharger la page
               </button>
-              
-              <button
-                onClick={this.handleGoHome}
-                className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+              <a
+                href="/"
+                className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2 no-underline"
               >
                 Retour à l'accueil
-              </button>
+              </a>
             </div>
 
             <div className="border-t border-gray-200 pt-6">
