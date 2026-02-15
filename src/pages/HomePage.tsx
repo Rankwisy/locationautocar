@@ -220,19 +220,21 @@ const HomePage: React.FC = () => {
           <div className="max-w-5xl mx-auto">
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
-              Location d'Autocar à Bruxelles – Service Professionnel avec Chauffeur
+              Location d'Autocar à Bruxelles avec Chauffeur – Devis Rapide
             </h1>
             
             {/* Subtitle */}
             <p className="text-xl sm:text-2xl md:text-3xl mb-4 text-blue-100 font-medium">
-              Bus et Minibus avec chauffeur depuis 2007
+              Bus et minibus pour groupes, entreprises et écoles depuis 2007.
             </p>
             
-            {/* Services Description */}
-            <p className="text-base sm:text-lg md:text-xl mb-8 text-blue-200 max-w-4xl mx-auto leading-relaxed">
+            {/* Services line */}
+            <p className="text-base sm:text-lg md:text-xl mb-2 text-blue-200 max-w-4xl mx-auto leading-relaxed">
               Transferts • Excursions • Voyages d'affaires • Mise à disposition
-              <br className="hidden sm:block" />
-              Service professionnel en Belgique et en Europe
+            </p>
+            {/* Trust / coverage line */}
+            <p className="text-base sm:text-lg text-blue-200/90 max-w-4xl mx-auto mb-8">
+              Départs de Bruxelles vers toute la Belgique et l'Europe.
             </p>
             
             {/* Call-to-Action Buttons */}
