@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle, Plane, Building, Camera } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import InternalLink from '../components/SEO/InternalLink';
 import { serviceSchemas } from '../data/enhancedSchemas';
+import { semanticKeywords } from '../data/seoData';
+import { priceFaq, servicesFAQ } from '../data/faqData';
 
 const ServicesPage: React.FC = () => {
   const { category } = useParams<{ category?: string }>();
@@ -174,9 +177,10 @@ const ServicesPage: React.FC = () => {
         title={pageTitle}
         metaTitle={pageMetaTitle}
         description={pageDescription}
-        keywords="services transport autocar bruxelles, transferts aeroports bruxelles, excursions touristiques bruxelles, voyages affaires belgique, chauffeur professionnel bruxelles"
+        keywords={semanticKeywords.services.join(', ')}
         canonical={pageCanonical}
         schema={servicesSchema}
+        faqSchema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [...(servicesFAQ.mainEntity as object[]), ...(priceFaq.mainEntity as object[])] }}
       />
 
       <div className="py-12">
@@ -219,9 +223,9 @@ const ServicesPage: React.FC = () => {
                 : <>
                     Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur
                     pour particuliers et entreprises en Belgique et en Europe. Notre{' '}
-                    <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte moderne</Link>{' '}
+                    <InternalLink to="/notre-flotte" anchor="Notre flotte autocars" />{' '}
                     dessert toutes nos{' '}
-                    <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
+                    <InternalLink to="/destinations" anchor="Destinations depuis Bruxelles" />.
                   </>
               }
             </p>

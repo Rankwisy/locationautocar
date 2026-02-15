@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import InternalLink from '../components/SEO/InternalLink';
 import { destinationSchemas } from '../data/enhancedSchemas';
+import { semanticKeywords, bruxellesHyperlocal } from '../data/seoData';
 
 const DestinationBruxellesPage: React.FC = () => {
   const attractions = [
@@ -106,7 +108,7 @@ const DestinationBruxellesPage: React.FC = () => {
         title="Excursions Bruxelles avec Chauffeur | Atomium, Grand-Place | Devis Gratuit"
         metaTitle="Excursions Bruxelles Autocar | Grand-Place Atomium | Guide Francophone"
         description="Découvrez Bruxelles avec nos excursions guidées en autocar : Grand-Place UNESCO, Atomium, quartier européen. Transport avec chauffeur professionnel. Réservez maintenant."
-        keywords="excursions bruxelles, visite guidée bruxelles, grand-place atomium, autocar bruxelles, guide francophone"
+        keywords={semanticKeywords.bruxelles.join(', ')}
         canonical="https://www.locationautocar.be/destinations/bruxelles"
         schema={destinationSchemas.bruxelles}
       />
@@ -132,9 +134,9 @@ const DestinationBruxellesPage: React.FC = () => {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez la <strong>capitale de l'Europe</strong> avec nos excursions guidées en autocar. 
               De la Grand-Place UNESCO au quartier européen, explorez Bruxelles avec nos{' '}
-              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">guides expérimentés</Link>{' '}
+              <InternalLink to="/nos-services/excursions-tourisme" anchor="Excursions touristiques Bruxelles" />{' '}
               et notre{' '}
-              <Link to="/notre-flotte/bus" className="text-blue-600 hover:text-blue-700 font-semibold">transport confortable</Link>.
+              <InternalLink to="/notre-flotte/bus" anchor="Location bus groupe excursion" />.
             </p>
           </div>
 
@@ -232,6 +234,28 @@ const DestinationBruxellesPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Zones hyperlocales Bruxelles */}
+          <div className="mb-16 bg-white border border-gray-200 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Zones desservies à Bruxelles et en Région
+            </h2>
+            <p className="text-gray-600 text-center mb-6 max-w-2xl mx-auto">
+              Prise en charge et dépôt dans toutes les communes de la Région bruxelloise : centre-ville (1000 Bruxelles), 
+              quartier européen (Etterbeek, Schuman), Atomium (Laeken), ainsi que les 19 communes.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
+              {bruxellesHyperlocal.quartiersStrategiques.slice(0, 7).map((zone, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 px-3 py-2 rounded-lg">
+                  <MapPin className="w-4 h-4 text-blue-600 flex-shrink-0" aria-hidden="true" />
+                  <span>{zone.nom}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-gray-500 mt-4 text-center">
+              Aéroport Zaventem, Charleroi, Gares Midi, Nord et Central • <InternalLink to="/lez-bruxelles" anchor="Autocar conforme LEZ Bruxelles" className="text-blue-600 hover:text-blue-700" />
+            </p>
+          </div>
+
           {/* Practical Information */}
           <div className="mb-16 bg-gray-50 rounded-2xl p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
@@ -311,16 +335,16 @@ const DestinationBruxellesPage: React.FC = () => {
               Autres Destinations
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Link to="/destinations/belgique" className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <InternalLink to="/destinations/belgique" anchor="Excursions Bruges Gand Anvers" className="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
                 <h3 className="text-xl font-semibold mb-3">Belgique</h3>
                 <p className="text-gray-600 mb-4">Découvrez les trésors de la Belgique : Bruges, Gand, Anvers</p>
                 <div className="text-blue-600 font-semibold">Explorer la Belgique →</div>
-              </Link>
-              <Link to="/destinations/europe" className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+              </InternalLink>
+              <InternalLink to="/destinations/europe" anchor="Voyages Paris Amsterdam en autocar" className="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
                 <h3 className="text-xl font-semibold mb-3">Europe</h3>
                 <p className="text-gray-600 mb-4">Voyages longue distance : Paris, Amsterdam, Allemagne</p>
                 <div className="text-blue-600 font-semibold">Découvrir l'Europe →</div>
-              </Link>
+              </InternalLink>
             </div>
           </div>
 

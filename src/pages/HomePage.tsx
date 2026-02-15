@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bus, Shield, Clock, Star, CheckCircle, ArrowRight, Users, MapPin, Calendar } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import InternalLink from '../components/SEO/InternalLink';
 import EnvironmentalCompliance from '../components/EnvironmentalCompliance';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '../data/enhancedSchemas';
+import { homePageFaq } from '../data/faqData';
+import { semanticKeywords, conversionCopy } from '../data/seoData';
 
 const HomePage: React.FC = () => {
   const services = [
@@ -107,60 +110,7 @@ const HomePage: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Quels types de véhicules proposez-vous ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nous proposons une flotte complète : minibus 8-16 places, bus 20-35 places et autocars grand tourisme 40-55 places, tous avec chauffeur professionnel."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Couvrez-vous toute l'Europe ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, nous organisons des voyages dans toute l'Europe : France, Pays-Bas, Allemagne, République Tchèque, Autriche et bien d'autres destinations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vos chauffeurs sont-ils qualifiés ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tous nos chauffeurs possèdent les permis requis (D, D1, D1E), une formation continue en sécurité routière et une excellente connaissance des destinations européennes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Proposez-vous un service 24/7 ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, notre service client est disponible 24h/24 et 7j/7 pour vos urgences et réservations de dernière minute."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Comment obtenir un devis ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Contactez-nous par téléphone au +32 2 580 03 25, par email à info@locationautocar.be ou via notre formulaire en ligne. Devis gratuit sous 24h."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vos véhicules sont-ils conformes à la Zone de Basses Émissions (LEZ) de Bruxelles ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, 100% de notre flotte est conforme aux normes Euro 6 ou supérieures, garantissant un accès illimité à la Zone de Basses Émissions (LEZ) de Bruxelles. Vous pouvez circuler au centre-ville sans risque d'amende ni de restriction, conformément aux réglementations 2026."
-        }
-      }
-    ]
-  };
+  const homeKeywords = semanticKeywords.home.join(', ');
 
   return (
     <>
@@ -168,10 +118,10 @@ const HomePage: React.FC = () => {
         title="Location Autocar à Bruxelles - Bus & Minibus avec Chauffeur"
         metaTitle="Location Autocar à Bruxelles | Bus & Minibus avec Chauffeur – Devis Gratuit"
         description="Location autocar avec chauffeur Bruxelles depuis 2007. Flotte 100% conforme LEZ Euro 6. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7."
-        keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires, autocar euro 6, lez bruxelles, transport ecologique bruxelles, autocar acces centre-ville bruxelles, bus conforme zone basse emission"
+        keywords={homeKeywords}
         canonical="https://www.locationautocar.be/"
         schema={[organizationSchema, websiteSchema, localBusinessSchema]}
-        faqSchema={faqSchema}
+        faqSchema={homePageFaq}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
 
@@ -242,9 +192,9 @@ const HomePage: React.FC = () => {
               <Link
                 to="/contactez-nous"
                 className="group bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
-                title="Demander devis gratuit location autocar bus minibus Bruxelles"
+                title={conversionCopy.cta.principal}
               >
-                Devis Gratuit
+                {conversionCopy.cta.principal}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
               </Link>
               <Link
@@ -293,10 +243,10 @@ const HomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Depuis 2007, nous offrons des services de transport en autocar avec chauffeur 
-              pour tous vos besoins : <Link to="/nos-services/transferts-aeroports" className="text-blue-600 hover:text-blue-700 font-semibold">transferts aéroports</Link>, 
-              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">excursions touristiques</Link>, 
+              pour tous vos besoins : <InternalLink to="/nos-services/transferts-aeroports" anchor="Transferts aéroports Bruxelles" />, 
+              <InternalLink to="/nos-services/excursions-tourisme" anchor="Excursions touristiques Bruxelles" />, 
               voyages d'affaires et mise à disposition. Découvrez également nos{' '}
-              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link> populaires.
+              <InternalLink to="/destinations/europe" anchor="Voyages Paris Amsterdam en autocar" /> populaires.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -374,14 +324,15 @@ const HomePage: React.FC = () => {
                   <p className="text-gray-600 mb-4">
                     {vehicle.capacity}
                   </p>
-                  <Link
-                    to={vehicle.link}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                    title={`Découvrir notre flotte ${vehicle.linkTitle || vehicle.name} avec chauffeur à Bruxelles`}
-                  >
-                    Voir les détails
+                  <span className="inline-flex items-center">
+                    <InternalLink
+                      to={vehicle.link}
+                      anchor={vehicle.linkTitle === 'minibus' ? 'Location minibus Bruxelles prix' : vehicle.linkTitle === 'bus' ? 'Location bus 30 places Bruxelles' : 'Location autocar grand tourisme'}
+                      className="text-blue-600 hover:text-blue-700 font-semibold"
+                      title={`Découvrir notre flotte ${vehicle.linkTitle || vehicle.name} avec chauffeur à Bruxelles`}
+                    />
                     <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
-                  </Link>
+                  </span>
                 </div>
               </div>
             ))}
@@ -426,30 +377,43 @@ const HomePage: React.FC = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {destinations.map((destination, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                <div className="h-48 bg-gray-200 relative">
-                  <img 
-                    src={destination.image} 
-                    alt={destination.imageAlt}
-                    title={`Excursions ${destination.shortName || destination.name} en autocar avec guide depuis Bruxelles`}
-                    className="w-full h-full object-cover"
-                    width="400"
-                    height="300"
-                    decoding="async"
-                    loading={index === 0 ? "eager" : "lazy"}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {destination.name}
-                  </h3>
-                  <p className="text-gray-600">
-                    {destination.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {destinations.map((destination, index) => {
+              const destPath = destination.shortName === 'Bruxelles' ? '/destinations/bruxelles' : destination.shortName === 'Paris' ? '/destinations/europe' : '/destinations/europe';
+              return (
+                <InternalLink
+                  key={index}
+                  to={destPath}
+                  anchor={destination.shortName === 'Bruxelles' ? 'Excursions Bruxelles' : destination.shortName === 'Paris' ? 'Voyages Paris en autocar' : 'Excursions Amsterdam'}
+                  className="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
+                  title={`${destination.shortName === 'Bruxelles' ? 'Excursions Bruxelles' : destination.shortName === 'Paris' ? 'Voyages Paris' : 'Excursions Amsterdam'} en autocar depuis Bruxelles`}
+                >
+                  <div className="h-48 bg-gray-200 relative">
+                    <img 
+                      src={destination.image} 
+                      alt={destination.imageAlt}
+                      title={`Excursions ${destination.shortName || destination.name} en autocar avec guide depuis Bruxelles`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      width="400"
+                      height="300"
+                      decoding="async"
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {destination.name}
+                    </h3>
+                    <p className="text-gray-600">
+                      {destination.description}
+                    </p>
+                    <span className="inline-flex items-center mt-2 text-blue-600 font-semibold">
+                      Découvrir
+                      <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
+                    </span>
+                  </div>
+                </InternalLink>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -542,19 +506,13 @@ const HomePage: React.FC = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-8">
             <h3 className="text-lg font-semibold text-blue-100 m-0">
-              <Link to="/nos-services" className="text-blue-100 hover:text-white underline underline-offset-2">
-                Découvrir nos services
-              </Link>
+              <InternalLink to="/nos-services" anchor="Nos services transport autocar" className="text-blue-100 hover:text-white underline underline-offset-2" />
             </h3>
             <h3 className="text-lg font-semibold text-blue-100 m-0">
-              <Link to="/notre-flotte" className="text-blue-100 hover:text-white underline underline-offset-2">
-                Voir notre flotte
-              </Link>
+              <InternalLink to="/notre-flotte" anchor="Notre flotte autocars" className="text-blue-100 hover:text-white underline underline-offset-2" />
             </h3>
             <h3 className="text-lg font-semibold text-blue-100 m-0">
-              <Link to="/contactez-nous" className="text-blue-100 hover:text-white underline underline-offset-2">
-                Contact & devis pour Bruxelles
-              </Link>
+              <InternalLink to="/contactez-nous" anchor="Devis gratuit location autocar" className="text-blue-100 hover:text-white underline underline-offset-2" />
             </h3>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -563,7 +521,7 @@ const HomePage: React.FC = () => {
               className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
               title="Demander devis gratuit transport autocar bus minibus"
             >
-              Demander un Devis
+              {conversionCopy.cta.principal}
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <a

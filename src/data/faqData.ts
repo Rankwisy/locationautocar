@@ -69,6 +69,90 @@ export const generalFAQ = {
   ]
 };
 
+/** FAQ ciblant les recherches prix (intention transactionnelle, NLP) */
+export const priceFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien coûte un autocar avec chauffeur à Bruxelles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le prix dépend du type de véhicule, de la durée et du trajet. Comptez environ 120€ à 300€ pour un minibus (8-16 places), 150€ à 400€ pour un bus (20-35 places), et 300€ à 800€ pour un autocar (40-55 places) à la journée. Devis gratuit et personnalisé sous 24h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le tarif d'un transfert aéroport Bruxelles-Zaventem ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un transfert en autocar depuis ou vers Zaventem varie selon le nombre de passagers et la destination. À partir d'environ 250€ pour un bus de 30 places vers le centre-ville. Devis gratuit immédiat par téléphone ou formulaire en ligne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment obtenir un devis gratuit pour une location d'autocar ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contactez-nous au +32 2 580 03 25, par email info@locationautocar.be ou via notre formulaire. Indiquez : nombre de passagers, dates, itinéraire. Réponse détaillée sous 24h, sans engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il des frais cachés dans le prix de location ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Notre tarification est transparente. Le devis inclut véhicule, chauffeur professionnel et assurance. Seuls péages, parking éventuels et supplément nuit peuvent s'ajouter, toujours indiqués à l'avance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le prix d'une excursion d'une journée à Bruges depuis Bruxelles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour une excursion Bruxelles-Bruges en autocar avec chauffeur : entre 500€ et 750€ selon la taille du groupe et le véhicule. Inclut transport aller-retour, chauffeur professionnel. Devis personnalisé sur demande."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la durée minimale de location et le tarif à l'heure ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La mise à disposition commence généralement à 4 heures minimum. Le tarif à l'heure varie selon le véhicule : minibus à partir d'environ 45€/h, bus 55€/h, autocar 80€/h. Demandez un devis pour votre programme précis."
+      }
+    }
+  ]
+};
+
+/** FAQ prix fusionnée avec FAQ générale (pour HomePage) */
+export const generalWithPriceFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    ...(generalFAQ.mainEntity as object[]),
+    ...(priceFaq.mainEntity as object[])
+  ]
+};
+
+/** FAQ complète HomePage : générale + prix + LEZ */
+export const homePageFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    ...(generalFAQ.mainEntity as object[]),
+    ...(priceFaq.mainEntity as object[]),
+    {
+      "@type": "Question",
+      "name": "Vos véhicules sont-ils conformes à la Zone de Basses Émissions (LEZ) de Bruxelles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, 100% de notre flotte est conforme aux normes Euro 6 ou supérieures, garantissant un accès illimité à la Zone de Basses Émissions (LEZ) de Bruxelles. Vous pouvez circuler au centre-ville sans risque d'amende ni de restriction, conformément aux réglementations 2026."
+      }
+    }
+  ]
+};
+
 export const fleetFAQ = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
