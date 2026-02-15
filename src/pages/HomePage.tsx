@@ -9,29 +9,30 @@ const HomePage: React.FC = () => {
   const services = [
     {
       icon: MapPin,
-      title: "Transferts & Navettes",
+      title: "Transferts & Navettes Aéroport depuis Bruxelles",
       description: "Aéroports, gares, hôtels - Service de transfert professionnel avec chauffeur expérimenté"
     },
     {
       icon: Users,
-      title: "Excursions & Tourisme",
+      title: "Excursions & Tourisme au départ de Bruxelles",
       description: "Découvrez Bruxelles, l'Atomium, les musées et l'Europe avec nos circuits organisés"
     },
     {
       icon: Calendar,
-      title: "Voyages d'Affaires",
+      title: "Voyages d'Affaires et Événements Corporate à Bruxelles",
       description: "Transport de groupes pour séminaires, conférences et événements d'entreprise"
     },
     {
       icon: Clock,
-      title: "Mise à Disposition",
+      title: "Mise à Disposition d'Autocar avec Chauffeur à Bruxelles",
       description: "Location à l'heure selon vos besoins spécifiques - Flexibilité maximale"
     }
   ];
 
   const fleetTypes = [
     {
-      name: "Minibus",
+      name: "Location de Minibus avec Chauffeur",
+      linkTitle: "minibus",
       description: "8 à 16 passagers",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Location minibus Mercedes luxe avec chauffeur professionnel à Bruxelles - 8 à 16 places pour transferts VIP et excursions",
@@ -40,7 +41,8 @@ const HomePage: React.FC = () => {
       capacity: "Idéal pour petits groupes"
     },
     {
-      name: "Bus",
+      name: "Location de Bus pour Groupes",
+      linkTitle: "bus",
       description: "20 à 35 passagers",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Location bus touristique confortable 20-35 places avec chauffeur pour voyages Europe excursions Belgique",
@@ -49,7 +51,8 @@ const HomePage: React.FC = () => {
       capacity: "Parfait pour groupes moyens"
     },
     {
-      name: "Autocars",
+      name: "Location d'Autocars Grand Tourisme",
+      linkTitle: "autocars",
       description: "40 à 55 passagers",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Location autocar grand tourisme 40-55 places avec chauffeur professionnel circuits Europe voyages organisés",
@@ -61,19 +64,22 @@ const HomePage: React.FC = () => {
 
   const destinations = [
     {
-      name: "Bruxelles",
+      name: "Transport local et interurbain à Bruxelles",
+      shortName: "Bruxelles",
       description: "Atomium, Grand-Place, Musées",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Excursions Bruxelles Grand-Place Atomium avec autocar chauffeur guide francophone"
     },
     {
-      name: "Paris",
+      name: "Voyages en autocar vers Paris",
+      shortName: "Paris",
       description: "Excursions depuis Bruxelles",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Voyages Paris Tour Eiffel en autocar depuis Bruxelles circuits organisés guide"
     },
     {
-      name: "Amsterdam",
+      name: "Navettes et excursions vers Amsterdam",
+      shortName: "Amsterdam",
       description: "Circuits touristiques",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg?tr=w-400,h-300,c-maintain_ratio,f-webp,q-85",
       imageAlt: "Excursions Amsterdam canaux vélos autocar confortable depuis Belgique"
@@ -159,8 +165,8 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Location Autocar Bruxelles - Bus Minibus avec Chauffeur"
-        metaTitle="Location Autocar Bruxelles | Bus Minibus Chauffeur | Devis Gratuit"
+        title="Location Autocar à Bruxelles - Bus & Minibus avec Chauffeur"
+        metaTitle="Location Autocar à Bruxelles | Bus & Minibus avec Chauffeur – Devis Gratuit"
         description="Location autocar avec chauffeur Bruxelles depuis 2007. Flotte 100% conforme LEZ Euro 6. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7."
         keywords="location autocar bruxelles, bus chauffeur, minibus belgique, excursions europe, transfert aeroport, voyage affaires, autocar euro 6, lez bruxelles, transport ecologique bruxelles, autocar acces centre-ville bruxelles, bus conforme zone basse emission"
         canonical="https://www.locationautocar.be/"
@@ -214,7 +220,7 @@ const HomePage: React.FC = () => {
           <div className="max-w-5xl mx-auto">
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
-              Location Autocar Bruxelles
+              Location d'Autocar à Bruxelles – Service Professionnel avec Chauffeur
             </h1>
             
             {/* Subtitle */}
@@ -281,7 +287,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nos Services de Transport
+              Nos Services de Transport à Bruxelles et en Belgique
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Depuis 2007, nous offrons des services de transport en autocar avec chauffeur 
@@ -314,7 +320,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Notre Flotte
+              Notre Flotte d'Autocars Disponible à Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               <a 
@@ -369,7 +375,7 @@ const HomePage: React.FC = () => {
                   <Link
                     to={vehicle.link}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                    title={`Découvrir notre flotte ${vehicle.name.toLowerCase()} avec chauffeur`}
+                    title={`Découvrir notre flotte ${vehicle.linkTitle || vehicle.name} avec chauffeur à Bruxelles`}
                   >
                     Voir les détails
                     <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
@@ -393,7 +399,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Destinations Populaires
+              Destinations Populaires depuis Bruxelles
             </h2>
             <p className="text-xl text-gray-600">
               Excursions et circuits organisés depuis{' '}
@@ -424,7 +430,7 @@ const HomePage: React.FC = () => {
                   <img 
                     src={destination.image} 
                     alt={destination.imageAlt}
-                    title={`Excursions ${destination.name} en autocar avec guide depuis Bruxelles`}
+                    title={`Excursions ${destination.shortName || destination.name} en autocar avec guide depuis Bruxelles`}
                     className="w-full h-full object-cover"
                     width="400"
                     height="300"
@@ -451,7 +457,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Pourquoi Choisir Location Autocar Bruxelles ?
+              Pourquoi Choisir notre Service de Location d'Autocar à Bruxelles ?
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -459,28 +465,28 @@ const HomePage: React.FC = () => {
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <CheckCircle className="w-8 h-8 text-green-600" aria-hidden="true" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Depuis 2007</h3>
+              <h3 className="text-lg font-semibold mb-2">Entreprise active depuis 2007</h3>
               <p className="text-gray-600">Plus de 15 ans d'expérience dans le transport de groupes</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Shield className="w-8 h-8 text-blue-600" aria-hidden="true" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Pas de Frais Cachés</h3>
+              <h3 className="text-lg font-semibold mb-2">Tarifs transparents, pas de frais cachés</h3>
               <p className="text-gray-600">Tarification transparente - vous ne payez que ce que vous utilisez</p>
             </div>
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Clock className="w-8 h-8 text-orange-600" aria-hidden="true" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Service 24/7</h3>
+              <h3 className="text-lg font-semibold mb-2">Service disponible 24/7 à Bruxelles</h3>
               <p className="text-gray-600">Support et assistance disponibles à tout moment</p>
             </div>
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Star className="w-8 h-8 text-purple-600" aria-hidden="true" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Devis Gratuit</h3>
+              <h3 className="text-lg font-semibold mb-2">Devis gratuit et réponse rapide</h3>
               <p className="text-gray-600">Estimation personnalisée sans engagement</p>
             </div>
           </div>
@@ -492,7 +498,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ce que Disent nos Clients
+              Ce que Disent nos Clients à Bruxelles
             </h2>
             <p className="text-xl text-gray-600">
               La satisfaction de nos clients est notre priorité depuis 2007
@@ -527,11 +533,28 @@ const HomePage: React.FC = () => {
       <section className="py-16 bg-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Besoin d'un Transport en Autocar ?
+            Besoin d'un Transport en Autocar à Bruxelles ?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-6 text-blue-100">
             Contactez-nous pour un devis gratuit et personnalisé. Service disponible 24/7.
           </p>
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-8">
+            <h3 className="text-lg font-semibold text-blue-100 m-0">
+              <Link to="/nos-services" className="text-blue-100 hover:text-white underline underline-offset-2">
+                Découvrir nos services
+              </Link>
+            </h3>
+            <h3 className="text-lg font-semibold text-blue-100 m-0">
+              <Link to="/notre-flotte" className="text-blue-100 hover:text-white underline underline-offset-2">
+                Voir notre flotte
+              </Link>
+            </h3>
+            <h3 className="text-lg font-semibold text-blue-100 m-0">
+              <Link to="/contactez-nous" className="text-blue-100 hover:text-white underline underline-offset-2">
+                Contact & devis pour Bruxelles
+              </Link>
+            </h3>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contactez-nous"

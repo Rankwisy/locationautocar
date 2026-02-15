@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Shield, Leaf, MapPin, ArrowRight } from 'lucide-react';
+import { ROUTES } from '../data/canonicalRoutes';
 
 const EnvironmentalCompliance: React.FC = () => {
   return (
@@ -8,13 +9,13 @@ const EnvironmentalCompliance: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <Leaf className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Leaf className="w-4 h-4" aria-hidden="true" />
               Flotte 100% Conforme LEZ
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Tous nos autocars sont conformes aux normes Euro 6 ou supérieures
+              Tous nos autocars au départ de Bruxelles sont conformes aux normes Euro 6 ou supérieures
             </h2>
 
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -42,11 +43,12 @@ const EnvironmentalCompliance: React.FC = () => {
             </div>
 
             <Link
-              to="/lez-bruxelles"
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+              to={ROUTES.LEZ}
+              className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+              aria-label="En savoir plus sur la zone de basses émissions (LEZ) Bruxelles"
             >
-              En savoir plus sur la LEZ
-              <ArrowRight className="w-4 h-4" />
+              <span>En savoir plus sur la LEZ</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
 

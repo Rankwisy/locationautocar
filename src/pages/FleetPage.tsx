@@ -16,6 +16,7 @@ const FleetPage: React.FC = () => {
     {
       id: 1,
       name: "Mercedes Sprinter Luxe",
+      headingTitle: "Mercedes Sprinter Luxe avec chauffeur à Bruxelles",
       type: "Minibus",
       capacity: 16,
       year: 2023,
@@ -38,6 +39,7 @@ const FleetPage: React.FC = () => {
     {
       id: 2,
       name: "Mercedes Sprinter Standard",
+      headingTitle: "Mercedes Sprinter Standard pour transferts à Bruxelles",
       type: "Minibus",
       capacity: 12,
       year: 2022,
@@ -60,6 +62,7 @@ const FleetPage: React.FC = () => {
     {
       id: 3,
       name: "Autocar Tourisme Premium",
+      headingTitle: "Autocar Tourisme Premium au départ de Bruxelles",
       type: "Autocar",
       capacity: 55,
       year: 2023,
@@ -83,6 +86,7 @@ const FleetPage: React.FC = () => {
     {
       id: 4,
       name: "Bus Tourisme Confort",
+      headingTitle: "Bus Tourisme Confort pour groupes à Bruxelles",
       type: "Bus",
       capacity: 35,
       year: 2022,
@@ -105,6 +109,7 @@ const FleetPage: React.FC = () => {
     {
       id: 5,
       name: "Autocar Grand Tourisme",
+      headingTitle: "Autocar Grand Tourisme pour voyages longue distance depuis Bruxelles",
       type: "Autocar",
       capacity: 49,
       year: 2021,
@@ -127,6 +132,7 @@ const FleetPage: React.FC = () => {
     {
       id: 6,
       name: "Bus Urbain Écologique",
+      headingTitle: "Bus Urbain Écologique autorisé dans Bruxelles",
       type: "Bus",
       capacity: 25,
       year: 2023,
@@ -230,7 +236,7 @@ const FleetPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Notre Flotte
+              Notre Flotte d'Autocars et Minibus Disponibles à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez notre flotte moderne de véhicules avec chauffeur professionnel. 
@@ -245,7 +251,7 @@ const FleetPage: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-12">
             <div className="flex items-center gap-2 mb-6">
               <Filter className="w-5 h-5 text-blue-600" aria-hidden="true" />
-              <h2 className="text-xl font-semibold text-gray-900">Filtrer par :</h2>
+              <h2 className="text-xl font-semibold text-gray-900">Filtrer par type de véhicule à Bruxelles</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -359,7 +365,7 @@ const FleetPage: React.FC = () => {
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xl font-semibold text-gray-900">
-                      {vehicle.name}
+                      {vehicle.headingTitle || vehicle.name}
                     </h3>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
@@ -427,7 +433,7 @@ const FleetPage: React.FC = () => {
           {/* Fleet Statistics */}
           <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Notre Flotte en Chiffres
+              Notre Flotte en Chiffres à Bruxelles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               <div className="text-center">
@@ -456,35 +462,35 @@ const FleetPage: React.FC = () => {
           {/* Why Choose Our Fleet */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Pourquoi Choisir Notre Flotte ?
+              Pourquoi Choisir Notre Flotte pour vos déplacements à Bruxelles ?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Shield className="w-8 h-8 text-green-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Sécurité Maximale</h3>
+                <h3 className="text-lg font-semibold mb-2">Sécurité Maximale pour tous vos trajets bruxellois</h3>
                 <p className="text-gray-600 text-sm">Véhicules récents, entretien rigoureux, chauffeurs expérimentés</p>
               </div>
               <div className="text-center">
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Award className="w-8 h-8 text-blue-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Confort Premium</h3>
+                <h3 className="text-lg font-semibold mb-2">Confort Premium pour passagers et entreprises</h3>
                 <p className="text-gray-600 text-sm">Équipements modernes, sièges ergonomiques, climatisation</p>
               </div>
               <div className="text-center">
                 <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Clock className="w-8 h-8 text-orange-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Ponctualité</h3>
+                <h3 className="text-lg font-semibold mb-2">Ponctualité garantie à Bruxelles et alentours</h3>
                 <p className="text-gray-600 text-sm">Respect des horaires, planification optimisée, suivi en temps réel</p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <CheckCircle className="w-8 h-8 text-purple-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Service Complet</h3>
+                <h3 className="text-lg font-semibold mb-2">Service complet avec chauffeur professionnel</h3>
                 <p className="text-gray-600 text-sm">Assistance 24/7, devis gratuit, service personnalisé</p>
               </div>
             </div>
@@ -492,11 +498,11 @@ const FleetPage: React.FC = () => {
 
           <div className="mb-16 bg-green-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Véhicules et Sécurité
+              Ressources Véhicules et Sécurité en Belgique
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl">
-                <h3 className="text-lg font-semibold mb-3">Sécurité Routière Belgique</h3>
+                <h3 className="text-lg font-semibold mb-3">Sécurité routière en Belgique</h3>
                 <p className="text-gray-600 mb-4">
                   Informations officielles sur la sécurité routière et les réglementations belges.
                 </p>
@@ -511,7 +517,7 @@ const FleetPage: React.FC = () => {
                 </a>
               </div>
               <div className="bg-white p-6 rounded-xl">
-                <h3 className="text-lg font-semibold mb-3">Normes Véhicules UE</h3>
+                <h3 className="text-lg font-semibold mb-3">Normes véhicules de l'Union européenne</h3>
                 <p className="text-gray-600 mb-4">
                   Standards européens pour les véhicules de transport de passagers.
                 </p>
@@ -531,7 +537,7 @@ const FleetPage: React.FC = () => {
           {/* FAQ Section */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Questions Fréquentes sur Notre Flotte
+              Questions Fréquentes sur Notre Flotte à Bruxelles
             </h2>
             <div className="max-w-4xl mx-auto space-y-4">
               {fleetFAQ.mainEntity.map((item, index) => (
@@ -565,13 +571,29 @@ const FleetPage: React.FC = () => {
           {/* CTA Section */}
           <div className="bg-gray-50 rounded-2xl p-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Prêt à Réserver Votre Véhicule ?
+              Prêt à Réserver Votre Véhicule à Bruxelles ?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
               Contactez-nous pour un devis personnalisé et découvrez le véhicule parfait pour vos besoins. 
               Service professionnel garanti depuis 2007.
             </p>
-            
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <h3 className="text-lg font-semibold text-gray-700 m-0">
+                <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
+                  Nos services de transport
+                </Link>
+              </h3>
+              <h3 className="text-lg font-semibold text-gray-700 m-0">
+                <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
+                  Découvrir toute la flotte
+                </Link>
+              </h3>
+              <h3 className="text-lg font-semibold text-gray-700 m-0">
+                <Link to="/contactez-nous" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
+                  Contact et devis à Bruxelles
+                </Link>
+              </h3>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center justify-center gap-3 text-gray-700">
                 <Phone className="w-5 h-5 text-blue-600" aria-hidden="true" />

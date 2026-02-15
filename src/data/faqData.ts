@@ -91,7 +91,7 @@ export const fleetFAQ = {
     },
     {
       "@type": "Question",
-      "name": "Peut-on choisir un véhicule spécifique ?",
+      "name": "Peut-on choisir un véhicule spécifique pour un départ à Bruxelles ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Nous attribuons le véhicule le mieux adapté à vos besoins (nombre de passagers, distance, type de voyage). Vous pouvez exprimer des préférences lors de la réservation, nous ferons notre possible pour les satisfaire selon disponibilité."
