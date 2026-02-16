@@ -173,11 +173,29 @@ const Footer: React.FC = () => {
               </Link>
             ))}
           </nav>
-          <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-800 pt-6">
             <p className="text-gray-400 text-sm">
               © {currentYear} Location Autocar Bruxelles. Tous droits réservés.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-6 mt-4 md:mt-0">
+            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mt-4 md:mt-0">
+              <a
+                href="https://transportbelgique.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white text-sm"
+                title="Transport Belgique - Secteur transport"
+              >
+                Transport Belgique
+              </a>
+              <a
+                href="https://top.brussels/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white text-sm"
+                title="TOP Brussels - Tourisme et économie Bruxelles"
+              >
+                TOP Brussels
+              </a>
               <Link to={ROUTES.MENTIONS_LEGALES} className="text-gray-400 hover:text-white text-sm">
                 Mentions Légales
               </Link>
