@@ -105,6 +105,19 @@ for = "/k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt"
 Content-Type = "text/plain; charset=UTF-8"
 Cache-Control = "public, max-age=3600"
 
+# Enforce www – avoids canonical/sitemap conflict when non-www is requested
+[[redirects]]
+from = "http://locationautocar.be/*"
+to = "https://www.locationautocar.be/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://locationautocar.be/*"
+to = "https://www.locationautocar.be/:splat"
+status = 301
+force = true
+
 [[redirects]]
 from = "/admin/*"
 to = "/admin/index.html"

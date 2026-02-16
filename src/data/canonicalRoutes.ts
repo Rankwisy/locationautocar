@@ -1,7 +1,15 @@
 /**
- * Canonical URL paths for the site. Use these for all internal links
- * so navigation and SEO point to a single canonical URL per page.
+ * Canonical URL paths and base URL. Use for internal links, canonicals and sitemap.
+ * Sitemap must ONLY list URLs that match each page's canonical – no conflicting signals.
  */
+export const CANONICAL_BASE = 'https://www.locationautocar.be' as const;
+
+/** Build full canonical URL for a path (no trailing slash except for root) */
+export function toCanonicalUrl(path: string): string {
+  const normalized = path === '/' ? '/' : path.replace(/\/+$/, '');
+  return `${CANONICAL_BASE}${normalized || '/'}`;
+}
+
 export const ROUTES = {
   HOME: '/',
   SERVICES: '/nos-services',
