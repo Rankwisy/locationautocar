@@ -246,7 +246,9 @@ const HomePage: React.FC = () => {
               pour tous vos besoins : <InternalLink to="/nos-services/transferts-aeroports" anchor="Transferts aéroports Bruxelles" />, 
               <InternalLink to="/nos-services/excursions-tourisme" anchor="Excursions touristiques Bruxelles" />, 
               voyages d'affaires et mise à disposition. Découvrez également nos{' '}
-              <InternalLink to="/destinations/europe" anchor="Voyages Paris Amsterdam en autocar" /> populaires.
+              <InternalLink to="/destinations/europe" anchor="Voyages Paris Amsterdam en autocar" /> et{' '}
+              <InternalLink to="/destinations" anchor="toutes nos destinations" />. Consultez notre{' '}
+              <InternalLink to="/blog" anchor="Blog conseils voyage" />.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -356,15 +358,9 @@ const HomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600">
               Excursions et circuits organisés depuis{' '}
-              <a 
-                href="https://fr.wikipedia.org/wiki/Bruxelles" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-700 font-semibold"
-                title="Découvrir Bruxelles - Wikipédia"
-              >
-                Bruxelles
-              </a>{' '}vers les plus belles capitales européennes. Consultez le{' '}
+              <InternalLink to="/destinations/bruxelles" anchor="Bruxelles" />{' '}
+              vers les plus belles capitales européennes. Voir toutes nos{' '}
+              <InternalLink to="/destinations" anchor="destinations" />. Consultez le{' '}
               <a 
                 href="https://www.visiteurope.com" 
                 target="_blank" 
@@ -513,6 +509,9 @@ const HomePage: React.FC = () => {
             </h3>
             <h3 className="text-lg font-semibold text-blue-100 m-0">
               <InternalLink to="/contactez-nous" anchor="Devis gratuit location autocar" className="text-blue-100 hover:text-white underline underline-offset-2" />
+            </h3>
+            <h3 className="text-lg font-semibold text-blue-100 m-0">
+              <InternalLink to="/blog" anchor="Blog & Conseils voyage" className="text-blue-100 hover:text-white underline underline-offset-2" />
             </h3>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

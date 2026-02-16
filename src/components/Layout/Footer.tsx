@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div>
             <Link to={ROUTES.HOME} className="inline-block">
@@ -33,10 +33,15 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Services - direct links to canonical service pages */}
+          {/* Services - hub + sub-pages */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Nos Services</h3>
             <ul className="space-y-2">
+              <li>
+                <Link to={ROUTES.SERVICES} className="text-blue-400 hover:text-blue-300 font-medium">
+                  Tous nos services
+                </Link>
+              </li>
               <li>
                 <Link to={ROUTES.SERVICE_TRANSFERTS} className="text-gray-300 hover:text-white">
                   Transferts Aéroports
@@ -92,12 +97,42 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Destinations - ensure sub-pages linked from every page */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <h3 className="text-lg font-semibold mb-4">Destinations</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to={ROUTES.DESTINATIONS} className="text-blue-400 hover:text-blue-300 font-medium">
+                  Toutes nos destinations
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.DESTINATION_BRUXELLES} className="text-gray-300 hover:text-white">
+                  Bruxelles
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.DESTINATION_BELGIQUE} className="text-gray-300 hover:text-white">
+                  Belgique
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.DESTINATION_EUROPE} className="text-gray-300 hover:text-white">
+                  Europe
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact & Blog */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact & Blog</h3>
             <div className="space-y-3">
               <Link to={ROUTES.CONTACT} className="text-blue-400 hover:text-blue-300 font-medium inline-block mb-2">
                 Page contact
+              </Link>
+              <Link to={ROUTES.BLOG} className="text-gray-300 hover:text-white block">
+                Blog & Conseils
               </Link>
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 text-blue-400" />

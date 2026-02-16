@@ -342,7 +342,9 @@ const ServicesPage: React.FC = () => {
           {/* Destinations */}
           <div className="mt-16 bg-gray-50 rounded-2xl p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Nos Destinations
+              <Link to="/destinations" className="text-gray-900 hover:text-blue-600 transition-colors">
+                Nos Destinations
+              </Link>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {destinations.map((destination, index) => (
