@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, AlertTriangle, Leaf, Shield, MapPin, ArrowRight, Info, Phone, Mail } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import LEZBadge from '../components/LEZBadge';
+import { semanticKeywords } from '../data/seoData';
 
 const LEZBruxellesPage: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -72,7 +73,7 @@ const LEZBruxellesPage: React.FC = () => {
         title="Zone LEZ Bruxelles - Flotte 100% Conforme Euro 6 | Location Autocar"
         metaTitle="LEZ Bruxelles 2026 | Flotte Autocar Euro 6 Conforme | Sans Amende"
         description="Tous nos autocars sont conformes aux normes LEZ Bruxelles 2026. Flotte 100% Euro 6 garantissant accès illimité au centre-ville. Pas d'amende, pas de restriction."
-        keywords="lez bruxelles, zone basse emission bruxelles, autocar euro 6, bus conforme lez, transport ecologique bruxelles, norme euro 6 bruxelles, amende lez bruxelles, autocar acces centre-ville, location autocar conforme lez"
+        keywords={semanticKeywords.lez.join(', ')}
         canonical="https://www.locationautocar.be/lez-bruxelles"
         faqSchema={faqSchema}
         breadcrumbSchema={breadcrumbSchema}

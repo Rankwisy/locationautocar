@@ -4,6 +4,7 @@ import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
+import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const FleetAutocarsPage: React.FC = () => {
   const autocarModels = [
@@ -152,10 +153,10 @@ const FleetAutocarsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Location Autocar avec Chauffeur Bruxelles | 40-55 Places | Grand Tourisme"
-        metaTitle="Autocar Grand Tourisme | 40-55 Places | Voyages Longue Distance Europe"
-        description="Location d'autocar grand tourisme avec chauffeur professionnel à Bruxelles. Flotte moderne 40-55 places pour voyages longue distance et circuits en Europe. Devis gratuit."
-        keywords="autocar grand tourisme, 40-55 places, voyages longue distance, circuits europe, chauffeur professionnel"
+        title={pageMeta.fleetAutocar.title}
+        metaTitle={pageMeta.fleetAutocar.metaTitle}
+        description={pageMeta.fleetAutocar.description}
+        keywords={semanticKeywords.fleetAutocar.join(', ')}
         canonical="https://www.locationautocar.be/notre-flotte/autocars"
         schema={serviceVehicleSchemas.autocar}
       />
@@ -176,11 +177,11 @@ const FleetAutocarsPage: React.FC = () => {
               Location Autocar Grand Tourisme à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez notre flotte d'<strong>autocars grand tourisme de 40 à 55 places</strong> avec chauffeur professionnel. 
-              Parfaits pour vos circuits touristiques vers nos{' '}
-              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>{' '}
-              et voyages d'affaires avec notre{' '}
-              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">service premium</Link>.
+              Nos <strong>autocars 40-55 places</strong> sont équipés toilettes, kitchenette, WiFi et sièges inclinables pour 
+              Paris, Amsterdam, Prague, Allemagne. Pèlerinages, voyages scolaires, séminaires. Consultez nos{' '}
+              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">circuits Europe</Link>{' '}
+              et notre{' '}
+              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">catalogue voyages</Link>.
             </p>
           </div>
 

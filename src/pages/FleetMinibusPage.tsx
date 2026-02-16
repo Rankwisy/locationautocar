@@ -4,6 +4,7 @@ import { Users, Shield, Wifi, Star, CheckCircle, ArrowRight, Phone, Mail, Clock,
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
+import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const FleetMinibusPage: React.FC = () => {
   const minibusModels = [
@@ -143,10 +144,10 @@ const FleetMinibusPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Location Minibus avec Chauffeur Bruxelles | 8-16 Places | Service VIP"
-        metaTitle="Minibus Mercedes Chauffeur | 8-16 Places | Transferts VIP Bruxelles"
-        description="Location de minibus avec chauffeur professionnel à Bruxelles. Flotte Mercedes moderne 8-16 places pour transferts VIP, excursions et voyages d'affaires. Devis gratuit."
-        keywords="minibus mercedes chauffeur, transferts vip bruxelles, 8-16 places, excursions petits groupes"
+        title={pageMeta.fleetMinibus.title}
+        metaTitle={pageMeta.fleetMinibus.metaTitle}
+        description={pageMeta.fleetMinibus.description}
+        keywords={semanticKeywords.fleetMinibus.join(', ')}
         canonical="https://www.locationautocar.be/notre-flotte/minibus"
         schema={serviceVehicleSchemas.minibus}
       />
@@ -167,11 +168,11 @@ const FleetMinibusPage: React.FC = () => {
               Location Minibus avec Chauffeur à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez notre flotte de <strong>minibus Mercedes de 8 à 16 places</strong> avec chauffeur professionnel. 
-              Idéaux pour vos transferts VIP et excursions de prestige vers nos{' '}
-              <Link to="/destinations/bruxelles" className="text-blue-600 hover:text-blue-700 font-semibold">excursions à Bruxelles</Link>{' '}
+              Nos <strong>minibus Mercedes 8-16 places</strong> privilégient confort et discrétion pour transferts aéroport, 
+              navettes hôtels et sorties VIP. Sièges cuir, WiFi, climatisation bi-zone. Parfaits pour{' '}
+              <Link to="/destinations/bruxelles" className="text-blue-600 hover:text-blue-700 font-semibold">visites Bruxelles</Link>{' '}
               et{' '}
-              <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">circuits en Belgique</Link>.
+              <Link to="/destinations/belgique" className="text-blue-600 hover:text-blue-700 font-semibold">excursions Belgique</Link>.
             </p>
           </div>
 

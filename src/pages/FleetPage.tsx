@@ -5,6 +5,7 @@ import SEOHead from '../components/SEO/SEOHead';
 import LEZBadge from '../components/LEZBadge';
 import { fleetFAQ } from '../data/faqData';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
+import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const FleetPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -220,10 +221,10 @@ const FleetPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Notre Flotte - Location Autocar Bruxelles"
-        metaTitle="Flotte Autocar Bus Minibus Bruxelles | Chauffeur | Devis Gratuit"
-        description="Flotte moderne autocar bus minibus Euro 6 conforme LEZ Bruxelles avec chauffeur. Véhicules récents climatisés WiFi pour transferts excursions Europe. Accès centre-ville garanti. Réservation 24/7."
-        keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique, autocar euro 6, lez bruxelles, transport ecologique, autocar acces centre-ville bruxelles, bus conforme zone basse emission"
+        title={pageMeta.fleet.title}
+        metaTitle={pageMeta.fleet.metaTitle}
+        description={pageMeta.fleet.description}
+        keywords={semanticKeywords.fleet.join(', ')}
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
         faqSchema={fleetFAQ}

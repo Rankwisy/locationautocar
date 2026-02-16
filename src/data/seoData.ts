@@ -5,7 +5,51 @@
 
 import { ROUTES } from './canonicalRoutes';
 
-// ─── Mots-clés sémantiques par page ─────────────────────────────────────────
+// ─── Meta uniques par page (éviter duplication) ─────────────────────────────
+export const pageMeta: Record<string, { title: string; metaTitle: string; description: string }> = {
+  fleet: {
+    title: "Notre Flotte - Location Autocar Bruxelles",
+    metaTitle: "Flotte Bus Minibus Autocar Bruxelles | Euro 6 LEZ | Choisissez Votre Véhicule",
+    description: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-55 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7.",
+  },
+  fleetMinibus: {
+    title: "Location Minibus Bruxelles | 8-16 Places Mercedes",
+    metaTitle: "Minibus Mercedes Chauffeur | Transferts VIP & Excursions Petits Groupes",
+    description: "Minibus Mercedes 8-16 places : transferts aéroport Zaventem/Charleroi, excursions Bruxelles, séminaires. Sièges cuir, WiFi, climatisation. Devis rapide.",
+  },
+  fleetBus: {
+    title: "Location Bus Bruxelles | 20-35 Places Tourisme",
+    metaTitle: "Bus Touristique 20-35 Places | Excursions Belgique Europe",
+    description: "Bus 20-35 places pour excursions Bruges, Gand, Paris, Amsterdam. Équilibre confort/capacité. Climatisation, prises USB. Idéal groupes moyens.",
+  },
+  fleetAutocar: {
+    title: "Location Autocar Grand Tourisme | 40-55 Places",
+    metaTitle: "Autocar Grand Tourisme Europe | Paris Amsterdam Prague | Toilettes WiFi",
+    description: "Autocars 40-55 places : circuits Europe, Paris, Amsterdam, Prague. Toilettes, kitchenette, WiFi. Confort longue distance depuis Bruxelles.",
+  },
+  destinations: {
+    title: "Destinations Autocar | Bruxelles Belgique Europe",
+    metaTitle: "Circuits Autocar Bruxelles | Bruges Paris Amsterdam | Guides Francophones",
+    description: "Hub de nos circuits : Bruxelles (Grand-Place, Atomium), Belgique (Bruges, Gand, Anvers), Europe (Paris, Amsterdam, Prague). Comparez les offres.",
+  },
+  destinationBruxelles: {
+    title: "Excursions Bruxelles | Grand-Place Atomium Quartier Européen",
+    metaTitle: "Visite Guidée Bruxelles Autocar | Circuits Capitale Europe",
+    description: "Circuits Bruxelles : Grand-Place UNESCO, Atomium, quartier européen, Manneken-Pis. Transport et guide inclus. Circuits classique, moderne ou gourmand.",
+  },
+  destinationBelgique: {
+    title: "Circuits Belgique | Bruges Gand Anvers Dinant",
+    metaTitle: "Excursions Belgique Autocar | Triangle Flamand Vallée Meuse",
+    description: "Bruges UNESCO, Gand médiéval, Anvers diamantaire, Dinant Meuse. Circuits 1-2 jours. Patrimoine, bières trappistes, chocolat.",
+  },
+  destinationEurope: {
+    title: "Voyages Europe | Paris Amsterdam Prague Cologne",
+    metaTitle: "Circuits Europe Autocar | Capitales Nord & Centrale",
+    description: "Paris, Amsterdam, Prague, Cologne, Luxembourg, Strasbourg. Voyages 2-7 jours. Autocar grand tourisme, hébergements sélectionnés.",
+  },
+};
+
+// ─── Mots-clés sémantiques par page (moins de chevauchement) ─────────────────
 export const semanticKeywords: Record<string, string[]> = {
   home: [
     'location autocar bruxelles',
@@ -29,38 +73,60 @@ export const semanticKeywords: Record<string, string[]> = {
     'transport groupe entreprise',
   ],
   fleet: [
-    'location minibus bruxelles',
-    'location bus 30 places',
-    'autocar grand tourisme',
+    'flotte autocar bruxelles',
+    'choisir véhicule groupe',
+    'minibus bus autocar comparatif',
+    'véhicules euro 6 bruxelles',
+    'réservation flotte 24/7',
+  ],
+  fleetMinibus: [
+    'minibus mercedes bruxelles',
+    'transfert vip 8 places',
     'minibus 16 places chauffeur',
+    'excursion petits groupes',
+    'navette aéroport minibus',
+  ],
+  fleetBus: [
+    'bus 30 places excursion',
+    'bus touristique belgique',
+    'location bus groupe moyen',
+    'excursion bruges bus',
     'bus climatisation wifi',
-    'autocar euro 6 bruxelles',
+  ],
+  fleetAutocar: [
+    'autocar grand tourisme europe',
+    'voyage paris autocar',
+    'autocar 50 places',
+    'circuit longue distance',
+    'autocar toilettes wifi',
   ],
   bruxelles: [
     'excursion bruxelles grand-place',
-    'visite guidée atomium',
-    'tour bruxelles autocar',
-    'circuit bruxelles capitale europe',
-    'excursion quartier européen bruxelles',
-    'visite guidée bruxelles francophone',
+    'visite atomium bruxelles',
+    'circuit quartier européen',
+    'tour manneken-pis',
+    'excursion bruxelles 1 jour',
   ],
   belgique: [
-    'excursion bruges gand',
-    'circuit belgique autocar',
-    'voyage scolaire belgique',
-    'excursion anvers bruxelles',
+    'circuit bruges gand anvers',
+    'excursion bruges 1 jour',
+    'triangle flamand autocar',
+    'vallée meuse dinant',
+    'patrimoine unesco belgique',
   ],
   europe: [
-    'voyage paris autocar bruxelles',
-    'excursion amsterdam bruxelles',
-    'circuit europe autocar',
-    'voyage longue distance europe',
+    'voyage paris autocar',
+    'circuit amsterdam bruxelles',
+    'voyage prague autocar',
+    'cologne strasbourg autocar',
+    'capitales europe nord',
   ],
   lez: [
-    'LEZ bruxelles autocar',
+    'LEZ bruxelles 2026',
     'zone basse émission bruxelles',
-    'autocar conforme LEZ',
-    'euro 6 bruxelles centre',
+    'autocar euro 6 centre-ville',
+    'amende LEZ bruxelles',
+    'véhicule conforme zone emission',
   ],
   contact: [
     'devis location autocar',

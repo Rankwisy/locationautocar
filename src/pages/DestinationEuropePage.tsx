@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Plane, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar, Globe } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { destinationSchemas } from '../data/enhancedSchemas';
+import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const DestinationEuropePage: React.FC = () => {
   const destinations = [
@@ -130,10 +131,10 @@ const DestinationEuropePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Voyages Europe en Autocar | Paris, Amsterdam, Prague | Circuits Organisés"
-        metaTitle="Voyages Europe Autocar | Paris Amsterdam Prague | Grand Tourisme"
-        description="Découvrez l'Europe avec nos circuits en autocar grand tourisme : Paris, Amsterdam, Prague, Allemagne. Voyages organisés avec guide francophone depuis Bruxelles. Réservez maintenant."
-        keywords="voyages europe autocar, paris amsterdam prague, circuits organises, autocar grand tourisme, guide francophone"
+        title={pageMeta.destinationEurope.title}
+        metaTitle={pageMeta.destinationEurope.metaTitle}
+        description={pageMeta.destinationEurope.description}
+        keywords={semanticKeywords.europe.join(', ')}
         canonical="https://www.locationautocar.be/destinations/europe"
         schema={destinationSchemas.europe}
       />
@@ -157,11 +158,11 @@ const DestinationEuropePage: React.FC = () => {
               Voyages en Europe au départ de Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Explorez l'<strong>Europe en autocar grand tourisme</strong> avec nos circuits organisés. 
-              De Paris romantique à Prague magique, découvrez les capitales européennes avec nos{' '}
-              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">guides francophones expérimentés</Link>{' '}
-              et notre{' '}
-              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte d'autocars grand tourisme</Link>.
+              Paris, Amsterdam, Cologne, Luxembourg, Prague, Strasbourg : voyez nos <strong>circuits 2-7 jours</strong>. 
+              Capitales Nord, Europe centrale, vallée du Rhin. Autocar toilettes/WiFi, hôtels 3-4*, guides locaux. Consultez nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">voyages Europe</Link>{' '}
+              et la{' '}
+              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte longue distance</Link>.
             </p>
           </div>
 

@@ -4,6 +4,7 @@ import { Users, Shield, Wifi, Coffee, CheckCircle, ArrowRight, Phone, Mail, Star
 import SEOHead from '../components/SEO/SEOHead';
 import BreadcrumbComponent from '../components/SEO/BreadcrumbComponent';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
+import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const FleetBusPage: React.FC = () => {
   const busModels = [
@@ -143,10 +144,10 @@ const FleetBusPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Location Bus avec Chauffeur Bruxelles | 20-35 Places | Devis Gratuit"
-        metaTitle="Bus Touristique Chauffeur | 20-35 Places | Excursions Confortables"
-        description="Location de bus avec chauffeur professionnel à Bruxelles. Flotte moderne 20-35 places pour excursions, voyages d'affaires et transferts en Europe. Devis gratuit 24/7."
-        keywords="bus touristique chauffeur, 20-35 places, excursions confortables, voyages affaires europe"
+        title={pageMeta.fleetBus.title}
+        metaTitle={pageMeta.fleetBus.metaTitle}
+        description={pageMeta.fleetBus.description}
+        keywords={semanticKeywords.fleetBus.join(', ')}
         canonical="https://www.locationautocar.be/notre-flotte/bus"
         schema={serviceVehicleSchemas.bus}
       />
@@ -167,11 +168,11 @@ const FleetBusPage: React.FC = () => {
               Location Bus avec Chauffeur à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez notre flotte de <strong>bus modernes de 20 à 35 places</strong> avec chauffeur professionnel. 
-              Parfaits pour vos excursions touristiques vers nos{' '}
-              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>{' '}
-              et voyages d'affaires avec notre{' '}
-              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">service professionnel</Link>.
+              Nos <strong>bus 20-35 places</strong> offrent le meilleur compromis capacité/confort pour groupes scolaires, 
+              associations et entreprises. Excursions Bruges-Gand, Paris, Amsterdam. Prises USB, climatisation, soute bagages. Consultez nos{' '}
+              <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">circuits Europe</Link>{' '}
+              et{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">formules excursion</Link>.
             </p>
           </div>
 

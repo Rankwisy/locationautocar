@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar, Globe, Plane } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { destinationSchemas } from '../data/enhancedSchemas';
+import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const DestinationsPage: React.FC = () => {
   const mainDestinations = [
@@ -211,10 +212,10 @@ const DestinationsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Destinations Excursions Autocar | Bruxelles, Belgique, Europe | Guide Francophone"
-        metaTitle="Destinations Autocar Bruxelles | Excursions Belgique Europe | Guide"
-        description="Découvrez nos destinations en autocar avec chauffeur et guide francophone : Bruxelles Grand-Place Atomium, Belgique Bruges Gand, Europe Paris Amsterdam. Circuits organisés depuis Bruxelles."
-        keywords="destinations autocar bruxelles, excursions belgique, circuits europe, guide francophone, bruges gand anvers, paris amsterdam prague"
+        title={pageMeta.destinations.title}
+        metaTitle={pageMeta.destinations.metaTitle}
+        description={pageMeta.destinations.description}
+        keywords={semanticKeywords.destinations.join(', ')}
         canonical="https://www.locationautocar.be/destinations"
         schema={destinationsSchema}
         faqSchema={faqSchema}
@@ -230,12 +231,11 @@ const DestinationsPage: React.FC = () => {
               Destinations depuis Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Explorez <strong>Bruxelles, la Belgique et l'Europe</strong> avec nos circuits en autocar. 
-              Guides francophones expérimentés, transport confortable et itinéraires soigneusement élaborés 
-              pour découvrir les plus beaux sites européens. Notre{' '}
-              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte d'autocars grand tourisme</Link>{' '}
-              vous emmène vers toutes nos{' '}
-              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">excursions organisées</Link>.
+              Trois niveaux de circuits : <strong>Bruxelles</strong> (Grand-Place, Atomium), <strong>Belgique</strong> (Bruges, Gand, Anvers),{' '}
+              <strong>Europe</strong> (Paris, Amsterdam, Prague). Guides francophones, autocar confortable, hébergements inclus selon formule. Comparez les{' '}
+              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">véhicules disponibles</Link>{' '}
+              et nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">formules excursion</Link>.
             </p>
           </div>
 

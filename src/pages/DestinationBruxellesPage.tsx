@@ -4,7 +4,7 @@ import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Sta
 import SEOHead from '../components/SEO/SEOHead';
 import InternalLink from '../components/SEO/InternalLink';
 import { destinationSchemas } from '../data/enhancedSchemas';
-import { semanticKeywords, bruxellesHyperlocal } from '../data/seoData';
+import { pageMeta, semanticKeywords, bruxellesHyperlocal } from '../data/seoData';
 
 const DestinationBruxellesPage: React.FC = () => {
   const attractions = [
@@ -105,9 +105,9 @@ const DestinationBruxellesPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Excursions Bruxelles avec Chauffeur | Atomium, Grand-Place | Devis Gratuit"
-        metaTitle="Excursions Bruxelles Autocar | Grand-Place Atomium | Guide Francophone"
-        description="Découvrez Bruxelles avec nos excursions guidées en autocar : Grand-Place UNESCO, Atomium, quartier européen. Transport avec chauffeur professionnel. Réservez maintenant."
+        title={pageMeta.destinationBruxelles.title}
+        metaTitle={pageMeta.destinationBruxelles.metaTitle}
+        description={pageMeta.destinationBruxelles.description}
         keywords={semanticKeywords.bruxelles.join(', ')}
         canonical="https://www.locationautocar.be/destinations/bruxelles"
         schema={destinationSchemas.bruxelles}
@@ -132,11 +132,11 @@ const DestinationBruxellesPage: React.FC = () => {
               Excursions à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez la <strong>capitale de l'Europe</strong> avec nos excursions guidées en autocar. 
-              De la Grand-Place UNESCO au quartier européen, explorez Bruxelles avec nos{' '}
-              <InternalLink to="/nos-services/excursions-tourisme" anchor="Excursions touristiques Bruxelles" />{' '}
-              et notre{' '}
-              <InternalLink to="/notre-flotte/bus" anchor="Location bus groupe excursion" />.
+              Circuits à la carte : <strong>Classique</strong> (Grand-Place, Manneken-Pis), <strong>Moderne</strong> (Atomium, Cinquantenaire), 
+              <strong> Gourmand</strong> (chocolat, bières). Transport et guide inclus. Réservez nos{' '}
+              <InternalLink to="/nos-services/excursions-tourisme" anchor="excursions Bruxelles" />{' '}
+              avec{' '}
+              <InternalLink to="/notre-flotte/bus" anchor="bus confortable" />.
             </p>
           </div>
 
