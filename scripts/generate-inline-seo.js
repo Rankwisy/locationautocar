@@ -8,8 +8,8 @@ const BASE = 'https://www.locationautocar.be';
 
 const META = {
   '/': {
-    t: "Location Autocar à Bruxelles | Bus & Minibus avec Chauffeur – Devis Gratuit",
-    d: "Location autocar avec chauffeur Bruxelles depuis 2007. Flotte 100% conforme LEZ Euro 6. Minibus, bus, autocars pour transferts, excursions Europe. Service 24/7."
+    t: "Location Autocar Bruxelles avec chauffeur – Comparatif devis gratuit",
+    d: "Location autocar Bruxelles avec chauffeur. Bus et minibus pour groupes événements et transferts. Comparatif clair et devis gratuit rapide."
   },
   '/nos-services': {
     t: "Services Transport Autocar Bruxelles | Transferts Excursions | Chauffeur Professionnel",
