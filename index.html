@@ -25,6 +25,23 @@
     <!-- Canonical/OG/Twitter are set per-route by SEOHead -->
     <!-- SEO inline: title/canonical/og/twitter avant React; meta description par Helmet -->
     <script src="/seo-inline.js"></script>
+    <!-- Remove duplicate generic meta description (keep page-specific one from Helmet) -->
+    <script>
+      (function(){
+        var generic = "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe. Devis gratuit.";
+        function clean(){
+          var metas = document.querySelectorAll('meta[name="description"]');
+          if (metas.length > 1) {
+            metas.forEach(function(m){
+              if (m.getAttribute('content') === generic) m.remove();
+            });
+          }
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', clean);
+        else clean();
+        setTimeout(clean, 1500);
+      })();
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://ik.imagekit.io/by733ltn6/locationautocar/favicon%20locationoutocarbe.png" />
@@ -32,8 +49,6 @@
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Ahrefs Site Audit – Patch it / Batch AI -->
-    <script defer type="application/javascript" src="https://patches.ahrefs.com/348de573-2488-4652-a3a2-54852be08590.js"></script>
   </head>
   <body>
     <div id="root"></div>
