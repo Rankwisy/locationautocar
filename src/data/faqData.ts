@@ -69,7 +69,7 @@ export const generalFAQ = {
   ]
 };
 
-/** FAQ ciblant les recherches prix (intention transactionnelle, NLP) */
+/** FAQ ciblant les recherches prix (intention transactionnelle, NLP, questions naturelles) */
 export const priceFaq = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -120,6 +120,22 @@ export const priceFaq = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "La mise à disposition commence généralement à 4 heures minimum. Le tarif à l'heure varie selon le véhicule : minibus à partir d'environ 45€/h, bus 55€/h, autocar 80€/h. Demandez un devis pour votre programme précis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Location minibus Bruxelles prix : quel budget prévoir ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un minibus 8-16 places à Bruxelles : environ 120€ à 300€ la journée selon la durée et le trajet. Transfert aéroport : à partir de 150€. Devis gratuit sous 24h au +32 2 580 03 25."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Autocar LEZ Bruxelles tarif : les véhicules Euro 6 coûtent-ils plus cher ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre flotte 100% Euro 6 est tarifée au même niveau que le marché. En évitant les amendes LEZ (350€), vous réalisez des économies. Tarification transparente, devis détaillé sans frais cachés."
       }
     }
   ]

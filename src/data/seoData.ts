@@ -173,6 +173,9 @@ export const nlpTerms = {
     'Location minibus bruxelles prix ?',
     'Devis gratuit autocar bruxelles ?',
     'Autocar LEZ bruxelles tarif ?',
+    'Quel tarif pour une excursion Bruges en bus ?',
+    'Prix location bus 30 places journée ?',
+    'Coût transfert Zaventem centre-ville ?',
   ],
 };
 
@@ -287,6 +290,7 @@ export const internalLinkAnchors: Record<string, string[]> = {
     'Location minibus Bruxelles prix',
     'Minibus 8-16 places chauffeur',
     'Prix minibus avec chauffeur',
+    'minibus luxe Mercedes',
   ],
   [ROUTES.FLOTTE_BUS]: [
     'Location bus 30 places Bruxelles',
@@ -297,6 +301,7 @@ export const internalLinkAnchors: Record<string, string[]> = {
     'Location autocar grand tourisme',
     'Autocar 50 places prix',
     'Tarif autocar Europe',
+    'autocar grand tourisme',
   ],
   [ROUTES.LEZ]: [
     'Autocar conforme LEZ Bruxelles',

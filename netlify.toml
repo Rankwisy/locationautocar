@@ -1,3 +1,5 @@
+# SEO/Prerender: Enable "Netlify Prerender" extension in dashboard for crawlers to receive
+# fully-rendered HTML (fixes duplicate title/description on 23+ pages). See docs/PRERENDER-SEO.md
 [build]
 publish = "dist"
 command = "npm run build:sitemap"
@@ -128,6 +130,73 @@ from = "/contact-success"
 to = "/contactez-nous?success=true"
 status = 302
 
+# Legacy URLs -> canonical routes (preserve backlinks / avoid 404s)
+[[redirects]]
+from = "/contact"
+to = "/contactez-nous"
+status = 301
+
+[[redirects]]
+from = "/services"
+to = "/nos-services"
+status = 301
+
+[[redirects]]
+from = "/fleet"
+to = "/notre-flotte"
+status = 301
+
+[[redirects]]
+from = "/notre-flotte/autocar"
+to = "/notre-flotte/autocars"
+status = 301
+
+[[redirects]]
+from = "/notre-flotte/autocar/"
+to = "/notre-flotte/autocars"
+status = 301
+
+[[redirects]]
+from = "/privacy-policy"
+to = "/politique-confidentialite"
+status = 301
+
+[[redirects]]
+from = "/legal-notice"
+to = "/mentions-legales"
+status = 301
+
+# Legacy blog slugs with date prefix -> current canonical blog slugs
+[[redirects]]
+from = "/blog/2024-01-20-eiffel-tower-sunset-magic"
+to = "/blog/eiffel-tower-sunset-magic"
+status = 301
+
+[[redirects]]
+from = "/blog/2024-01-25-bruxelles-coeur-europe"
+to = "/blog/bruxelles-coeur-europe"
+status = 301
+
+[[redirects]]
+from = "/blog/2024-01-30-amsterdam-canaux-velo"
+to = "/blog/amsterdam-canaux-velo"
+status = 301
+
+[[redirects]]
+from = "/blog/2025-01-28-location-autocar-avec-chauffeur-bruxelles-prix"
+to = "/blog/location-autocar-avec-chauffeur-bruxelles-prix"
+status = 301
+
+[[redirects]]
+from = "/blog/2025-02-05-location-autocar-evenements-bruxelles-2025"
+to = "/blog/location-autocar-evenements-bruxelles-2025"
+status = 301
+
+[[redirects]]
+from = "/blog/2026-02-01-lez-bruxelles-2026-guide-complet-normes-euro-6"
+to = "/blog/lez-bruxelles-2026-guide-complet-normes-euro-6"
+status = 301
+
 [[redirects]]
 from = "/404"
 to = "/index.html"
@@ -137,6 +206,13 @@ status = 404
 from = "/500"
 to = "/index.html"
 status = 500
+
+# Ahrefs verification – doit précéder le catch-all SPA
+[[redirects]]
+from = "/k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt"
+to = "/k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt"
+status = 200
+force = false
 
 [[redirects]]
 from = "/*"

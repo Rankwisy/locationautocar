@@ -6,7 +6,7 @@ import InternalLink from '../components/SEO/InternalLink';
 import EnvironmentalCompliance from '../components/EnvironmentalCompliance';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '../data/enhancedSchemas';
 import { homePageFaq } from '../data/faqData';
-import { semanticKeywords, conversionCopy } from '../data/seoData';
+import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '../data/seoData';
 
 const HomePage: React.FC = () => {
   const services = [
@@ -182,9 +182,9 @@ const HomePage: React.FC = () => {
             <p className="text-base sm:text-lg md:text-xl mb-2 text-blue-200 max-w-4xl mx-auto leading-relaxed">
               Transferts • Excursions • Voyages d'affaires • Mise à disposition
             </p>
-            {/* Trust / coverage line */}
+            {/* Trust / coverage line - zones hyperlocales */}
             <p className="text-base sm:text-lg text-blue-200/90 max-w-4xl mx-auto mb-8">
-              Départs de Bruxelles vers toute la Belgique et l'Europe.
+              Prise en charge dans les {bruxellesHyperlocal.communes.length} communes bruxelloises (Grand-Place, Schuman, Atomium…) vers toute la Belgique et l'Europe.
             </p>
             
             {/* Call-to-Action Buttons */}
@@ -197,13 +197,11 @@ const HomePage: React.FC = () => {
                 {conversionCopy.cta.principal}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
               </Link>
-              <Link
+              <InternalLink
                 to="/nos-services"
+                anchor="Nos services transport autocar"
                 className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/10 min-w-[200px]"
-                title="Découvrir services transport autocar transferts excursions"
-              >
-                Nos Services
-              </Link>
+              />
             </div>
             
             {/* Trust Indicators */}

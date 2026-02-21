@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import InternalLink from '../components/SEO/InternalLink';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import LEZBadge from '../components/LEZBadge';
-import { fleetFAQ } from '../data/faqData';
+import { fleetFAQ, priceFaq } from '../data/faqData';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
 import { pageMeta, semanticKeywords } from '../data/seoData';
 
@@ -227,7 +228,7 @@ const FleetPage: React.FC = () => {
         keywords={semanticKeywords.fleet.join(', ')}
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
-        faqSchema={fleetFAQ}
+        faqSchema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [...(fleetFAQ.mainEntity as object[]), ...(priceFaq.mainEntity as object[]).slice(0, 3)] }}
         breadcrumbSchema={breadcrumbSchema}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
@@ -241,10 +242,10 @@ const FleetPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez notre flotte moderne de véhicules avec chauffeur professionnel. 
-              Du <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">minibus luxe</Link> à 
-              l'<Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>, 
+              Du <InternalLink to="/notre-flotte/minibus" anchor="minibus luxe Mercedes" /> à 
+              l'<InternalLink to="/notre-flotte/autocars" anchor="autocar grand tourisme" />, 
               nous avons le véhicule parfait pour tous vos{' '}
-              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">besoins de transport</Link>.
+              <InternalLink to="/nos-services" />.
             </p>
           </div>
 

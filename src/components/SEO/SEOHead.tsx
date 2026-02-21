@@ -40,7 +40,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{finalTitle}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={description ?? ''} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={fullCanonical} />
 

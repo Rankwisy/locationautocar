@@ -348,12 +348,12 @@ const DestinationEuropePage: React.FC = () => {
                   Réseau officiel des capitales européennes de la culture.
                 </p>
                 <a 
-                  href="https://www.ecoc-doc-athens.eu" 
+                  href="https://culture.ec.europa.eu/creative-europe/culture/capitals-of-culture" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2"
                 >
-                  Capitales Culture Europe
+                  Capitales Européennes de la Culture (UE)
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

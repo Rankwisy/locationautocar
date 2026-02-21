@@ -1,9 +1,27 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
 const Layout: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (import.meta.env.DEV) {
+      const check = () => {
+        const metas = document.querySelectorAll('meta[name="description"]');
+        if (metas.length > 1) {
+          console.warn(
+            `[SEO] ${metas.length} meta description(s) sur ${location.pathname}. Il ne doit y en avoir qu'une.`,
+            [...metas].map(m => m.getAttribute('content')?.slice(0, 60))
+          );
+        }
+      };
+      const id = setTimeout(check, 800);
+      return () => clearTimeout(id);
+    }
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <a

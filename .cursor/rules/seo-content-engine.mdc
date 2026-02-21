@@ -1,0 +1,34 @@
+---
+description: SEO Content Engine – Google 2026, E-E-A-T, hyperlocal Bruxelles, conversion
+globs: "src/content/**/*,src/pages/**/*.tsx,src/data/seoData.ts,src/data/faqData.ts,src/data/blogContentData.ts"
+alwaysApply: false
+---
+
+# SEO Content Engine – Location Autocar Bruxelles
+
+When creating or editing content, follow this framework. Full spec: `docs/SEO-CONTENT-ENGINE.md`.
+
+## Core Pillars
+- **Relevance** to user intent (informational, commercial, transactional, local)
+- **Reliability** via E-E-A-T, proof signals, industry terms
+- **Real Value** – no filler; every section adds unique insight or action
+- **Conversion** – benefit-driven copy, clear CTAs, trust signals
+- **Hyperlocal Authority** – Bruxelles zones: Anderlecht, Etterbeek, Schaerbeek, Ixelles, Uccle, Woluwe, Quartier Européen, Gare du Midi, Zaventem, Avenue Louise
+
+## Mandatory Structure
+1. **Direct answer** in first 100–150 words
+2. **Semantic headings** H2/H3 aligned with real queries
+3. **FAQ** for extractable snippets; use `priceFaq`, `nlpTerms.questions` from `seoData.ts`
+4. **Internal links** via `InternalLink` + ancres from `internalLinkAnchors` (no spam)
+
+## Data Sources (use existing)
+- `seoData.ts`: `semanticKeywords`, `nlpTerms`, `bruxellesHyperlocal`, `conversionCopy`, `internalLinkAnchors`, `getInternalLinkAnchor()`
+- `faqData.ts`: `priceFaq`, `generalFAQ`, `servicesFAQ`, `fleetFAQ`
+
+## Output Checklist
+- [ ] Intent-first, direct answer up front
+- [ ] Semantic keywords & NLP entities integrated
+- [ ] Hyperlocal zones (if Bruxelles/Belgique topic)
+- [ ] CTA with `conversionCopy`
+- [ ] Internal anchors diversified, not exact-match spam
+- [ ] No thin content, no keyword stuffing

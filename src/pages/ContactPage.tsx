@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight, Home } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
+import InternalLink from '../components/SEO/InternalLink';
 import EnhancedContactForm from '../components/Forms/EnhancedContactForm';
 import { contactSchema } from '../data/enhancedSchemas';
 import { ROUTES } from '../data/canonicalRoutes';
+import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '../data/seoData';
+import { priceFaq } from '../data/faqData';
 
 const ContactPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -51,11 +54,12 @@ const ContactPage: React.FC = () => {
       <SEOHead
         title="Contactez Nous - Location Autocar Bruxelles"
         metaTitle="Contact Location Autocar Bruxelles | Devis Gratuit | Service 24/7"
-        description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Bruxelles."
-        keywords="contact autocar bruxelles, devis gratuit transport, service 24/7, bd industriel bruxelles"
+        description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Anderlecht (Bruxelles)."
+        keywords={semanticKeywords.contact.join(', ')}
         canonical="https://www.locationautocar.be/contactez-nous"
         schema={contactSchema}
         breadcrumbSchema={breadcrumbSchema}
+        faqSchema={priceFaq}
       />
 
       <div className="py-12">
@@ -66,11 +70,10 @@ const ContactPage: React.FC = () => {
               Contactez-nous à Bruxelles
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Demandez votre devis gratuit pour nos services de transport en autocar avec chauffeur. 
-              Notre équipe est disponible 24/7 pour répondre à vos besoins. Consultez notre{' '}
-              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte complète</Link>{' '}
-              et découvrez nos{' '}
-              <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
+              {conversionCopy.cta.principal} pour nos services de transport en autocar avec chauffeur. 
+              Notre équipe est disponible 24/7. Prise en charge dans les 19 communes bruxelloises (Anderlecht, Etterbeek, Schaerbeek…). Consultez notre{' '}
+              <InternalLink to={ROUTES.FLOTTE} /> et nos{' '}
+              <InternalLink to={ROUTES.DESTINATIONS} anchorVariant={1} />.
             </p>
           </div>
 
@@ -91,25 +94,23 @@ const ContactPage: React.FC = () => {
                 </div>
                 <p className="text-sm text-green-700 mb-3">Continuez à explorer :</p>
                 <div className="flex flex-wrap gap-3">
-                  <Link
+                  <InternalLink
                     to={ROUTES.HOME}
                     className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition-colors text-sm font-medium"
                   >
                     <Home className="w-4 h-4" />
                     Accueil
-                  </Link>
-                  <Link
+                  </InternalLink>
+                  <InternalLink
                     to={ROUTES.SERVICES}
+                    anchor="Nos services transport autocar"
                     className="inline-flex items-center gap-2 border border-green-700 text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
-                  >
-                    Nos services
-                  </Link>
-                  <Link
+                  />
+                  <InternalLink
                     to={ROUTES.FLOTTE}
+                    anchorVariant={1}
                     className="inline-flex items-center gap-2 border border-green-700 text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
-                  >
-                    Notre flotte
-                  </Link>
+                  />
                 </div>
               </div>
             </div>

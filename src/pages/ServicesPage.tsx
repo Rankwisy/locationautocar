@@ -4,7 +4,7 @@ import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle, Plane, Buildin
 import SEOHead from '../components/SEO/SEOHead';
 import InternalLink from '../components/SEO/InternalLink';
 import { serviceSchemas } from '../data/enhancedSchemas';
-import { semanticKeywords } from '../data/seoData';
+import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '../data/seoData';
 import { priceFaq, servicesFAQ } from '../data/faqData';
 
 const ServicesPage: React.FC = () => {
@@ -222,10 +222,9 @@ const ServicesPage: React.FC = () => {
                 ? activeService.description
                 : <>
                     Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur
-                    pour particuliers et entreprises en Belgique et en Europe. Notre{' '}
-                    <InternalLink to="/notre-flotte" anchor="Notre flotte autocars" />{' '}
-                    dessert toutes nos{' '}
-                    <InternalLink to="/destinations" anchor="Destinations depuis Bruxelles" />.
+                    pour particuliers et entreprises. Prise en charge dans tout Bruxelles ({bruxellesHyperlocal.quartiersStrategiques.slice(0, 3).map(q => q.nom).join(', ')}…). Notre{' '}
+                    <InternalLink to="/notre-flotte" /> dessert toutes nos{' '}
+                    <InternalLink to="/destinations" anchorVariant={1} />.
                   </>
               }
             </p>
@@ -284,13 +283,14 @@ const ServicesPage: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link
+                  <InternalLink
                     to="/contactez-nous"
+                    anchor={conversionCopy.cta.secondaire}
                     className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
                   >
-                    Demander un Devis
+                    {conversionCopy.cta.secondaire}
                     <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
-                  </Link>
+                  </InternalLink>
                 </div>
               </div>
             ))}
