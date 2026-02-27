@@ -1,25 +1,9 @@
-# SEO/Prerender: Enable "Netlify Prerender" extension in dashboard for crawlers to receive
-# fully-rendered HTML (fixes duplicate title/description on 23+ pages). See docs/PRERENDER-SEO.md
+# Next.js: SSR/SSG native. Netlify Prerender extension not needed.
 [build]
-publish = "dist"
-command = "npm run build:sitemap"
+  command = "npm run build"
 
-[build.processing]
-skip_processing = false
-
-[build.processing.css]
-bundle = true
-minify = true
-
-[build.processing.js]
-bundle = true
-minify = true
-
-[build.processing.html]
-pretty_urls = true
-
-[build.processing.images]
-compress = true
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [build.environment]
 NODE_VERSION = "18"
@@ -197,24 +181,11 @@ from = "/blog/2026-02-01-lez-bruxelles-2026-guide-complet-normes-euro-6"
 to = "/blog/lez-bruxelles-2026-guide-complet-normes-euro-6"
 status = 301
 
-[[redirects]]
-from = "/404"
-to = "/index.html"
-status = 404
-
-[[redirects]]
-from = "/500"
-to = "/index.html"
-status = 500
-
-# Ahrefs verification – doit précéder le catch-all SPA
+# Ahrefs verification
 [[redirects]]
 from = "/k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt"
 to = "/k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt"
 status = 200
 force = false
 
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+# Next.js handles 404/500 and routing - no SPA catch-all

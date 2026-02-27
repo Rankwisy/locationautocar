@@ -1,55 +1,45 @@
-# Prérendu & SEO – Résolution des doublons title/description
+# SEO & Server-Side Rendering – Next.js
 
-## Problème résolu
+## Architecture actuelle : Next.js avec App Router
 
-23+ pages avaient le même `title` et `description` (ceux de `index.html`) et semblaient peu fournies en contenu, car :
-- Le site est une **SPA** (Single Page Application)
-- Toutes les URLs servaient le même `index.html` avec des meta statiques
-- Le contenu et les meta sont injectés côté client par React/Helmet
-- Les crawlers qui exécutent peu ou pas le JavaScript voyaient les meta par défaut et peu de contenu
+Le site utilise **Next.js 14** avec l’App Router. Les pages sont rendues côté serveur (SSR) ou pré-rendues à la compilation (SSG), ce qui fournit directement :
 
-## Solution recommandée : Extension Netlify Prerender
+- **HTML complet** avec meta tags corrects pour chaque URL
+- **Contenu visible** pour tous les crawlers sans exécution JavaScript
+- **Structured data (JSON-LD)** injectée dans le HTML à la génération
+- **Sitemap et robots** générés dynamiquement via `app/sitemap.ts` et `app/robots.ts`
 
-L’extension **Netlify Prerender** génère du HTML complet par URL pour les crawlers et les agents IA, tout en laissant les visiteurs sur l’app React normale.
+## Netlify Prerender : plus nécessaire
 
-### Activation (à faire dans le dashboard Netlify)
+L’extension Netlify Prerender n’est **plus requise** avec Next.js. Le rendu des pages est géré nativement par Next.js. L’utilisation de `@netlify/plugin-nextjs` suffit pour déployer correctement l’application sur Netlify.
 
-1. Désactiver l’ancien prerendering (si activé)  
-   - **Configuration du projet** → **Build & deploy** → **Post processing** → **Prerendering** → Désactiver
+Si l’extension Netlify Prerender était activée auparavant, elle peut être **désactivée** dans le tableau de bord Netlify.
 
-2. Installer l’extension Netlify Prerender  
-   - Aller sur : https://app.netlify.com/extensions/prerender  
-   - Cliquer sur **Install**
+## SEO et métadonnées
 
-3. Activer pour ce projet  
-   - Ouvrir le projet sur Netlify  
-   - Dans le menu gauche : **Extensions**  
-   - Sélectionner **Prerender** → **Enable prerendering**  
-   - Enregistrer et redéployer
+### generateMetadata
 
-### Fonctionnement
+Chaque page exporte `metadata` ou `generateMetadata` avec :
 
-- **Visiteurs** : reçoivent l’app React normale
-- **Crawlers / robots** : reçoivent du HTML déjà rendu, avec les bons meta et le contenu complet
+- `title`, `description`, `keywords`
+- `alternates.canonical`
+- `openGraph` (title, description, url, images)
+- `twitter` (card, title, description)
 
-### Sitemap et URLs à prérendre
+### Structured data (JSON-LD)
 
-Le sitemap (`/sitemap.xml`) liste toutes les URLs importantes. L’extension Netlify Prerender gère les requêtes des crawlers sur ces URLs automatiquement.
+Les schémas (Organization, LocalBusiness, WebSite, FAQ, etc.) sont inclus dans les layouts et pages via des balises `<script type="application/ld+json">`.
 
-## Script SEO inline (`public/seo-inline.js`)
+### Sitemap et robots
 
-Un script léger met à jour **title**, **description**, **canonical** et **og/twitter** avant le chargement de React, en fonction de l’URL. Cela aide les crawlers qui exécutent du JavaScript minimal mais pas le bundle React complet.
+- **Sitemap** : `app/sitemap.ts` génère automatiquement toutes les URLs (pages statiques + articles de blog)
+- **Robots** : `app/robots.ts` définit les règles de crawl et pointe vers le sitemap
 
-- Script : `public/seo-inline.js`
-- Régénération : `npm run generate:seo-inline`
-- Couvre toutes les routes statiques + articles de blog
+## Ancien script SEO inline (`seo-inline.js`)
 
-## Autres actions effectuées
-
-- **Sitemap** : ajout du 6ᵉ article de blog (`location-autocar-evenements-bruxelles-2025`)
-- **Canonical par défaut** dans `index.html` pour la page d’accueil
+Ce script n’existe plus. Avec Next.js, les meta tags sont servis directement dans le HTML à chaque requête, sans script client.
 
 ## Références
 
-- [Documentation Netlify Prerender](https://docs.netlify.com/build/post-processing/prerendering/#netlify-prerender-extension)
-- [Extension Prerender sur Netlify](https://app.netlify.com/extensions/prerender)
+- [Next.js Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+- [Next.js on Netlify](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/)
