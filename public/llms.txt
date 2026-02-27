@@ -1,0 +1,39 @@
+# Location Autocar Bruxelles
+
+> Location d'autocar et bus avec chauffeur à Bruxelles depuis 2007 – transferts aéroports, excursions, voyages d'affaires et mise à disposition pour groupes en Belgique et en Europe.
+
+## Pages principales
+
+- [Accueil](https://www.locationautocar.be/): Page d'accueil, devis gratuit, présentation des services.
+- [Nos services](https://www.locationautocar.be/nos-services): Transferts, excursions, voyages d'affaires, mise à disposition.
+- [Transferts aéroports](https://www.locationautocar.be/nos-services/transferts-aeroports): Navettes et transferts depuis Bruxelles vers les aéroports.
+- [Excursions & tourisme](https://www.locationautocar.be/nos-services/excursions-tourisme): Circuits et excursions pour groupes au départ de Bruxelles.
+- [Voyages d'affaires](https://www.locationautocar.be/nos-services/voyages-affaires): Transport corporate, séminaires, événements d'entreprise.
+- [Mise à disposition](https://www.locationautocar.be/nos-services/mise-a-disposition): Location à l'heure selon vos besoins.
+- [Notre flotte](https://www.locationautocar.be/notre-flotte): Minibus, bus et autocars avec chauffeur.
+- [Minibus](https://www.locationautocar.be/notre-flotte/minibus): 8 à 16 passagers.
+- [Bus](https://www.locationautocar.be/notre-flotte/bus): 20 à 35 passagers.
+- [Autocars](https://www.locationautocar.be/notre-flotte/autocars): 40 à 55 passagers.
+- [Destinations](https://www.locationautocar.be/destinations): Bruxelles, Belgique, Europe.
+- [Destinations Bruxelles](https://www.locationautocar.be/destinations/bruxelles): Transport local et interurbain à Bruxelles.
+- [Destinations Belgique](https://www.locationautocar.be/destinations/belgique): Voyages en Belgique.
+- [Destinations Europe](https://www.locationautocar.be/destinations/europe): Paris, Amsterdam, circuits Europe.
+- [LEZ Bruxelles](https://www.locationautocar.be/lez-bruxelles): Normes Low Emission Zone et conformité véhicules.
+- [Blog](https://www.locationautocar.be/blog): Articles sur le transport en autocar, excursions, actualités.
+- [Contact](https://www.locationautocar.be/contactez-nous): Demande de devis et formulaire de contact.
+- [Mentions légales](https://www.locationautocar.be/mentions-legales): Informations légales.
+- [Politique de confidentialité](https://www.locationautocar.be/politique-confidentialite): RGPD et protection des données.
+
+## Contexte
+
+Location Autocar Bruxelles propose la location d'autocars, bus et minibus avec chauffeur professionnel pour les entreprises, écoles et groupes touristiques. Services principaux : transferts aéroport (Zaventem, Charleroi), excursions (Grand-Place, Atomium, musées), voyages d'affaires (séminaires, conférences), mise à disposition à l'heure. Flotte Euro 6 conforme à la LEZ Bruxelles. Zone de couverture : 19 communes bruxelloises, Belgique, Europe (Paris, Amsterdam, etc.). Site en français. Devis gratuit sans engagement.
+
+## Optional
+
+- [Sitemap](https://www.locationautocar.be/sitemap.xml): Plan du site XML.
+- [LEZ Bruxelles 2026 – Guide Euro 6](https://www.locationautocar.be/blog/lez-bruxelles-2026-guide-complet-normes-euro-6)
+- [Location autocar avec chauffeur Bruxelles – Prix](https://www.locationautocar.be/blog/location-autocar-avec-chauffeur-bruxelles-prix)
+- [Location autocar événements Bruxelles 2025](https://www.locationautocar.be/blog/location-autocar-evenements-bruxelles-2025)
+- [Bruxelles cœur de l'Europe](https://www.locationautocar.be/blog/bruxelles-coeur-europe)
+- [Amsterdam canaux vélo](https://www.locationautocar.be/blog/amsterdam-canaux-velo)
+- [Eiffel Tower Sunset Magic](https://www.locationautocar.be/blog/eiffel-tower-sunset-magic)
