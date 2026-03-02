@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { semanticKeywords } from '@/data/seoData';
 
 export const metadata: Metadata = {
-  title: 'Zone LEZ Bruxelles - Flotte 100% Conforme Euro 6 | Location Autocar',
+  title: 'LEZ Bruxelles 2026 | Flotte Autocar Euro 6 Conforme',
   description: 'Tous nos autocars sont conformes aux normes LEZ Bruxelles 2026. Flotte 100% Euro 6 garantissant accès illimité au centre-ville. Pas d\'amende, pas de restriction.',
   keywords: semanticKeywords.lez.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/lez-bruxelles' },

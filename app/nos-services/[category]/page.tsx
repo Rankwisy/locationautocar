@@ -93,10 +93,10 @@ export async function generateMetadata({
   const { category } = await params;
   const service = SERVICES.find((s) => s.id === category);
   if (!service) {
-    return { title: 'Service non trouvé | Location Autocar Bruxelles' };
+    return { title: 'Service non trouvé' };
   }
   return {
-    title: `${service.seoTitle} - Location Autocar Bruxelles`,
+    title: `${service.seoTitle} | Chauffeur Professionnel Belgique`,
     description: service.seoDescription,
     keywords: semanticKeywords.services.join(', '),
     alternates: { canonical: `https://www.locationautocar.be/nos-services/${category}` },

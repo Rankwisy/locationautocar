@@ -3,12 +3,12 @@ import { Suspense } from 'react';
 import { semanticKeywords } from '@/data/seoData';
 
 export const metadata: Metadata = {
-  title: 'Contactez Nous - Location Autocar Bruxelles',
+  title: 'Contact | Devis gratuit Bruxelles',
   description: 'Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Anderlecht (Bruxelles).',
   keywords: semanticKeywords.contact.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/contactez-nous' },
   openGraph: {
-    title: 'Contact Location Autocar Bruxelles | Devis Gratuit | Service 24/7',
+    title: 'Contact | Devis gratuit',
     description: 'Contactez-nous pour un devis gratuit. Service 24/7, Bd Industriel 9, 1070 Bruxelles.',
     url: 'https://www.locationautocar.be/contactez-nous',
   },

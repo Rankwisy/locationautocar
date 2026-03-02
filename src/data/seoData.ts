@@ -8,7 +8,7 @@ import { ROUTES } from './canonicalRoutes';
 // ─── Meta uniques par page (éviter duplication) ─────────────────────────────
 export const pageMeta: Record<string, { title: string; metaTitle: string; description: string }> = {
   fleet: {
-    title: "Notre Flotte - Location Autocar Bruxelles",
+    title: "Notre Flotte | Bus Minibus Autocar",
     metaTitle: "Flotte Bus Minibus Autocar Bruxelles | Euro 6 LEZ | Choisissez Votre Véhicule",
     description: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-55 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7.",
   },

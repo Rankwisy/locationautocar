@@ -4,7 +4,7 @@ import { Shield, Lock, Eye, UserCheck, Mail, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Politique de Confidentialité - Location Autocar Bruxelles',
+  title: 'Politique de Confidentialité',
   description: 'Politique de confidentialité et protection des données personnelles de Location Autocar Bruxelles. Conformité RGPD et respect de votre vie privée.',
   keywords: 'politique confidentialite, rgpd, protection donnees, vie privee',
   alternates: { canonical: 'https://www.locationautocar.be/politique-confidentialite' },

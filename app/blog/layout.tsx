@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog - Location Autocar Bruxelles',
+  title: 'Blog Voyage Autocar | Guides Destinations',
   description: 'Découvrez nos guides de voyage, conseils pratiques et actualités sur le transport en autocar. Destinations, itinéraires et astuces pour vos voyages de groupe.',
   keywords: 'blog voyage autocar, guides destinations, conseils transport groupe, excursions europe, circuits belgique',
   alternates: { canonical: 'https://www.locationautocar.be/blog' },

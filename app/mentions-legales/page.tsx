@@ -4,12 +4,12 @@ import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mentions Légales - Location Autocar Bruxelles',
+  title: 'Mentions Légales',
   description: 'Mentions légales de Location Autocar Bruxelles. Informations légales sur notre entreprise de transport en autocar avec chauffeur en Belgique.',
   keywords: 'mentions legales, location autocar bruxelles, informations legales',
   alternates: { canonical: 'https://www.locationautocar.be/mentions-legales' },
   openGraph: {
-    title: 'Mentions Légales | Location Autocar Bruxelles',
+    title: 'Mentions Légales',
     description: 'Mentions légales et informations légales de Location Autocar Bruxelles.',
     url: 'https://www.locationautocar.be/mentions-legales',
   },
