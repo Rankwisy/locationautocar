@@ -8,13 +8,13 @@ import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '@/data/se
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Location Autocar Bruxelles avec chauffeur – Comparatif devis gratuit',
-  description: "Location autocar Bruxelles avec chauffeur. Bus et minibus pour groupes événements et transferts. Comparatif clair et devis gratuit rapide.",
+  title: 'Location Autocar Bruxelles – Devis gratuit',
+  description: "Autocariste Bruxelles pour location autocar avec chauffeur. Bus et minibus confort pour groupes et événements. Devis gratuit immédiat.",
   keywords: semanticKeywords.home.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/' },
   openGraph: {
-    title: 'Location Autocar Bruxelles avec chauffeur – Comparatif devis gratuit',
-    description: "Location autocar Bruxelles avec chauffeur. Bus et minibus pour groupes événements et transferts. Comparatif clair et devis gratuit rapide.",
+    title: 'Location Autocar Bruxelles – Devis gratuit',
+    description: "Autocariste Bruxelles pour location autocar avec chauffeur. Bus et minibus confort pour groupes et événements. Devis gratuit immédiat.",
     url: 'https://www.locationautocar.be/',
     images: ['https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85'],
   },

@@ -6,15 +6,15 @@ import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '@/data/se
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nos Services - Location Autocar Bruxelles',
+  title: 'Nos Services | Autocariste Bruxelles avec Chauffeur',
   description:
-    "Services complets de transport en autocar avec chauffeur à Bruxelles : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition en Belgique.",
+    "Autocariste à Bruxelles : location d'autocar avec chauffeur pour transferts aéroports, excursions, voyages d'affaires et événements. Devis rapide.",
   keywords: semanticKeywords.services.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/nos-services' },
   openGraph: {
-    title: 'Nos Services Transport Autocar Bruxelles | Transferts Excursions',
+    title: 'Nos Services | Autocariste Bruxelles avec Chauffeur',
     description:
-      "Services complets de transport en autocar avec chauffeur : transferts aéroports, excursions, voyages d'affaires et mise à disposition.",
+      "Autocariste à Bruxelles : location d'autocar avec chauffeur pour transferts aéroports, excursions, voyages d'affaires et événements. Devis rapide.",
     url: 'https://www.locationautocar.be/nos-services',
     images: [
       'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85',
