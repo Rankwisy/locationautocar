@@ -157,15 +157,15 @@ const ServicesPage: React.FC = () => {
 
   const pageTitle = activeService
     ? `${activeService.seoTitle} - Location Autocar Bruxelles`
-    : "Nos Services - Location Autocar Bruxelles";
+    : "Nos Services | Autocariste Bruxelles avec Chauffeur";
 
   const pageMetaTitle = activeService
     ? `${activeService.seoTitle} | Chauffeur Professionnel Belgique`
-    : "Services Transport Autocar Bruxelles | Transferts Excursions | Chauffeur Professionnel";
+    : "Nos Services | Autocariste Bruxelles avec Chauffeur";
 
   const pageDescription = activeService
     ? activeService.seoDescription
-    : "Services complets de transport en autocar avec chauffeur à Bruxelles : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition en Belgique.";
+    : "Autocariste à Bruxelles : location d'autocar avec chauffeur pour transferts aéroports, excursions, voyages d'affaires et événements. Devis rapide.";
 
   const pageCanonical = activeService
     ? `https://www.locationautocar.be/nos-services/${category}`

@@ -12,8 +12,8 @@ const META = {
     d: "Autocariste Bruxelles pour location autocar avec chauffeur. Bus et minibus confort pour groupes et événements. Devis gratuit immédiat."
   },
   '/nos-services': {
-    t: "Services Transport Autocar Bruxelles | Transferts Excursions | Chauffeur Professionnel",
-    d: "Services complets de transport en autocar avec chauffeur à Bruxelles : transferts aéroports, excursions touristiques, voyages d'affaires et mise à disposition en Belgique."
+    t: "Nos Services | Autocariste Bruxelles avec Chauffeur",
+    d: "Autocariste à Bruxelles : location d'autocar avec chauffeur pour transferts aéroports, excursions, voyages d'affaires et événements. Devis rapide."
   },
   '/nos-services/transferts-aeroports': {
     t: "Transferts Aéroports Bruxelles | Chauffeur Professionnel Belgique",
