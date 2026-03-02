@@ -115,9 +115,9 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Location Autocar Bruxelles avec chauffeur"
-        metaTitle="Location Autocar Bruxelles avec chauffeur – Comparatif devis gratuit"
-        description="Location autocar Bruxelles avec chauffeur. Bus et minibus pour groupes événements et transferts. Comparatif clair et devis gratuit rapide."
+        title="Location Autocar Bruxelles"
+        metaTitle="Location Autocar Bruxelles – Devis gratuit"
+        description="Autocariste Bruxelles pour location autocar avec chauffeur. Bus et minibus confort pour groupes et événements. Devis gratuit immédiat."
         keywords={homeKeywords}
         canonical="https://www.locationautocar.be/"
         schema={[organizationSchema, websiteSchema, localBusinessSchema]}
