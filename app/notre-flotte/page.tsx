@@ -7,6 +7,12 @@ import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import LEZBadge from '@/components/LEZBadge';
 import { pageMeta, semanticKeywords } from '@/data/seoData';
 
+const fleetPathByType: Record<string, string> = {
+  Minibus: '/notre-flotte/minibus',
+  Bus: '/notre-flotte/bus',
+  Autocar: '/notre-flotte/autocars',
+};
+
 const vehicles = [
   {
     id: 1,
@@ -236,7 +242,7 @@ export default function NotreFlottePage() {
                     Réserver
                   </Link>
                   <Link
-                    href={`/notre-flotte/${vehicle.type.toLowerCase()}`}
+                    href={fleetPathByType[vehicle.type] ?? `/notre-flotte/${vehicle.type.toLowerCase()}`}
                     className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 text-sm"
                   >
                     Détails
