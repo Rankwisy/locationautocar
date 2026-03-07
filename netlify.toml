@@ -214,6 +214,27 @@ to = "/k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt"
 status = 200
 force = false
 
+# SPA fallback – explicit rewrites for service subpages (prevents 404)
+[[redirects]]
+from = "/nos-services/prix"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/nos-services/location-bus-groupe"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/nos-services/autocar-mariage"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/nos-services/navette-entreprise"
+to = "/index.html"
+status = 200
+
 [[redirects]]
 from = "/*"
 to = "/index.html"

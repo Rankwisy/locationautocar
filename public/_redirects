@@ -4,4 +4,8 @@
 /  /  301  Query=l=*
 
 # SPA routing - serve index.html for all routes
+/nos-services/prix  /index.html  200
+/nos-services/location-bus-groupe  /index.html  200
+/nos-services/autocar-mariage  /index.html  200
+/nos-services/navette-entreprise  /index.html  200
 /*  /index.html  200
