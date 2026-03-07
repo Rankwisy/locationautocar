@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
               >
                 Contactez-nous pour votre prochain voyage
-                <ArrowRight className="w-4 h-4 ml-1 rotate-180" aria-hidden="true" />
+                <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
               </Link>
             </div>
           </div>
