@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import HeaderNext from '@/components/Layout/HeaderNext';
 import FooterNext from '@/components/Layout/FooterNext';
-import { organizationSchema, websiteSchema, localBusinessSchema } from '@/data/enhancedSchemas';
+import { organizationSchema, websiteSchema, localBusinessSchema, touristTripSchema, transportServiceSchema } from '@/data/enhancedSchemas';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.locationautocar.be'),
   title: {
@@ -48,7 +48,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const schemas = [organizationSchema, websiteSchema, localBusinessSchema];
+  const schemas = [organizationSchema, websiteSchema, localBusinessSchema, touristTripSchema, transportServiceSchema];
 
   return (
     <html lang="fr">
