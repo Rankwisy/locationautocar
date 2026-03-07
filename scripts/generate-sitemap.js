@@ -8,10 +8,10 @@ const currentDate = new Date().toISOString();
 const BLOG_POSTS = [
   { slug: 'lez-bruxelles-2026-guide-complet-normes-euro-6', lastmod: '2026-02-01T09:00:00+00:00' },
   { slug: 'location-autocar-evenements-bruxelles-2025', lastmod: '2025-02-05T09:00:00+00:00' },
-  { slug: 'location-autocar-avec-chauffeur-bruxelles-prix', lastmod: '2025-01-28T10:00:00+00:00' },
-  { slug: 'bruxelles-coeur-europe', lastmod: '2024-01-25T09:00:00+00:00' },
-  { slug: 'amsterdam-canaux-velo', lastmod: '2024-01-30T10:00:00+00:00' },
-  { slug: 'eiffel-tower-sunset-magic', lastmod: '2024-01-20T10:00:00+00:00' },
+  { slug: 'location-autocar-avec-chauffeur-bruxelles-prix', lastmod: '2026-03-05T10:00:00+00:00' },
+  { slug: 'bruxelles-coeur-europe', lastmod: '2026-03-05T10:00:00+00:00' },
+  { slug: 'amsterdam-canaux-velo', lastmod: '2026-03-05T10:00:00+00:00' },
+  { slug: 'eiffel-tower-sunset-magic', lastmod: '2026-03-05T10:00:00+00:00' },
 ];
 
 /** Build canonical URL – no trailing slash except for root */

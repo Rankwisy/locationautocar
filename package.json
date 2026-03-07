@@ -11,7 +11,9 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "generate:seo-inline": "node scripts/generate-inline-seo.js",
     "build:sitemap": "npm run sitemap && npm run build",
-    "verify:meta": "node scripts/verify-single-meta-description.js"
+    "verify:meta": "node scripts/verify-single-meta-description.js",
+    "check:readability": "node scripts/check-readability.js",
+    "generate:jsonld": "node scripts/generate-static-jsonld.js"
   },
   "dependencies": {
     "date-fns": "^3.6.0",

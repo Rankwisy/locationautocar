@@ -257,6 +257,64 @@ export const localBusinessSchema = {
   ]
 };
 
+/** Standalone TouristTrip for static JSON-LD (crawlers) */
+export const touristTripSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Excursions Touristiques en Autocar",
+  "description": "Circuits organisés avec guide francophone en Belgique et Europe : Bruxelles, Paris, Amsterdam, Bruges, Gand.",
+  "url": "https://www.locationautocar.be/nos-services/excursions-tourisme",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Location Autocar Bruxelles",
+    "url": "https://www.locationautocar.be"
+  },
+  "touristType": ["Cultural Tourism", "City Break", "Heritage Tourism"],
+  "itinerary": [
+    { "@type": "Place", "name": "Bruxelles", "sameAs": "https://en.wikipedia.org/wiki/Brussels" },
+    { "@type": "Place", "name": "Paris", "sameAs": "https://en.wikipedia.org/wiki/Paris" },
+    { "@type": "Place", "name": "Amsterdam", "sameAs": "https://en.wikipedia.org/wiki/Amsterdam" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "minPrice": "120",
+      "maxPrice": "500",
+      "priceCurrency": "EUR"
+    }
+  }
+};
+
+/** TransportService for bus/coach transport - static JSON-LD (crawlers) */
+export const transportServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TransportService",
+  "name": "Location Autocar avec Chauffeur",
+  "description": "Service de location d'autocar, bus et minibus avec chauffeur professionnel à Bruxelles. Transferts aéroports, excursions et voyages d'affaires en Belgique et Europe.",
+  "url": "https://www.locationautocar.be",
+  "transportType": ["Bus", "Coach"],
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Location Autocar Bruxelles",
+    "url": "https://www.locationautocar.be"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Brussels" },
+    { "@type": "Country", "name": "Belgium" },
+    { "@type": "Place", "name": "Europe" }
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "80",
+    "highPrice": "800",
+    "offerCount": "6",
+    "url": "https://www.locationautocar.be/nos-services"
+  }
+};
+
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
