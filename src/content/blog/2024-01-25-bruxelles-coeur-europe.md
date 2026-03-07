@@ -4,7 +4,7 @@ metaTitle: "Visiter Bruxelles - Guide Complet de la Capitale Européenne 2024"
 metaDescription: "Découvrez Bruxelles authentique : Grand-Place, Atomium, quartiers secrets et spécialités locales. Guide complet avec conseils d'initiés pour une visite réussie."
 slug: "bruxelles-coeur-europe"
 excerpt: "Plongez au cœur de Bruxelles, où l'histoire européenne se mêle à l'art de vivre belge. Entre Grand-Place majestueuse et quartiers bohèmes, découvrez une capitale qui sait allier tradition et modernité."
-featuredImage: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg"
+featuredImage: "https://ik.imagekit.io/by733ltn6/une-file-d-autobus-touristiques-sur-le-parking%20(2).jpg?updatedAt=1756080445908"
 featuredImageAlt: "Grand-Place de Bruxelles avec ses maisons dorées illuminées au crépuscule"
 content: |
   # Bruxelles, Cœur Battant de l'Europe : Découverte d'une Capitale Authentique

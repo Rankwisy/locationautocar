@@ -566,7 +566,7 @@ export const destinationSchemas = {
     "@type": "TouristDestination",
     "name": "Belgique - Circuits Patrimoniaux",
     "description": "Circuits en Belgique : Bruges UNESCO, Gand médiéval, Anvers diamantaire avec transport en autocar et guide francophone",
-    "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg",
+    "image": "https://ik.imagekit.io/by733ltn6/une-file-d-autobus-touristiques-sur-le-parking%20(2).jpg?updatedAt=1756080445908",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "BE"

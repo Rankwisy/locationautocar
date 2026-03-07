@@ -6,11 +6,12 @@ import { Users, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, St
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import LEZBadge from '@/components/LEZBadge';
 import { pageMeta, semanticKeywords } from '@/data/seoData';
+import { ROUTES } from '@/data/canonicalRoutes';
 
 const fleetPathByType: Record<string, string> = {
-  Minibus: '/notre-flotte/minibus',
-  Bus: '/notre-flotte/bus',
-  Autocar: '/notre-flotte/autocars',
+  Minibus: ROUTES.FLOTTE_MINIBUS,
+  Bus: ROUTES.FLOTTE_BUS,
+  Autocar: ROUTES.FLOTTE_AUTOCARS,
 };
 
 const vehicles = [
@@ -242,7 +243,7 @@ export default function NotreFlottePage() {
                     Réserver
                   </Link>
                   <Link
-                    href={fleetPathByType[vehicle.type] ?? `/notre-flotte/${vehicle.type.toLowerCase()}`}
+                    href={fleetPathByType[vehicle.type] || ROUTES.FLOTTE}
                     className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 text-sm"
                   >
                     Détails

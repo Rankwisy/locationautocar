@@ -4,7 +4,7 @@ metaTitle: "Visiter Amsterdam à Vélo - Guide Complet des Canaux 2024"
 metaDescription: "Découvrez Amsterdam authentique à vélo : canaux historiques, quartiers bohèmes, musées incontournables et culture locale. Guide pratique avec itinéraires secrets."
 slug: "amsterdam-canaux-velo"
 excerpt: "Enfourchez un vélo et laissez-vous porter par l'esprit libre d'Amsterdam. Entre canaux centenaires et culture avant-gardiste, découvrez une ville où tradition et modernité dansent au rythme des sonnettes de bicyclettes."
-featuredImage: "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg"
+featuredImage: "https://ik.imagekit.io/by733ltn6/un-bus-touristique-blanc-elegant-sur-la-cote-mediterraneenne%20(2).jpg?updatedAt=1754934217207"
 featuredImageAlt: "Vélos hollandais alignés le long d'un canal d'Amsterdam avec maisons traditionnelles en arrière-plan"
 content: |
   # Amsterdam à Vélo : Entre Canaux et Liberté, l'Art de Vivre Hollandais

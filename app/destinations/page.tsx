@@ -34,7 +34,7 @@ const mainDestinations = [
     name: 'Belgique',
     subtitle: 'Trésors du Royaume',
     description: 'Explorez les joyaux belges : Bruges médiévale, Gand universitaire, Anvers diamantaire et vallées wallonnes.',
-    image: 'https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://ik.imagekit.io/by733ltn6/une-file-d-autobus-touristiques-sur-le-parking%20(2).jpg?updatedAt=1756080445908',
     imageAlt: 'Bruges canaux médiévaux Venise du Nord',
     duration: '1-3 jours',
     link: '/destinations/belgique',
