@@ -13,7 +13,11 @@ export const mainNavigation: NavigationItem[] = [
       { label: "Transferts Aéroports", url: ROUTES.SERVICE_TRANSFERTS },
       { label: "Excursions & Tourisme", url: ROUTES.SERVICE_EXCURSIONS },
       { label: "Voyages d'Affaires", url: ROUTES.SERVICE_VOYAGES_AFFAIRES },
-      { label: "Mise à Disposition", url: ROUTES.SERVICE_MISE_A_DISPOSITION }
+      { label: "Mise à Disposition", url: ROUTES.SERVICE_MISE_A_DISPOSITION },
+      { label: "Prix & Devis", url: ROUTES.SERVICE_PRIX },
+      { label: "Location Bus Groupe", url: ROUTES.SERVICE_LOCATION_BUS_GROUPE },
+      { label: "Autocar Mariage", url: ROUTES.SERVICE_AUTOCAR_MARIAGE },
+      { label: "Navette Entreprise", url: ROUTES.SERVICE_NAVETTE_ENTREPRISE }
     ]
   },
   {

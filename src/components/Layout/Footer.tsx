@@ -62,6 +62,26 @@ const Footer: React.FC = () => {
                   Mise à Disposition
                 </Link>
               </li>
+              <li>
+                <Link to={ROUTES.SERVICE_PRIX} className="text-gray-300 hover:text-white">
+                  Prix & Devis
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.SERVICE_LOCATION_BUS_GROUPE} className="text-gray-300 hover:text-white">
+                  Location Bus Groupe
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.SERVICE_AUTOCAR_MARIAGE} className="text-gray-300 hover:text-white">
+                  Autocar Mariage
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.SERVICE_NAVETTE_ENTREPRISE} className="text-gray-300 hover:text-white">
+                  Navette Entreprise
+                </Link>
+              </li>
             </ul>
           </div>
 

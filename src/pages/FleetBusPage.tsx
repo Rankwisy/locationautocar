@@ -169,7 +169,8 @@ const FleetBusPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Nos <strong>bus 20-35 places</strong> offrent le meilleur compromis capacité/confort pour groupes scolaires, 
-              associations et entreprises. Excursions Bruges-Gand, Paris, Amsterdam. Prises USB, climatisation, soute bagages. Consultez nos{' '}
+              associations et entreprises. Excursions Bruges-Gand, Paris, Amsterdam. Prises USB, climatisation, soute bagages. Consultez notre{' '}
+              <Link to="/nos-services/location-bus-groupe" className="text-blue-600 hover:text-blue-700 font-semibold">location bus groupe</Link>, nos{' '}
               <Link to="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">circuits Europe</Link>{' '}
               et{' '}
               <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">formules excursion</Link>.

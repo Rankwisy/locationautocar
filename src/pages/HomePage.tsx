@@ -243,9 +243,12 @@ const HomePage: React.FC = () => {
               Depuis 2007, nous offrons des services de transport en autocar avec chauffeur 
               pour tous vos besoins : <InternalLink to="/nos-services/transferts-aeroports" anchor="Transferts aéroports Bruxelles" />, 
               <InternalLink to="/nos-services/excursions-tourisme" anchor="Excursions touristiques Bruxelles" />, 
-              voyages d'affaires et mise à disposition. Découvrez également nos{' '}
-              <InternalLink to="/destinations/europe" anchor="Voyages Paris Amsterdam en autocar" /> et{' '}
-              <InternalLink to="/destinations" anchor="toutes nos destinations" />. Consultez notre{' '}
+              voyages d'affaires et mise à disposition. Découvrez notre{' '}
+              <InternalLink to="/nos-services/prix" anchor="Prix & devis autocar Bruxelles" />, 
+              <InternalLink to="/nos-services/location-bus-groupe" anchor="location bus groupe" />, 
+              <InternalLink to="/nos-services/autocar-mariage" anchor="autocar mariage" /> et{' '}
+              <InternalLink to="/nos-services/navette-entreprise" anchor="navette entreprise" />. Voyages Paris Amsterdam,{' '}
+              <InternalLink to="/destinations" anchor="toutes nos destinations" />,{' '}
               <InternalLink to="/blog" anchor="Blog conseils voyage" />.
             </p>
           </div>

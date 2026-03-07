@@ -31,6 +31,22 @@ const META = {
     t: "Mise à Disposition Autocar Bruxelles | Chauffeur Professionnel Belgique",
     d: "Location d'autocar avec chauffeur à l'heure pour vos déplacements personnalisés en Belgique et Europe."
   },
+  '/nos-services/prix': {
+    t: "Location autocar Bruxelles prix : Tarifs & Devis 2026",
+    d: "Prix location autocar avec chauffeur à Bruxelles. Tarifs transferts, excursions, groupes. Devis gratuit sous 24h."
+  },
+  '/nos-services/location-bus-groupe': {
+    t: "Location Bus Bruxelles Groupe : 20–55 Places",
+    d: "Location bus et autocar pour groupes à Bruxelles. Scolaires, entreprises, événements. Minibus à autocars. Devis rapide."
+  },
+  '/nos-services/autocar-mariage': {
+    t: "Autocar Mariage Bruxelles : Transport Invités",
+    d: "Autocar et bus pour mariage à Bruxelles. Transport invités, cortège. Chauffeur professionnel. Devis personnalisé."
+  },
+  '/nos-services/navette-entreprise': {
+    t: "Navette Entreprise Bruxelles : Transport Salariés",
+    d: "Navette entreprise Bruxelles pour salariés. Trajets réguliers, aéroports, sites. Service sur mesure. Devis gratuit."
+  },
   '/notre-flotte': {
     t: "Flotte Bus Minibus Autocar Bruxelles | Euro 6 LEZ | Choisissez Votre Véhicule",
     d: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-55 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7."
