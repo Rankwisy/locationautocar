@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Plane, Camera, Building, Clock, ArrowRight, CheckCircle } from 'lucide-react';
+import { Plane, Camera, Building, Clock, ArrowRight, CheckCircle, DollarSign, Bus, Heart } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
 import type { Metadata } from 'next';
@@ -48,6 +48,7 @@ const SERVICES = [
     icon: Building,
     title: "Voyages d'Affaires",
     description: 'Transport de groupes pour événements professionnels et séminaires',
+    relatedInternalLink: { to: '/nos-services/navette-entreprise', anchor: 'navette entreprise Bruxelles' },
     features: [
       "Séminaires d'entreprise",
       'Conférences',
@@ -66,6 +67,7 @@ const SERVICES = [
     icon: Clock,
     title: 'Mise à Disposition',
     description: "Location d'autocar avec chauffeur selon vos besoins spécifiques",
+    relatedInternalLink: { to: '/nos-services/autocar-mariage', anchor: 'autocar mariage Bruxelles' },
     features: [
       "Location à l'heure",
       'Trajets personnalisés',
@@ -78,6 +80,82 @@ const SERVICES = [
     seoTitle: 'Mise à Disposition Autocar Bruxelles',
     seoDescription:
       "Location d'autocar avec chauffeur à l'heure pour vos déplacements personnalisés en Belgique et Europe.",
+  },
+  {
+    id: 'prix',
+    icon: DollarSign,
+    title: 'Location Autocar Bruxelles Prix',
+    description:
+      "Tarifs et prix de location d'autocar avec chauffeur à Bruxelles. Transferts, excursions, groupes. Devis gratuit sous 24h.",
+    features: [
+      'Prix transferts aéroport (dès 250€)',
+      'Excursions journée (500-750€)',
+      'Voyages 2 jours Europe (1200-1800€)',
+      'Devis personnalisé gratuit',
+      'Pas de frais cachés',
+    ],
+    image:
+      'https://ik.imagekit.io/by733ltn6/locationautocar/autocar-bruxelles-scaled.jpeg?updatedAt=1750900410371&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
+    seoTitle: 'Location autocar Bruxelles prix : Tarifs & Devis 2026',
+    seoDescription:
+      'Prix location autocar avec chauffeur à Bruxelles. Tarifs transferts, excursions, groupes. Devis gratuit sous 24h.',
+  },
+  {
+    id: 'location-bus-groupe',
+    icon: Bus,
+    title: 'Location Bus Bruxelles Groupe',
+    description:
+      'Location bus et autocar pour groupes à Bruxelles. Scolaires, entreprises, événements. De 8 à 55 places. Minibus, bus, autocars.',
+    features: [
+      'Groupes scolaires et voyages étudiants',
+      'Entreprises et séminaires',
+      'Associations et événements',
+      'Minibus 8-16 places',
+      'Bus 20-35, autocars 40-55 places',
+    ],
+    image:
+      'https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
+    seoTitle: 'Location Bus Bruxelles Groupe : 20–55 Places',
+    seoDescription:
+      'Location bus et autocar pour groupes à Bruxelles. Scolaires, entreprises, événements. Minibus à autocars. Devis rapide.',
+  },
+  {
+    id: 'autocar-mariage',
+    icon: Heart,
+    title: 'Autocar Mariage Bruxelles',
+    description:
+      'Autocar et bus pour mariage à Bruxelles. Transport invités, cortège nuptial. Chauffeur professionnel, véhicules élégants.',
+    features: [
+      'Transport des invités (mairie, église, salle)',
+      'Cortège nuptial',
+      'Minibus pour petits groupes',
+      'Bus ou autocar pour grandes listes',
+      'Service discret et ponctuel',
+    ],
+    image:
+      'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
+    seoTitle: 'Autocar Mariage Bruxelles : Transport Invités',
+    seoDescription:
+      'Autocar et bus pour mariage à Bruxelles. Transport invités, cortège. Chauffeur professionnel. Devis personnalisé.',
+  },
+  {
+    id: 'navette-entreprise',
+    icon: Building,
+    title: 'Navette Entreprise Bruxelles',
+    description:
+      'Navette entreprise Bruxelles pour salariés. Trajets réguliers aéroports, gares, sites. Service sur mesure, facturation entreprise.',
+    features: [
+      'Navettes aéroports (Zaventem, Charleroi)',
+      'Trajets gare - siège social',
+      'Déplacements multi-sites',
+      'Horaires adaptés à vos équipes',
+      'Facturation et suivi dédiés',
+    ],
+    image:
+      'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-aeroport-bruxelles-scaled.jpeg?updatedAt=1750900457571&tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
+    seoTitle: 'Navette Entreprise Bruxelles : Transport Salariés',
+    seoDescription:
+      'Navette entreprise Bruxelles pour salariés. Trajets réguliers, aéroports, sites. Service sur mesure. Devis gratuit.',
   },
 ];
 
@@ -160,6 +238,18 @@ export default async function ServicesCategoryPage({
               {activeService.seoTitle}
             </h1>
             <p className="text-lg text-gray-600 mb-6">{activeService.description}</p>
+            {'relatedInternalLink' in activeService &&
+              (activeService as { relatedInternalLink?: { to: string; anchor: string } }).relatedInternalLink && (
+                <p className="text-lg text-gray-600 mb-6">
+                  Voir aussi :{' '}
+                  <InternalLinkNext
+                    to={(activeService as { relatedInternalLink: { to: string; anchor: string } }).relatedInternalLink.to}
+                    anchor={(activeService as { relatedInternalLink: { to: string; anchor: string } }).relatedInternalLink.anchor}
+                    className="text-blue-600 hover:text-blue-700 font-semibold"
+                  />
+                  .
+                </p>
+              )}
             <ul className="space-y-2 mb-6">
               {activeService.features.map((feature, idx) => (
                 <li key={idx} className="flex items-center">

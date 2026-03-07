@@ -74,7 +74,10 @@ export default function BusPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Nos <strong>bus 20-35 places</strong> offrent le meilleur compromis capacité/confort pour groupes scolaires,
-            associations et entreprises. Excursions Bruges-Gand, Paris, Amsterdam. Consultez nos{' '}
+            associations et entreprises. Excursions Bruges-Gand, Paris, Amsterdam. Consultez notre{' '}
+            <Link href="/nos-services/location-bus-groupe" className="text-blue-600 hover:text-blue-700 font-semibold">
+              location bus groupe
+            </Link>, nos{' '}
             <Link href="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">
               circuits Europe
             </Link>{' '}
