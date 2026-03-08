@@ -421,6 +421,127 @@ export default async function ServicesCategoryPage({
           </div>
         )}
 
+        {category === 'excursions-tourisme' && (
+          <div className="mt-20 max-w-4xl mx-auto prose prose-lg prose-blue prose-headings:text-gray-900 prose-p:text-gray-700 prose-ul:text-gray-700 prose-li:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-700">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Excursions touristiques en autocar en Belgique
+            </h2>
+            <p>
+              La <InternalLinkNext to="/destinations/belgique" anchor="Belgique" /> est une destination idéale pour les{' '}
+              <InternalLinkNext to="/nos-services/excursions-tourisme" anchor="excursions touristiques en groupe" />. Entre ses villes historiques, ses musées renommés et ses événements culturels, le pays attire chaque année des millions de visiteurs. À{' '}
+              <InternalLinkNext to="/destinations/bruxelles" anchor="Bruxelles" />, les attractions culturelles et les musées accueillent plus de 6,4 millions de visiteurs par an, ce qui montre l&apos;importance du tourisme dans la capitale.
+            </p>
+            <p>
+              Pour découvrir ces lieux dans les meilleures conditions, de nombreux groupes choisissent une excursion organisée en{' '}
+              <InternalLinkNext to="/notre-flotte/autocars" anchor="autocar avec chauffeur" />. Cette solution permet de voyager confortablement, de visiter plusieurs destinations dans la même journée et de profiter pleinement du programme touristique.
+            </p>
+            <p>
+              Chez <InternalLinkNext to="/" anchor="Location Autocar Bruxelles" />, nous organisons des excursions touristiques sur mesure pour les groupes, les associations, les écoles et les entreprises.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Pourquoi choisir un autocar pour une excursion touristique ?
+            </h2>
+            <p>
+              Les excursions en autocar restent l&apos;un des moyens les plus pratiques pour organiser un voyage de groupe. Contrairement à plusieurs véhicules individuels, un{' '}
+              <InternalLinkNext to="/notre-flotte/autocars" anchor="autocar" /> permet de réunir tous les participants dans un seul transport confortable.
+            </p>
+            <p>Les avantages sont nombreux :</p>
+            <ul>
+              <li>transport confortable pour les groupes</li>
+              <li>organisation simplifiée des déplacements</li>
+              <li>trajet direct entre les sites touristiques</li>
+              <li>possibilité de visiter plusieurs villes dans une journée</li>
+              <li>solution économique pour les groupes</li>
+            </ul>
+            <p>
+              C&apos;est pourquoi les agences de voyage, les écoles et les associations utilisent souvent la{' '}
+              <InternalLinkNext to="/nos-services/location-bus-groupe" anchor="location d&apos;autocar" /> pour les circuits touristiques en Belgique et en{' '}
+              <InternalLinkNext to="/destinations/europe" anchor="Europe" />.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Idées d&apos;excursions touristiques au départ de Bruxelles
+            </h2>
+            <p>
+              Grâce à sa position centrale, Bruxelles est un excellent point de départ pour de nombreuses excursions.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">
+              Découverte de Bruxelles
+            </h3>
+            <p>
+              La capitale belge possède un patrimoine culturel et architectural unique. Les groupes peuvent visiter de nombreux sites emblématiques comme des musées, des quartiers historiques ou des centres culturels européens. Par exemple, le centre des visiteurs du Parlement européen (Parlamentarium) et Mini-Europe sont des lieux très populaires des circuits touristiques proposés aux groupes visitant Bruxelles.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">
+              Excursions vers les villes historiques
+            </h3>
+            <p>
+              De nombreuses excursions au départ de Bruxelles permettent également de découvrir d&apos;autres villes belges connues pour leur patrimoine :
+            </p>
+            <ul>
+              <li>Bruges et ses canaux historiques</li>
+              <li>Gand et son architecture médiévale</li>
+              <li>Anvers et son patrimoine artistique</li>
+              <li>Namur et la vallée de la Meuse</li>
+            </ul>
+            <p>
+              Avec un <InternalLinkNext to="/notre-flotte/autocars" anchor="autocar touristique" />, il est possible de visiter plusieurs destinations dans une même journée tout en profitant du confort du transport. Découvrez nos{' '}
+              <InternalLinkNext to="/destinations/belgique" anchor="circuits en Belgique" />.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Excursions pour groupes, écoles et entreprises
+            </h2>
+            <p>
+              Les excursions touristiques en autocar sont particulièrement adaptées à différents types de groupes :
+            </p>
+            <ul>
+              <li>
+                <strong>Voyages scolaires</strong> : Les écoles organisent souvent des excursions pédagogiques pour découvrir l&apos;histoire, la culture ou les institutions européennes.
+              </li>
+              <li>
+                <strong>Associations et clubs</strong> : Les associations culturelles, sportives ou seniors organisent régulièrement des sorties d&apos;une journée pour découvrir de nouvelles destinations.
+              </li>
+              <li>
+                <strong>Entreprises et événements</strong> : Les excursions peuvent être intégrées dans des{' '}
+                <InternalLinkNext to="/nos-services/voyages-affaires" anchor="séminaires" />, événements professionnels ou voyages de motivation pour les équipes.
+              </li>
+            </ul>
+            <p>
+              Une excursion permet de combiner découverte, détente et activités de groupe.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Une organisation simple pour votre excursion
+            </h2>
+            <p>
+              Avec Location Autocar Bruxelles, l&apos;organisation d&apos;une excursion touristique devient simple et flexible. Nous proposons :
+            </p>
+            <ul>
+              <li>des <InternalLinkNext to="/notre-flotte/autocars" anchor="autocars confortables" /> pour tous types de groupes</li>
+              <li>des <InternalLinkNext to="/notre-flotte/minibus" anchor="minibus" /> pour les petits groupes</li>
+              <li>des chauffeurs expérimentés</li>
+              <li>des itinéraires personnalisés selon vos besoins</li>
+            </ul>
+            <p>
+              Notre équipe peut également vous accompagner dans la planification de votre excursion. Pour un devis adapté à votre groupe,{' '}
+              <InternalLinkNext to="/contactez-nous" anchor="contactez-nous" />.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Location d&apos;autocar pour excursions touristiques en Belgique
+            </h2>
+            <p>
+              Que vous souhaitiez organiser une excursion d&apos;une journée, un circuit touristique, une visite culturelle ou une sortie de groupe, Location Autocar Bruxelles met à votre disposition des véhicules modernes et un service professionnel pour assurer le transport de votre groupe.
+            </p>
+            <p>
+              Grâce à notre expérience dans le transport touristique, nous vous aidons à organiser des excursions confortables, ponctuelles et adaptées à vos besoins.
+            </p>
+          </div>
+        )}
+
         {relatedServices.length > 0 && (
           <div className="mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
