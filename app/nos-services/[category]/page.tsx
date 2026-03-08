@@ -268,6 +268,92 @@ export default async function ServicesCategoryPage({
           </div>
         </div>
 
+        {category === 'navette-entreprise' && (
+          <div className="mt-20 max-w-4xl mx-auto prose prose-lg prose-blue prose-headings:text-gray-900 prose-p:text-gray-700 prose-ul:text-gray-700 prose-li:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-700">
+            <p>
+              <InternalLinkNext to="/destinations/bruxelles" anchor="Bruxelles" /> attire chaque jour un grand nombre de professionnels, de visiteurs d&apos;affaires et de touristes. De nombreuses entreprises mettent en place des{' '}
+              <InternalLinkNext to="/nos-services/navette-entreprise" anchor="navettes privées" /> pour leurs employés, notamment pour relier :
+            </p>
+            <ul>
+              <li>les bureaux et les parkings</li>
+              <li>les hôtels et les <InternalLinkNext to="/nos-services/voyages-affaires" anchor="centres d&apos;affaires" /></li>
+              <li>les <InternalLinkNext to="/nos-services/transferts-aeroports" anchor="aéroports" /> et les lieux de travail</li>
+              <li>les <InternalLinkNext to="/nos-services/voyages-affaires" anchor="événements" /> et les salons professionnels</li>
+            </ul>
+            <p>
+              Ces services permettent d&apos;optimiser les déplacements, d&apos;améliorer la ponctualité et d&apos;offrir un transport confortable et organisé pour les équipes.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Comment réserver une navette privée à Bruxelles ?
+            </h2>
+            <p>
+              Réserver une navette avec Location Autocar Bruxelles est simple :
+            </p>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+              <li>Indiquer le lieu de départ et la destination</li>
+              <li>Préciser le nombre de passagers</li>
+              <li>Choisir le type de véhicule</li>
+              <li>Confirmer la date et l&apos;horaire du transport</li>
+            </ol>
+            <p>
+              Notre équipe organise ensuite le trajet avec un{' '}
+              <InternalLinkNext to="/notre-flotte" anchor="chauffeur professionnel" />, afin d&apos;assurer un transport fiable et ponctuel pour votre entreprise ou votre groupe.{' '}
+              <InternalLinkNext to="/contactez-nous" anchor="Obtenez votre devis gratuit" />.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Quelle compagnie choisir pour louer un bus à Bruxelles ?
+            </h2>
+            <p>
+              Pour un transport fiable et confortable, il est important de choisir une entreprise spécialisée dans la{' '}
+              <InternalLinkNext to="/nos-services/mise-a-disposition" anchor="location d&apos;autocar avec chauffeur" />. Location Autocar Bruxelles propose :
+            </p>
+            <ul>
+              <li>des <InternalLinkNext to="/notre-flotte/autocars" anchor="autocars modernes" /> et climatisés</li>
+              <li>des <InternalLinkNext to="/notre-flotte/minibus" anchor="minibus" /> pour petits groupes</li>
+              <li>des <InternalLinkNext to="/notre-flotte/bus" anchor="bus" /> pour événements et entreprises</li>
+              <li>des chauffeurs expérimentés</li>
+              <li>des solutions de transport personnalisées</li>
+            </ul>
+            <p>
+              Nous accompagnons les entreprises, les organisateurs d&apos;événements et les groupes dans tous leurs déplacements à{' '}
+              <InternalLinkNext to="/destinations/bruxelles" anchor="Bruxelles" /> et dans toute la{' '}
+              <InternalLinkNext to="/destinations/belgique" anchor="Belgique" />.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Pourquoi choisir Location Autocar Bruxelles ?
+            </h2>
+            <p>
+              Choisir Location Autocar Bruxelles, c&apos;est bénéficier :
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <span>d&apos;un transport privé confortable</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <span>d&apos;une organisation professionnelle</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <span>d&apos;une grande flexibilité des horaires</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <span>d&apos;une solution idéale pour les groupes et les entreprises</span>
+              </li>
+            </ul>
+            <p>
+              Que ce soit pour une navette d&apos;entreprise, un{' '}
+              <InternalLinkNext to="/nos-services/voyages-affaires" anchor="événement professionnel" /> ou un{' '}
+              <InternalLinkNext to="/nos-services/location-bus-groupe" anchor="transfert de groupe" />, nous mettons à votre disposition des véhicules adaptés et un service de qualité.
+            </p>
+          </div>
+        )}
+
         {relatedServices.length > 0 && (
           <div className="mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
