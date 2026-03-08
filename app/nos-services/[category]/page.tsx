@@ -354,6 +354,73 @@ export default async function ServicesCategoryPage({
           </div>
         )}
 
+        {category === 'transferts-aeroports' && (
+          <div className="mt-20 max-w-4xl mx-auto prose prose-lg prose-blue prose-headings:text-gray-900 prose-p:text-gray-700 prose-ul:text-gray-700 prose-li:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-700">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Transferts aéroports à Bruxelles avec Location Autocar
+            </h2>
+            <p>
+              Organiser un transfert vers l&apos;aéroport peut parfois être un peu compliqué, surtout lorsqu&apos;il s&apos;agit de transporter un groupe, des collaborateurs ou des invités professionnels.{' '}
+              <InternalLinkNext to="/" anchor="Location Autocar Bruxelles" /> propose un service de{' '}
+              <InternalLinkNext to="/nos-services/transferts-aeroports" anchor="transfert aéroport" /> très fiable, confortable et entièrement personnalisé.
+            </p>
+            <p>
+              Location Autocar Bruxelles assure les transferts vers les principaux aéroports de Belgique, notamment Bruxelles-Zaventem et Charleroi, avec des véhicules adaptés aux groupes de toutes tailles :{' '}
+              <InternalLinkNext to="/notre-flotte/minibus" anchor="minibus" />, autocars et{' '}
+              <InternalLinkNext to="/notre-flotte/bus" anchor="bus grand tourisme" />. Notre objectif est simple : garantir un trajet fluide et ponctuel entre votre point de départ et l&apos;aéroport, que ce soit pour un{' '}
+              <InternalLinkNext to="/nos-services/voyages-affaires" anchor="voyage d&apos;affaires" />, un événement ou un déplacement de groupe.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Un transfert aéroport simple et ponctuel
+            </h2>
+            <p>
+              Lors d&apos;un voyage, la ponctualité est très importante. Un service de transfert privé permet d&apos;organiser le trajet à l&apos;avance avec un{' '}
+              <InternalLinkNext to="/notre-flotte" anchor="chauffeur professionnel" />, afin d&apos;éviter le stress lié aux retards ou aux transports imprévisibles. Avec Location Autocar Bruxelles, le chauffeur arrive à l&apos;heure prévue, le véhicule est réservé exclusivement pour votre groupe, le trajet est direct vers l&apos;aéroport et l&apos;organisation du transport est planifiée à l&apos;avance. Cette solution est particulièrement appréciée pour les voyages d&apos;entreprise, les séminaires ou les{' '}
+              <InternalLinkNext to="/nos-services/excursions-tourisme" anchor="groupes touristiques" />.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Combien coûte un transfert vers l&apos;aéroport de Bruxelles ?
+            </h2>
+            <p>
+              Le prix d&apos;un transfert vers l&apos;aéroport dépend principalement de plusieurs éléments : la distance du trajet, le nombre de passagers, le type de véhicule choisi et la durée du service. À titre indicatif, un transfert privé vers l&apos;aéroport de Bruxelles peut varier entre 35 euros et 70 euros pour un véhicule standard, tandis qu&apos;un minivan ou un véhicule pour groupes peut coûter davantage selon la capacité. Pour les groupes, la{' '}
+              <InternalLinkNext to="/notre-flotte/autocars" anchor="location d&apos;autocar" /> est souvent plus économique par passager, car les frais sont partagés entre tous les voyageurs. Chez Location Autocar Bruxelles, nous proposons des{' '}
+              <InternalLinkNext to="/contactez-nous" anchor="devis personnalisés" />, afin d&apos;adapter le transport exactement à vos besoins.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Pourquoi choisir un transfert aéroport avec chauffeur ?
+            </h2>
+            <p>
+              Les transferts aéroports privés sont devenus très populaires auprès des entreprises et des groupes car ils offrent de nombreux avantages : confort et tranquillité, transport direct porte-à-porte et prix transparent. Contrairement à certains moyens de transport, les transferts privés fonctionnent généralement avec un tarif fixe confirmé à l&apos;avance, ce qui évite les surprises liées au trafic ou aux suppléments. C&apos;est également idéal pour les groupes : les entreprises, associations et agences de voyage choisissent souvent la{' '}
+              <InternalLinkNext to="/nos-services/location-bus-groupe" anchor="location d&apos;autocar pour les transferts aéroport" />, car elle permet de transporter tout le groupe dans un seul véhicule.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Transfert aéroport pour entreprises et groupes
+            </h2>
+            <p>
+              Location Autocar Bruxelles propose des solutions de transport spécialement conçues pour les entreprises, les séminaires et congrès, les{' '}
+              <InternalLinkNext to="/nos-services/voyages-affaires" anchor="voyages d&apos;affaires" />, les groupes touristiques et les événements et conférences. Nos chauffeurs professionnels connaissent parfaitement les trajets vers les aéroports et les conditions de circulation autour de{' '}
+              <InternalLinkNext to="/destinations/bruxelles" anchor="Bruxelles" />, ce qui permet d&apos;optimiser les horaires de départ et d&apos;arrivée. Le trajet entre le centre de Bruxelles et l&apos;aéroport de Zaventem dure généralement environ 20 à 30 minutes selon la circulation.
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
+              Réserver un transfert aéroport avec Location Autocar Bruxelles
+            </h2>
+            <p>
+              La réservation d&apos;un transfert aéroport est très simple : indiquez le lieu de départ, choisissez l&apos;aéroport de destination, précisez le nombre de passagers et sélectionnez le véhicule adapté à votre groupe. Notre équipe organise ensuite votre transport avec un chauffeur expérimenté et un véhicule confortable, afin de garantir un trajet sécurisé et ponctuel.{' '}
+              <InternalLinkNext to="/contactez-nous" anchor="Demandez votre devis gratuit" />.
+            </p>
+            <p>
+              Vous bénéficiez de transferts vers l&apos;aéroport de Bruxelles-Zaventem, de navettes pour groupes vers l&apos;aéroport de Charleroi, de transport pour entreprises et événements, et d&apos;{' '}
+              <InternalLinkNext to="/notre-flotte/autocars" anchor="autocars confortables avec chauffeur" />. Avec Location Autocar Bruxelles, vous bénéficiez d&apos;un service professionnel pour tous vos transferts aéroport en{' '}
+              <InternalLinkNext to="/destinations/belgique" anchor="Belgique" />.
+            </p>
+          </div>
+        )}
+
         {relatedServices.length > 0 && (
           <div className="mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
