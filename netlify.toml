@@ -147,6 +147,17 @@ to = "/location-autocar-bruxelles"
 status = 301
 force = true
 
+# Legacy: autocar-bruxelles/les-tarifs → prix
+[[redirects]]
+from = "/autocar-bruxelles/les-tarifs-pour-une-location-de-bus-avec-chauffeur"
+to = "/nos-services/prix"
+status = 301
+
+[[redirects]]
+from = "/autocar-bruxelles/les-tarifs-pour-une-location-de-bus-avec-chauffeur/"
+to = "/nos-services/prix"
+status = 301
+
 # Legacy: tourisme-national-et-international → excursions tourisme
 [[redirects]]
 from = "/tourisme-national-et-international-par-autocar-car-bus"

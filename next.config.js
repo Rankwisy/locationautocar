@@ -12,6 +12,17 @@ const nextConfig = {
         destination: '/notre-flotte/autocars',
         permanent: true,
       },
+      // Legacy: autocar-bruxelles/les-tarifs... → prix (pricing page)
+      {
+        source: '/autocar-bruxelles/les-tarifs-pour-une-location-de-bus-avec-chauffeur',
+        destination: '/nos-services/prix',
+        permanent: true,
+      },
+      {
+        source: '/autocar-bruxelles/les-tarifs-pour-une-location-de-bus-avec-chauffeur/',
+        destination: '/nos-services/prix',
+        permanent: true,
+      },
       // Legacy URL (old site structure)
       {
         source: '/tourisme-national-et-international-par-autocar-car-bus',
