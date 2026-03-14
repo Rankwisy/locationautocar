@@ -194,7 +194,7 @@ const FooterNext: React.FC = () => {
               <a
                 href="https://transportbelgique.com/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="text-gray-400 hover:text-white text-sm"
                 title="Transport Belgique - Secteur transport"
               >
@@ -203,7 +203,7 @@ const FooterNext: React.FC = () => {
               <a
                 href="https://top.brussels/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="text-gray-400 hover:text-white text-sm"
                 title="TOP Brussels - Tourisme et économie Bruxelles"
               >
