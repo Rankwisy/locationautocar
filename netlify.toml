@@ -122,6 +122,103 @@ from = "/contact-success"
 to = "/contactez-nous?success=true"
 status = 302
 
+# Trailing slash → canonical (no slash) – fix duplicate page indexing
+[[redirects]]
+from = "/blog/"
+to = "/blog"
+status = 301
+force = true
+
+[[redirects]]
+from = "/contactez-nous/"
+to = "/contactez-nous"
+status = 301
+force = true
+
+[[redirects]]
+from = "/nos-services/"
+to = "/nos-services"
+status = 301
+force = true
+
+# Old/invalid destination URLs → canonical Europe (Paris, Amsterdam)
+[[redirects]]
+from = "/destinations/paris"
+to = "/destinations/europe"
+status = 301
+
+[[redirects]]
+from = "/destinations/paris/"
+to = "/destinations/europe"
+status = 301
+
+[[redirects]]
+from = "/destinations/location-autocar-amesterdam"
+to = "/destinations/europe"
+status = 301
+
+[[redirects]]
+from = "/destinations/location-autocar-amesterdam/"
+to = "/destinations/europe"
+status = 301
+
+[[redirects]]
+from = "/destinations/amsterdam"
+to = "/destinations/europe"
+status = 301
+
+[[redirects]]
+from = "/destinations/amsterdam/"
+to = "/destinations/europe"
+status = 301
+
+# /en/ (non-existent locale) → French canonical
+[[redirects]]
+from = "/en"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/en/"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/en/*"
+to = "/:splat"
+status = 301
+
+# Trailing slash → canonical for main sections
+[[redirects]]
+from = "/destinations/"
+to = "/destinations"
+status = 301
+force = true
+
+[[redirects]]
+from = "/notre-flotte/"
+to = "/notre-flotte"
+status = 301
+force = true
+
+[[redirects]]
+from = "/lez-bruxelles/"
+to = "/lez-bruxelles"
+status = 301
+force = true
+
+[[redirects]]
+from = "/mentions-legales/"
+to = "/mentions-legales"
+status = 301
+force = true
+
+[[redirects]]
+from = "/politique-confidentialite/"
+to = "/politique-confidentialite"
+status = 301
+force = true
+
 # Legacy URLs -> canonical routes (preserve backlinks / avoid 404s)
 [[redirects]]
 from = "/contact"
