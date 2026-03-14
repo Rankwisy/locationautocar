@@ -12,11 +12,9 @@ const nextConfig = {
         destination: '/notre-flotte/autocars',
         permanent: true,
       },
-      // Old/invalid destination URLs → canonical Europe page (Paris, Amsterdam)
-      { source: '/destinations/paris', destination: '/destinations/europe', permanent: true },
-      { source: '/destinations/paris/', destination: '/destinations/europe', permanent: true },
-      { source: '/destinations/location-autocar-amesterdam', destination: '/destinations/europe', permanent: true },
-      { source: '/destinations/location-autocar-amesterdam/', destination: '/destinations/europe', permanent: true },
+      // Old typo: amesterdam → canonical Amsterdam page
+      { source: '/destinations/location-autocar-amesterdam', destination: '/destinations/amsterdam', permanent: true },
+      { source: '/destinations/location-autocar-amesterdam/', destination: '/destinations/amsterdam', permanent: true },
       // /en/ (non-existent locale) → French canonical
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/', destination: '/', permanent: true },
@@ -31,9 +29,6 @@ const nextConfig = {
       { source: '/lez-bruxelles/', destination: '/lez-bruxelles', permanent: true },
       { source: '/mentions-legales/', destination: '/mentions-legales', permanent: true },
       { source: '/politique-confidentialite/', destination: '/politique-confidentialite', permanent: true },
-      // Amsterdam (correct spelling) variant
-      { source: '/destinations/amsterdam', destination: '/destinations/europe', permanent: true },
-      { source: '/destinations/amsterdam/', destination: '/destinations/europe', permanent: true },
     ];
   },
   images: {

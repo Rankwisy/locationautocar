@@ -4,23 +4,29 @@ import { Shield, Clock, Star, CheckCircle, ArrowRight, Users, MapPin, Calendar }
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import EnvironmentalComplianceNext from '@/components/EnvironmentalComplianceNext';
 import { homePageFaq } from '@/data/faqData';
+import { getAllBlogPosts } from '@/data/blogContentData';
 import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '@/data/seoData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Location Autocar Bruxelles – Devis gratuit',
-  description: "Autocariste Bruxelles pour location autocar avec chauffeur. Bus et minibus confort pour groupes et événements. Devis gratuit immédiat.",
+  title: 'Location Autocar Bruxelles | Chauffeur depuis 2007',
+  description:
+    "Location d'autocar, bus et minibus avec chauffeur à Bruxelles depuis 2007. Transferts, excursions, voyages d'affaires. Devis gratuit sous 24h.",
   keywords: semanticKeywords.home.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/' },
   openGraph: {
-    title: 'Location Autocar Bruxelles – Devis gratuit',
-    description: "Autocariste Bruxelles pour location autocar avec chauffeur. Bus et minibus confort pour groupes et événements. Devis gratuit immédiat.",
+    title: 'Location Autocar Bruxelles | Chauffeur depuis 2007',
+    description:
+      "Location d'autocar, bus et minibus avec chauffeur à Bruxelles depuis 2007. Transferts, excursions, voyages d'affaires. Devis gratuit sous 24h.",
     url: 'https://www.locationautocar.be/',
     images: ['https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85'],
   },
 };
 
 export default function HomePage() {
+  const latestPosts = getAllBlogPosts()
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 3);
   const services = [
     { icon: MapPin, title: "Transferts & Navettes Aéroport depuis Bruxelles", description: "Aéroports, gares, hôtels - Service de transfert professionnel avec chauffeur expérimenté" },
     { icon: Users, title: "Excursions & Tourisme au départ de Bruxelles", description: "Découvrez Bruxelles, l'Atomium, les musées et l'Europe avec nos circuits organisés" },
@@ -41,14 +47,81 @@ export default function HomePage() {
   ];
 
   const testimonials = [
-    { name: "Marie Dubois", company: "Entreprise ABC", rating: 5, comment: "Service impeccable pour notre séminaire d'entreprise. Chauffeur professionnel et ponctuel." },
-    { name: "Jean Martin", company: "Groupe Tourisme", rating: 5, comment: "Excellent service pour nos excursions. Véhicules confortables et chauffeurs expérimentés." },
-    { name: "Sophie Laurent", company: "Hôtel Central", rating: 5, comment: "Partenaire de confiance pour nos transferts aéroport. Service 24/7 très apprécié." },
+    {
+      name: 'Nathalie V.',
+      company: 'Coordinatrice événementielle',
+      rating: 5,
+      comment:
+        "Nous avons fait appel à leur service pour le transport de 45 collaborateurs lors de notre séminaire annuel. Ponctuel, professionnel, rien à redire. On renouvelle l'expérience.",
+    },
+    {
+      name: 'David M.',
+      company: 'Directeur, École Saint-Michel Bruxelles',
+      rating: 5,
+      comment:
+        "Partenaire régulier pour toutes nos sorties scolaires depuis 3 ans. Les chauffeurs sont toujours à l'heure et très courtois avec les enfants. Je recommande sans hésitation.",
+    },
+    {
+      name: 'Isabelle R.',
+      company: 'Particulière – Mariage à Bruges',
+      rating: 5,
+      comment:
+        "Autocar impeccable pour notre mariage. L'équipe a été réactive dès la demande de devis et le chauffeur adorable le jour J. Merci beaucoup !",
+    },
   ];
+
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Location Autocar Bruxelles',
+    url: 'https://www.locationautocar.be',
+    logo: 'https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png',
+    telephone: '+3225800325',
+    email: 'info@locationautocar.be',
+    foundingDate: '2007',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Bd Industriel 9',
+      addressLocality: 'Bruxelles',
+      postalCode: '1070',
+      addressCountry: 'BE',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 50.8389, longitude: 4.3326 },
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '22:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: '10:00', closes: '22:00' },
+    ],
+    priceRange: '€€',
+    description:
+      "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Minibus, bus et autocars pour groupes de 8 à 55 personnes.",
+    areaServed: 'Bruxelles',
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '47', bestRating: '5' },
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Location Autocar Bruxelles',
+    url: 'https://www.locationautocar.be',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://www.locationautocar.be/?s={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.locationautocar.be' }],
+  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageFaq) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -163,7 +236,14 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {destinations.map((destination, index) => {
-              const destPath = destination.shortName === 'Bruxelles' ? '/destinations/bruxelles' : '/destinations/europe';
+              const destPath =
+                destination.shortName === 'Bruxelles'
+                  ? '/destinations/bruxelles'
+                  : destination.shortName === 'Paris'
+                    ? '/destinations/paris'
+                    : destination.shortName === 'Amsterdam'
+                      ? '/destinations/amsterdam'
+                      : '/destinations/europe';
               const anchor = destination.shortName === 'Bruxelles' ? 'Excursions Bruxelles' : destination.shortName === 'Paris' ? 'Voyages Paris en autocar' : 'Excursions Amsterdam';
               return (
                 <InternalLinkNext key={index} to={destPath} anchor={anchor} className="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group" title={`${anchor} en autocar depuis Bruxelles`}>
@@ -231,6 +311,54 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Derniers Conseils Voyage</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Guides, conseils pratiques et actualités pour préparer vos voyages en groupe.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 group"
+              >
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                  <img
+                    src={post.featuredImage}
+                    alt={post.featuredImageAlt || post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2 mb-4">{post.excerpt}</p>
+                  <span className="inline-flex items-center text-blue-600 font-semibold text-sm">
+                    Lire l&apos;article
+                    <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              Voir tous les articles
+              <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

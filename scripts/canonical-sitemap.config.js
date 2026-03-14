@@ -25,6 +25,8 @@ export const CANONICAL_PATHS = [
   { path: '/destinations/bruxelles', priority: '0.7', changefreq: 'weekly' },
   { path: '/destinations/belgique', priority: '0.7', changefreq: 'weekly' },
   { path: '/destinations/europe', priority: '0.7', changefreq: 'weekly' },
+  { path: '/destinations/paris', priority: '0.7', changefreq: 'weekly' },
+  { path: '/destinations/amsterdam', priority: '0.7', changefreq: 'weekly' },
   { path: '/lez-bruxelles', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog', priority: '0.6', changefreq: 'weekly' },
   { path: '/contactez-nous', priority: '0.8', changefreq: 'monthly' },

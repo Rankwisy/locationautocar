@@ -147,35 +147,15 @@ to = "/location-autocar-bruxelles"
 status = 301
 force = true
 
-# Old/invalid destination URLs → canonical Europe (Paris, Amsterdam)
-[[redirects]]
-from = "/destinations/paris"
-to = "/destinations/europe"
-status = 301
-
-[[redirects]]
-from = "/destinations/paris/"
-to = "/destinations/europe"
-status = 301
-
+# Old typo: amesterdam → canonical Amsterdam page
 [[redirects]]
 from = "/destinations/location-autocar-amesterdam"
-to = "/destinations/europe"
+to = "/destinations/amsterdam"
 status = 301
 
 [[redirects]]
 from = "/destinations/location-autocar-amesterdam/"
-to = "/destinations/europe"
-status = 301
-
-[[redirects]]
-from = "/destinations/amsterdam"
-to = "/destinations/europe"
-status = 301
-
-[[redirects]]
-from = "/destinations/amsterdam/"
-to = "/destinations/europe"
+to = "/destinations/amsterdam"
 status = 301
 
 # /en/ (non-existent locale) → French canonical

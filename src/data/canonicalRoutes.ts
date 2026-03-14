@@ -30,6 +30,8 @@ export const ROUTES = {
   DESTINATION_BRUXELLES: '/destinations/bruxelles',
   DESTINATION_BELGIQUE: '/destinations/belgique',
   DESTINATION_EUROPE: '/destinations/europe',
+  DESTINATION_PARIS: '/destinations/paris',
+  DESTINATION_AMSTERDAM: '/destinations/amsterdam',
   LOCATION_AUTOCAR_BRUXELLES: '/location-autocar-bruxelles',
   BLOG: '/blog',
   CONTACT: '/contactez-nous',
