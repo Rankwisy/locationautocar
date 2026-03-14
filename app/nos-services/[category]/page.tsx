@@ -160,8 +160,19 @@ const SERVICES = [
 ];
 
 export async function generateStaticParams() {
-  return SERVICES.map((s) => ({ category: s.id }));
+  return [
+    { category: 'transferts-aeroports' },
+    { category: 'excursions-tourisme' },
+    { category: 'voyages-affaires' },
+    { category: 'mise-a-disposition' },
+    { category: 'prix' },
+    { category: 'location-bus-groupe' },
+    { category: 'autocar-mariage' },
+    { category: 'navette-entreprise' },
+  ];
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
