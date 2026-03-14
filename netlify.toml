@@ -147,6 +147,17 @@ to = "/location-autocar-bruxelles"
 status = 301
 force = true
 
+# Legacy: tourisme-national-et-international → excursions tourisme
+[[redirects]]
+from = "/tourisme-national-et-international-par-autocar-car-bus"
+to = "/nos-services/excursions-tourisme"
+status = 301
+
+[[redirects]]
+from = "/tourisme-national-et-international-par-autocar-car-bus/"
+to = "/nos-services/excursions-tourisme"
+status = 301
+
 # Old typo: amesterdam → canonical Amsterdam page
 [[redirects]]
 from = "/destinations/location-autocar-amesterdam"

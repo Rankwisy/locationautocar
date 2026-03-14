@@ -12,6 +12,17 @@ const nextConfig = {
         destination: '/notre-flotte/autocars',
         permanent: true,
       },
+      // Legacy URL (old site structure)
+      {
+        source: '/tourisme-national-et-international-par-autocar-car-bus',
+        destination: '/nos-services/excursions-tourisme',
+        permanent: true,
+      },
+      {
+        source: '/tourisme-national-et-international-par-autocar-car-bus/',
+        destination: '/nos-services/excursions-tourisme',
+        permanent: true,
+      },
       // Old typo: amesterdam → canonical Amsterdam page
       { source: '/destinations/location-autocar-amesterdam', destination: '/destinations/amsterdam', permanent: true },
       { source: '/destinations/location-autocar-amesterdam/', destination: '/destinations/amsterdam', permanent: true },
