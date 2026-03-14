@@ -28,6 +28,7 @@ export const CANONICAL_PATHS = [
   { path: '/lez-bruxelles', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog', priority: '0.6', changefreq: 'weekly' },
   { path: '/contactez-nous', priority: '0.8', changefreq: 'monthly' },
+  { path: '/location-autocar-bruxelles', priority: '0.9', changefreq: 'weekly' },
   { path: '/mentions-legales', priority: '0.3', changefreq: 'yearly' },
   { path: '/politique-confidentialite', priority: '0.3', changefreq: 'yearly' },
 ];

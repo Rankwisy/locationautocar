@@ -307,7 +307,7 @@ export default async function ServicesCategoryPage({
             </h2>
             <p>
               Pour un transport fiable et confortable, il est important de choisir une entreprise spécialisée dans la{' '}
-              <InternalLinkNext to="/nos-services/mise-a-disposition" anchor="location d&apos;autocar avec chauffeur" />. Location Autocar Bruxelles propose :
+              <InternalLinkNext to="/location-autocar-bruxelles" anchor="location d&apos;autocar avec chauffeur Bruxelles" />. Notre <InternalLinkNext to="/location-autocar-bruxelles" anchor="location bus Bruxelles" /> propose :
             </p>
             <ul>
               <li>des <InternalLinkNext to="/notre-flotte/autocars" anchor="autocars modernes" /> et climatisés</li>
@@ -361,11 +361,11 @@ export default async function ServicesCategoryPage({
             </h2>
             <p>
               Organiser un transfert vers l&apos;aéroport peut parfois être un peu compliqué, surtout lorsqu&apos;il s&apos;agit de transporter un groupe, des collaborateurs ou des invités professionnels.{' '}
-              <InternalLinkNext to="/" anchor="Location Autocar Bruxelles" /> propose un service de{' '}
+              <InternalLinkNext to="/location-autocar-bruxelles" anchor="Location Autocar Bruxelles" /> propose un service de{' '}
               <InternalLinkNext to="/nos-services/transferts-aeroports" anchor="transfert aéroport" /> très fiable, confortable et entièrement personnalisé.
             </p>
             <p>
-              Location Autocar Bruxelles assure les transferts vers les principaux aéroports de Belgique, notamment Bruxelles-Zaventem et Charleroi, avec des véhicules adaptés aux groupes de toutes tailles :{' '}
+              Notre service de <InternalLinkNext to="/location-autocar-bruxelles" anchor="location autocar Bruxelles" /> assure les transferts vers les principaux aéroports de Belgique, notamment Bruxelles-Zaventem et Charleroi, avec des véhicules adaptés aux groupes de toutes tailles :{' '}
               <InternalLinkNext to="/notre-flotte/minibus" anchor="minibus" />, autocars et{' '}
               <InternalLinkNext to="/notre-flotte/bus" anchor="bus grand tourisme" />. Notre objectif est simple : garantir un trajet fluide et ponctuel entre votre point de départ et l&apos;aéroport, que ce soit pour un{' '}
               <InternalLinkNext to="/nos-services/voyages-affaires" anchor="voyage d&apos;affaires" />, un événement ou un déplacement de groupe.
@@ -433,10 +433,10 @@ export default async function ServicesCategoryPage({
             </p>
             <p>
               Pour découvrir ces lieux dans les meilleures conditions, de nombreux groupes choisissent une excursion organisée en{' '}
-              <InternalLinkNext to="/notre-flotte/autocars" anchor="autocar avec chauffeur" />. Cette solution permet de voyager confortablement, de visiter plusieurs destinations dans la même journée et de profiter pleinement du programme touristique.
+              <InternalLinkNext to="/location-autocar-bruxelles" anchor="autocar avec chauffeur Bruxelles" />. Cette solution permet de voyager confortablement, de visiter plusieurs destinations dans la même journée et de profiter pleinement du programme touristique.
             </p>
             <p>
-              Chez <InternalLinkNext to="/" anchor="Location Autocar Bruxelles" />, nous organisons des excursions touristiques sur mesure pour les groupes, les associations, les écoles et les entreprises.
+              Chez <InternalLinkNext to="/location-autocar-bruxelles" anchor="Location Autocar Bruxelles" />, nous organisons des excursions touristiques sur mesure pour les groupes, les associations, les écoles et les entreprises.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">

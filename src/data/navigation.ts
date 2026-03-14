@@ -21,6 +21,10 @@ export const mainNavigation: NavigationItem[] = [
     ]
   },
   {
+    label: "Location autocar Bruxelles",
+    url: ROUTES.LOCATION_AUTOCAR_BRUXELLES
+  },
+  {
     label: "Notre Flotte",
     url: ROUTES.FLOTTE,
     children: [

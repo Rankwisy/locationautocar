@@ -24,6 +24,7 @@ const nextConfig = {
       // Trailing slash → canonical (no slash) to fix duplicate page indexing
       { source: '/blog/', destination: '/blog', permanent: true },
       { source: '/contactez-nous/', destination: '/contactez-nous', permanent: true },
+      { source: '/location-autocar-bruxelles/', destination: '/location-autocar-bruxelles', permanent: true },
       { source: '/nos-services/', destination: '/nos-services', permanent: true },
       { source: '/destinations/', destination: '/destinations', permanent: true },
       { source: '/notre-flotte/', destination: '/notre-flotte', permanent: true },

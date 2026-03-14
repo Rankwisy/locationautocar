@@ -141,6 +141,12 @@ to = "/nos-services"
 status = 301
 force = true
 
+[[redirects]]
+from = "/location-autocar-bruxelles/"
+to = "/location-autocar-bruxelles"
+status = 301
+force = true
+
 # Old/invalid destination URLs → canonical Europe (Paris, Amsterdam)
 [[redirects]]
 from = "/destinations/paris"
