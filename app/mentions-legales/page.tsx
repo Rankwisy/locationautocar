@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     title: 'Mentions Légales',
     description: 'Mentions légales et informations légales de Location Autocar Bruxelles.',
     url: 'https://www.locationautocar.be/mentions-legales',
+    images: [
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
+    ],
   },
 };
 

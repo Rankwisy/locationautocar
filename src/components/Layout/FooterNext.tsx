@@ -136,6 +136,16 @@ const FooterNext: React.FC = () => {
                   Europe
                 </Link>
               </li>
+              <li>
+                <Link href={ROUTES.DESTINATION_PARIS} className="text-gray-300 hover:text-white">
+                  Paris
+                </Link>
+              </li>
+              <li>
+                <Link href={ROUTES.DESTINATION_AMSTERDAM} className="text-gray-300 hover:text-white">
+                  Amsterdam
+                </Link>
+              </li>
             </ul>
           </div>
 

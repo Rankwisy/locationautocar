@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     title: 'Politique de Confidentialité | Protection des Données RGPD',
     description: 'Politique de confidentialité et protection des données personnelles. Conformité RGPD.',
     url: 'https://www.locationautocar.be/politique-confidentialite',
+    images: [
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
+    ],
   },
 };
 

@@ -52,7 +52,8 @@ export default function EuropePage() {
             Voyages en Europe au départ de Bruxelles
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Paris, Amsterdam, Cologne, Luxembourg, Prague, Strasbourg : voyez nos <strong>circuits 2-7 jours</strong>.
+            <Link href="/destinations/paris" className="text-blue-600 hover:text-blue-700 font-semibold">Paris</Link>,{' '}
+            <Link href="/destinations/amsterdam" className="text-blue-600 hover:text-blue-700 font-semibold">Amsterdam</Link>, Cologne, Luxembourg, Prague, Strasbourg : voyez nos <strong>circuits 2-7 jours</strong>.
             Autocar toilettes/WiFi, hôtels 3-4*, guides locaux. Consultez nos{' '}
             <Link href="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">voyages Europe</Link>{' '}
             et la{' '}
@@ -70,26 +71,48 @@ export default function EuropePage() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Destinations Européennes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {destinations.map((d, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{d.name}</h3>
-                <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
-                  <MapPin className="w-4 h-4" aria-hidden="true" />
-                  {d.distance}
-                  <Clock className="w-4 h-4" aria-hidden="true" />
-                  {d.duration}
+            {destinations.map((d, idx) => {
+              const cardContent = (
+                <>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{d.name}</h3>
+                  <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
+                    <MapPin className="w-4 h-4" aria-hidden="true" />
+                    {d.distance}
+                    <Clock className="w-4 h-4" aria-hidden="true" />
+                    {d.duration}
+                  </div>
+                  <div className="space-y-1 mb-4">
+                    {d.highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-gray-600">
+                        <CheckCircle className="w-3 h-3 text-green-500" aria-hidden="true" />
+                        {h}
+                      </div>
+                    ))}
+                  </div>
+                  <span className="text-xs text-blue-600 font-medium">{d.country}</span>
+                </>
+              );
+              const cardClass = 'bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow';
+              if (d.name.startsWith('Paris')) {
+                return (
+                  <Link key={idx} href="/destinations/paris" className={`${cardClass} block`}>
+                    {cardContent}
+                  </Link>
+                );
+              }
+              if (d.name.startsWith('Amsterdam')) {
+                return (
+                  <Link key={idx} href="/destinations/amsterdam" className={`${cardClass} block`}>
+                    {cardContent}
+                  </Link>
+                );
+              }
+              return (
+                <div key={idx} className={cardClass}>
+                  {cardContent}
                 </div>
-                <div className="space-y-1 mb-4">
-                  {d.highlights.map((h, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-gray-600">
-                      <CheckCircle className="w-3 h-3 text-green-500" aria-hidden="true" />
-                      {h}
-                    </div>
-                  ))}
-                </div>
-                <span className="text-xs text-blue-600 font-medium">{d.country}</span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         <div className="mb-16">

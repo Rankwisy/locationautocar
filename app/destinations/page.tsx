@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: [...(semanticKeywords.bruxelles || []), ...(semanticKeywords.belgique || []), ...(semanticKeywords.europe || [])].slice(0, 8).join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/destinations' },
   openGraph: {
-    title: pageMeta.destinations.metaTitle,
+    title: 'Destinations Autocar | Bruxelles Belgique Europe',
     description: pageMeta.destinations.description,
     url: 'https://www.locationautocar.be/destinations',
     images: [
@@ -62,7 +62,7 @@ export default function DestinationsPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Trois niveaux de circuits : <strong>Bruxelles</strong> (Grand-Place, Atomium), <strong>Belgique</strong> (Bruges, Gand, Anvers),{' '}
-            <strong>Europe</strong> (Paris, Amsterdam, Prague). Guides francophones, autocar confortable. Comparez les{' '}
+            <strong>Europe</strong> (<Link href="/destinations/paris" className="text-blue-600 hover:text-blue-700 font-semibold">Paris</Link>, <Link href="/destinations/amsterdam" className="text-blue-600 hover:text-blue-700 font-semibold">Amsterdam</Link>, Prague). Guides francophones, autocar confortable. Comparez les{' '}
             <Link href="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">
               véhicules disponibles
             </Link>{' '}

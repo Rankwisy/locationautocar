@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     title: pageMeta.fleetBus.metaTitle,
     description: pageMeta.fleetBus.description,
     url: 'https://www.locationautocar.be/notre-flotte/bus',
+    images: [
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
+    ],
   },
 };
 

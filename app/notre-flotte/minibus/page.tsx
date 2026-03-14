@@ -11,9 +11,12 @@ export const metadata: Metadata = {
   keywords: semanticKeywords.fleetMinibus.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/notre-flotte/minibus' },
   openGraph: {
-    title: pageMeta.fleetMinibus.metaTitle,
+    title: 'Location Minibus Bruxelles | 8-16 Places Mercedes',
     description: pageMeta.fleetMinibus.description,
     url: 'https://www.locationautocar.be/notre-flotte/minibus',
+    images: [
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
+    ],
   },
 };
 

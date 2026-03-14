@@ -11,9 +11,12 @@ export const metadata: Metadata = {
   keywords: semanticKeywords.fleetAutocar.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/notre-flotte/autocars' },
   openGraph: {
-    title: pageMeta.fleetAutocar.metaTitle,
+    title: 'Location Autocar Grand Tourisme | 40-55 Places',
     description: pageMeta.fleetAutocar.description,
     url: 'https://www.locationautocar.be/notre-flotte/autocars',
+    images: [
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
+    ],
   },
 };
 

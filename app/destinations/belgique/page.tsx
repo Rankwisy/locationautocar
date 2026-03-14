@@ -10,9 +10,12 @@ export const metadata: Metadata = {
   keywords: semanticKeywords.belgique.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/destinations/belgique' },
   openGraph: {
-    title: pageMeta.destinationBelgique.metaTitle,
+    title: 'Circuits Belgique | Bruges Gand Anvers Dinant',
     description: pageMeta.destinationBelgique.description,
     url: 'https://www.locationautocar.be/destinations/belgique',
+    images: [
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
+    ],
   },
 };
 

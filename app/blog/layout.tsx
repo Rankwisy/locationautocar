@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   keywords: 'blog voyage autocar, guides destinations, conseils transport groupe, excursions europe, circuits belgique',
   alternates: { canonical: 'https://www.locationautocar.be/blog' },
   openGraph: {
-    title: 'Blog Voyage Autocar | Guides Destinations | Conseils Transport Groupe',
+    title: 'Blog Voyage Autocar | Guides Destinations',
     description: 'Guides de voyage, conseils pratiques et actualités sur le transport en autocar à Bruxelles.',
     url: 'https://www.locationautocar.be/blog',
   },

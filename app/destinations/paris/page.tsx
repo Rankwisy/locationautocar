@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Organisez votre voyage en autocar de Bruxelles à Paris avec chauffeur professionnel. Groupes de 8 à 55 personnes. Devis gratuit sous 24h.",
     url: 'https://www.locationautocar.be/destinations/paris',
     images: [
-      'https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85',
+      { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
     ],
   },
 };
