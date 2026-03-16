@@ -3,7 +3,15 @@ import Link from 'next/link';
 import { Shield, Clock, Star, CheckCircle, ArrowRight, Users, MapPin, Calendar } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import EnvironmentalComplianceNext from '@/components/EnvironmentalComplianceNext';
-import { homePageFaq } from '@/data/faqData';
+import {
+  buildWebSiteSchema,
+  buildLocalBusinessSchema,
+  buildFAQSchema,
+  buildServiceSchema,
+  buildBreadcrumbSchema,
+  buildAggregateRatingSchema,
+} from '@/seo/schema';
+import { HOMEPAGE_FAQ, SERVICES_SCHEMA_DATA } from '@/seo/schemaData';
 import { getAllBlogPosts } from '@/data/blogContentData';
 import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '@/data/seoData';
 import type { Metadata } from 'next';
@@ -70,58 +78,26 @@ export default function HomePage() {
     },
   ];
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Location Autocar Bruxelles',
-    url: 'https://www.locationautocar.be',
-    logo: 'https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png',
-    telephone: '+3225800325',
-    email: 'info@locationautocar.be',
-    foundingDate: '2007',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Bd Industriel 9',
-      addressLocality: 'Bruxelles',
-      postalCode: '1070',
-      addressCountry: 'BE',
-    },
-    geo: { '@type': 'GeoCoordinates', latitude: 50.8389, longitude: 4.3326 },
-    openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '22:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: '10:00', closes: '22:00' },
-    ],
-    priceRange: '€€',
-    description:
-      "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Minibus, bus et autocars pour groupes de 8 à 55 personnes.",
-    areaServed: 'Bruxelles',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '47', bestRating: '5' },
-  };
-
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Location Autocar Bruxelles',
-    url: 'https://www.locationautocar.be',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://www.locationautocar.be/?s={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.locationautocar.be' }],
-  };
+  const homepageSchemas = [
+    buildWebSiteSchema(),
+    buildLocalBusinessSchema(),
+    buildFAQSchema(HOMEPAGE_FAQ),
+    ...SERVICES_SCHEMA_DATA.map((s) =>
+      buildServiceSchema(s.nom, s.description, s.url, s.serviceType)
+    ),
+    buildBreadcrumbSchema([{ nom: 'Accueil', url: 'https://www.locationautocar.be/' }]),
+    buildAggregateRatingSchema(4.9, 47),
+  ];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageFaq) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {homepageSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

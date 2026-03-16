@@ -1,0 +1,156 @@
+/**
+ * JSON-LD schema builders pour Location Autocar Bruxelles.
+ * Données métier vérifiées : ne pas modifier les valeurs (contexte Phase 1).
+ */
+
+export function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Location Autocar Bruxelles',
+    alternateName: 'Autocar avec Chauffeur Bruxelles depuis 2007',
+    url: 'https://www.locationautocar.be/',
+    description:
+      "Location d'autocar, bus et minibus avec chauffeur à Bruxelles depuis 2007. Flotte LEZ Euro 6+, 8 à 55 places, 19 communes, devis gratuit 24/7.",
+    inLanguage: 'fr-BE',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.locationautocar.be/contactez-nous?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function buildLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Location Autocar Bruxelles',
+    alternateName: 'Autocar avec Chauffeur Bruxelles depuis 2007',
+    url: 'https://www.locationautocar.be/',
+    logo: 'https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png',
+    image: 'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg',
+    telephone: '+3225800325',
+    email: 'info@locationautocar.be',
+    foundingDate: '2007',
+    priceRange: '€€',
+    currenciesAccepted: 'EUR',
+    paymentAccepted: 'Espèces, Carte bancaire, Virement bancaire',
+    openingHours: ['Mo-Fr 08:00-22:00', 'Sa-Su 10:00-22:00'],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Bd Industriel 9',
+      postalCode: '1070',
+      addressLocality: 'Bruxelles',
+      addressCountry: 'BE',
+      addressRegion: 'Région de Bruxelles-Capitale',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 50.8366,
+      longitude: 4.3367,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Bruxelles' },
+      { '@type': 'Country', name: 'Belgique' },
+      { '@type': 'Continent', name: 'Europe' },
+    ],
+    hasMap: 'https://maps.google.com/?q=Bd+Industriel+9,+1070+Bruxelles',
+    inLanguage: 'fr-BE',
+  };
+}
+
+export function buildFAQSchema(faqs: { question: string; reponse: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.reponse,
+      },
+    })),
+  };
+}
+
+export function buildServiceSchema(
+  nom: string,
+  description: string,
+  url: string,
+  serviceType: string
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: nom,
+    description: description,
+    url: url,
+    serviceType: serviceType,
+    inLanguage: 'fr-BE',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Location Autocar Bruxelles',
+      url: 'https://www.locationautocar.be/',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Bruxelles',
+    },
+  };
+}
+
+export function buildBreadcrumbSchema(items: { nom: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.nom,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildAggregateRatingSchema(ratingValue: number, reviewCount: number) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Location Autocar Bruxelles',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: ratingValue.toString(),
+      reviewCount: reviewCount.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Nathalie V.' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5' },
+        reviewBody:
+          "Nous avons fait appel à leur service pour le transport de 45 collaborateurs lors de notre séminaire annuel. Ponctuel, professionnel, rien à redire. On renouvelle l'expérience.",
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'David M.' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5' },
+        reviewBody:
+          "Partenaire régulier pour toutes nos sorties scolaires depuis 3 ans. Les chauffeurs sont toujours à l'heure et très courtois avec les enfants. Je recommande sans hésitation.",
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Isabelle R.' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5' },
+        reviewBody:
+          "Autocar impeccable pour notre mariage. L'équipe a été réactive dès la demande de devis et le chauffeur adorable le jour J. Merci beaucoup !",
+      },
+    ],
+  };
+}

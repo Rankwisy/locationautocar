@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '@/data/seoData';
+import { buildBreadcrumbSchema, buildServiceSchema } from '@/seo/schema';
+import { SERVICES_SCHEMA_DATA } from '@/seo/schemaData';
+import { toCanonicalUrl } from '@/data/canonicalRoutes';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -56,7 +59,25 @@ const tripTypes = [
 ];
 
 export default function NosServicesPage() {
+  const servicesSchemas = [
+    buildBreadcrumbSchema([
+      { nom: 'Accueil', url: toCanonicalUrl('/') },
+      { nom: 'Nos services', url: toCanonicalUrl('/nos-services') },
+    ]),
+    ...SERVICES_SCHEMA_DATA.map((s) =>
+      buildServiceSchema(s.nom, s.description, s.url, s.serviceType)
+    ),
+  ];
+
   return (
+    <>
+      {servicesSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <div className="py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -170,5 +191,6 @@ export default function NosServicesPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

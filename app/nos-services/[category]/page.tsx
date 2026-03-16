@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import { Plane, Camera, Building, Clock, ArrowRight, CheckCircle, DollarSign, Bus, Heart } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
+import { buildBreadcrumbSchema, buildServiceSchema } from '@/seo/schema';
+import { toCanonicalUrl } from '@/data/canonicalRoutes';
 import type { Metadata } from 'next';
 
 const SERVICES = [
@@ -209,7 +211,30 @@ export default async function ServicesCategoryPage({
 
   const relatedServices = SERVICES.filter((s) => s.id !== category);
 
+  const serviceUrl = toCanonicalUrl(`/nos-services/${category}`);
+  const categorySchemas = [
+    buildBreadcrumbSchema([
+      { nom: 'Accueil', url: toCanonicalUrl('/') },
+      { nom: 'Nos services', url: toCanonicalUrl('/nos-services') },
+      { nom: activeService.seoTitle, url: serviceUrl },
+    ]),
+    buildServiceSchema(
+      activeService.seoTitle,
+      activeService.seoDescription,
+      serviceUrl,
+      activeService.title
+    ),
+  ];
+
   return (
+    <>
+      {categorySchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <div className="py-12">
       <div className="container mx-auto px-4">
         <nav className="mb-6" aria-label="Fil d'Ariane">
@@ -601,5 +626,6 @@ export default async function ServicesCategoryPage({
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Phone, Mail, MapPin, Clock, CheckCircle, Home } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import EnhancedContactForm from '@/components/Forms/EnhancedContactForm';
-import { ROUTES } from '@/data/canonicalRoutes';
+import { ROUTES, toCanonicalUrl } from '@/data/canonicalRoutes';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/seo/schema';
 
 export default function ContactPage() {
   const searchParams = useSearchParams();
@@ -28,7 +29,26 @@ export default function ContactPage() {
     console.error('Form submission error:', error);
   };
 
+  const contactSchemas = useMemo(
+    () => [
+      buildLocalBusinessSchema(),
+      buildBreadcrumbSchema([
+        { nom: 'Accueil', url: toCanonicalUrl('/') },
+        { nom: 'Contactez-nous', url: toCanonicalUrl(ROUTES.CONTACT) },
+      ]),
+    ],
+    []
+  );
+
   return (
+    <>
+      {contactSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <div className="py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -200,5 +220,6 @@ export default function ContactPage() {
         <input type="hidden" name="form-name" value="contact" />
       </form>
     </div>
+    </>
   );
 }
