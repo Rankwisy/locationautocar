@@ -37,10 +37,24 @@ const nextConfig = {
       // Old typo: amesterdam → canonical Amsterdam page
       { source: '/destinations/location-autocar-amesterdam', destination: '/destinations/amsterdam', permanent: true },
       { source: '/destinations/location-autocar-amesterdam/', destination: '/destinations/amsterdam', permanent: true },
+      // /index.php → homepage
+      { source: '/index.php', destination: '/', permanent: true },
+      // /nl/ (Dutch locale, non-existent) → French canonical
+      { source: '/nl', destination: '/', permanent: true },
+      { source: '/nl/', destination: '/', permanent: true },
+      { source: '/nl/:path*', destination: '/:path*', permanent: true },
       // /en/ (non-existent locale) → French canonical
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/', destination: '/', permanent: true },
       { source: '/en/:path*', destination: '/:path*', permanent: true },
+      // Legacy: liste-des-destinations → destinations
+      { source: '/liste-des-destinations', destination: '/destinations', permanent: true },
+      { source: '/liste-des-destinations/', destination: '/destinations', permanent: true },
+      // Legacy: autocar-bruxelles pricing/minibus pages
+      { source: '/autocar-bruxelles/location-autocar-avec-chauffeur-prix', destination: '/nos-services/prix', permanent: true },
+      { source: '/autocar-bruxelles/location-autocar-avec-chauffeur-prix/', destination: '/nos-services/prix', permanent: true },
+      { source: '/autocar-bruxelles/location-minibus-avec-chauffeur-bruxelles', destination: '/location-autocar-bruxelles', permanent: true },
+      { source: '/autocar-bruxelles/location-minibus-avec-chauffeur-bruxelles/', destination: '/location-autocar-bruxelles', permanent: true },
       // Trailing slash → canonical (no slash) to fix duplicate page indexing
       { source: '/blog/', destination: '/blog', permanent: true },
       { source: '/contactez-nous/', destination: '/contactez-nous', permanent: true },
