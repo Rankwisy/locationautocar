@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint .",
     "verify:meta": "node scripts/verify-single-meta-description.js",
-    "check-readability": "node scripts/check-readability.js"
+    "check-readability": "node scripts/check-readability.js",
+    "index:google": "node scripts/submit-google-indexing.js"
   },
   "dependencies": {
     "date-fns": "^3.6.0",

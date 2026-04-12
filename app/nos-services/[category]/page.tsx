@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import { Plane, Camera, Building, Clock, ArrowRight, CheckCircle, DollarSign, Bus, Heart } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
-import { buildBreadcrumbSchema, buildServiceSchema } from '@/seo/schema';
+import { priceFaq } from '@/data/faqData';
+import { buildBreadcrumbSchema, buildServiceSchema, buildPriceSpecificationSchema } from '@/seo/schema';
 import { toCanonicalUrl } from '@/data/canonicalRoutes';
 import type { Metadata } from 'next';
 
@@ -224,6 +225,7 @@ export default async function ServicesCategoryPage({
       serviceUrl,
       activeService.title
     ),
+    ...(category === 'prix' ? [buildPriceSpecificationSchema(150, 2500), priceFaq] : []),
   ];
 
   return (
@@ -575,6 +577,51 @@ export default async function ServicesCategoryPage({
             <p>
               Grâce à notre expérience dans le transport touristique, nous vous aidons à organiser des excursions confortables, ponctuelles et adaptées à vos besoins.
             </p>
+          </div>
+        )}
+
+        {category === 'prix' && (
+          <div className="mt-16 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Tarifs par type de véhicule</h2>
+            <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-12">
+              <table className="w-full text-sm">
+                <thead className="bg-blue-600 text-white">
+                  <tr>
+                    <th className="px-4 py-3 text-left font-semibold">Véhicule</th>
+                    <th className="px-4 py-3 text-left font-semibold">Capacité</th>
+                    <th className="px-4 py-3 text-left font-semibold">Transfert local</th>
+                    <th className="px-4 py-3 text-left font-semibold">Excursion journée</th>
+                    <th className="px-4 py-3 text-left font-semibold">Voyage 2 jours</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[
+                    { vehicle: 'Minibus', capacity: '8–16 places', local: 'Dès 150€', day: '400–550€', trip: '850–1 200€' },
+                    { vehicle: 'Bus', capacity: '20–35 places', local: 'Dès 250€', day: '550–750€', trip: '1 200–1 700€' },
+                    { vehicle: 'Autocar Grand Tourisme', capacity: '40–55 places', local: 'Dès 350€', day: '700–950€', trip: '1 600–2 500€' },
+                  ].map((row, i) => (
+                    <tr key={row.vehicle} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      <td className="px-4 py-3 font-semibold text-gray-900">{row.vehicle}</td>
+                      <td className="px-4 py-3 text-gray-600">{row.capacity}</td>
+                      <td className="px-4 py-3 text-gray-700">{row.local}</td>
+                      <td className="px-4 py-3 text-gray-700">{row.day}</td>
+                      <td className="px-4 py-3 text-gray-700">{row.trip}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-500 mb-12">* Tarifs indicatifs TTC. Devis personnalisé selon date, itinéraire et options. Carburant, chauffeur et TVA inclus.</p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Questions fréquentes sur les tarifs</h2>
+            <div className="space-y-6">
+              {priceFaq.mainEntity.map((faq: { name: string; acceptedAnswer: { text: string } }) => (
+                <div key={faq.name} className="border-b border-gray-200 pb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.name}</h3>
+                  <p className="text-gray-700">{faq.acceptedAnswer.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

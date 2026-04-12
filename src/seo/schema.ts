@@ -117,6 +117,64 @@ export function buildBreadcrumbSchema(items: { nom: string; url: string }[]) {
   };
 }
 
+export function buildHowToSchema(steps: { name: string; text: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Comment réserver un autocar avec chauffeur à Bruxelles',
+    description: "Réservez votre autocar en 3 étapes simples. Devis gratuit sous 24h, sans engagement.",
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+    totalTime: 'PT24H',
+    estimatedCost: { '@type': 'MonetaryAmount', currency: 'EUR', value: '0', name: 'Devis gratuit' },
+  };
+}
+
+export function buildPriceSpecificationSchema(minPrice: number, maxPrice: number) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Location d\'autocar avec chauffeur à Bruxelles',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Location Autocar Bruxelles',
+      url: 'https://www.locationautocar.be/',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      lowPrice: minPrice.toString(),
+      highPrice: maxPrice.toString(),
+      offerCount: '8',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        minPrice: minPrice.toString(),
+        maxPrice: maxPrice.toString(),
+        priceCurrency: 'EUR',
+        description: 'Selon type de véhicule (minibus, bus, autocar) et durée du trajet',
+      },
+    },
+  };
+}
+
+export function buildItemListSchema(items: { name: string; url: string; description: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+      description: item.description,
+    })),
+  };
+}
+
 export function buildAggregateRatingSchema(ratingValue: number, reviewCount: number) {
   return {
     '@context': 'https://schema.org',

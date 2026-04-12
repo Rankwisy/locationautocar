@@ -9,6 +9,7 @@ export interface BlogPost {
   featuredImageAlt: string;
   publishedAt: string;
   author: string;
+  authorUrl?: string;
   category: string;
   tags: string[];
   readTime: string;
@@ -27,6 +28,7 @@ export const blogPosts: BlogPost[] = [
     featuredImageAlt: "Autocar moderne Euro 6 circulant dans le centre de Bruxelles près de la Grand-Place",
     publishedAt: "2026-02-01T09:00:00.000Z",
     author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Réglementation",
     tags: ["LEZ Bruxelles", "Zone Basse Émission", "Euro 6", "Réglementation", "Transport Écologique"],
     readTime: "7 min",
@@ -195,6 +197,7 @@ export const blogPosts: BlogPost[] = [
     featuredImageAlt: "Tour Eiffel illuminée au coucher de soleil depuis le Trocadéro",
     publishedAt: "2026-03-05T10:00:00.000Z",
     author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Destinations",
     tags: ["Paris", "Tour Eiffel", "Excursions", "Photographie", "Conseils voyage"],
     readTime: "8 min",
@@ -328,6 +331,7 @@ export const blogPosts: BlogPost[] = [
     featuredImageAlt: "Vélos hollandais alignés le long d'un canal d'Amsterdam avec maisons traditionnelles en arrière-plan",
     publishedAt: "2026-03-05T10:00:00.000Z",
     author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Destinations",
     tags: ["Amsterdam", "Vélo", "Canaux", "Culture hollandaise", "Week-end"],
     readTime: "7 min",
@@ -388,6 +392,7 @@ export const blogPosts: BlogPost[] = [
     featuredImageAlt: "Grand-Place de Bruxelles avec ses maisons dorées illuminées au crépuscule",
     publishedAt: "2026-03-05T10:00:00.000Z",
     author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Destinations",
     tags: ["Bruxelles", "Grand-Place", "Atomium", "Gastronomie belge", "Europe"],
     readTime: "6 min",
@@ -436,6 +441,7 @@ export const blogPosts: BlogPost[] = [
     featuredImageAlt: "Autocar moderne avec chauffeur à Bruxelles disponible à la location",
     publishedAt: "2026-03-05T10:00:00.000Z",
     author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Conseils",
     tags: ["Bruxelles", "Autocar", "Prix", "Location", "Chauffeur", "Devis"],
     readTime: "10 min",
@@ -574,7 +580,7 @@ export const blogPosts: BlogPost[] = [
     `
   },
   {
-    id: 5,
+    id: 6,
     title: "Location autocar avec chauffeur Bruxelles : Le meilleur choix pour vos événements d'octobre à décembre 2025",
     metaTitle: "Location Autocar Bruxelles Événements 2025 | Plaisirs d'Hiver & Festivals",
     metaDescription: "Profitez des événements majeurs à Bruxelles (Plaisirs d'Hiver, festivals, concerts) avec notre service de location d'autocar avec chauffeur. Confort, sécurité et tarifs compétitifs garantis.",
@@ -584,6 +590,7 @@ export const blogPosts: BlogPost[] = [
     featuredImageAlt: "Touristes visitant Bruxelles en autocar confortable",
     publishedAt: "2026-03-05T09:00:00.000Z",
     author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Événements",
     tags: ["Bruxelles", "Événements", "Plaisirs d'Hiver", "Festivals", "Transport groupe", "Automne 2025"],
     readTime: "12 min",
@@ -791,6 +798,424 @@ export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
   console.log('Available slugs:', blogPosts.map(post => post.slug));
   return blogPosts.find(post => post.slug === slug);
 };
+
+// ─── Content Calendar 2026 — 12 new posts ────────────────────────────────────
+// Full content to be written per post. Stubs below establish metadata, schema
+// signals and internal linking so pages are indexable immediately.
+
+const newPosts: BlogPost[] = [
+  {
+    id: 7,
+    title: "Location Autocar Bruxelles : Guide Complet des Tarifs 2026 (Avec Exemples de Prix)",
+    metaTitle: "Location Autocar Bruxelles Prix 2026 : Tarifs Minibus, Bus, Autocar",
+    metaDescription: "Combien coûte une location d'autocar à Bruxelles ? Grille de prix 2026 par véhicule, exemples concrets et conseils pour obtenir le meilleur tarif. Devis gratuit.",
+    slug: "tarifs-location-autocar-bruxelles-2026",
+    excerpt: "Minibus dès 150€, bus dès 250€, autocar grand tourisme dès 350€ : découvrez la grille de tarifs 2026 avec des exemples concrets pour chaque type de prestation.",
+    featuredImage: "https://images.pexels.com/photos/3943737/pexels-photo-3943737.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Autocar confortable avec chauffeur professionnel — tarifs location autocar Bruxelles 2026",
+    publishedAt: "2026-05-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Conseils & Tarifs",
+    tags: ["location autocar prix", "tarif bus chauffeur", "devis autocar Bruxelles", "prix minibus"],
+    readTime: "9 min",
+    content: `<p>La question revient systématiquement avant toute réservation : <strong>combien coûte vraiment une location d'autocar avec chauffeur à Bruxelles ?</strong> Dans ce guide, nous répondons avec des chiffres réels, des exemples concrets et les facteurs qui font varier le prix.</p>
+
+<h2>Grille de prix 2026 par type de véhicule</h2>
+
+<h3>Minibus 8–16 places</h3>
+<p>Le minibus est la solution idéale pour les petits groupes VIP, les transferts aéroports ou les sorties en petit comité. Tarif indicatif : <strong>dès 150€ pour un transfert local</strong>, 400–550€ pour une excursion journée.</p>
+
+<h3>Bus 20–35 places</h3>
+<p>Pour les groupes moyens — associations, classes, équipes corporate. Transfert local dès 250€, excursion journée 550–750€.</p>
+
+<h3>Autocar grand tourisme 40–55 places</h3>
+<p>L'option longue distance par excellence, avec toilettes, WiFi et prises électriques. Transfert local dès 350€, excursion journée 700–950€, voyage Europe 1 600–2 500€.</p>
+
+<h2>Prix par type de prestation</h2>
+
+<h3>Transfert aéroport Zaventem / Charleroi</h3>
+<p>Minibus 8–12 places : 250–400€ aller-retour. Bus 25 places : 400–600€.</p>
+
+<h3>Excursion journée Bruges ou Gand depuis Bruxelles</h3>
+<p>Aller-retour journée (8h) : minibus dès 400€, bus dès 550€, autocar dès 700€.</p>
+
+<h3>Voyage Paris ou Amsterdam (aller-retour 2 jours)</h3>
+<p>Autocar 50 places : 1 400–2 000€ selon l'itinéraire et les heures d'attente.</p>
+
+<h2>Ce qui est inclus (et ce qui est en supplément)</h2>
+<p>Toujours inclus : chauffeur professionnel, carburant, TVA, assurance RC. En supplément : péages et parkings, guide touristique, repas.</p>
+
+<h2>Comment obtenir le meilleur tarif ?</h2>
+<p>Réservez à l'avance (minimum 48h, idéalement plusieurs semaines pour les grands événements). Plus le groupe est grand, plus le coût par personne diminue. Comparez toujours sur le <strong>coût par passager</strong> et non le tarif global.</p>
+
+<h2>FAQ Tarifs</h2>
+<p>Pour un devis personnalisé gratuit, <a href="/contactez-nous">contactez-nous</a> ou consultez notre <a href="/nos-services/prix">page tarifs</a>.</p>`,
+  },
+  {
+    id: 8,
+    title: "Transfert Aéroport Bruxelles-Zaventem en Groupe : Le Guide 2026",
+    metaTitle: "Transfert Aéroport Bruxelles Groupe 2026 | Navette Zaventem & Charleroi",
+    metaDescription: "Organiser un transfert aéroport de Bruxelles en groupe ? Guide complet : navette Zaventem, Charleroi, tarifs, suivi de vol, conseils logistiques. Devis gratuit.",
+    slug: "transfert-aeroport-bruxelles-zaventem-groupe-guide",
+    excerpt: "Navette aéroport pour groupe à Bruxelles : comment choisir entre Zaventem et Charleroi, quels tarifs attendre et comment notre service de suivi de vol fonctionne.",
+    featuredImage: "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Autocar de groupe devant l'aéroport de Bruxelles-Zaventem",
+    publishedAt: "2026-05-10T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Conseils",
+    tags: ["transfert aéroport Bruxelles", "navette Zaventem groupe", "transport aéroport groupe"],
+    readTime: "7 min",
+    content: `<p>Organiser le transfert aéroport d'un groupe est l'une des étapes les plus stressantes d'un voyage. Un autocar privatisé avec chauffeur résout tous les problèmes d'un coup : plus personne n'est laissé pour compte, les bagages sont centralisés, et le chauffeur suit les vols en temps réel.</p>
+
+<h2>Pourquoi choisir un autocar pour vos transferts à Zaventem ?</h2>
+<p>Pour un groupe de 15 personnes, le coût d'un autocar privatisé est souvent inférieur à celui de 4–5 taxis. Et surtout : tout le monde arrive ensemble, à l'heure, sans coordination chaotique.</p>
+
+<h2>Aéroport de Charleroi (BSCA) : ce qui change</h2>
+<p>Charleroi est à 60 km de Bruxelles (45 min à 1h15 selon la circulation). Le minibus est souvent plus adapté que le grand autocar pour les liaisons Charleroi, compte tenu des accès.</p>
+
+<h2>Tarifs indicatifs</h2>
+<p>Bruxelles centre → Zaventem aller-retour : minibus 8 places dès 250€, bus 25 places dès 400€. Pour <a href="/nos-services/prix">voir tous nos tarifs</a>, consultez notre guide complet.</p>
+
+<h2>Comment réserver votre navette aéroport ?</h2>
+<p>Indiquez la date, l'heure de vol, le nombre de passagers et le point de départ. Notre équipe vous répond sous 24h avec un devis. <a href="/contactez-nous">Demandez votre devis gratuit</a>.</p>`,
+  },
+  {
+    id: 9,
+    title: "Autocar pour Mariage en Belgique : Tout Savoir pour 2026 (Tarifs, Types, Conseils)",
+    metaTitle: "Autocar Mariage Belgique 2026 : Bus pour Invités, Tarifs & Guide Complet",
+    metaDescription: "Location autocar mariage Belgique : quel véhicule choisir, quels tarifs, comment organiser le circuit invités. Guide complet avec exemples. Devis gratuit.",
+    slug: "autocar-mariage-belgique-guide-complet",
+    excerpt: "Minibus pour 12 invités ou autocar pour 50 ? Cortège avec chauffeur en tenue, circuit multi-arrêts, formule aller-retour... Tout sur la location d'autocar mariage en Belgique.",
+    featuredImage: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Autocar élégant décoré pour un mariage en Belgique",
+    publishedAt: "2026-05-20T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Événements",
+    tags: ["autocar mariage Belgique", "bus mariage Bruxelles", "transport invités mariage", "navette mariage"],
+    readTime: "8 min",
+    content: `<p>Le jour de votre mariage, le dernier souci que vous souhaitez avoir concerne la logistique de transport. Un autocar avec chauffeur pour vos invités règle tout en une fois — personne ne prend le volant après avoir bu, tout le monde arrive ensemble, et le départ se fait dans une ambiance collective unique.</p>
+
+<h2>Quel véhicule pour votre mariage ?</h2>
+<h3>Moins de 20 invités</h3>
+<p>Le <a href="/notre-flotte/minibus">minibus 8–16 places</a> est parfait. Élégant, maniable, idéal pour transporter les témoins et famille proche.</p>
+<h3>20 à 40 invités</h3>
+<p>Le <a href="/notre-flotte/bus">bus 20–35 places</a> offre le juste équilibre entre confort et capacité.</p>
+<h3>Plus de 40 invités</h3>
+<p>L'<a href="/notre-flotte/autocars">autocar grand tourisme</a> peut accueillir jusqu'à 55 passagers avec tout le confort nécessaire.</p>
+
+<h2>Services spéciaux mariage</h2>
+<p>Nous proposons : chauffeur en tenue, décoration intérieure légère sur demande, circuit multi-arrêts (domicile → mairie → église → salle de réception → hôtels). <a href="/nos-services/autocar-mariage">En savoir plus sur notre service mariage</a>.</p>
+
+<h2>Combien de temps à l'avance réserver ?</h2>
+<p>Pour un mariage, nous recommandons de réserver <strong>au minimum 3 mois à l'avance</strong>, idéalement 6 mois pour les dates en haute saison (mai–septembre). <a href="/contactez-nous">Demandez votre devis mariage</a>.</p>`,
+  },
+  {
+    id: 10,
+    title: "Voyage Scolaire en Autocar depuis Bruxelles : Guide Organisateur 2026",
+    metaTitle: "Voyage Scolaire Autocar Bruxelles 2026 | Guide Organisateur Complet",
+    metaDescription: "Organisez un voyage scolaire en autocar depuis Bruxelles. Réglementation belge, destinations populaires, tarifs, garanties sécurité. Guide complet pour enseignants.",
+    slug: "voyage-scolaire-autocar-bruxelles-guide-organisateur",
+    excerpt: "Permis D, assurance scolaire, conformité LEZ, destinations... Tout ce qu'un enseignant ou organisateur doit savoir pour réserver un autocar scolaire depuis Bruxelles.",
+    featuredImage: "https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Élèves montant dans un autocar scolaire pour un voyage éducatif",
+    publishedAt: "2026-06-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Conseils",
+    tags: ["voyage scolaire autocar", "sortie scolaire bus Bruxelles", "transport scolaire groupe", "location bus école"],
+    readTime: "9 min",
+    content: `<p>Organiser un voyage scolaire, c'est jongler entre sécurité des élèves, budget, réglementation et logistique. Un autocar privatisé depuis Bruxelles simplifie tout — un seul prestataire, un seul véhicule, un chauffeur qualifié.</p>
+
+<h2>Ce que la réglementation belge exige</h2>
+<p>Tous nos chauffeurs possèdent le permis D (transport en commun), une formation continue en sécurité routière et un casier judiciaire vierge. Nos véhicules sont 100% conformes LEZ Bruxelles (Euro 6) et équipés de ceintures de sécurité à chaque place.</p>
+
+<h2>Destinations populaires pour voyages scolaires depuis Bruxelles</h2>
+<ul>
+  <li><strong>Journée à <a href="/destinations/bruges">Bruges</a> ou <a href="/destinations/gand">Gand</a></strong> : histoire, art, patrimoine UNESCO — idéal pour les cours d'histoire et de langue.</li>
+  <li><strong>Parlement Européen</strong> : 30 min depuis le centre de Bruxelles, visite gratuite sur réservation.</li>
+  <li><strong>Mémorial de Bastogne ou Ypres</strong> : histoire des deux guerres mondiales, très adapté aux élèves du secondaire.</li>
+  <li><strong>Week-end <a href="/destinations/paris">Paris</a> ou <a href="/destinations/amsterdam">Amsterdam</a></strong> : 2–3 jours, idéal pour les groupes lycéens.</li>
+</ul>
+
+<h2>Comment obtenir un devis sur bon de commande ?</h2>
+<p>Nous travaillons avec les administrations publiques et établissements scolaires — facturation sur bon de commande disponible. <a href="/contactez-nous">Contactez notre équipe</a> pour un devis adapté à votre établissement.</p>`,
+  },
+  {
+    id: 11,
+    title: "Excursion Bruges depuis Bruxelles en Autocar : Guide Complet pour Groupes 2026",
+    metaTitle: "Excursion Bruges depuis Bruxelles Autocar 2026 | Guide Groupes & Tarifs",
+    metaDescription: "Tout savoir sur une excursion Bruges depuis Bruxelles en autocar : durée, itinéraire, tarifs, infos pratiques pour groupes. Devis gratuit sous 24h.",
+    slug: "excursion-bruges-depuis-bruxelles-autocar-guide",
+    excerpt: "Bruges en 1 ou 2 jours depuis Bruxelles : itinéraire optimisé pour groupes, tarifs aller-retour par type de véhicule et toutes les infos pratiques (parking, LEZ, bateau).",
+    featuredImage: "https://images.pexels.com/photos/4388163/pexels-photo-4388163.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Canaux et architecture médiévale de Bruges vue depuis un pont — excursion autocar",
+    publishedAt: "2026-06-10T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Destinations",
+    tags: ["excursion Bruges Bruxelles", "autocar Bruges groupe", "visite Bruges bus", "journée Bruges"],
+    readTime: "10 min",
+    content: `<p>Bruges est la destination de groupe la plus demandée depuis Bruxelles. À 90 km (1h15 en autocar), elle offre l'un des centres médiévaux les mieux conservés d'Europe, classé au patrimoine mondial de l'UNESCO.</p>
+
+<h2>Bruges en 1 jour : l'itinéraire optimisé</h2>
+<p>Départ 8h30 de Bruxelles → 9h45 arrivée Bruges → 10h00 Markt et Beffroi → 12h00 déjeuner → 13h30 bateau sur les canaux → 15h00 musée Groeninge → 16h30 temps libre → 17h30 retour → 19h00 Bruxelles.</p>
+
+<h2>Tarifs aller-retour</h2>
+<p>Minibus 8–16 places dès 400€ · Bus 20–35 places dès 550€ · Autocar 40–55 places dès 700€. <a href="/nos-services/prix">Voir tous les tarifs</a>.</p>
+
+<h2>Infos pratiques</h2>
+<p>Parking autocar : Katelijnepoort (gratuit, hors centre). Le centre est piétonnier. Notre chauffeur connaît parfaitement le dépôt le plus proche. Voir aussi <a href="/destinations/bruges">notre page dédiée à Bruges</a>.</p>`,
+  },
+  {
+    id: 12,
+    title: "Excursion Gand depuis Bruxelles : Guide Groupes 2026 (Histoire, Gastronomie, Art)",
+    metaTitle: "Excursion Gand depuis Bruxelles Autocar 2026 | Guide Groupes Complet",
+    metaDescription: "Tout savoir sur une excursion à Gand depuis Bruxelles en autocar : Gravensteen, L'Agneau Mystique, cuberdon, tarifs groupes. Devis gratuit sous 24h.",
+    slug: "excursion-gand-depuis-bruxelles-guide-groupes",
+    excerpt: "Gand en une journée depuis Bruxelles : Gravensteen, Van Eyck, cuberdon et bières gantoises. Guide complet pour groupes avec itinéraire et tarifs autocar.",
+    featuredImage: "https://images.pexels.com/photos/4388163/pexels-photo-4388163.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Vue sur le Gravensteen et les quais médiévaux de Gand",
+    publishedAt: "2026-07-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Destinations",
+    tags: ["excursion Gand Bruxelles", "autocar Gand groupe", "visite Gand bus", "journée Gand"],
+    readTime: "9 min",
+    content: `<p>Gand est la destination secrète des connaisseurs : moins touristique que Bruges, mais tout aussi riche en histoire médiévale et en art flamand. À 55 km de Bruxelles (45 min en autocar), c'est l'excursion idéale pour une journée culturelle en groupe.</p>
+
+<h2>Les incontournables de Gand</h2>
+<ul>
+  <li><strong>Gravensteen</strong> : le château des Comtes de Flandre, l'un des mieux conservés d'Europe</li>
+  <li><strong>Sint-Baafskathedraal</strong> : l'Agneau Mystique de Van Eyck (réservation obligatoire)</li>
+  <li><strong>Graslei & Korenlei</strong> : les quais médiévaux, cœur de la vie nocturne gantoise</li>
+  <li><strong>Cuberdon & bières</strong> : les spécialités locales incontournables</li>
+</ul>
+
+<h2>Gand ou Bruges ?</h2>
+<p>Pour un groupe qui veut éviter la foule, Gand est idéale. Moins connue, plus authentique, et avec un Gravensteen qui impressionne davantage que le Beffroi de Bruges. <a href="/destinations/gand">Voir notre guide Gand</a>.</p>
+
+<h2>Tarifs</h2>
+<p>Minibus dès 380€ · Bus dès 520€ · Autocar dès 680€. <a href="/contactez-nous">Demandez votre devis</a>.</p>`,
+  },
+  {
+    id: 13,
+    title: "Week-end à Cologne depuis Bruxelles en Autocar : Guide Complet 2026",
+    metaTitle: "Week-end Cologne Bruxelles Autocar 2026 | Guide Groupes & Tarifs",
+    metaDescription: "Organiser un week-end à Cologne depuis Bruxelles en autocar. Cathédrale UNESCO, bières Kölsch, marché de Noël. Guide complet groupes avec itinéraires et tarifs.",
+    slug: "week-end-cologne-depuis-bruxelles-autocar",
+    excerpt: "Cologne à 2h30 de Bruxelles : cathédrale gothique UNESCO, bières Kölsch, marché de Noël légendaire. Guide complet pour organiser un week-end de groupe en autocar.",
+    featuredImage: "https://images.pexels.com/photos/3214995/pexels-photo-3214995.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Cathédrale de Cologne (Kölner Dom) illuminée — voyage autocar depuis Bruxelles",
+    publishedAt: "2026-07-15T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Destinations",
+    tags: ["week-end Cologne Bruxelles", "autocar Cologne groupe", "voyage Cologne bus", "excursion Cologne"],
+    readTime: "8 min",
+    content: `<p>Cologne est la destination européenne parfaite pour un week-end de groupe depuis Bruxelles. À 250 km (2h30 en autocar), elle offre une cathédrale à couper le souffle, des brasseries Kölsch authentiques et, en décembre, l'un des plus beaux marchés de Noël d'Europe.</p>
+
+<h2>Pourquoi Cologne pour votre groupe ?</h2>
+<p>Le Kölner Dom (cathédrale gothique classée UNESCO depuis 1996) est l'un des monuments les plus impressionnants d'Europe. Ajoutez le Musée Ludwig (Picasso, Warhol), l'Altstadt animée et les brasseries où la Kölsch se sert en verre de 0,2L — et vous avez un week-end parfait.</p>
+
+<h2>Itinéraire 2 jours recommandé</h2>
+<p>Jour 1 : départ Bruxelles 7h30, arrivée 10h, visite cathédrale, déjeuner Altstadt, musée, brasserie. Jour 2 : Maison Farina, bords du Rhin, départ 14h30, retour Bruxelles 17h.</p>
+
+<h2>Marché de Noël de Cologne</h2>
+<p>Novembre–décembre : 7 marchés simultanés dans la ville. La navette spéciale Cologne Noël est notre excursion la plus demandée. <strong>Réservation à l'avance obligatoire.</strong></p>
+
+<h2>Tarifs</h2>
+<p>Autocar 40–55 places : aller-retour journée dès 1 200€. Pour un week-end avec nuit : devis sur mesure. <a href="/contactez-nous">Contactez-nous</a> · <a href="/destinations/cologne">Guide Cologne complet</a>.</p>`,
+  },
+  {
+    id: 14,
+    title: "Transport Groupe Plaisirs d'Hiver Bruxelles 2026 : Navette & Autocar",
+    metaTitle: "Transport Groupe Plaisirs d'Hiver Bruxelles 2026 | Navette Marché Noël",
+    metaDescription: "Navette groupe pour les Plaisirs d'Hiver de Bruxelles 2026. Formules aller-retour, mise à disposition, circuit multi-arrêts. Devis gratuit.",
+    slug: "transport-groupe-plaisirs-hiver-bruxelles-2026",
+    excerpt: "Les Plaisirs d'Hiver de Bruxelles sans galères de parking ni dernier métro : nos formules navette groupe pour profiter pleinement du marché de Noël de la Grand-Place.",
+    featuredImage: "https://images.pexels.com/photos/4388163/pexels-photo-4388163.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Illuminations de Noël à Bruxelles — navette groupe Plaisirs d'Hiver",
+    publishedAt: "2026-09-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Événements",
+    tags: ["Plaisirs d'Hiver Bruxelles", "navette marché Noël Bruxelles", "transport groupe Noël", "autocar événement Bruxelles"],
+    readTime: "7 min",
+    content: `<p>Chaque année, les Plaisirs d'Hiver attirent plusieurs millions de visiteurs sur la Grand-Place de Bruxelles. Pour les entreprises, associations et groupes, organiser le transport collectif en autocar est la solution la plus intelligente : pas de parking, pas de limite d'alcool au volant, retour flexible.</p>
+
+<h2>Pourquoi l'autocar pour les Plaisirs d'Hiver ?</h2>
+<p>Embouteillages monstres, parking introuvable, dernier métro à 0h30 : l'autocar privatisé élimine tous ces problèmes. Votre groupe part ensemble, profite sans contrainte et rentre à l'heure qu'il souhaite.</p>
+
+<h2>Nos formules transport Plaisirs d'Hiver</h2>
+<ul>
+  <li><strong>Navette aller-retour</strong> depuis votre commune ou lieu de travail</li>
+  <li><strong>Mise à disposition soirée</strong> (départ + attente + retour)</li>
+  <li><strong>Circuit multi-arrêts</strong> pour groupes dispersés dans la région bruxelloise</li>
+</ul>
+
+<h2>Combiner avec Bruges ou Cologne en décembre</h2>
+<p>Ajoutez une journée <a href="/destinations/bruges">Bruges</a> ou un week-end <a href="/destinations/cologne">Cologne</a> marché de Noël pour une expérience encore plus mémorable. Packages disponibles sur devis.</p>`,
+  },
+  {
+    id: 15,
+    title: "Comment Choisir son Autocar : Minibus, Bus ou Grand Tourisme — Guide Décideur",
+    metaTitle: "Choisir Autocar Location : Minibus, Bus ou Grand Tourisme ? Guide 2026",
+    metaDescription: "Minibus, bus ou autocar grand tourisme ? Critères pour bien choisir selon le nombre de passagers, la distance et l'événement. Guide complet avec tableau comparatif.",
+    slug: "comment-choisir-autocar-minibus-bus-grand-tourisme",
+    excerpt: "8, 25 ou 50 passagers ? Transfert local ou voyage 500 km ? Ce guide vous aide à choisir le bon véhicule en 5 questions simples.",
+    featuredImage: "https://images.pexels.com/photos/3943737/pexels-photo-3943737.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Comparatif minibus bus autocar — guide pour choisir son véhicule de location",
+    publishedAt: "2026-09-15T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Conseils",
+    tags: ["choisir autocar location", "différence minibus bus autocar", "guide location véhicule groupe", "quelle taille autocar"],
+    readTime: "8 min",
+    content: `<p>La première question que nous posent nos clients : quel véhicule choisir ? La réponse dépend de trois critères principaux : le nombre de passagers, la distance du trajet et le type d'événement.</p>
+
+<h2>Le minibus (8–16 places) : pour qui ?</h2>
+<p>Idéal pour les petits groupes VIP, les transferts aéroports, les sorties en petit comité. Maniable en centre-ville, il peut stationner presque partout. Voir notre <a href="/notre-flotte/minibus">flotte minibus</a>.</p>
+
+<h2>Le bus (20–35 places) : le juste milieu</h2>
+<p>La solution polyvalente pour la grande majorité des demandes. Adapté aux excursions journée, sorties scolaires et événements d'entreprise. Voir notre <a href="/notre-flotte/bus">flotte bus</a>.</p>
+
+<h2>L'autocar grand tourisme (40–55 places) : le long courrier</h2>
+<p>Toilettes, WiFi, prises électriques, espace bagages — l'autocar GT est conçu pour les voyages longue distance. Pour Paris, Amsterdam, Cologne ou plus loin. Voir notre <a href="/notre-flotte/autocars">flotte autocars</a>.</p>
+
+<h2>Checklist en 5 questions</h2>
+<ol>
+  <li>Combien de passagers ? (8–16 → minibus / 20–35 → bus / 40–55 → autocar)</li>
+  <li>Quelle distance ? (&lt;100 km → les 3 / 100–500 km → bus ou autocar / +500 km → autocar GT)</li>
+  <li>Quel événement ? (mariage → minibus/bus / séminaire → bus/autocar / voyage Europe → autocar GT)</li>
+  <li>Besoin de WiFi/toilettes ? (oui → autocar GT obligatoire)</li>
+  <li>Budget par personne ? (plus le groupe est grand, moins ça coûte par tête)</li>
+</ol>`,
+  },
+  {
+    id: 16,
+    title: "Transport d'Entreprise à Bruxelles : Comment Organiser une Navette Corporate",
+    metaTitle: "Navette Entreprise Bruxelles 2026 | Transport Corporate Autocar",
+    metaDescription: "Comment mettre en place une navette corporate à Bruxelles ? Cahier des charges, tarifs, références Schuman. Guide B2B pour responsables mobilité. Devis gratuit.",
+    slug: "navette-entreprise-bruxelles-transport-corporate",
+    excerpt: "Navettes régulières, transferts aéroports, team building : pourquoi les entreprises bruxelloises choisissent l'autocar avec chauffeur et comment établir un contrat annuel.",
+    featuredImage: "https://images.pexels.com/photos/3943737/pexels-photo-3943737.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Navette corporate devant un immeuble d'entreprise à Bruxelles",
+    publishedAt: "2026-10-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Conseils",
+    tags: ["navette entreprise Bruxelles", "transport corporate Belgique", "autocar séminaire entreprise", "navette salariés Bruxelles"],
+    readTime: "9 min",
+    content: `<p>Pour les entreprises du quartier Schuman, de Zaventem ou d'Anderlecht, la navette corporate avec autocar résout des problèmes quotidiens : salariés dispersés, parkings saturés, transferts aéroports répétitifs.</p>
+
+<h2>Cas d'usage corporate les plus fréquents</h2>
+<ul>
+  <li>Navette quotidienne depuis parking P+R vers bureau</li>
+  <li>Transfert d'équipes entre sites (Bruxelles–Zaventem–Liège)</li>
+  <li>Team building et soirées d'entreprise (retour garanti)</li>
+  <li>Conférences et événements institutionnels (EU district Schuman)</li>
+</ul>
+
+<h2>Ce que nous offrons aux entreprises</h2>
+<ul>
+  <li>Facturation mensuelle consolidée</li>
+  <li>Chauffeurs dédiés aux clients réguliers</li>
+  <li>Garantie de ponctualité</li>
+  <li>Contrats annuels avec remises volume</li>
+</ul>
+
+<p>Pour établir un cahier des charges transport ou obtenir un contrat annuel, <a href="/contactez-nous">contactez notre équipe B2B</a>. Voir aussi notre service <a href="/nos-services/navette-entreprise">navette entreprise</a>.</p>`,
+  },
+  {
+    id: 17,
+    title: "Les 10 Meilleures Excursions en Autocar depuis Bruxelles en 2026",
+    metaTitle: "10 Meilleures Excursions Autocar depuis Bruxelles 2026 | Guide Groupes",
+    metaDescription: "Bruges, Gand, Paris, Amsterdam, Cologne, Luxembourg... Les 10 meilleures excursions en autocar depuis Bruxelles pour groupes en 2026. Distances, durées, tarifs.",
+    slug: "meilleures-excursions-autocar-depuis-bruxelles-2026",
+    excerpt: "De Bruges à Prague, en passant par Cologne et Luxembourg : notre sélection des 10 meilleures excursions de groupe en autocar depuis Bruxelles, avec distances et tarifs.",
+    featuredImage: "https://images.pexels.com/photos/4388163/pexels-photo-4388163.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Collage des meilleures destinations en autocar depuis Bruxelles",
+    publishedAt: "2026-11-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Destinations",
+    tags: ["excursions autocar Bruxelles", "meilleures destinations groupe Belgique", "voyage autocar Europe", "idées sorties groupe"],
+    readTime: "11 min",
+    content: `<p>Depuis Bruxelles, vous avez accès en autocar à certaines des plus belles destinations d'Europe. Voici notre sélection des 10 excursions les plus demandées par nos clients groupes.</p>
+
+<h2>1. Bruges — La Venise du Nord (90 km · 1h15)</h2>
+<p>La destination classique. <a href="/destinations/bruges">Guide complet Bruges</a>.</p>
+
+<h2>2. Gand — Cité médiévale et universitaire (55 km · 45 min)</h2>
+<p>Moins connue que Bruges, tout aussi spectaculaire. <a href="/destinations/gand">Guide complet Gand</a>.</p>
+
+<h2>3. Paris — L'éternelle romantique (310 km · 3h)</h2>
+<p>Week-end 2 jours idéal. <a href="/destinations/paris">Guide complet Paris</a>.</p>
+
+<h2>4. Amsterdam — Canaux et liberté (210 km · 2h30)</h2>
+<p>Musées, vélos, canaux. <a href="/destinations/amsterdam">Guide complet Amsterdam</a>.</p>
+
+<h2>5. Cologne — Cathédrale et bières Kölsch (250 km · 2h30)</h2>
+<p>Le marché de Noël le plus beau d'Europe. <a href="/destinations/cologne">Guide complet Cologne</a>.</p>
+
+<h2>6. Luxembourg — Le Monaco du Nord (190 km · 2h)</h2>
+<p>Vieille ville UNESCO, nature, finance.</p>
+
+<h2>7. Liège — La Cité Ardente (100 km · 1h15)</h2>
+<p>Gastronomie wallonne, bouquinistes de la Batte, sirop de Liège.</p>
+
+<h2>8. Anvers — Mode, diamants et port (50 km · 40 min)</h2>
+<p>La ville la plus trendy de Belgique.</p>
+
+<h2>9. Dinant — Vallée de la Meuse (90 km · 1h)</h2>
+<p>Citadelle, kayak, saxophonistes (patrie d'Adolphe Sax).</p>
+
+<h2>10. Mons — Culture et gastronomie wallonne (65 km · 45 min)</h2>
+<p>Capitale culturelle oubliée, à redécouvrir.</p>
+
+<p>Pour réserver votre excursion, <a href="/contactez-nous">demandez un devis gratuit</a>.</p>`,
+  },
+  {
+    id: 18,
+    title: "Transport Écologique pour Groupes : Pourquoi l'Autocar Bat la Voiture (et Parfois le Train)",
+    metaTitle: "Transport Écologique Groupe 2026 : Autocar vs Voiture vs Train | Bilan Carbone",
+    metaDescription: "Bilan carbone autocar vs voiture individuelle : les chiffres qui surprennent. Pourquoi l'autocar Euro 6 est le transport de groupe le plus écologique. Données ADEME.",
+    slug: "transport-ecologique-groupe-autocar-bilan-carbone",
+    excerpt: "Par passager-kilomètre, un autocar Euro 6 émet 6x moins de CO₂ qu'une voiture individuelle. Les chiffres de l'ADEME et de l'AIE sur le vrai bilan carbone du transport de groupe.",
+    featuredImage: "https://images.pexels.com/photos/3973897/pexels-photo-3973897.jpeg?tr=w-1200,h-628,c-maintain_ratio,f-webp,q-85",
+    featuredImageAlt: "Autocar Euro 6 sur autoroute — transport écologique pour groupes",
+    publishedAt: "2026-12-01T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Environnement & Réglementation",
+    tags: ["transport écologique groupe", "bilan carbone autocar", "autocar vs voiture CO2", "Euro 6 écologie", "transport durable Belgique"],
+    readTime: "8 min",
+    content: `<p>On parle beaucoup d'écologie dans les transports, mais les chiffres réels sur les autocars surprennent souvent. Par passager-kilomètre, un autocar Euro 6 plein émet <strong>6 à 8 fois moins de CO₂ qu'une voiture individuelle</strong>.</p>
+
+<h2>Les données ADEME et AIE</h2>
+<p>Émissions CO₂ par passager-kilomètre (données 2024) :</p>
+<ul>
+  <li>Voiture individuelle (diesel, 1,5 personne) : ~130 g CO₂/pkm</li>
+  <li>Avion court courrier : ~260 g CO₂/pkm</li>
+  <li>Autocar diesel Euro 6 (taux de remplissage 70%) : ~18–22 g CO₂/pkm</li>
+  <li>Train (réseau belge SNCB) : ~8–12 g CO₂/pkm</li>
+</ul>
+
+<h2>La norme Euro 6 : ce que ça change</h2>
+<p>Nos véhicules 100% Euro 6 réduisent les émissions de NOx de 80% par rapport à Euro 5, et les particules fines de 95%. Pour la <a href="/lez-bruxelles">zone LEZ de Bruxelles</a>, c'est le standard minimum depuis 2025.</p>
+
+<h2>Quand l'autocar bat même le train</h2>
+<p>Pour les trajets point à point sans correspondances (Bruxelles → Cologne, Bruxelles → Paris), l'autocar peut être plus rapide et aussi écologique qu'une combinaison train avec correspondances. Pour un groupe de 40 personnes, il n'existe souvent pas d'alternative ferroviaire directe.</p>
+
+<h2>Notre engagement environnemental</h2>
+<p>Flotte 100% Euro 6, programme de renouvellement régulier, formation éco-conduite de nos chauffeurs. <a href="/a-propos">En savoir plus sur notre démarche</a>.</p>`,
+  },
+];
+
+blogPosts.push(...newPosts);
 
 export const getAllBlogPosts = (): BlogPost[] => {
   return blogPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());

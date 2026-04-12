@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Bus, MapPin, Users, CheckCircle, ArrowRight, Star, Phone } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { conversionCopy, bruxellesHyperlocal } from '@/data/seoData';
+import { localBusinessSchema } from '@/data/enhancedSchemas';
+import { generalFAQ } from '@/data/faqData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -24,59 +26,44 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Location Autocar Bruxelles',
-  url: 'https://www.locationautocar.be',
-  telephone: '+3225800325',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Bd Industriel 9',
-    addressLocality: 'Bruxelles',
-    postalCode: '1070',
-    addressCountry: 'BE',
+const localBusinessWithFreshness = {
+  ...localBusinessSchema,
+  dateModified: new Date().toISOString(),
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'EUR',
+    lowPrice: '150',
+    highPrice: '2500',
+    offerCount: '8',
   },
-  openingHours: ['Mo-Fr 08:00-22:00', 'Sa-Su 10:00-22:00'],
-  priceRange: '€€',
-  description:
-    "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Minibus, bus et autocars pour groupes de 8 à 55 personnes.",
 };
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
+  ...generalFAQ,
   mainEntity: [
+    ...generalFAQ.mainEntity,
     {
       '@type': 'Question',
       name: "Quel est le prix d'une location d'autocar à Bruxelles ?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Le tarif dépend du type de véhicule, du nombre de passagers et de la durée du trajet. Nos prix débutent à partir de 150€ pour un transfert local en minibus.",
+        text: "Le tarif dépend du type de véhicule, du nombre de passagers et de la durée du trajet. Nos prix débutent à partir de 150€ pour un transfert local en minibus. Demandez un devis gratuit pour une offre personnalisée.",
       },
     },
     {
       '@type': 'Question',
-      name: 'Combien de temps à l\'avance faut-il réserver ?',
+      name: "Vos autocars sont-ils autorisés en zone LEZ Bruxelles ?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Nous recommandons de réserver au minimum 48h à l'avance. Pour les événements importants, plusieurs semaines à l'avance sont conseillées.",
+        text: "Oui, tous nos véhicules sont conformes aux normes Euro 6 et sont autorisés à circuler dans la zone de basses émissions (LEZ) de Bruxelles.",
       },
     },
     {
       '@type': 'Question',
-      name: 'Vos autocars sont-ils autorisés en zone LEZ Bruxelles ?',
+      name: "Quels types de groupes transportez-vous ?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, tous nos véhicules sont conformes aux normes Euro 6 et sont autorisés à circuler dans la zone de basses émissions (LEZ) de Bruxelles.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quels types de groupes transportez-vous ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Nous transportons des entreprises, associations, écoles, groupes touristiques et privés. Nos véhicules accueillent de 8 à 55 passagers.',
+        text: "Nous transportons des entreprises, associations, écoles, groupes touristiques et privés. Nos véhicules accueillent de 8 à 55 passagers selon le modèle choisi.",
       },
     },
   ],
@@ -101,7 +88,7 @@ export default function LocationAutocarBruxellesPage() {
     <div className="py-12">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessWithFreshness) }}
       />
       <script
         type="application/ld+json"
@@ -140,6 +127,7 @@ export default function LocationAutocarBruxellesPage() {
             <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
               <Bus className="w-8 h-8 text-blue-600" aria-hidden="true" />
             </div>
+            <p className="text-xs text-gray-400 mb-2">Mis à jour : avril 2026</p>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Location autocar Bruxelles avec chauffeur
             </h1>
@@ -326,6 +314,33 @@ export default function LocationAutocarBruxellesPage() {
                 <p className="text-gray-700">
                   Nous transportons des entreprises, associations, écoles, groupes touristiques et privés. Nos véhicules
                   accueillent de 8 à 55 passagers selon le modèle choisi.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Proposez-vous un service 24h/24 et 7j/7 ?
+                </h3>
+                <p className="text-gray-700">
+                  Oui, notre service client est disponible 24h/24 et 7j/7 pour vos urgences, réservations de dernière
+                  minute et assistance pendant vos voyages. Appelez-nous au +32 2 580 03 25 à tout moment.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Quelle est votre politique d&apos;annulation ?
+                </h3>
+                <p className="text-gray-700">
+                  Annulation gratuite jusqu&apos;à 48h avant le départ. Entre 24h et 48h : 50% du montant. Moins de
+                  24h : 100% du montant (sauf cas de force majeure).
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Quels équipements sont inclus dans vos véhicules ?
+                </h3>
+                <p className="text-gray-700">
+                  Tous nos véhicules incluent climatisation, sièges confortables et ceintures de sécurité. Les autocars
+                  disposent en plus de toilettes, WiFi haut débit et prises électriques.
                 </p>
               </div>
             </div>

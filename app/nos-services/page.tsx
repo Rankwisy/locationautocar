@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { MapPin, Users, Calendar, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '@/data/seoData';
-import { buildBreadcrumbSchema, buildServiceSchema } from '@/seo/schema';
+import { buildBreadcrumbSchema, buildServiceSchema, buildItemListSchema } from '@/seo/schema';
 import { SERVICES_SCHEMA_DATA } from '@/seo/schemaData';
+import { servicesFAQ } from '@/data/faqData';
 import { toCanonicalUrl } from '@/data/canonicalRoutes';
 import type { Metadata } from 'next';
 
@@ -30,25 +31,33 @@ const services = [
     id: 'transferts-aeroports',
     icon: MapPin,
     title: 'Transferts Aéroports & Gares',
-    description: 'Service de navette professionnel entre aéroports, gares et votre destination',
+    description: 'Service de navette professionnel entre aéroports, gares et votre destination. Suivi des vols en temps réel, chauffeur avec pancarte nominative.',
+    idealFor: ['Groupes professionnels', 'Arrivées tardives/tôt matin', 'Équipes commerciales en déplacement'],
+    priceFrom: 'À partir de 250€',
   },
   {
     id: 'excursions-tourisme',
     icon: Users,
     title: 'Excursions & Tourisme',
-    description: "Découvrez Bruxelles, la Belgique et l'Europe avec nos circuits organisés",
+    description: "Découvrez Bruxelles, la Belgique et l'Europe avec nos circuits organisés. Bruges, Gand, Paris, Amsterdam — nous connaissons les meilleures routes.",
+    idealFor: ['Associations culturelles', 'Groupes scolaires', 'Tours opérateurs'],
+    priceFrom: 'À partir de 500€ / jour',
   },
   {
     id: 'voyages-affaires',
     icon: Calendar,
     title: "Voyages d'Affaires",
-    description: 'Transport de groupes pour événements professionnels et séminaires',
+    description: 'Transport de groupes pour événements professionnels et séminaires. WiFi à bord, facturation mensuelle, chauffeurs en tenue.',
+    idealFor: ['Séminaires corporate', 'Conférences institutionnelles', 'Incentives équipes'],
+    priceFrom: 'Sur devis',
   },
   {
     id: 'mise-a-disposition',
     icon: Clock,
     title: 'Mise à Disposition',
-    description: "Location d'autocar avec chauffeur selon vos besoins spécifiques",
+    description: "Location d'autocar avec chauffeur selon vos besoins spécifiques. Tarification à l'heure, flexibilité totale sur l'itinéraire.",
+    idealFor: ['Mariages et événements', 'Journées d\'entreprise', 'Circuits sur mesure'],
+    priceFrom: 'À partir de 80€ / heure',
   },
 ];
 
@@ -67,6 +76,14 @@ export default function NosServicesPage() {
     ...SERVICES_SCHEMA_DATA.map((s) =>
       buildServiceSchema(s.nom, s.description, s.url, s.serviceType)
     ),
+    buildItemListSchema(
+      services.map((s) => ({
+        name: s.title,
+        url: `https://www.locationautocar.be/nos-services/${s.id}`,
+        description: s.description,
+      }))
+    ),
+    servicesFAQ,
   ];
 
   return (
@@ -84,12 +101,15 @@ export default function NosServicesPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Nos Services de Transport à Bruxelles
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Depuis 2007, nous proposons des services complets de transport en autocar avec chauffeur
             pour particuliers et entreprises. Prise en charge dans tout Bruxelles (
             {bruxellesHyperlocal.quartiersStrategiques.slice(0, 3).map((q) => q.nom).join(', ')}…).
             Notre <InternalLinkNext to="/notre-flotte" anchor="flotte" /> dessert toutes nos{' '}
             <InternalLinkNext to="/destinations" anchorVariant={1} />.
+          </p>
+          <p className="text-base text-gray-500">
+            Consultez notre <Link href="/nos-services/prix" className="text-blue-600 hover:underline font-medium">guide complet des tarifs</Link> pour une estimation rapide.
           </p>
         </div>
 
@@ -130,7 +150,16 @@ export default function NosServicesPage() {
                   <service.icon className="w-8 h-8 text-blue-600" aria-hidden="true" />
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                <p className="text-lg text-gray-600 mb-6">{service.description}</p>
+                <p className="text-lg text-gray-600 mb-4">{service.description}</p>
+                <p className="text-sm font-semibold text-blue-700 mb-3">{service.priceFrom}</p>
+                <ul className="mb-6 space-y-1">
+                  {service.idealFor.map((who) => (
+                    <li key={who} className="flex items-center gap-2 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" aria-hidden="true" />
+                      Idéal pour : {who}
+                    </li>
+                  ))}
+                </ul>
                 <Link
                   href={`/nos-services/${service.id}`}
                   className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
@@ -166,6 +195,18 @@ export default function NosServicesPage() {
               <h3 className="text-lg font-semibold mb-2">Depuis 2007</h3>
               <p className="text-blue-100">Plus de 15 ans d'expérience</p>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-16 max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Questions fréquentes</h2>
+          <div className="space-y-6">
+            {servicesFAQ.mainEntity.map((faq: { name: string; acceptedAnswer: { text: string } }) => (
+              <div key={faq.name} className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.name}</h3>
+                <p className="text-gray-700">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
           </div>
         </div>
 

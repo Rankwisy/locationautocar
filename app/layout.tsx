@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import HeaderNext from '@/components/Layout/HeaderNext';
 import FooterNext from '@/components/Layout/FooterNext';
+import TrustBar from '@/components/TrustBar';
 import { organizationSchema, websiteSchema, localBusinessSchema, touristTripSchema, transportServiceSchema } from '@/data/enhancedSchemas';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.locationautocar.be'),
@@ -28,6 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@locationautocar',
+    creator: '@locationautocar',
   },
   robots: {
     index: true,
@@ -76,6 +79,7 @@ export default function RootLayout({
           Aller au contenu principal
         </a>
         <HeaderNext />
+        <TrustBar />
         <main id="main-content" className="flex-1 min-h-screen" role="main">
           {children}
         </main>
