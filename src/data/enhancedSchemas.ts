@@ -27,19 +27,28 @@ export const organizationSchema = {
       "telephone": "+32 2 580 03 25",
       "contactType": "customer service",
       "availableLanguage": ["French", "Dutch", "English"],
-      "hoursAvailable": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "22:00"
-      }
+      "hoursAvailable": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:30",
+          "closes": "18:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "13:30",
+          "closes": "18:30"
+        }
+      ]
     },
     {
       "@type": "ContactPoint",
       "telephone": "+32 2 580 03 25",
       "contactType": "emergency",
       "availableLanguage": ["French", "Dutch", "English"],
-      "hoursAvailable": "24/7"
+      "hoursAvailable": "24/7",
+      "description": "En cas d'urgence seulement — 7j/7"
     }
   ],
   "email": "info@locationautocar.be",
@@ -124,7 +133,21 @@ export const localBusinessSchema = {
   "telephone": "+32 2 580 03 25",
   "email": "info@locationautocar.be",
   "foundingDate": "2007",
-  "openingHours": ["Mo-Fr 08:00-22:00", "Sa-Su 10:00-22:00"],
+  "openingHours": ["Mo-Fr 09:30-18:30", "Sa 13:30-18:30"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:30",
+      "closes": "18:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "13:30",
+      "closes": "18:30"
+    }
+  ],
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": "Cash, Credit Card, Bank Transfer",
@@ -691,8 +714,22 @@ export const contactSchema = {
       "addressCountry": "BE"
     },
     "openingHours": [
-      "Mo-Fr 08:00-22:00",
-      "Sa-Su 10:00-22:00"
+      "Mo-Fr 09:30-18:30",
+      "Sa 13:30-18:30"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:30",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "13:30",
+        "closes": "18:30"
+      }
     ],
     "contactPoint": {
       "@type": "ContactPoint",

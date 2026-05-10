@@ -31,7 +31,7 @@ export const HOMEPAGE_FAQ = [
   {
     question: 'Comment obtenir un devis rapidement ?',
     reponse:
-      "Appelez-nous au +32 2 580 03 25 (Lun-Ven 8h-22h, Sam-Dim 10h-22h) ou remplissez notre formulaire en ligne. Nous répondons rapidement avec un devis gratuit et sans engagement.",
+      "Appelez-nous au +32 2 580 03 25 (Lun-Ven 9h30-18h30, Sam 13h30-18h30 — urgences 7j/7) ou remplissez notre formulaire en ligne. Nous répondons rapidement avec un devis gratuit et sans engagement.",
   },
 ];
 

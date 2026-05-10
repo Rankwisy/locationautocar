@@ -153,10 +153,11 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Horaires</h3>
                   <p className="text-gray-600">
-                    Lundi - Vendredi : 08:00 - 22:00<br />
-                    Samedi - Dimanche : 10:00 - 22:00
+                    Lundi - Vendredi : 09:30 - 18:30<br />
+                    Samedi : 13:30 - 18:30<br />
+                    Dimanche : Fermé
                   </p>
-                  <p className="text-sm text-gray-500">Service d&apos;urgence 24/7</p>
+                  <p className="text-sm text-gray-500">Urgences : +32 2 580 03 25 (en cas d&apos;urgence seulement — 7j/7)</p>
                 </div>
               </div>
             </div>

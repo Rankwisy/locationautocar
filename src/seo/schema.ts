@@ -39,7 +39,21 @@ export function buildLocalBusinessSchema() {
     priceRange: '€€',
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Espèces, Carte bancaire, Virement bancaire',
-    openingHours: ['Mo-Fr 08:00-22:00', 'Sa-Su 10:00-22:00'],
+    openingHours: ['Mo-Fr 09:30-18:30', 'Sa 13:30-18:30'],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:30',
+        closes: '18:30',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
+        opens: '13:30',
+        closes: '18:30',
+      },
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Bd Industriel 9',

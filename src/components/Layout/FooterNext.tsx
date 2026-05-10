@@ -165,11 +165,14 @@ const FooterNext: React.FC = () => {
                   <p className="text-gray-300">1070 Bruxelles</p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 mr-2 text-blue-400" />
-                <a href="tel:+3225800325" className="text-gray-300 hover:text-white">
-                  +32 2 580 03 25
-                </a>
+              <div className="flex items-start">
+                <Phone className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                <div>
+                  <a href="tel:+3225800325" className="text-gray-300 hover:text-white">
+                    +32 2 580 03 25
+                  </a>
+                  <p className="text-gray-500 text-xs mt-0.5">En cas d&apos;urgence seulement — 7j/7</p>
+                </div>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-blue-400" />
@@ -180,8 +183,9 @@ const FooterNext: React.FC = () => {
               <div className="flex items-start">
                 <Clock className="w-5 h-5 mr-2 mt-0.5 text-blue-400" />
                 <div>
-                  <p className="text-gray-300">Lun-Ven: 8h-22h</p>
-                  <p className="text-gray-300">Sam-Dim: 10h-22h</p>
+                  <p className="text-gray-300">Lun-Ven: 9h30-18h30</p>
+                  <p className="text-gray-300">Sam: 13h30-18h30</p>
+                  <p className="text-gray-300">Dim: Fermé</p>
                 </div>
               </div>
             </div>
