@@ -116,7 +116,6 @@ export default function ContactPage() {
                       +32 2 580 03 25
                     </a>
                   </p>
-                  <p className="text-sm text-gray-500">Service disponible 24/7</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
