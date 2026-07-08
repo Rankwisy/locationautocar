@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import { getAllBlogPosts, getBlogPostsByCategory } from '@/data/blogContentData';
 
-const categories = ['Tous', 'Destinations', 'Conseils', 'Réglementation'];
+const categories = ['Tous', 'Destinations', 'Conseils', 'Événements', 'Réglementation'];
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState('Tous');
