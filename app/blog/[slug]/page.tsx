@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Calendar, User, Tag, ArrowLeft, Clock, Share2, ArrowRight } from 'lucide-react';
 import { getBlogPostBySlug, blogPosts } from '@/data/blogContentData';
+import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema } from '@/seo/schema';
+import { toCanonicalUrl } from '@/data/canonicalRoutes';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -50,8 +52,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     });
   };
 
+  const postUrl = toCanonicalUrl(`/blog/${blogPost.slug}`);
+  const postSchemas = [
+    buildBreadcrumbSchema([
+      { nom: 'Accueil', url: toCanonicalUrl('/') },
+      { nom: 'Blog', url: toCanonicalUrl('/blog') },
+      { nom: blogPost.title, url: postUrl },
+    ]),
+    buildArticleSchema({
+      headline: blogPost.metaTitle || blogPost.title,
+      description: blogPost.metaDescription || blogPost.excerpt,
+      url: postUrl,
+      imageUrl: blogPost.featuredImage.startsWith('http')
+        ? blogPost.featuredImage
+        : toCanonicalUrl(blogPost.featuredImage),
+      datePublished: blogPost.publishedAt,
+      authorName: blogPost.author,
+    }),
+    ...(blogPost.faqs && blogPost.faqs.length > 0 ? [buildFAQSchema(blogPost.faqs)] : []),
+  ];
+
   return (
     <article className="py-12">
+      {postSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <Link

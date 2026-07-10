@@ -14,6 +14,7 @@ export interface BlogPost {
   tags: string[];
   readTime: string;
   content: string;
+  faqs?: { question: string; reponse: string }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -1424,6 +1425,232 @@ const newPosts: BlogPost[] = [
 <p>Entre l'affluence, les accès limités et les enjeux d'image pour vos invités, le <strong>transport professionnel</strong> vers Tomorrowland mérite d'être préparé avec un partenaire fiable. Notre équipe met à votre disposition tout son savoir-faire en <strong>transport groupe</strong>, navette événement et transport VIP pour que votre entreprise vive ce rendez-vous exceptionnel sans aucune contrainte logistique.</p>
 
 <p><a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Contactez notre équipe dès maintenant</a> pour organiser le transport de votre groupe vers Tomorrowland Belgium 2026.</p>`,
+  },
+  {
+    id: 21,
+    title: "Dour Festival 2026 : du 15 au 19 juillet, vivez une expérience unique en Belgique",
+    metaTitle: "Dour Festival 2026 : Autocar Belgique 15-19 Juillet",
+    metaDescription: "Dour Festival 2026 approche : découvrez comment réserver votre location autocar avec chauffeur vers le site, du 15 au 19 juillet, en toute simplicité.",
+    slug: "dour-festival-2026-location-autocar-belgique",
+    excerpt: "Dour Festival revient du 15 au 19 juillet 2026 ! Découvrez comment organiser votre location autocar avec chauffeur vers le site, en toute simplicité, et réservez vos billets dès maintenant.",
+    featuredImage: "/images/blog/dour-festival-2026-autocar.jpg",
+    featuredImageAlt: "Autocar de tourisme avec festivaliers arrivant sur le site du Dour Festival en Belgique",
+    publishedAt: "2026-07-11T09:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Événements",
+    tags: ["Dour Festival", "Location autocar", "Transport événementiel", "Autocar Belgique", "Festival Belgique"],
+    readTime: "7 min",
+    faqs: [
+      { question: "Où se trouve le site du Dour Festival ?", reponse: "Le festival se déroule à Dour, dans la province de Hainaut, à environ 1h30 de Bruxelles et 30 minutes de Mons." },
+      { question: "Combien de temps à l'avance faut-il réserver son autocar ?", reponse: "Nous recommandons de réserver dès que possible, idéalement plusieurs semaines avant le festival, car la demande est très forte en pleine saison estivale." },
+      { question: "Peut-on prévoir un aller simple et un retour à une autre date ?", reponse: "Oui, beaucoup de groupes arrivent le 15 juillet et repartent seulement le 19 ou le 20. Nous adaptons les dates aller et retour selon votre programme." },
+      { question: "Le matériel de camping peut-il être transporté dans l'autocar ?", reponse: "Oui, nos autocars disposent de soutes à bagages adaptées aux tentes, sacs de couchage et autre matériel de camping." },
+      { question: "Proposez-vous des minibus pour les petits groupes ?", reponse: "Oui, notre gamme de minibus convient parfaitement aux groupes restreints d'amis ou d'étudiants." },
+      { question: "Le transport est-il disponible depuis toute la Belgique ?", reponse: "Oui, nous organisons des départs depuis Bruxelles, Mons, Charleroi, Liège et la plupart des grandes villes belges vers Dour." },
+    ],
+    content: `<p>Chaque été, la petite ville de <strong>Dour</strong>, dans le Hainaut, se transforme en scène musicale à ciel ouvert pour l'un des plus grands festivals indépendants de Belgique. Du <strong>15 au 19 juillet 2026</strong>, le <strong>Dour Festival</strong> attend des dizaines de milliers de festivaliers venus vivre une expérience musicale hors normes, entre scènes électro, hip-hop, rock et musiques du monde. Mais qui dit grand festival dit aussi grande question logistique : comment rejoindre le site sereinement, surtout quand on voyage en groupe ?</p>
+
+<p>Chez Location Autocar Bruxelles, nous accompagnons chaque année des groupes d'amis, d'étudiants et d'associations vers les plus grands festivals belges grâce à notre service de <strong>location autocar avec chauffeur</strong>. Découvrez dans cet article comment organiser votre transport vers Dour Festival 2026 sans le moindre stress, et réservez vos billets dès maintenant pour ne rien manquer de l'événement.</p>
+
+<h2>Dour Festival 2026 : dates et informations clés</h2>
+
+<p>Le festival se déroule du 15 au 19 juillet 2026 sur le site historique de Dour, dans la province de Hainaut, à environ 1h30 de Bruxelles et 30 minutes de Mons. Cinq jours de concerts, un immense camping et une ambiance festive qui attire un public venu de toute l'Europe.</p>
+
+<h3>Un site rural difficile d'accès en voiture</h3>
+
+<p>Comme pour beaucoup de grands festivals, le site de Dour est aménagé dans une zone rurale, avec des routes secondaires qui saturent rapidement à l'arrivée et au départ des festivaliers. Les parkings visiteurs sont éloignés du site et souvent limités en places, surtout les jours de forte affluence.</p>
+
+<h3>La solution : voyager groupé en autocar</h3>
+
+<p>C'est pour cette raison que de plus en plus de groupes optent pour un <strong>autocar Belgique</strong> affrété spécialement pour l'occasion. En voyageant ensemble, vous évitez les embouteillages, le stress du stationnement, et vous profitez d'un accès facilité aux zones de dépose réservées aux autocars.</p>
+
+<h2>Pourquoi choisir la location autocar avec chauffeur pour Dour Festival</h2>
+
+<h3>Confort avant et après les concerts</h3>
+
+<p>Après plusieurs jours de festival et de camping, rien ne vaut un trajet de retour confortable, assis, sans avoir à conduire. Nos autocars modernes offrent sièges inclinables, climatisation et espace de rangement pour vos bagages de camping.</p>
+
+<h3>Sécurité et tranquillité d'esprit</h3>
+
+<p>Avec l'ambiance festive du festival, laisser la conduite à un chauffeur professionnel est un choix de bon sens. Aucun risque lié à la fatigue du festival : notre équipe s'occupe du trajet, vous profitez du moment présent.</p>
+
+<h3>Un budget maîtrisé entre amis</h3>
+
+<p>En répartissant le coût de la <strong>location bus</strong> entre tous les participants, le trajet vers Dour devient souvent bien plus économique que plusieurs voitures individuelles, sans compter les frais de parking sur place.</p>
+
+<h2>Nos solutions de transport pour Dour Festival 2026</h2>
+
+<h3>Location autocar pour grands groupes</h3>
+
+<p>Pour les bandes d'amis, associations étudiantes ou comités de festival, nos autocars de 40 à 55 places offrent la solution idéale pour un <strong>transport de groupe</strong> confortable, avec espace bagages adapté au matériel de camping.</p>
+
+<h3>Location minibus pour petits groupes</h3>
+
+<p>Vous êtes un groupe plus restreint ? Notre offre de <strong>location minibus</strong> (8 à 16 places) permet un déplacement flexible et convivial, avec la même exigence de ponctualité et de confort.</p>
+
+<h3>Transport événementiel sur mesure</h3>
+
+<p>Chaque groupe a ses propres contraintes : arrivée la veille, départ après la dernière scène, arrêt intermédiaire pour un ravitaillement. Notre service de <strong>transport événementiel</strong> s'adapte entièrement à votre programme de festival.</p>
+
+<h2>Comment réserver votre autocar pour Dour Festival</h2>
+
+<ul>
+  <li>Contactez-nous avec le nombre de passagers, votre point de départ et vos dates (aller le 15 juillet, retour le 19 ou le 20 par exemple).</li>
+  <li>Recevez un devis détaillé et gratuit sous 24h.</li>
+  <li>Confirmez votre réservation rapidement : les disponibilités sont limitées en pleine saison des festivals.</li>
+  <li>Profitez du festival l'esprit tranquille, nous gérons l'aller-retour dans son intégralité.</li>
+</ul>
+
+<p>👉 <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Demandez votre devis gratuit pour Dour Festival 2026</a></p>
+
+<h2>Pourquoi choisir Location Autocar Bruxelles</h2>
+
+<p>Depuis 2007, nous accompagnons groupes et associations pour tous types de <strong>transport événementiel</strong> en Belgique et en Europe. Découvrez notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte complète de véhicules</a>, du minibus à l'autocar grand tourisme, ou notre offre dédiée de <a href="/nos-services/location-bus-groupe" class="text-blue-600 hover:text-blue-700 font-semibold">location bus pour groupes</a>.</p>
+
+<p>Pour tout autre déplacement, consultez également nos <a href="/destinations/belgique" class="text-blue-600 hover:text-blue-700 font-semibold">destinations en Belgique</a> ou notre page <a href="/nos-services/prix" class="text-blue-600 hover:text-blue-700 font-semibold">tarifs et devis</a>.</p>
+
+<h2>FAQ : Location autocar pour Dour Festival 2026</h2>
+
+<h3>Où se trouve le site du Dour Festival ?</h3>
+<p>Le festival se déroule à Dour, dans la province de Hainaut, à environ 1h30 de Bruxelles et 30 minutes de Mons.</p>
+
+<h3>Combien de temps à l'avance faut-il réserver son autocar ?</h3>
+<p>Nous recommandons de réserver dès que possible, idéalement plusieurs semaines avant le festival, car la demande est très forte en pleine saison estivale.</p>
+
+<h3>Peut-on prévoir un aller simple et un retour à une autre date ?</h3>
+<p>Oui, beaucoup de groupes arrivent le 15 juillet et repartent seulement le 19 ou le 20. Nous adaptons les dates aller et retour selon votre programme.</p>
+
+<h3>Le matériel de camping peut-il être transporté dans l'autocar ?</h3>
+<p>Oui, nos autocars disposent de soutes à bagages adaptées aux tentes, sacs de couchage et autre matériel de camping.</p>
+
+<h3>Proposez-vous des minibus pour les petits groupes ?</h3>
+<p>Oui, notre <a href="/notre-flotte/minibus" class="text-blue-600 hover:text-blue-700 font-semibold">gamme de minibus</a> convient parfaitement aux groupes restreints d'amis ou d'étudiants.</p>
+
+<h3>Le transport est-il disponible depuis toute la Belgique ?</h3>
+<p>Oui, nous organisons des départs depuis Bruxelles, Mons, Charleroi, Liège et la plupart des grandes villes belges vers Dour.</p>
+
+<h2>Conclusion : vivez Dour Festival 2026 sans contrainte de transport</h2>
+
+<p>Entre les routes saturées, le parking limité et la fatigue du festival, se rendre à Dour en voiture individuelle peut vite compliquer l'expérience. En optant pour une <strong>location autocar avec chauffeur</strong>, vous transformez le trajet en une expérience détendue et conviviale, digne de l'ambiance qui vous attend sur le site.</p>
+
+<p>Que vous soyez un groupe d'amis, une association étudiante ou un comité de festival, notre équipe est prête à organiser votre <strong>transport de groupe</strong> vers Dour Festival 2026. <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Contactez-nous dès aujourd'hui</a> pour recevoir votre devis gratuit et réserver votre autocar en toute simplicité.</p>`,
+  },
+  {
+    id: 22,
+    title: "Dour Festival Belgium 2026 : transport professionnel et navette pour groupes et entreprises",
+    metaTitle: "Dour Festival Belgium 2026 : Transport Groupe & VIP",
+    metaDescription: "Organisez le transport de votre équipe pour Dour Festival Belgium 2026 : navette événement, transport VIP et chauffeur privé. Devis gratuit rapide.",
+    slug: "dour-festival-belgium-2026-transport-professionnel-groupe",
+    excerpt: "Dour Festival Belgium 2026 approche : découvrez nos solutions de transport professionnel, navette événement et transport VIP pour les entreprises et groupes.",
+    featuredImage: "/images/blog/dour-festival-belgium-2026-transport-groupe.jpg",
+    featuredImageAlt: "Autocar de luxe transportant des professionnels vers un événement d'entreprise pour Dour Festival",
+    publishedAt: "2026-07-11T10:00:00.000Z",
+    author: "Location Autocar Bruxelles",
+    authorUrl: "https://www.locationautocar.be/a-propos",
+    category: "Événements",
+    tags: ["Dour Festival", "Transport professionnel", "Navette entreprise", "Transport VIP", "Chauffeur privé"],
+    readTime: "8 min",
+    faqs: [
+      { question: "À partir de combien de personnes peut-on réserver une navette ?", reponse: "Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 55 places pour un grand groupe d'entreprise." },
+      { question: "Peut-on personnaliser les horaires de départ et de retour ?", reponse: "Oui, chaque navette événement est organisée sur mesure selon votre programme, y compris pour des horaires de montage ou de démontage tôt le matin." },
+      { question: "Proposez-vous un service pour les invités VIP uniquement ?", reponse: "Oui, notre offre de transport VIP avec chauffeur privé est spécialement pensée pour l'accueil de partenaires, artistes ou clients prestigieux." },
+      { question: "Le devis pour un transport séminaire est-il gratuit ?", reponse: "Oui, chaque demande fait l'objet d'un devis personnalisé et gratuit, sans engagement, sous 24h." },
+      { question: "Peut-on prévoir une étape supplémentaire (hôtel, restaurant) ?", reponse: "Tout à fait, notre service de transport professionnel s'adapte à un itinéraire avec plusieurs arrêts, avant ou après le festival." },
+      { question: "Les chauffeurs connaissent-ils bien la zone de Dour pendant le festival ?", reponse: "Oui, nos chauffeurs sont expérimentés sur les grands événements belges et connaissent les meilleurs itinéraires et zones de dépose autour du site." },
+    ],
+    content: `<p><strong>Dour Festival</strong> n'est plus seulement un rendez-vous pour festivaliers indépendants : chaque édition attire aussi des marques partenaires, des exposants, des médias et des équipes de production qui doivent organiser leur propre logistique sur plusieurs jours. Pour ces acteurs professionnels, la question du <strong>transport professionnel</strong> devient stratégique : comment acheminer ses équipes, ses invités ou son matériel dans les meilleures conditions vers le site de Dour ?</p>
+
+<h2>Dour Festival Belgium 2026 : un enjeu logistique pour les entreprises</h2>
+
+<p>Avec plusieurs dizaines de milliers de visiteurs qui convergent vers Dour sur cinq jours, les accès routiers et les zones de stationnement se saturent rapidement, en particulier lors des pics d'affluence en début et fin de festival. Pour les entreprises qui organisent une présence sur site ou un événement autour du festival, improviser le transport au dernier moment est risqué.</p>
+
+<p>C'est là qu'intervient notre offre de <strong>location autocar entreprise</strong> : un service pensé pour les marques, agences et organisations professionnelles, avec toute la fiabilité attendue pour un événement de cette envergure.</p>
+
+<h2>Nos solutions de transport pour Dour Festival</h2>
+
+<h3>Navette événement au départ des grandes villes belges</h3>
+
+<p>Notre service de <strong>navette événement</strong> relie Bruxelles, Mons, Charleroi ou Lille directement aux abords du site de Dour, avec des horaires calés sur votre programme :</p>
+
+<ul>
+  <li>Départs adaptés aux horaires d'accréditation ou de montage</li>
+  <li>Retours organisés en soirée ou en fin de festival</li>
+  <li>Points de prise en charge flexibles selon votre entreprise ou lieu de rassemblement</li>
+  <li>Coordination directe avec votre équipe organisatrice ou votre agence événementielle</li>
+</ul>
+
+<h3>Transport séminaire et opérations d'image de marque</h3>
+
+<p>Certaines entreprises profitent de Dour Festival pour organiser un <strong>transport séminaire</strong> ou une opération de communication autour de leurs équipes, partenaires ou influenceurs. Nous adaptons notre prestation à ces formats spécifiques :</p>
+
+<ul>
+  <li>Autocar dédié pour toute la durée du déplacement</li>
+  <li>Étapes intermédiaires possibles (hôtel, restaurant, activité de team building)</li>
+  <li>Habillage discret ou personnalisation du véhicule sur demande</li>
+  <li>Un seul interlocuteur pour toute la logistique transport</li>
+</ul>
+
+<h3>Transport VIP avec chauffeur privé</h3>
+
+<p>Pour vos invités, artistes ou partenaires les plus prestigieux, nous proposons également un service de <strong>transport VIP</strong> avec <strong>chauffeur privé</strong> : véhicules haut de gamme, discrétion, ponctualité irréprochable et accueil personnalisé dès la descente d'avion ou de train.</p>
+
+<h2>Ce qui est inclus dans notre prestation</h2>
+
+<ul>
+  <li>Un autocar ou minibus récent, climatisé et conforme aux normes Euro 6</li>
+  <li>Un chauffeur professionnel, ponctuel et habitué aux grands événements</li>
+  <li>Une assurance complète incluse dans le prix</li>
+  <li>Un devis gratuit et personnalisé sous 24h</li>
+  <li>Une disponibilité 24h/24 pendant toute la durée du festival</li>
+</ul>
+
+<h3>Un engagement écologique et responsable</h3>
+
+<p>Notre flotte est 100% conforme à la norme Euro 6, garantissant un accès sans restriction aux zones à faibles émissions et un impact environnemental réduit par rapport à des dizaines de véhicules individuels. Un argument que vos équipes RSE apprécieront lors du bilan de l'événement.</p>
+
+<h2>Comment organiser le transport professionnel de votre groupe</h2>
+
+<ol>
+  <li>Contactez notre équipe avec le nombre de participants et vos dates de déplacement</li>
+  <li>Précisez le format souhaité : navette simple, séminaire, ou transport VIP</li>
+  <li>Recevez votre devis détaillé sous 24h</li>
+  <li>Validez la réservation, nous nous occupons du reste</li>
+</ol>
+
+<p>👉 <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Demandez votre devis gratuit pour Dour Festival Belgium 2026</a></p>
+
+<h2>Pourquoi les entreprises nous font confiance</h2>
+
+<p>Depuis 2007, Location Autocar Bruxelles accompagne les entreprises belges dans l'organisation de leurs déplacements de <strong>transport groupe</strong>, qu'il s'agisse de <a href="/nos-services/navette-entreprise" class="text-blue-600 hover:text-blue-700 font-semibold">navettes d'entreprise</a>, de <a href="/nos-services/voyages-affaires" class="text-blue-600 hover:text-blue-700 font-semibold">voyages d'affaires</a> ou de <a href="/nos-services/mise-a-disposition" class="text-blue-600 hover:text-blue-700 font-semibold">mise à disposition de véhicules avec chauffeur</a>.</p>
+
+<p>Consultez notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte de véhicules</a> ou notre page <a href="/nos-services/prix" class="text-blue-600 hover:text-blue-700 font-semibold">tarifs et devis</a> pour préparer votre budget en amont.</p>
+
+<h2>FAQ : Transport professionnel pour Dour Festival Belgium 2026</h2>
+
+<h3>À partir de combien de personnes peut-on réserver une navette ?</h3>
+<p>Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 55 places pour un grand groupe d'entreprise.</p>
+
+<h3>Peut-on personnaliser les horaires de départ et de retour ?</h3>
+<p>Oui, chaque navette événement est organisée sur mesure selon votre programme, y compris pour des horaires de montage ou de démontage tôt le matin.</p>
+
+<h3>Proposez-vous un service pour les invités VIP uniquement ?</h3>
+<p>Oui, notre offre de transport VIP avec chauffeur privé est spécialement pensée pour l'accueil de partenaires, artistes ou clients prestigieux.</p>
+
+<h3>Le devis pour un transport séminaire est-il gratuit ?</h3>
+<p>Oui, chaque demande fait l'objet d'un devis personnalisé et gratuit, sans engagement, sous 24h.</p>
+
+<h3>Peut-on prévoir une étape supplémentaire (hôtel, restaurant) ?</h3>
+<p>Tout à fait, notre service de transport professionnel s'adapte à un itinéraire avec plusieurs arrêts, avant ou après le festival.</p>
+
+<h3>Les chauffeurs connaissent-ils bien la zone de Dour pendant le festival ?</h3>
+<p>Oui, nos chauffeurs sont expérimentés sur les grands événements belges et connaissent les meilleurs itinéraires et zones de dépose autour du site.</p>
+
+<h2>Conclusion : simplifiez le transport de votre entreprise pour Dour Festival Belgium 2026</h2>
+
+<p>Entre l'affluence, les accès limités et les enjeux d'image pour vos invités, le <strong>transport professionnel</strong> vers Dour Festival mérite d'être préparé avec un partenaire fiable. Notre équipe met à votre disposition tout son savoir-faire en <strong>transport groupe</strong>, navette événement et transport VIP pour que votre entreprise vive ce rendez-vous exceptionnel sans aucune contrainte logistique.</p>
+
+<p><a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Contactez notre équipe dès maintenant</a> pour organiser le transport de votre groupe vers Dour Festival Belgium 2026.</p>`,
   },
 ];
 

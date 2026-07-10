@@ -189,6 +189,43 @@ export function buildItemListSchema(items: { name: string; url: string; descript
   };
 }
 
+export function buildArticleSchema(params: {
+  headline: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+  datePublished: string;
+  authorName: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: params.headline,
+    description: params.description,
+    image: [params.imageUrl],
+    datePublished: params.datePublished,
+    dateModified: params.datePublished,
+    inLanguage: 'fr-BE',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': params.url,
+    },
+    author: {
+      '@type': 'Organization',
+      name: params.authorName,
+      url: 'https://www.locationautocar.be/a-propos',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Location Autocar Bruxelles',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://ik.imagekit.io/by733ltn6/locationautocar/cropped-logo-base-location-autocar-bruxelles.png',
+      },
+    },
+  };
+}
+
 export function buildAggregateRatingSchema(ratingValue: number, reviewCount: number) {
   return {
     '@context': 'https://schema.org',
