@@ -54,7 +54,7 @@ export default function PolitiqueConfidentialitePage() {
               </p>
               <div className="bg-gray-50 rounded-lg p-6 mb-4">
                 <p className="text-gray-700 mb-2"><strong>Location Autocar Bruxelles</strong></p>
-                <p className="text-gray-700 mb-2">Rue du Poinçon 43, 1000 Bruxelles, Belgique</p>
+                <p className="text-gray-700 mb-2">Priemstraat 43, 1000 Brussel, Belgique</p>
                 <p className="text-gray-700 mb-2">Email : <a href="mailto:info@locationautocar.be" className="text-blue-600 hover:text-blue-700">info@locationautocar.be</a></p>
                 <p className="text-gray-700">Téléphone : <a href="tel:+3225800325" className="text-blue-600 hover:text-blue-700">+32 2 580 03 25</a></p>
               </div>

@@ -48,7 +48,7 @@ export default function MentionsLegalesPage() {
                   </a>
                   {' '}(BCE/KBO)
                 </p>
-                <p className="text-gray-700 mb-2"><strong>Adresse :</strong> Rue du Poinçon 43, 1000 Bruxelles, Belgique</p>
+                <p className="text-gray-700 mb-2"><strong>Adresse :</strong> Priemstraat 43, 1000 Brussel, Belgique</p>
                 <p className="text-gray-700 mb-2"><strong>Téléphone :</strong> <a href="tel:+3225800325" className="text-blue-600 hover:text-blue-700">+32 2 580 03 25</a></p>
                 <p className="text-gray-700"><strong>Email :</strong> <a href="mailto:info@locationautocar.be" className="text-blue-600 hover:text-blue-700">info@locationautocar.be</a></p>
               </div>
@@ -121,8 +121,8 @@ export default function MentionsLegalesPage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-blue-600 mt-1" aria-hidden="true" />
                   <div className="text-gray-700">
-                    Rue du Poinçon 43<br />
-                    1000 Bruxelles, Belgique
+                    Priemstraat 43<br />
+                    1000 Brussel, Belgique
                   </div>
                 </div>
               </div>
