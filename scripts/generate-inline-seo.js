@@ -97,7 +97,7 @@ const META = {
   },
   '/contactez-nous': {
     t: "Contact Location Autocar Bruxelles | Devis Gratuit | Service 24/7",
-    d: "Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Priemstraat 43, 1000 Brussel."
+    d: "Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Priemstraat 43 bus, 1000 Brussel."
   },
   '/mentions-legales': {
     t: "Mentions Légales | Location Autocar Bruxelles",

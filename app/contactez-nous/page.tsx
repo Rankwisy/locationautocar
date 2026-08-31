@@ -139,7 +139,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Adresse</h3>
                   <p className="text-gray-600">
-                    Priemstraat 43<br />
+                    Priemstraat 43 bus<br />
                     1000 Brussel<br />
                     Belgique
                   </p>
@@ -196,7 +196,7 @@ export default function ContactPage() {
           <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
-              <p className="text-gray-600">Priemstraat 43, 1000 Brussel</p>
+              <p className="text-gray-600">Priemstraat 43 bus, 1000 Brussel</p>
               <p className="text-sm text-gray-500 mt-2">Carte interactive disponible prochainement</p>
             </div>
           </div>

@@ -155,7 +155,7 @@ content: |
 
   ## Contact & Devis Gratuit
 
-  📍 **Adresse :** Priemstraat 43, 1000 Brussel, Belgique  
+  📍 **Adresse :** Priemstraat 43 bus, 1000 Brussel, Belgique  
   📞 **Téléphone :** +32 2 580 03 25  
   📧 **Email :** info@locationautocar.be  
   🌐 **Site Web :** [www.locationautocar.be](https://www.locationautocar.be/)
