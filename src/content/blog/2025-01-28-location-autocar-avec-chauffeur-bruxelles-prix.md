@@ -155,7 +155,7 @@ content: |
 
   ## Contact & Devis Gratuit
 
-  📍 **Adresse :** Bd Industriel 9, 1070 Bruxelles, Belgique  
+  📍 **Adresse :** Rue du Poinçon 43, 1000 Bruxelles, Belgique  
   📞 **Téléphone :** +32 2 580 03 25  
   📧 **Email :** info@locationautocar.be  
   🌐 **Site Web :** [www.locationautocar.be](https://www.locationautocar.be/)

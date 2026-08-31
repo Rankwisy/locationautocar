@@ -13,15 +13,15 @@ export const siteConfig: SiteConfig = {
   contact: {
     phone: "+32 2 580 03 25",
     email: "info@locationautocar.be",
-    address: "Bd Industriel 9, 1070 Bruxelles"
+    address: "Rue du Poinçon 43, 1000 Bruxelles"
   },
   business: {
     name: "Location Autocar Bruxelles",
     type: "Bus Rental Service",
     location: {
-      street: "Bd Industriel 9",
+      street: "Rue du Poinçon 43",
       city: "Bruxelles",
-      postalCode: "1070",
+      postalCode: "1000",
       country: "BE"
     }
   }

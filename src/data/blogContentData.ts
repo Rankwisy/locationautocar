@@ -561,7 +561,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Contact & Devis Gratuit</h2>
 
-      <p><strong>📍 Adresse :</strong> Bd Industriel 9, 1070 Bruxelles, Belgique<br>
+      <p><strong>📍 Adresse :</strong> Rue du Poinçon 43, 1000 Bruxelles, Belgique<br>
       <strong>📞 Téléphone :</strong> <a href="tel:+3225800325" class="text-blue-600 hover:text-blue-700 font-semibold">+32 2 580 03 25</a><br>
       <strong>📧 Email :</strong> <a href="mailto:info@locationautocar.be" class="text-blue-600 hover:text-blue-700 font-semibold">info@locationautocar.be</a><br>
       <strong>🌐 Site Web :</strong> <a href="/" class="text-blue-600 hover:text-blue-700 font-semibold">www.locationautocar.be</a></p>

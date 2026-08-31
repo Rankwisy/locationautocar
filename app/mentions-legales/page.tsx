@@ -34,9 +34,21 @@ export default function MentionsLegalesPage() {
                 Le site <strong>www.locationautocar.be</strong> est édité par :
               </p>
               <div className="bg-gray-50 rounded-lg p-6 mb-4">
-                <p className="text-gray-700 mb-2"><strong>Raison sociale :</strong> Location Autocar Bruxelles</p>
-                <p className="text-gray-700 mb-2"><strong>Forme juridique :</strong> Société de services</p>
-                <p className="text-gray-700 mb-2"><strong>Adresse :</strong> Boulevard Industriel 9, 1070 Bruxelles, Belgique</p>
+                <p className="text-gray-700 mb-2"><strong>Raison sociale :</strong> Transport &amp; Events</p>
+                <p className="text-gray-700 mb-2"><strong>Nom commercial :</strong> Location Autocar Bruxelles</p>
+                <p className="text-gray-700 mb-2">
+                  <strong>Numéro d&apos;unité d&apos;établissement :</strong>{' '}
+                  <a
+                    href="https://kbopub.economie.fgov.be/kbopub/toonvestigingps.html?vestigingsnummer=2324592033"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-blue-600 hover:text-blue-700"
+                  >
+                    2.324.592.033
+                  </a>
+                  {' '}(BCE/KBO)
+                </p>
+                <p className="text-gray-700 mb-2"><strong>Adresse :</strong> Rue du Poinçon 43, 1000 Bruxelles, Belgique</p>
                 <p className="text-gray-700 mb-2"><strong>Téléphone :</strong> <a href="tel:+3225800325" className="text-blue-600 hover:text-blue-700">+32 2 580 03 25</a></p>
                 <p className="text-gray-700"><strong>Email :</strong> <a href="mailto:info@locationautocar.be" className="text-blue-600 hover:text-blue-700">info@locationautocar.be</a></p>
               </div>
@@ -109,8 +121,8 @@ export default function MentionsLegalesPage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-blue-600 mt-1" aria-hidden="true" />
                   <div className="text-gray-700">
-                    Boulevard Industriel 9<br />
-                    1070 Bruxelles, Belgique
+                    Rue du Poinçon 43<br />
+                    1000 Bruxelles, Belgique
                   </div>
                 </div>
               </div>

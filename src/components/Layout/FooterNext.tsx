@@ -161,8 +161,8 @@ const FooterNext: React.FC = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 text-blue-400" />
                 <div>
-                  <p className="text-gray-300">Bd Industriel 9</p>
-                  <p className="text-gray-300">1070 Bruxelles</p>
+                  <p className="text-gray-300">Rue du Poinçon 43</p>
+                  <p className="text-gray-300">1000 Bruxelles</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -205,24 +205,6 @@ const FooterNext: React.FC = () => {
               © {currentYear} Location Autocar Bruxelles. Tous droits réservés.
             </p>
             <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mt-4 md:mt-0">
-              <a
-                href="https://transportbelgique.com/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="text-gray-400 hover:text-white text-sm"
-                title="Transport Belgique - Secteur transport"
-              >
-                Transport Belgique
-              </a>
-              <a
-                href="https://top.brussels/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="text-gray-400 hover:text-white text-sm"
-                title="TOP Brussels - Tourisme et économie Bruxelles"
-              >
-                TOP Brussels
-              </a>
               <Link href={ROUTES.MENTIONS_LEGALES} className="text-gray-400 hover:text-white text-sm">
                 Mentions Légales
               </Link>

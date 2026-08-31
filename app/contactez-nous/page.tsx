@@ -139,8 +139,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Adresse</h3>
                   <p className="text-gray-600">
-                    Bd Industriel 9<br />
-                    1070 Bruxelles<br />
+                    Rue du Poinçon 43<br />
+                    1000 Bruxelles<br />
                     Belgique
                   </p>
                 </div>
@@ -196,7 +196,7 @@ export default function ContactPage() {
           <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
-              <p className="text-gray-600">Bd Industriel 9, 1070 Bruxelles</p>
+              <p className="text-gray-600">Rue du Poinçon 43, 1000 Bruxelles</p>
               <p className="text-sm text-gray-500 mt-2">Carte interactive disponible prochainement</p>
             </div>
           </div>

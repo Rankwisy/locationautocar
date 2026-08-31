@@ -56,23 +56,23 @@ export function buildLocalBusinessSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Bd Industriel 9',
-      postalCode: '1070',
+      streetAddress: 'Rue du Poinçon 43',
+      postalCode: '1000',
       addressLocality: 'Bruxelles',
       addressCountry: 'BE',
       addressRegion: 'Région de Bruxelles-Capitale',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 50.8366,
-      longitude: 4.3367,
+      latitude: 50.8375,
+      longitude: 4.3413,
     },
     areaServed: [
       { '@type': 'City', name: 'Bruxelles' },
       { '@type': 'Country', name: 'Belgique' },
       { '@type': 'Continent', name: 'Europe' },
     ],
-    hasMap: 'https://maps.google.com/?q=Bd+Industriel+9,+1070+Bruxelles',
+    hasMap: 'https://maps.google.com/?q=Rue+du+Poinçon+43,+1000+Bruxelles',
     inLanguage: 'fr-BE',
   };
 }
