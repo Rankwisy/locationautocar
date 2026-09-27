@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import InternalLink from '../components/SEO/InternalLink';
 import { Users, Calendar, Star, Filter, Search, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
-import LEZBadge from '../components/LEZBadge';
-import { fleetFAQ, priceFaq } from '../data/faqData';
+import { fleetFAQ } from '../data/faqData';
 import { serviceVehicleSchemas } from '../data/enhancedSchemas';
-import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const FleetPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,13 +15,11 @@ const FleetPage: React.FC = () => {
     {
       id: 1,
       name: "Mercedes Sprinter Luxe",
-      headingTitle: "Mercedes Sprinter Luxe avec chauffeur à Bruxelles",
       type: "Minibus",
       capacity: 16,
       year: 2023,
-      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Minibus Mercedes Sprinter luxe 16 places Euro 6 conforme LEZ Bruxelles avec chauffeur professionnel climatisation WiFi sièges cuir",
+      imageAlt: "Minibus Mercedes Sprinter luxe 16 places avec chauffeur professionnel climatisation WiFi sièges cuir",
       priceRange: "€€",
       features: [
         "Climatisation automatique",
@@ -41,13 +36,11 @@ const FleetPage: React.FC = () => {
     {
       id: 2,
       name: "Mercedes Sprinter Standard",
-      headingTitle: "Mercedes Sprinter Standard pour transferts à Bruxelles",
       type: "Minibus",
       capacity: 12,
       year: 2022,
-      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Minibus Mercedes Sprinter 12 places Euro 6 conforme LEZ économique transport groupe climatisation système audio",
+      imageAlt: "Minibus Mercedes Sprinter 12 places économique transport groupe climatisation système audio",
       priceRange: "€",
       features: [
         "Climatisation",
@@ -64,13 +57,11 @@ const FleetPage: React.FC = () => {
     {
       id: 3,
       name: "Autocar Tourisme Premium",
-      headingTitle: "Autocar Tourisme Premium au départ de Bruxelles",
       type: "Autocar",
       capacity: 55,
       year: 2023,
-      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Autocar grand tourisme 55 places Euro 6 LEZ Bruxelles premium toilettes WiFi kitchenette voyages longue distance Europe",
+      imageAlt: "Autocar grand tourisme 55 places premium toilettes WiFi kitchenette voyages longue distance Europe",
       priceRange: "€€€",
       features: [
         "Sièges inclinables cuir",
@@ -88,13 +79,11 @@ const FleetPage: React.FC = () => {
     {
       id: 4,
       name: "Bus Tourisme Confort",
-      headingTitle: "Bus Tourisme Confort pour groupes à Bruxelles",
       type: "Bus",
       capacity: 35,
       year: 2022,
-      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Bus touristique 35 places Euro 6 conforme LEZ Bruxelles confortable excursions climatisation vitres panoramiques soute bagages",
+      imageAlt: "Bus touristique 35 places confortable excursions climatisation vitres panoramiques soute bagages",
       priceRange: "€€",
       features: [
         "Sièges ergonomiques",
@@ -111,13 +100,11 @@ const FleetPage: React.FC = () => {
     {
       id: 5,
       name: "Autocar Grand Tourisme",
-      headingTitle: "Autocar Grand Tourisme pour voyages longue distance depuis Bruxelles",
       type: "Autocar",
       capacity: 49,
       year: 2021,
-      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Autocar 49 places Euro 6 LEZ compliant grand tourisme voyages groupe Europe climatisation réfrigérateur multimédia",
+      imageAlt: "Autocar 49 places grand tourisme voyages groupe Europe climatisation réfrigérateur multimédia",
       priceRange: "€€",
       features: [
         "Sièges inclinables",
@@ -134,13 +121,11 @@ const FleetPage: React.FC = () => {
     {
       id: 6,
       name: "Bus Urbain Écologique",
-      headingTitle: "Bus Urbain Écologique autorisé dans Bruxelles",
       type: "Bus",
       capacity: 25,
       year: 2023,
-      euroStandard: "Euro 6",
       image: "https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85",
-      imageAlt: "Bus écologique 25 places moteur Euro 6 conforme LEZ Bruxelles plancher bas accessible PMR transport urbain",
+      imageAlt: "Bus écologique 25 places moteur Euro 6 plancher bas accessible PMR transport urbain",
       priceRange: "€",
       features: [
         "Moteur Euro 6",
@@ -222,13 +207,13 @@ const FleetPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={pageMeta.fleet.title}
-        metaTitle={pageMeta.fleet.metaTitle}
-        description={pageMeta.fleet.description}
-        keywords={semanticKeywords.fleet.join(', ')}
+        title="Notre Flotte - Location Autocar Bruxelles"
+        metaTitle="Flotte Autocar Bus Minibus Bruxelles | Chauffeur | Devis Gratuit"
+        description="Flotte moderne autocar bus minibus avec chauffeur Bruxelles. Véhicules récents climatisés WiFi pour transferts excursions Europe. Réservation 24/7."
+        keywords="flotte autocar bruxelles, bus chauffeur, minibus mercedes, vehicules transport groupe, location autocar belgique"
         canonical="https://www.locationautocar.be/notre-flotte"
         schema={fleetSchema}
-        faqSchema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [...(fleetFAQ.mainEntity as object[]), ...(priceFaq.mainEntity as object[]).slice(0, 3)] }}
+        faqSchema={fleetFAQ}
         breadcrumbSchema={breadcrumbSchema}
         ogImage="https://ik.imagekit.io/by733ltn6/locationautocar/merrcedes-van1.png?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85"
       />
@@ -238,14 +223,14 @@ const FleetPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Notre Flotte d'Autocars et Minibus Disponibles à Bruxelles
+              Notre Flotte
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez notre flotte moderne de véhicules avec chauffeur professionnel. 
-              Du <InternalLink to="/notre-flotte/minibus" anchor="minibus luxe Mercedes" /> à 
-              l'<InternalLink to="/notre-flotte/autocars" anchor="autocar grand tourisme" />, 
+              Du <Link to="/notre-flotte/minibus" className="text-blue-600 hover:text-blue-700 font-semibold">minibus luxe</Link> à 
+              l'<Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>, 
               nous avons le véhicule parfait pour tous vos{' '}
-              <InternalLink to="/nos-services" />.
+              <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 font-semibold">besoins de transport</Link>.
             </p>
           </div>
 
@@ -253,7 +238,7 @@ const FleetPage: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-12">
             <div className="flex items-center gap-2 mb-6">
               <Filter className="w-5 h-5 text-blue-600" aria-hidden="true" />
-              <h2 className="text-xl font-semibold text-gray-900">Filtrer par type de véhicule à Bruxelles</h2>
+              <h2 className="text-xl font-semibold text-gray-900">Filtrer par :</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -367,7 +352,7 @@ const FleetPage: React.FC = () => {
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xl font-semibold text-gray-900">
-                      {vehicle.headingTitle || vehicle.name}
+                      {vehicle.name}
                     </h3>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
@@ -384,10 +369,6 @@ const FleetPage: React.FC = () => {
                       <Calendar className="w-4 h-4" aria-hidden="true" />
                       {vehicle.year}
                     </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <LEZBadge standard={vehicle.euroStandard} variant="compact" />
                   </div>
 
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
@@ -433,30 +414,26 @@ const FleetPage: React.FC = () => {
           </div>
 
           {/* Fleet Statistics */}
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white mb-16">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Notre Flotte en Chiffres à Bruxelles
+              Notre Flotte en Chiffres
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">25+</div>
-                <div className="text-green-100">Véhicules</div>
+                <div className="text-blue-100">Véhicules</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">2023</div>
-                <div className="text-green-100">Année moyenne</div>
+                <div className="text-blue-100">Année moyenne</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-green-100">Euro 6+ LEZ</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-green-100">Avec chauffeur</div>
+                <div className="text-blue-100">Avec chauffeur</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">24/7</div>
-                <div className="text-green-100">Service disponible</div>
+                <div className="text-blue-100">Service disponible</div>
               </div>
             </div>
           </div>
@@ -464,35 +441,35 @@ const FleetPage: React.FC = () => {
           {/* Why Choose Our Fleet */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Pourquoi Choisir Notre Flotte pour vos déplacements à Bruxelles ?
+              Pourquoi Choisir Notre Flotte ?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Shield className="w-8 h-8 text-green-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Sécurité Maximale pour tous vos trajets bruxellois</h3>
+                <h3 className="text-lg font-semibold mb-2">Sécurité Maximale</h3>
                 <p className="text-gray-600 text-sm">Véhicules récents, entretien rigoureux, chauffeurs expérimentés</p>
               </div>
               <div className="text-center">
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Award className="w-8 h-8 text-blue-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Confort Premium pour passagers et entreprises</h3>
+                <h3 className="text-lg font-semibold mb-2">Confort Premium</h3>
                 <p className="text-gray-600 text-sm">Équipements modernes, sièges ergonomiques, climatisation</p>
               </div>
               <div className="text-center">
                 <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Clock className="w-8 h-8 text-orange-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Ponctualité garantie à Bruxelles et alentours</h3>
+                <h3 className="text-lg font-semibold mb-2">Ponctualité</h3>
                 <p className="text-gray-600 text-sm">Respect des horaires, planification optimisée, suivi en temps réel</p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <CheckCircle className="w-8 h-8 text-purple-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Service complet avec chauffeur professionnel</h3>
+                <h3 className="text-lg font-semibold mb-2">Service Complet</h3>
                 <p className="text-gray-600 text-sm">Assistance 24/7, devis gratuit, service personnalisé</p>
               </div>
             </div>
@@ -500,11 +477,11 @@ const FleetPage: React.FC = () => {
 
           <div className="mb-16 bg-green-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Ressources Véhicules et Sécurité en Belgique
+              Ressources Véhicules et Sécurité
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl">
-                <h3 className="text-lg font-semibold mb-3">Sécurité routière en Belgique</h3>
+                <h3 className="text-lg font-semibold mb-3">Sécurité Routière Belgique</h3>
                 <p className="text-gray-600 mb-4">
                   Informations officielles sur la sécurité routière et les réglementations belges.
                 </p>
@@ -519,7 +496,7 @@ const FleetPage: React.FC = () => {
                 </a>
               </div>
               <div className="bg-white p-6 rounded-xl">
-                <h3 className="text-lg font-semibold mb-3">Normes véhicules de l'Union européenne</h3>
+                <h3 className="text-lg font-semibold mb-3">Normes Véhicules UE</h3>
                 <p className="text-gray-600 mb-4">
                   Standards européens pour les véhicules de transport de passagers.
                 </p>
@@ -539,7 +516,7 @@ const FleetPage: React.FC = () => {
           {/* FAQ Section */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Questions Fréquentes sur Notre Flotte à Bruxelles
+              Questions Fréquentes sur Notre Flotte
             </h2>
             <div className="max-w-4xl mx-auto space-y-4">
               {fleetFAQ.mainEntity.map((item, index) => (
@@ -573,29 +550,13 @@ const FleetPage: React.FC = () => {
           {/* CTA Section */}
           <div className="bg-gray-50 rounded-2xl p-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Prêt à Réserver Votre Véhicule à Bruxelles ?
+              Prêt à Réserver Votre Véhicule ?
             </h2>
-            <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Contactez-nous pour un devis personnalisé et découvrez le véhicule parfait pour vos besoins. 
               Service professionnel garanti depuis 2007.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <h3 className="text-lg font-semibold text-gray-700 m-0">
-                <Link to="/nos-services" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
-                  Nos services de transport
-                </Link>
-              </h3>
-              <h3 className="text-lg font-semibold text-gray-700 m-0">
-                <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
-                  Découvrir toute la flotte
-                </Link>
-              </h3>
-              <h3 className="text-lg font-semibold text-gray-700 m-0">
-                <Link to="/contactez-nous" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
-                  Contact et devis à Bruxelles
-                </Link>
-              </h3>
-            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center justify-center gap-3 text-gray-700">
                 <Phone className="w-5 h-5 text-blue-600" aria-hidden="true" />

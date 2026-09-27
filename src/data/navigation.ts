@@ -1,50 +1,44 @@
 import { NavigationItem } from '../types/content';
-import { ROUTES } from './canonicalRoutes';
 
 export const mainNavigation: NavigationItem[] = [
   {
     label: "Accueil",
-    url: ROUTES.HOME
+    url: "/"
   },
   {
     label: "Nos Services",
-    url: ROUTES.SERVICES,
+    url: "/nos-services",
     children: [
-      { label: "Transferts Aéroports", url: ROUTES.SERVICE_TRANSFERTS },
-      { label: "Excursions & Tourisme", url: ROUTES.SERVICE_EXCURSIONS },
-      { label: "Voyages d'Affaires", url: ROUTES.SERVICE_VOYAGES_AFFAIRES },
-      { label: "Mise à Disposition", url: ROUTES.SERVICE_MISE_A_DISPOSITION },
-      { label: "Prix & Devis", url: ROUTES.SERVICE_PRIX },
-      { label: "Location Bus Groupe", url: ROUTES.SERVICE_LOCATION_BUS_GROUPE },
-      { label: "Autocar Mariage", url: ROUTES.SERVICE_AUTOCAR_MARIAGE },
-      { label: "Navette Entreprise", url: ROUTES.SERVICE_NAVETTE_ENTREPRISE }
+      { label: "Transferts Aéroports", url: "/nos-services/transferts-aeroports" },
+      { label: "Excursions & Tourisme", url: "/nos-services/excursions-tourisme" },
+      { label: "Voyages d'Affaires", url: "/nos-services/voyages-affaires" },
+      { label: "Mise à Disposition", url: "/nos-services/mise-a-disposition" }
     ]
   },
   {
     label: "Notre Flotte",
-    url: ROUTES.FLOTTE,
+    url: "/notre-flotte",
     children: [
-      { label: "Autocars", url: ROUTES.FLOTTE_AUTOCARS },
-      { label: "Minibus", url: ROUTES.FLOTTE_MINIBUS },
-      { label: "Bus", url: ROUTES.FLOTTE_BUS },
-      { label: "Conformité LEZ", url: ROUTES.LEZ }
+      { label: "Autocars", url: "/notre-flotte/autocars" },
+      { label: "Minibus", url: "/notre-flotte/minibus" },
+      { label: "Bus", url: "/notre-flotte/bus" }
     ]
   },
   {
     label: "Destinations",
-    url: ROUTES.DESTINATIONS,
+    url: "/destinations",
     children: [
-      { label: "Bruxelles & Région", url: ROUTES.DESTINATION_BRUXELLES },
-      { label: "Belgique", url: ROUTES.DESTINATION_BELGIQUE },
-      { label: "Europe", url: ROUTES.DESTINATION_EUROPE }
+      { label: "Bruxelles & Région", url: "/destinations/bruxelles" },
+      { label: "Belgique", url: "/destinations/belgique" },
+      { label: "Europe", url: "/destinations/europe" }
     ]
   },
   {
     label: "Blog",
-    url: ROUTES.BLOG
+    url: "/blog"
   },
   {
     label: "Contactez Nous",
-    url: ROUTES.CONTACT
+    url: "/contactez-nous"
   }
 ];

@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight, Home } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
-import InternalLink from '../components/SEO/InternalLink';
 import EnhancedContactForm from '../components/Forms/EnhancedContactForm';
 import { contactSchema } from '../data/enhancedSchemas';
-import { ROUTES } from '../data/canonicalRoutes';
-import { semanticKeywords, conversionCopy, bruxellesHyperlocal } from '../data/seoData';
-import { priceFaq } from '../data/faqData';
 
 const ContactPage: React.FC = () => {
-  const [searchParams] = useSearchParams();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
-  useEffect(() => {
-    if (searchParams.get('success') === 'true') {
-      setShowSuccessMessage(true);
-      setTimeout(() => setShowSuccessMessage(false), 10000);
-    }
-  }, [searchParams]);
 
   const handleSubmissionSuccess = () => {
     setShowSuccessMessage(true);
-    setTimeout(() => setShowSuccessMessage(false), 10000);
+    // Hide success message after 5 seconds
+    setTimeout(() => setShowSuccessMessage(false), 5000);
   };
 
   const handleSubmissionError = (error: string) => {
@@ -54,12 +43,11 @@ const ContactPage: React.FC = () => {
       <SEOHead
         title="Contactez Nous - Location Autocar Bruxelles"
         metaTitle="Contact Location Autocar Bruxelles | Devis Gratuit | Service 24/7"
-        description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Anderlecht (Bruxelles)."
-        keywords={semanticKeywords.contact.join(', ')}
+        description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Bruxelles."
+        keywords="contact autocar bruxelles, devis gratuit transport, service 24/7, bd industriel bruxelles"
         canonical="https://www.locationautocar.be/contactez-nous"
         schema={contactSchema}
         breadcrumbSchema={breadcrumbSchema}
-        faqSchema={priceFaq}
       />
 
       <div className="py-12">
@@ -67,13 +55,14 @@ const ContactPage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Contactez-nous à Bruxelles
+              Contactez Nous
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {conversionCopy.cta.principal} pour nos services de transport en autocar avec chauffeur. 
-              Notre équipe est disponible 24/7. Prise en charge dans les 19 communes bruxelloises (Anderlecht, Etterbeek, Schaerbeek…). Consultez notre{' '}
-              <InternalLink to={ROUTES.FLOTTE} /> et nos{' '}
-              <InternalLink to={ROUTES.DESTINATIONS} anchorVariant={1} />.
+              Demandez votre devis gratuit pour nos services de transport en autocar avec chauffeur. 
+              Notre équipe est disponible 24/7 pour répondre à vos besoins. Consultez notre{' '}
+              <Link to="/notre-flotte" className="text-blue-600 hover:text-blue-700 font-semibold">flotte complète</Link>{' '}
+              et découvrez nos{' '}
+              <Link to="/destinations" className="text-blue-600 hover:text-blue-700 font-semibold">destinations européennes</Link>.
             </p>
           </div>
 
@@ -81,8 +70,8 @@ const ContactPage: React.FC = () => {
           {showSuccessMessage && (
             <div className="mb-8 max-w-4xl mx-auto">
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-500" />
                   <div>
                     <h3 className="text-lg font-semibold text-green-800">
                       Demande envoyée avec succès !
@@ -91,26 +80,6 @@ const ContactPage: React.FC = () => {
                       Nous vous contacterons dans les plus brefs délais pour établir votre devis personnalisé.
                     </p>
                   </div>
-                </div>
-                <p className="text-sm text-green-700 mb-3">Continuez à explorer :</p>
-                <div className="flex flex-wrap gap-3">
-                  <InternalLink
-                    to={ROUTES.HOME}
-                    className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition-colors text-sm font-medium"
-                  >
-                    <Home className="w-4 h-4" />
-                    Accueil
-                  </InternalLink>
-                  <InternalLink
-                    to={ROUTES.SERVICES}
-                    anchor="Nos services transport autocar"
-                    className="inline-flex items-center gap-2 border border-green-700 text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
-                  />
-                  <InternalLink
-                    to={ROUTES.FLOTTE}
-                    anchorVariant={1}
-                    className="inline-flex items-center gap-2 border border-green-700 text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
-                  />
                 </div>
               </div>
             </div>

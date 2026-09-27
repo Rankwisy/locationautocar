@@ -42,8 +42,3 @@ Crawl-delay: 1
 User-agent: Slurp
 Allow: /
 Crawl-delay: 2
-
-# Ahrefs - SEO verification & backlink analysis
-User-agent: AhrefsBot
-Allow: /
-Allow: /k9b1y8at1ak9tqfd59s66vdqrcp2ag1a.txt

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Users, Camera, CheckCircle, ArrowRight, Phone, Mail, Star, Calendar, Castle } from 'lucide-react';
 import SEOHead from '../components/SEO/SEOHead';
 import { destinationSchemas } from '../data/enhancedSchemas';
-import { pageMeta, semanticKeywords } from '../data/seoData';
 
 const DestinationBelgiquePage: React.FC = () => {
   const destinations = [
@@ -132,10 +131,10 @@ const DestinationBelgiquePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={pageMeta.destinationBelgique.title}
-        metaTitle={pageMeta.destinationBelgique.metaTitle}
-        description={pageMeta.destinationBelgique.description}
-        keywords={semanticKeywords.belgique.join(', ')}
+        title="Circuits Belgique en Autocar | Bruges, Gand, Anvers | Guide Francophone"
+        metaTitle="Circuits Belgique Autocar | Bruges Gand Anvers | Transport Confortable"
+        description="Découvrez la Belgique avec nos circuits en autocar : Bruges UNESCO, Gand médiéval, Anvers diamantaire. Transport confortable avec guide francophone. Réservez votre excursion."
+        keywords="circuits belgique, bruges gand anvers, autocar belgique, patrimoine unesco, guide francophone"
         canonical="https://www.locationautocar.be/destinations/belgique"
         schema={destinationSchemas.belgique}
       />
@@ -156,14 +155,14 @@ const DestinationBelgiquePage: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Circuits en Belgique au départ de Bruxelles
+              Circuits en Belgique
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Bruges canaux, Gand universitaire, Anvers diamantaire, Dinant Meuse, Leuven brasseries. 
-              Circuits 1 jour ou Triangle d'Or 2 jours. Patrimoine UNESCO, bières trappistes, chocolat. Voyagez avec nos{' '}
-              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">circuits Belgique</Link>{' '}
+              Explorez les <strong>trésors de la Belgique</strong> avec nos circuits en autocar. 
+              De Bruges la médiévale aux vallées wallonnes, découvrez un patrimoine exceptionnel avec nos{' '}
+              <Link to="/nos-services/excursions-tourisme" className="text-blue-600 hover:text-blue-700 font-semibold">guides francophones expérimentés</Link>{' '}
               et notre{' '}
-              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">autocar grand tourisme</Link>.
+              <Link to="/notre-flotte/autocars" className="text-blue-600 hover:text-blue-700 font-semibold">flotte d'autocars confortables</Link>.
             </p>
           </div>
 

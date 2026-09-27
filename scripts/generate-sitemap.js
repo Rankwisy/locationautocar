@@ -1,62 +1,143 @@
 import fs from 'fs';
 import path from 'path';
-import { CANONICAL_BASE, CANONICAL_PATHS } from './canonical-sitemap.config.js';
 
+const baseUrl = 'https://www.locationautocar.be';
 const currentDate = new Date().toISOString();
 
-// Blog slugs – must match BlogPost.slug in blogContentData
-const BLOG_POSTS = [
-  { slug: 'lez-bruxelles-2026-guide-complet-normes-euro-6', lastmod: '2026-02-01T09:00:00+00:00' },
-  { slug: 'location-autocar-evenements-bruxelles-2025', lastmod: '2025-02-05T09:00:00+00:00' },
-  { slug: 'location-autocar-avec-chauffeur-bruxelles-prix', lastmod: '2026-03-05T10:00:00+00:00' },
-  { slug: 'bruxelles-coeur-europe', lastmod: '2026-03-05T10:00:00+00:00' },
-  { slug: 'amsterdam-canaux-velo', lastmod: '2026-03-05T10:00:00+00:00' },
-  { slug: 'eiffel-tower-sunset-magic', lastmod: '2026-03-05T10:00:00+00:00' },
+// Define all live pages with their configurations
+const pages = [
+  // Homepage - Highest priority
+  {
+    url: '/',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '1.0'
+  },
+
+  // Main navigation pages - High priority
+  {
+    url: '/nos-services',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '0.9'
+  },
+  {
+    url: '/notre-flotte',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.9'
+  },
+  {
+    url: '/destinations',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '0.9'
+  },
+  {
+    url: '/contactez-nous',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  },
+
+  // Fleet category pages - Important for SEO
+  {
+    url: '/notre-flotte/minibus',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.7'
+  },
+  {
+    url: '/notre-flotte/bus',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.7'
+  },
+  {
+    url: '/notre-flotte/autocars',
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: '0.7'
+  },
+
+  // Destination pages - High value content
+  {
+    url: '/destinations/bruxelles',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '0.7'
+  },
+  {
+    url: '/destinations/belgique',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '0.7'
+  },
+  {
+    url: '/destinations/europe',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '0.7'
+  },
+
+  // Blog section
+  {
+    url: '/blog',
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: '0.6'
+  },
+
+  // Blog posts - Content marketing
+  {
+    url: '/blog/eiffel-tower-sunset-magic',
+    lastmod: '2024-01-20T10:00:00.000Z',
+    changefreq: 'monthly',
+    priority: '0.6'
+  },
+  {
+    url: '/blog/amsterdam-canaux-velo',
+    lastmod: '2024-01-30T10:00:00.000Z',
+    changefreq: 'monthly',
+    priority: '0.6'
+  },
+  {
+    url: '/blog/bruxelles-coeur-europe',
+    lastmod: '2024-01-25T09:00:00.000Z',
+    changefreq: 'monthly',
+    priority: '0.6'
+  },
+  {
+    url: '/blog/location-autocar-avec-chauffeur-bruxelles-prix',
+    lastmod: '2025-01-28T10:00:00.000Z',
+    changefreq: 'monthly',
+    priority: '0.6'
+  }
 ];
-
-/** Build canonical URL – no trailing slash except for root */
-function toCanonicalUrl(pathStr) {
-  const p = pathStr === '/' ? '/' : pathStr.replace(/\/+$/, '');
-  return `${CANONICAL_BASE}${p || '/'}`;
-}
-
-function generateHreflangLinks(pathStr) {
-  const fullUrl = toCanonicalUrl(pathStr);
-  return `\n    <xhtml:link rel="alternate" hreflang="fr" href="${fullUrl}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${fullUrl}"/>`;
-}
 
 function generateSitemap() {
   console.log('🚀 Generating comprehensive XML sitemap...');
-
+  
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-`;
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
 
-  // Static canonical pages (must match page canonical in SEOHead)
-  CANONICAL_PATHS.forEach(({ path: pathStr, priority, changefreq }) => {
-    sitemap += `  <url>
-    <loc>${toCanonicalUrl(pathStr)}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>${generateHreflangLinks(pathStr)}
-  </url>
-`;
+  // Add each page to the sitemap
+  pages.forEach(page => {
+    sitemap += `
+  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${page.lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
   });
 
-  // Blog posts (each has canonical https://www.locationautocar.be/blog/:slug)
-  BLOG_POSTS.forEach(({ slug, lastmod }) => {
-    const pathStr = `/blog/${slug}`;
-    sitemap += `  <url>
-    <loc>${toCanonicalUrl(pathStr)}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>${generateHreflangLinks(pathStr)}
-  </url>
-`;
-  });
-
-  sitemap += `</urlset>`;
+  sitemap += `
+</urlset>`;
 
   // Ensure public directory exists
   const publicDir = path.join(process.cwd(), 'public');
@@ -67,13 +148,11 @@ function generateSitemap() {
   // Write the sitemap to the public directory
   const sitemapPath = path.join(publicDir, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-
-  const totalUrls = CANONICAL_PATHS.length + BLOG_POSTS.length;
+  
   console.log('✅ Sitemap generated successfully!');
   console.log(`📍 Location: ${sitemapPath}`);
-  console.log(`📊 Total URLs: ${totalUrls} (canonical only)`);
-  console.log(`🌍 Base: ${CANONICAL_BASE}`);
-
+  console.log(`📊 Total URLs: ${pages.length}`);
+  
   return sitemap;
 }
 

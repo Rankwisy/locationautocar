@@ -40,7 +40,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{finalTitle}</title>
-      <meta name="description" content={description ?? ''} />
+      <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={fullCanonical} />
 
@@ -50,7 +50,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:site_name" content="Location Autocar à Bruxelles" />
+      <meta property="og:site_name" content="Location Autocar Bruxelles" />
       <meta property="og:locale" content="fr_BE" />
 
       {/* Twitter Card */}

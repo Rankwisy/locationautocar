@@ -9,7 +9,6 @@ import FleetPage from './pages/FleetPage';
 import FleetBusPage from './pages/FleetBusPage';
 import FleetMinibusPage from './pages/FleetMinibusPage';
 import FleetAutocarsPage from './pages/FleetAutocarsPage';
-import LEZBruxellesPage from './pages/LEZBruxellesPage';
 import DestinationsPage from './pages/DestinationsPage';
 import DestinationBruxellesPage from './pages/DestinationBruxellesPage';
 import DestinationBelgiquePage from './pages/DestinationBelgiquePage';
@@ -17,8 +16,6 @@ import DestinationEuropePage from './pages/DestinationEuropePage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
-import MentionsLegalesPage from './pages/MentionsLegalesPage';
-import PolitiqueConfidentialitePage from './pages/PolitiqueConfidentialitePage';
 
 function App() {
   return (
@@ -34,7 +31,6 @@ function App() {
               <Route path="notre-flotte/bus" element={<FleetBusPage />} />
               <Route path="notre-flotte/minibus" element={<FleetMinibusPage />} />
               <Route path="notre-flotte/autocars" element={<FleetAutocarsPage />} />
-              <Route path="lez-bruxelles" element={<LEZBruxellesPage />} />
               <Route path="destinations" element={<DestinationsPage />} />
               <Route path="destinations/bruxelles" element={<DestinationBruxellesPage />} />
               <Route path="destinations/belgique" element={<DestinationBelgiquePage />} />
@@ -42,8 +38,6 @@ function App() {
               <Route path="blog" element={<BlogPage />} />
               <Route path="blog/:slug" element={<BlogPostPage />} />
               <Route path="contactez-nous" element={<ContactPage />} />
-              <Route path="mentions-legales" element={<MentionsLegalesPage />} />
-              <Route path="politique-confidentialite" element={<PolitiqueConfidentialitePage />} />
               {/* Catch-all route - redirects any unmatched URLs to homepage */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
