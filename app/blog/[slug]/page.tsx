@@ -21,6 +21,9 @@ export async function generateMetadata({
   if (!blogPost) {
     return { title: 'Article non trouvé | Blog Bruxelles' };
   }
+  const imageUrl = blogPost.featuredImage.startsWith('http')
+    ? blogPost.featuredImage
+    : `https://www.locationautocar.be${blogPost.featuredImage}`;
   return {
     title: blogPost.metaTitle || blogPost.title,
     description: blogPost.metaDescription,
@@ -29,9 +32,15 @@ export async function generateMetadata({
       title: blogPost.metaTitle || blogPost.title,
       description: blogPost.metaDescription,
       url: `https://www.locationautocar.be/blog/${slug}`,
-      images: [blogPost.featuredImage],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: blogPost.featuredImageAlt || blogPost.title }],
       type: 'article',
       publishedTime: blogPost.publishedAt,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: blogPost.metaTitle || blogPost.title,
+      description: blogPost.metaDescription,
+      images: [imageUrl],
     },
   };
 }
