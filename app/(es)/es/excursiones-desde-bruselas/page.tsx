@@ -77,6 +77,7 @@ export default function Page() {
         },
       ]}
       faqs={faqs}
+      image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/if-its-sunday-this-must-be-bruxelles.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Excursión en autocar desde Bruselas' }}
     />
   );
 }

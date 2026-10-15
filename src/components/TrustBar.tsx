@@ -8,6 +8,8 @@ const TRUST_ITEMS = [
   'Sans engagement',
 ];
 
+import Link from 'next/link';
+
 export default function TrustBar() {
   return (
     <div className="bg-blue-50 border-y border-blue-100 py-3">

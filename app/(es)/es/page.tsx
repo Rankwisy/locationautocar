@@ -13,6 +13,7 @@ export default function EsHome() {
   return (
     <EsPageTemplate
       path="/es"
+      image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Autocar con conductor para grupos en Bruselas' }}
       h1="Alquiler de autocar con conductor en Bruselas"
       intro="¿Viaja a Bruselas con un grupo, por vacaciones o por trabajo? Desde 2007 ofrecemos autocares, autobuses y minibuses con conductor profesional para excursiones, traslados al aeropuerto y viajes de empresa en Bélgica y Europa."
       sections={[

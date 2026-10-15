@@ -64,6 +64,7 @@ export default function Page() {
         },
       ]}
       faqs={faqs}
+      image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Autocar de turismo para grupos' }}
     />
   );
 }

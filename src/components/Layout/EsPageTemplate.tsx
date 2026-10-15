@@ -17,9 +17,10 @@ interface Props {
   intro: string;
   sections: EsSection[];
   faqs?: { q: string; a: string }[];
+  image?: { src: string; alt: string };
 }
 
-export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs = [] }: Props) {
+export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs = [], image }: Props) {
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -78,7 +79,16 @@ export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs 
         )}
 
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{h1}</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mb-12">{intro}</p>
+        <p className="text-xl text-gray-600 max-w-3xl mb-8">{intro}</p>
+        {image && (
+          <img
+            src={image.src}
+            alt={image.alt}
+            width={1200}
+            height={630}
+            className="w-full max-w-4xl h-64 md:h-96 object-cover rounded-2xl shadow-sm mb-12"
+          />
+        )}
 
         {sections.map((s) => (
           <section key={s.title} className="mb-12">

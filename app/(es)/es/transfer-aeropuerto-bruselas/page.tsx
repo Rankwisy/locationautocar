@@ -61,6 +61,7 @@ export default function Page() {
         },
       ]}
       faqs={faqs}
+      image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-aeroport-bruxelles-scaled.jpeg?updatedAt=1750900457571&tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Autocar en el aeropuerto de Bruselas' }}
     />
   );
 }
