@@ -21,7 +21,10 @@ export const metadata: Metadata = {
   description:
     "Location d'autocar, bus et minibus avec chauffeur à Bruxelles depuis 2007. Transferts, excursions, voyages d'affaires. Devis gratuit sous 24h.",
   keywords: semanticKeywords.home.join(', '),
-  alternates: { canonical: 'https://www.locationautocar.be/' },
+  alternates: {
+    canonical: 'https://www.locationautocar.be/',
+    languages: { fr: 'https://www.locationautocar.be/', es: 'https://www.locationautocar.be/es', 'x-default': 'https://www.locationautocar.be/' },
+  },
   openGraph: {
     title: 'Location Autocar Bruxelles | Chauffeur depuis 2007',
     description:

@@ -191,7 +191,16 @@ export async function generateMetadata({
     title: `${service.seoTitle} | Chauffeur Professionnel Belgique`,
     description: service.seoDescription,
     keywords: semanticKeywords.services.join(', '),
-    alternates: { canonical: `https://www.locationautocar.be/nos-services/${category}` },
+    alternates: {
+      canonical: `https://www.locationautocar.be/nos-services/${category}`,
+      ...(category === 'transferts-aeroports' && {
+        languages: {
+          fr: 'https://www.locationautocar.be/nos-services/transferts-aeroports',
+          es: 'https://www.locationautocar.be/es/transfer-aeropuerto-bruselas',
+          'x-default': 'https://www.locationautocar.be/nos-services/transferts-aeroports',
+        },
+      }),
+    },
     openGraph: {
       title: `${service.seoTitle} | Chauffeur Professionnel Belgique`,
       description: service.seoDescription,

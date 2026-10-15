@@ -14,6 +14,13 @@ const BLOG_POSTS = [
   { slug: 'eiffel-tower-sunset-magic', lastmod: '2026-03-05T09:00:00+00:00' },
 ];
 
+const ES_PAGES = [
+  { es: '/es', fr: '/' },
+  { es: '/es/alquiler-autocar-bruselas', fr: '/location-autocar-bruxelles' },
+  { es: '/es/excursiones-desde-bruselas', fr: '/destinations/bruges' },
+  { es: '/es/transfer-aeropuerto-bruselas', fr: '/nos-services/transferts-aeroports' },
+];
+
 /** Build canonical URL – no trailing slash except for root */
 function toCanonicalUrl(pathStr) {
   const p = pathStr === '/' ? '/' : pathStr.replace(/\/+$/, '');
@@ -56,6 +63,20 @@ function generateSitemap() {
 `;
   });
 
+  // Spanish pages (hreflang es <-> fr)
+  ES_PAGES.forEach(({ es, fr }) => {
+    sitemap += `  <url>
+    <loc>${CANONICAL_BASE}${es}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${es === '/es' ? '0.8' : '0.7'}</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="${CANONICAL_BASE}${es}"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${toCanonicalUrl(fr)}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${toCanonicalUrl(fr)}"/>
+  </url>
+`;
+  });
+
   sitemap += `</urlset>`;
 
   // Ensure public directory exists
@@ -68,7 +89,7 @@ function generateSitemap() {
   const sitemapPath = path.join(publicDir, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemap, 'utf8');
 
-  const totalUrls = CANONICAL_PATHS.length + BLOG_POSTS.length;
+  const totalUrls = CANONICAL_PATHS.length + BLOG_POSTS.length + ES_PAGES.length;
   console.log('✅ Sitemap generated successfully!');
   console.log(`📍 Location: ${sitemapPath}`);
   console.log(`📊 Total URLs: ${totalUrls} (canonical only)`);

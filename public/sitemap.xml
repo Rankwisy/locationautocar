@@ -233,4 +233,40 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/blog/eiffel-tower-sunset-magic"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/blog/eiffel-tower-sunset-magic"/>
   </url>
+  <url>
+    <loc>https://www.locationautocar.be/es</loc>
+    <lastmod>2026-10-15T17:01:34.966Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.locationautocar.be/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/es/alquiler-autocar-bruselas</loc>
+    <lastmod>2026-10-15T17:01:34.966Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.locationautocar.be/es/alquiler-autocar-bruselas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/location-autocar-bruxelles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/location-autocar-bruxelles"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/es/excursiones-desde-bruselas</loc>
+    <lastmod>2026-10-15T17:01:34.966Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.locationautocar.be/es/excursiones-desde-bruselas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/destinations/bruges"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/destinations/bruges"/>
+  </url>
+  <url>
+    <loc>https://www.locationautocar.be/es/transfer-aeropuerto-bruselas</loc>
+    <lastmod>2026-10-15T17:01:34.966Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.locationautocar.be/es/transfer-aeropuerto-bruselas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.locationautocar.be/nos-services/transferts-aeroports"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locationautocar.be/nos-services/transferts-aeroports"/>
+  </url>
 </urlset>

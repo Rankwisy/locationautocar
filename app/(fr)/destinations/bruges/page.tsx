@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: 'Excursion Bruges depuis Bruxelles en Autocar | Guide Groupes 2026',
   description:
     "Organisez votre excursion à Bruges depuis Bruxelles en autocar avec chauffeur. Guide complet pour groupes : itinéraires, tarifs, infos pratiques. Devis gratuit.",
-  alternates: { canonical: 'https://www.locationautocar.be/destinations/bruges' },
+  alternates: {
+    canonical: 'https://www.locationautocar.be/destinations/bruges',
+    languages: { fr: 'https://www.locationautocar.be/destinations/bruges', es: 'https://www.locationautocar.be/es/excursiones-desde-bruselas', 'x-default': 'https://www.locationautocar.be/destinations/bruges' },
+  },
   openGraph: {
     title: 'Excursion Bruges depuis Bruxelles en Autocar | Guide Groupes 2026',
     description:

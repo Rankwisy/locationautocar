@@ -2,6 +2,13 @@ import { MetadataRoute } from 'next';
 import { CANONICAL_BASE, CANONICAL_PATHS } from '../scripts/canonical-sitemap.config.js';
 import { blogPosts } from '@/data/blogContentData';
 
+const ES_PATHS = [
+  '/es',
+  '/es/alquiler-autocar-bruselas',
+  '/es/excursiones-desde-bruselas',
+  '/es/transfer-aeropuerto-bruselas',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = CANONICAL_PATHS.map(({ path, priority, changefreq }) => ({
     url: `${CANONICAL_BASE}${path === '/' ? '' : path}`,
@@ -17,5 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...blogEntries];
+  const esEntries: MetadataRoute.Sitemap = ES_PATHS.map((path) => ({
+    url: `${CANONICAL_BASE}${path}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: path === '/es' ? 0.8 : 0.7,
+  }));
+
+  return [...staticEntries, ...esEntries, ...blogEntries];
 }
