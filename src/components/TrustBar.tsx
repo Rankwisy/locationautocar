@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
 
 const TRUST_ITEMS = [
@@ -7,8 +8,6 @@ const TRUST_ITEMS = [
   'Chauffeurs certifiés',
   'Sans engagement',
 ];
-
-import Link from 'next/link';
 
 export default function TrustBar() {
   return (
@@ -21,6 +20,16 @@ export default function TrustBar() {
               {item}
             </li>
           ))}
+          <li>
+            <Link
+              href="/es"
+              hrefLang="es"
+              lang="es"
+              className="text-sm font-semibold text-blue-700 underline hover:text-blue-900"
+            >
+              🇪🇸 Español
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
