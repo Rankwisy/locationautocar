@@ -7,7 +7,7 @@ export const generalFAQ = {
       "name": "Quels types de véhicules proposez-vous ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nous proposons une flotte complète : minibus 8-16 places pour petits groupes VIP, bus 20-35 places pour groupes moyens, et autocars grand tourisme 40-55 places pour voyages longue distance. Tous nos véhicules sont équipés de climatisation, WiFi et conduits par des chauffeurs professionnels."
+        "text": "Nous proposons une flotte complète : minibus 8-16 places pour petits groupes VIP, bus 20-35 places pour groupes moyens, et autocars grand tourisme 40-60 places pour voyages longue distance. Tous nos véhicules sont équipés de climatisation, WiFi et conduits par des chauffeurs professionnels."
       }
     },
     {
@@ -79,7 +79,7 @@ export const priceFaq = {
       "name": "Combien coûte un autocar avec chauffeur à Bruxelles ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le prix dépend du type de véhicule, de la durée et du trajet. Comptez environ 120€ à 300€ pour un minibus (8-16 places), 150€ à 400€ pour un bus (20-35 places), et 300€ à 800€ pour un autocar (40-55 places) à la journée. Devis gratuit et personnalisé sous 24h."
+        "text": "Le prix dépend du type de véhicule, de la durée et du trajet. Comptez environ 120€ à 300€ pour un minibus (8-16 places), 150€ à 400€ pour un bus (20-35 places), et 300€ à 800€ pour un autocar (40-60 places) à la journée. Devis gratuit et personnalisé sous 24h."
       }
     },
     {
@@ -178,7 +178,7 @@ export const fleetFAQ = {
       "name": "Quelle est la différence entre minibus, bus et autocar ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Minibus (8-16 places) : idéal pour petits groupes, transferts VIP, confort premium. Bus (20-35 places) : parfait équilibre capacité/confort pour excursions. Autocar (40-55 places) : grands groupes, voyages longue distance avec équipements premium (toilettes, WiFi, kitchenette)."
+        "text": "Minibus (8-16 places) : idéal pour petits groupes, transferts VIP, confort premium. Bus (20-35 places) : parfait équilibre capacité/confort pour excursions. Autocar (40-60 places) : grands groupes, voyages longue distance avec équipements premium (toilettes, WiFi, kitchenette)."
       }
     },
     {

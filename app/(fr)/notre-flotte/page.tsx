@@ -50,11 +50,11 @@ const vehicles = [
     id: 3,
     name: 'Autocar Tourisme Premium',
     type: 'Autocar',
-    capacity: 55,
+    capacity: 60,
     year: 2023,
     euroStandard: 'Euro 6',
     image: 'https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
-    imageAlt: 'Autocar grand tourisme 55 places',
+    imageAlt: 'Autocar grand tourisme 60 places',
     priceRange: '€€€',
     features: ['Sièges inclinables cuir', 'Toilettes à bord', 'Kitchenette', 'WiFi haut débit'],
     description: 'Le summum du confort pour vos voyages longue distance.',
@@ -275,7 +275,7 @@ export default function NotreFlottePage() {
             href="/notre-flotte/autocars"
             className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
           >
-            <h3 className="text-xl font-semibold mb-3">Autocars (40-55 places)</h3>
+            <h3 className="text-xl font-semibold mb-3">Autocars (40-60 places)</h3>
             <p className="text-gray-600 mb-4">Grands groupes et voyages longue distance</p>
             <span className="text-blue-600 font-semibold">Voir les autocars →</span>
           </Link>

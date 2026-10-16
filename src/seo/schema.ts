@@ -11,7 +11,7 @@ export function buildWebSiteSchema() {
     alternateName: 'Autocar avec Chauffeur Bruxelles depuis 2007',
     url: 'https://www.locationautocar.be/',
     description:
-      "Location d'autocar, bus et minibus avec chauffeur à Bruxelles depuis 2007. Flotte LEZ Euro 6+, 8 à 55 places, 19 communes, devis gratuit 24/7.",
+      "Location d'autocar, bus et minibus avec chauffeur à Bruxelles depuis 2007. Flotte LEZ Euro 6+, 8 à 60 places, 19 communes, devis gratuit 24/7.",
     inLanguage: 'fr-BE',
     potentialAction: {
       '@type': 'SearchAction',

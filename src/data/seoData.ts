@@ -10,7 +10,7 @@ export const pageMeta: Record<string, { title: string; metaTitle: string; descri
   fleet: {
     title: "Notre Flotte | Bus Minibus Autocar",
     metaTitle: "Flotte Bus Minibus Autocar Bruxelles | Euro 6 LEZ | Choisissez Votre Véhicule",
-    description: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-55 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7.",
+    description: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-60 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7.",
   },
   fleetMinibus: {
     title: "Location Minibus Bruxelles | 8-16 Places Mercedes",
@@ -23,9 +23,9 @@ export const pageMeta: Record<string, { title: string; metaTitle: string; descri
     description: "Bus 20-35 places pour excursions Bruges, Gand, Paris, Amsterdam. Équilibre confort/capacité. Climatisation, prises USB. Idéal groupes moyens.",
   },
   fleetAutocar: {
-    title: "Location Autocar Grand Tourisme | 40-55 Places",
+    title: "Location Autocar Grand Tourisme | 40-60 Places",
     metaTitle: "Autocar Grand Tourisme Europe | Paris Amsterdam Prague | Toilettes WiFi",
-    description: "Autocars 40-55 places : circuits Europe, Paris, Amsterdam, Prague. Toilettes, kitchenette, WiFi. Confort longue distance depuis Bruxelles.",
+    description: "Autocars 40-60 places : circuits Europe, Paris, Amsterdam, Prague. Toilettes, kitchenette, WiFi. Confort longue distance depuis Bruxelles.",
   },
   destinations: {
     title: "Destinations Autocar | Bruxelles Belgique Europe",

@@ -195,7 +195,7 @@ export default function ColognePage() {
             {[
               { vehicle: 'Minibus', capacity: '8–16 places', price: 'Dès 700€ / AR' },
               { vehicle: 'Bus', capacity: '20–35 places', price: 'Dès 950€ / AR' },
-              { vehicle: 'Autocar GT', capacity: '40–55 places', price: 'Dès 1 200€ / AR' },
+              { vehicle: 'Autocar GT', capacity: '40–60 places', price: 'Dès 1 200€ / AR' },
             ].map((v) => (
               <div key={v.vehicle} className="bg-white rounded-xl p-4 text-center shadow-sm">
                 <p className="font-bold text-gray-900 mb-1">{v.vehicle}</p>

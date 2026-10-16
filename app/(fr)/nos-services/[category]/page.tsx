@@ -108,17 +108,17 @@ const SERVICES = [
     icon: Bus,
     title: 'Location Bus Bruxelles Groupe',
     description:
-      'Location bus et autocar pour groupes à Bruxelles. Scolaires, entreprises, événements. De 8 à 55 places. Minibus, bus, autocars.',
+      'Location bus et autocar pour groupes à Bruxelles. Scolaires, entreprises, événements. De 8 à 60 places. Minibus, bus, autocars.',
     features: [
       'Groupes scolaires et voyages étudiants',
       'Entreprises et séminaires',
       'Associations et événements',
       'Minibus 8-16 places',
-      'Bus 20-35, autocars 40-55 places',
+      'Bus 20-35, autocars 40-60 places',
     ],
     image:
       'https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
-    seoTitle: 'Location Bus Bruxelles Groupe : 20–55 Places',
+    seoTitle: 'Location Bus Bruxelles Groupe : 20–60 Places',
     seoDescription:
       'Location bus et autocar pour groupes à Bruxelles. Scolaires, entreprises, événements. Minibus à autocars. Devis rapide.',
   },
@@ -607,7 +607,7 @@ export default async function ServicesCategoryPage({
                   {[
                     { vehicle: 'Minibus', capacity: '8–16 places', local: 'Dès 150€', day: '400–550€', trip: '850–1 200€' },
                     { vehicle: 'Bus', capacity: '20–35 places', local: 'Dès 250€', day: '550–750€', trip: '1 200–1 700€' },
-                    { vehicle: 'Autocar Grand Tourisme', capacity: '40–55 places', local: 'Dès 350€', day: '700–950€', trip: '1 600–2 500€' },
+                    { vehicle: 'Autocar Grand Tourisme', capacity: '40–60 places', local: 'Dès 350€', day: '700–950€', trip: '1 600–2 500€' },
                   ].map((row, i) => (
                     <tr key={row.vehicle} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                       <td className="px-4 py-3 font-semibold text-gray-900">{row.vehicle}</td>

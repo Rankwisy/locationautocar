@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: semanticKeywords.fleetAutocar.join(', '),
   alternates: { canonical: 'https://www.locationautocar.be/notre-flotte/autocars' },
   openGraph: {
-    title: 'Location Autocar Grand Tourisme | 40-55 Places',
+    title: 'Location Autocar Grand Tourisme | 40-60 Places',
     description: pageMeta.fleetAutocar.description,
     url: 'https://www.locationautocar.be/notre-flotte/autocars',
     images: [
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 const autocarModels = [
   {
     id: 1,
-    name: 'Autocar Grand Tourisme Premium 55 places',
-    capacity: 55,
+    name: 'Autocar Grand Tourisme Premium 60 places',
+    capacity: 60,
     year: 2023,
     image: 'https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-600,h-400,c-maintain_ratio,f-webp,q-85',
-    imageAlt: 'Autocar grand tourisme 55 places premium pour voyages longue distance',
+    imageAlt: 'Autocar grand tourisme 60 places premium pour voyages longue distance',
     features: ['Sièges inclinables cuir premium', 'Toilettes à bord', 'Kitchenette', 'WiFi haut débit'],
     description: 'Le summum du confort pour vos voyages longue distance en Europe.',
     priceRange: '€€€',
@@ -60,7 +60,7 @@ const autocarModels = [
 ];
 
 const advantages = [
-  { icon: Users, title: 'Grande Capacité', description: '40 à 55 passagers pour grands groupes' },
+  { icon: Users, title: 'Grande Capacité', description: '40 à 60 passagers pour grands groupes' },
   { icon: Shield, title: 'Sécurité Renforcée', description: 'Équipements de sécurité dernière génération' },
   { icon: Wifi, title: 'Connectivité Premium', description: 'WiFi satellite et écrans individuels' },
   { icon: Coffee, title: 'Services à Bord', description: 'Toilettes, kitchenette et bar' },
@@ -76,7 +76,7 @@ export default function AutocarsPage() {
             Location Autocar Grand Tourisme à Bruxelles
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Nos <strong>autocars 40-55 places</strong> sont équipés toilettes, kitchenette, WiFi et sièges inclinables pour
+            Nos <strong>autocars 40-60 places</strong> sont équipés toilettes, kitchenette, WiFi et sièges inclinables pour
             Paris, Amsterdam, Prague, Allemagne. Consultez nos{' '}
             <Link href="/destinations/europe" className="text-blue-600 hover:text-blue-700 font-semibold">
               circuits Europe
@@ -136,7 +136,7 @@ export default function AutocarsPage() {
             <span className="text-blue-600 font-semibold">Voir les bus →</span>
           </Link>
           <div className="bg-blue-100 p-6 rounded-xl border-2 border-blue-300">
-            <h3 className="text-xl font-semibold mb-3 text-blue-800">Autocars (40-55 places)</h3>
+            <h3 className="text-xl font-semibold mb-3 text-blue-800">Autocars (40-60 places)</h3>
             <p className="text-blue-700 mb-4">Vous êtes ici - Grands groupes longue distance</p>
           </div>
         </div>

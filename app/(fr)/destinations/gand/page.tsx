@@ -66,7 +66,7 @@ const faqSchema = {
       name: "Quel est le tarif d'une excursion Gand en autocar depuis Bruxelles ?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Prix indicatifs aller-retour en journée : minibus 8–16 places dès 380€, bus 20–35 places dès 520€, autocar 40–55 places dès 680€. Chauffeur et carburant inclus. Devis personnalisé gratuit.",
+        text: "Prix indicatifs aller-retour en journée : minibus 8–16 places dès 380€, bus 20–35 places dès 520€, autocar 40–60 places dès 680€. Chauffeur et carburant inclus. Devis personnalisé gratuit.",
       },
     },
     {
@@ -175,7 +175,7 @@ export default function GandPage() {
             {[
               { vehicle: 'Minibus', capacity: '8–16 places', price: 'Dès 380€' },
               { vehicle: 'Bus', capacity: '20–35 places', price: 'Dès 520€' },
-              { vehicle: 'Autocar', capacity: '40–55 places', price: 'Dès 680€' },
+              { vehicle: 'Autocar', capacity: '40–60 places', price: 'Dès 680€' },
             ].map((v) => (
               <div key={v.vehicle} className="bg-white rounded-xl p-4 text-center shadow-sm">
                 <p className="font-bold text-gray-900 mb-1">{v.vehicle}</p>

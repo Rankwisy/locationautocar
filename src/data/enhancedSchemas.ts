@@ -201,7 +201,7 @@ export const localBusinessSchema = {
         "itemOffered": {
           "@type": "Service",
           "name": "Location Autocar avec Chauffeur",
-          "description": "Service de location d'autocar 40-55 places avec chauffeur professionnel"
+          "description": "Service de location d'autocar 40-60 places avec chauffeur professionnel"
         }
       },
       {
@@ -508,7 +508,7 @@ export const serviceVehicleSchemas = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Service de Location Autocar Grand Tourisme",
-    "description": "Autocar grand tourisme 40-55 places avec chauffeur professionnel pour voyages longue distance",
+    "description": "Autocar grand tourisme 40-60 places avec chauffeur professionnel pour voyages longue distance",
     "serviceType": "Coach Rental Service",
     "provider": {
       "@type": "Organization",

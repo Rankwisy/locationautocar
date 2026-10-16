@@ -8,12 +8,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Voyage en Autocar vers Amsterdam depuis Bruxelles | Location Autocar',
   description:
-    "Organisez votre voyage en autocar de Bruxelles à Amsterdam avec chauffeur professionnel. Groupes de 8 à 55 personnes. Devis gratuit sous 24h.",
+    "Organisez votre voyage en autocar de Bruxelles à Amsterdam avec chauffeur professionnel. Groupes de 8 à 60 personnes. Devis gratuit sous 24h.",
   alternates: { canonical: 'https://www.locationautocar.be/destinations/amsterdam' },
   openGraph: {
     title: 'Voyage en Autocar vers Amsterdam depuis Bruxelles | Location Autocar',
     description:
-      "Organisez votre voyage en autocar de Bruxelles à Amsterdam avec chauffeur professionnel. Groupes de 8 à 55 personnes. Devis gratuit sous 24h.",
+      "Organisez votre voyage en autocar de Bruxelles à Amsterdam avec chauffeur professionnel. Groupes de 8 à 60 personnes. Devis gratuit sous 24h.",
     url: 'https://www.locationautocar.be/destinations/amsterdam',
     images: [
       { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-shot-bicycles-leaned-again-fence-bridge-river.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
@@ -63,7 +63,7 @@ export default function AmsterdamPage() {
               Organisez votre voyage en autocar de Bruxelles à Amsterdam avec Location Autocar Bruxelles. À environ 200
               km et 2h30 de trajet, Amsterdam est une destination prisée pour les groupes. Nous proposons des circuits
               vers la Venise du Nord : canaux historiques, Rijksmuseum, musée Van Gogh, quartier Jordaan… Nos autocars
-              grand tourisme accueillent de 8 à 55 passagers et disposent de climatisation, toilettes et WiFi. Chauffeur
+              grand tourisme accueillent de 8 à 60 passagers et disposent de climatisation, toilettes et WiFi. Chauffeur
               professionnel, flexibilité des horaires et devis gratuit sous 24h.
             </p>
             <Link

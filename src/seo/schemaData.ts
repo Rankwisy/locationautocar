@@ -6,7 +6,7 @@ export const HOMEPAGE_FAQ = [
   {
     question: "Quel est le prix d'une location d'autocar à Bruxelles ?",
     reponse:
-      "Nos tarifs varient selon le type de véhicule, la durée et la destination. Contactez-nous pour un devis gratuit et personnalisé. Minibus 8-16 places, bus 20-35 places, autocars 40-55 places.",
+      "Nos tarifs varient selon le type de véhicule, la durée et la destination. Contactez-nous pour un devis gratuit et personnalisé. Minibus 8-16 places, bus 20-35 places, autocars 40-60 places.",
   },
   {
     question: 'Vos autocars sont-ils conformes à la LEZ de Bruxelles ?',
@@ -53,7 +53,7 @@ export const SERVICES_SCHEMA_DATA = [
   {
     nom: 'Location Bus Groupe Bruxelles',
     description:
-      'Location de bus pour groupes à Bruxelles. Minibus 8-16 places, bus 20-35 places, autocars 40-55 places.',
+      'Location de bus pour groupes à Bruxelles. Minibus 8-16 places, bus 20-35 places, autocars 40-60 places.',
     url: 'https://www.locationautocar.be/nos-services/location-bus-groupe',
     serviceType: 'Transport groupe',
   },

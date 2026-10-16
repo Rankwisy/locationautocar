@@ -63,7 +63,7 @@ content: |
 
   Un bon compromis pour les groupes moyens.
 
-  ### Autocars (40 à 55 places)
+  ### Autocars (40 à 60 places)
 
   Solution idéale pour les grandes classes, les voyages scolaires ou les événements de masse.
 
@@ -117,7 +117,7 @@ content: |
 
   ### Une flotte moderne et adaptée
 
-  De 8 à 55 places, tous les véhicules sont récents, confortables et parfaitement entretenus.
+  De 8 à 60 places, tous les véhicules sont récents, confortables et parfaitement entretenus.
 
   ### Expérience depuis 2007
 

@@ -69,7 +69,7 @@ const faqSchema = {
       name: "Quel est le tarif d'une excursion Bruges en autocar depuis Bruxelles ?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Le prix varie selon le type de véhicule et la taille du groupe. À titre indicatif : minibus 8–16 places dès 400€, bus 20–35 places dès 550€, autocar 40–55 places dès 700€ (aller-retour journée, chauffeur et carburant inclus).",
+        text: "Le prix varie selon le type de véhicule et la taille du groupe. À titre indicatif : minibus 8–16 places dès 400€, bus 20–35 places dès 550€, autocar 40–60 places dès 700€ (aller-retour journée, chauffeur et carburant inclus).",
       },
     },
     {
@@ -178,7 +178,7 @@ export default function BrugesPage() {
             {[
               { vehicle: 'Minibus', capacity: '8–16 places', price: 'Dès 400€' },
               { vehicle: 'Bus', capacity: '20–35 places', price: 'Dès 550€' },
-              { vehicle: 'Autocar', capacity: '40–55 places', price: 'Dès 700€' },
+              { vehicle: 'Autocar', capacity: '40–60 places', price: 'Dès 700€' },
             ].map((v) => (
               <div key={v.vehicle} className="bg-white rounded-xl p-4 text-center shadow-sm">
                 <p className="font-bold text-gray-900 mb-1">{v.vehicle}</p>

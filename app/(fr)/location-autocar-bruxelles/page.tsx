@@ -66,7 +66,7 @@ const faqSchema = {
       name: "Quels types de groupes transportez-vous ?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Nous transportons des entreprises, associations, écoles, groupes touristiques et privés. Nos véhicules accueillent de 8 à 55 passagers selon le modèle choisi.",
+        text: "Nous transportons des entreprises, associations, écoles, groupes touristiques et privés. Nos véhicules accueillent de 8 à 60 passagers selon le modèle choisi.",
       },
     },
   ],
@@ -234,7 +234,7 @@ export default function LocationAutocarBruxellesPage() {
               Autocar avec chauffeur Bruxelles : une flotte adaptée
             </h2>
             <p className="text-gray-700 mb-4">
-              L&apos;<strong>autocar avec chauffeur Bruxelles</strong> offre un confort optimal pour les groupes de 8 à 55
+              L&apos;<strong>autocar avec chauffeur Bruxelles</strong> offre un confort optimal pour les groupes de 8 à 60
               personnes. Notre flotte comprend :
             </p>
             <ul className="space-y-2 mb-6">
@@ -254,7 +254,7 @@ export default function LocationAutocarBruxellesPage() {
               <li className="flex items-start gap-2">
                 <Users className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span>
-                  <InternalLinkNext to="/notre-flotte/autocars" anchor="Autocars 40-55 places" /> : circuits longue
+                  <InternalLinkNext to="/notre-flotte/autocars" anchor="Autocars 40-60 places" /> : circuits longue
                   distance, climatisation, WiFi
                 </span>
               </li>
@@ -316,7 +316,7 @@ export default function LocationAutocarBruxellesPage() {
                 </h3>
                 <p className="text-gray-700">
                   Nous transportons des entreprises, associations, écoles, groupes touristiques et privés. Nos véhicules
-                  accueillent de 8 à 55 passagers selon le modèle choisi.
+                  accueillent de 8 à 60 passagers selon le modèle choisi.
                 </p>
               </div>
               <div>

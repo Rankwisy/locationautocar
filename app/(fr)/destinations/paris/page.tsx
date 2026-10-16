@@ -8,12 +8,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Voyage en Autocar vers Paris depuis Bruxelles | Location Autocar',
   description:
-    "Organisez votre voyage en autocar de Bruxelles à Paris avec chauffeur professionnel. Groupes de 8 à 55 personnes. Devis gratuit sous 24h.",
+    "Organisez votre voyage en autocar de Bruxelles à Paris avec chauffeur professionnel. Groupes de 8 à 60 personnes. Devis gratuit sous 24h.",
   alternates: { canonical: 'https://www.locationautocar.be/destinations/paris' },
   openGraph: {
     title: 'Voyage en Autocar vers Paris depuis Bruxelles | Location Autocar',
     description:
-      "Organisez votre voyage en autocar de Bruxelles à Paris avec chauffeur professionnel. Groupes de 8 à 55 personnes. Devis gratuit sous 24h.",
+      "Organisez votre voyage en autocar de Bruxelles à Paris avec chauffeur professionnel. Groupes de 8 à 60 personnes. Devis gratuit sous 24h.",
     url: 'https://www.locationautocar.be/destinations/paris',
     images: [
       { url: 'https://ik.imagekit.io/by733ltn6/locationautocar/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', width: 1200, height: 630 },
@@ -63,7 +63,7 @@ export default function ParisPage() {
               Organisez votre voyage en autocar de Bruxelles à Paris avec Location Autocar Bruxelles. À seulement 320 km
               et environ 3h30 de trajet, Paris est une destination idéale pour les groupes. Nous proposons des
               excursions sur mesure vers la Ville Lumière : Tour Eiffel, Louvre, Champs-Élysées… Nos autocars grand
-              tourisme accueillent de 8 à 55 passagers et disposent de climatisation, toilettes et WiFi pour un confort
+              tourisme accueillent de 8 à 60 passagers et disposent de climatisation, toilettes et WiFi pour un confort
               optimal. Chauffeur professionnel, horaires flexibles et devis gratuit sous 24h.
             </p>
             <Link

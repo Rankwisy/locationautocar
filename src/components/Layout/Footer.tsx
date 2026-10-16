@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to={ROUTES.FLOTTE_AUTOCARS} className="text-gray-300 hover:text-white">
-                  Autocars (40-55 places)
+                  Autocars (40-60 places)
                 </Link>
               </li>
               <li>

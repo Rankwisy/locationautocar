@@ -13,7 +13,7 @@
 - [Notre flotte](https://www.locationautocar.be/notre-flotte): Minibus, bus et autocars avec chauffeur.
 - [Minibus](https://www.locationautocar.be/notre-flotte/minibus): 8 à 16 passagers.
 - [Bus](https://www.locationautocar.be/notre-flotte/bus): 20 à 35 passagers.
-- [Autocars](https://www.locationautocar.be/notre-flotte/autocars): 40 à 55 passagers.
+- [Autocars](https://www.locationautocar.be/notre-flotte/autocars): 40 à 60 passagers.
 - [Destinations](https://www.locationautocar.be/destinations): Bruxelles, Belgique, Europe.
 - [Destinations Bruxelles](https://www.locationautocar.be/destinations/bruxelles): Transport local et interurbain à Bruxelles.
 - [Destinations Belgique](https://www.locationautocar.be/destinations/belgique): Voyages en Belgique.

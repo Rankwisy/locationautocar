@@ -33,7 +33,7 @@ const META = {
   },
   '/notre-flotte': {
     t: "Flotte Bus Minibus Autocar Bruxelles | Euro 6 LEZ | Choisissez Votre Véhicule",
-    d: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-55 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7."
+    d: "Comparez minibus 8-16 places, bus 20-35 et autocars 40-60 places. Tous Euro 6, accès LEZ Bruxelles garanti. Climatisation, WiFi, chauffeur pro. Réservez 24/7."
   },
   '/notre-flotte/minibus': {
     t: "Minibus Mercedes Chauffeur | Transferts VIP & Excursions Petits Groupes",
@@ -45,7 +45,7 @@ const META = {
   },
   '/notre-flotte/autocars': {
     t: "Autocar Grand Tourisme Europe | Paris Amsterdam Prague | Toilettes WiFi",
-    d: "Autocars 40-55 places : circuits Europe, Paris, Amsterdam, Prague. Toilettes, kitchenette, WiFi. Confort longue distance depuis Bruxelles."
+    d: "Autocars 40-60 places : circuits Europe, Paris, Amsterdam, Prague. Toilettes, kitchenette, WiFi. Confort longue distance depuis Bruxelles."
   },
   '/destinations': {
     t: "Circuits Autocar Bruxelles | Bruges Paris Amsterdam | Guides Francophones",

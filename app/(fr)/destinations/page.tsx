@@ -115,7 +115,7 @@ export default function DestinationsPage() {
                 <Users className="w-8 h-8 text-blue-600" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Groupes de Toutes Tailles</h3>
-              <p className="text-gray-600 text-sm">De 8 à 55 passagers selon vos besoins</p>
+              <p className="text-gray-600 text-sm">De 8 à 60 passagers selon vos besoins</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">

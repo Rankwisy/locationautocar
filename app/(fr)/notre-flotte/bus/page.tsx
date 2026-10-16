@@ -138,7 +138,7 @@ export default function BusPage() {
             <p className="text-blue-700 mb-4">Vous êtes ici - Parfait équilibre capacité/confort</p>
           </div>
           <Link href="/notre-flotte/autocars" className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-            <h3 className="text-xl font-semibold mb-3">Autocars (40-55 places)</h3>
+            <h3 className="text-xl font-semibold mb-3">Autocars (40-60 places)</h3>
             <p className="text-gray-600 mb-4">Grands groupes et voyages longue distance</p>
             <span className="text-blue-600 font-semibold">Voir les autocars →</span>
           </Link>

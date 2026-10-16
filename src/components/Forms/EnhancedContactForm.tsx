@@ -243,7 +243,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 value={formData.passengers}
                 onChange={handleChange}
                 min="1"
-                max="55"
+                max="60"
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Ex: 25"
               />

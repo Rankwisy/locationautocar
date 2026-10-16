@@ -486,7 +486,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Bus (20 à 35 places)</h3>
       <p>Un bon compromis pour les groupes moyens.</p>
 
-      <h3>Autocars (40 à 55 places)</h3>
+      <h3>Autocars (40 à 60 places)</h3>
       <p>Solution idéale pour les grandes classes, les voyages scolaires ou les événements de masse.</p>
 
       <h2>Location autocar avec chauffeur Bruxelles prix : combien ça coûte ?</h2>
@@ -534,7 +534,7 @@ export const blogPosts: BlogPost[] = [
       <p>Transport de dernière minute ? On a un service d'urgence 24h/24, 7j/7. On ne vous laisse pas en plan.</p>
 
       <h3>Une flotte au top</h3>
-      <p>De 8 à 55 places, des véhicules récents, confortables et bien entretenus. On ne vous embarque pas dans des antédiluviens.</p>
+      <p>De 8 à 60 places, des véhicules récents, confortables et bien entretenus. On ne vous embarque pas dans des antédiluviens.</p>
 
       <h3>Depuis 2007</h3>
       <p>Plus de 15 ans sur les routes de Belgique et d'Europe. On connaît le métier, et ça se voit.</p>
@@ -605,7 +605,7 @@ export const blogPosts: BlogPost[] = [
       <p>La force de LOCATIONAUTOCAR, c'est la combinaison d'une flotte moderne et haut de gamme, de chauffeurs chevronnés et multilingues (FR, EN, NL, ES), et d'une organisation sur-mesure, adaptée à tous types d'événements.</p>
 
       <h3>Confort et sécurité</h3>
-      <p>Grâce à nos <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">véhicules spacieux</a> (minibus et autocars jusqu'à 55 places), climatisés et équipés des dernières technologies : wifi, audio/vidéo, sièges ergonomiques et toilettes pour les longs trajets.</p>
+      <p>Grâce à nos <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">véhicules spacieux</a> (minibus et autocars jusqu'à 60 places), climatisés et équipés des dernières technologies : wifi, audio/vidéo, sièges ergonomiques et toilettes pour les longs trajets.</p>
 
       <h3>Souplesse d'itinéraire et horaires</h3>
       <p>Nos conseillers vous aident à planifier un circuit multi-événements, avec dépôt, attente et reprise du groupe selon votre programme. Vous choisissez vos horaires, nous nous adaptons.</p>
@@ -676,7 +676,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Un service pensé pour chaque événement</h2>
 
       <h3>Prise en charge de groupes nombreux et hétérogènes</h3>
-      <p>De 8 à 55 personnes, nous avons le véhicule adapté. Familles, groupes d'amis, associations, entreprises, écoles : tous nos véhicules offrent le même niveau de confort et de sécurité.</p>
+      <p>De 8 à 60 personnes, nous avons le véhicule adapté. Familles, groupes d'amis, associations, entreprises, écoles : tous nos véhicules offrent le même niveau de confort et de sécurité.</p>
 
       <h3>Adaptation des horaires aux programmes et soirées prolongées</h3>
       <p>Événements qui finissent tard ? Programmation qui change ? Notre service 24/7 et nos chauffeurs flexibles s'adaptent à vos contraintes en temps réel.</p>
@@ -751,7 +751,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Bus 20-35 places</h3>
       <p>Le compromis parfait pour associations, clubs sportifs, groupes scolaires de taille moyenne. Confort optimal pour trajets urbains et inter-villes.</p>
 
-      <h3>Autocars 40-55 places</h3>
+      <h3>Autocars 40-60 places</h3>
       <p>Pour grands événements d'entreprise, excursions scolaires importantes, festivals. Équipements premium : toilettes, écrans vidéo, prises USB, sièges inclinables.</p>
 
       <p>Découvrez toute notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte de véhicules en détail</a>.</p>
@@ -830,7 +830,7 @@ const newPosts: BlogPost[] = [
 <h3>Bus 20–35 places</h3>
 <p>Pour les groupes moyens — associations, classes, équipes corporate. Transfert local dès 250€, excursion journée 550–750€.</p>
 
-<h3>Autocar grand tourisme 40–55 places</h3>
+<h3>Autocar grand tourisme 40–60 places</h3>
 <p>L'option longue distance par excellence, avec toilettes, WiFi et prises électriques. Transfert local dès 350€, excursion journée 700–950€, voyage Europe 1 600–2 500€.</p>
 
 <h2>Prix par type de prestation</h2>
@@ -905,7 +905,7 @@ const newPosts: BlogPost[] = [
 <h3>20 à 40 invités</h3>
 <p>Le <a href="/notre-flotte/bus">bus 20–35 places</a> offre le juste équilibre entre confort et capacité.</p>
 <h3>Plus de 40 invités</h3>
-<p>L'<a href="/notre-flotte/autocars">autocar grand tourisme</a> peut accueillir jusqu'à 55 passagers avec tout le confort nécessaire.</p>
+<p>L'<a href="/notre-flotte/autocars">autocar grand tourisme</a> peut accueillir jusqu'à 60 passagers avec tout le confort nécessaire.</p>
 
 <h2>Services spéciaux mariage</h2>
 <p>Nous proposons : chauffeur en tenue, décoration intérieure légère sur demande, circuit multi-arrêts (domicile → mairie → église → salle de réception → hôtels). <a href="/nos-services/autocar-mariage">En savoir plus sur notre service mariage</a>.</p>
@@ -965,7 +965,7 @@ const newPosts: BlogPost[] = [
 <p>Départ 8h30 de Bruxelles → 9h45 arrivée Bruges → 10h00 Markt et Beffroi → 12h00 déjeuner → 13h30 bateau sur les canaux → 15h00 musée Groeninge → 16h30 temps libre → 17h30 retour → 19h00 Bruxelles.</p>
 
 <h2>Tarifs aller-retour</h2>
-<p>Minibus 8–16 places dès 400€ · Bus 20–35 places dès 550€ · Autocar 40–55 places dès 700€. <a href="/nos-services/prix">Voir tous les tarifs</a>.</p>
+<p>Minibus 8–16 places dès 400€ · Bus 20–35 places dès 550€ · Autocar 40–60 places dès 700€. <a href="/nos-services/prix">Voir tous les tarifs</a>.</p>
 
 <h2>Infos pratiques</h2>
 <p>Parking autocar : Katelijnepoort (gratuit, hors centre). Le centre est piétonnier. Notre chauffeur connaît parfaitement le dépôt le plus proche. Voir aussi <a href="/destinations/bruges">notre page dédiée à Bruges</a>.</p>`,
@@ -1028,7 +1028,7 @@ const newPosts: BlogPost[] = [
 <p>Novembre–décembre : 7 marchés simultanés dans la ville. La navette spéciale Cologne Noël est notre excursion la plus demandée. <strong>Réservation à l'avance obligatoire.</strong></p>
 
 <h2>Tarifs</h2>
-<p>Autocar 40–55 places : aller-retour journée dès 1 200€. Pour un week-end avec nuit : devis sur mesure. <a href="/contactez-nous">Contactez-nous</a> · <a href="/destinations/cologne">Guide Cologne complet</a>.</p>`,
+<p>Autocar 40–60 places : aller-retour journée dès 1 200€. Pour un week-end avec nuit : devis sur mesure. <a href="/contactez-nous">Contactez-nous</a> · <a href="/destinations/cologne">Guide Cologne complet</a>.</p>`,
   },
   {
     id: 14,
@@ -1083,12 +1083,12 @@ const newPosts: BlogPost[] = [
 <h2>Le bus (20–35 places) : le juste milieu</h2>
 <p>La solution polyvalente pour la grande majorité des demandes. Adapté aux excursions journée, sorties scolaires et événements d'entreprise. Voir notre <a href="/notre-flotte/bus">flotte bus</a>.</p>
 
-<h2>L'autocar grand tourisme (40–55 places) : le long courrier</h2>
+<h2>L'autocar grand tourisme (40–60 places) : le long courrier</h2>
 <p>Toilettes, WiFi, prises électriques, espace bagages — l'autocar GT est conçu pour les voyages longue distance. Pour Paris, Amsterdam, Cologne ou plus loin. Voir notre <a href="/notre-flotte/autocars">flotte autocars</a>.</p>
 
 <h2>Checklist en 5 questions</h2>
 <ol>
-  <li>Combien de passagers ? (8–16 → minibus / 20–35 → bus / 40–55 → autocar)</li>
+  <li>Combien de passagers ? (8–16 → minibus / 20–35 → bus / 40–60 → autocar)</li>
   <li>Quelle distance ? (&lt;100 km → les 3 / 100–500 km → bus ou autocar / +500 km → autocar GT)</li>
   <li>Quel événement ? (mariage → minibus/bus / séminaire → bus/autocar / voyage Europe → autocar GT)</li>
   <li>Besoin de WiFi/toilettes ? (oui → autocar GT obligatoire)</li>
@@ -1263,7 +1263,7 @@ const newPosts: BlogPost[] = [
 
 <h3>Location autocar pour grands groupes</h3>
 
-<p>Pour les groupes d'entreprise, les comités d'événements ou les associations de passionnés, nos autocars de 40 à 55 places offrent la solution idéale pour un <strong>transport de groupe</strong> confortable, avec Wi-Fi et système audio/vidéo à bord.</p>
+<p>Pour les groupes d'entreprise, les comités d'événements ou les associations de passionnés, nos autocars de 40 à 60 places offrent la solution idéale pour un <strong>transport de groupe</strong> confortable, avec Wi-Fi et système audio/vidéo à bord.</p>
 
 <h3>Location minibus pour comités restreints ou VIP</h3>
 
@@ -1403,7 +1403,7 @@ const newPosts: BlogPost[] = [
 <h2>FAQ : Transport professionnel pour Tomorrowland Belgium 2026</h2>
 
 <h3>À partir de combien de personnes peut-on réserver une navette ?</h3>
-<p>Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 55 places pour un grand groupe d'entreprise.</p>
+<p>Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 60 places pour un grand groupe d'entreprise.</p>
 
 <h3>Peut-on personnaliser les horaires de départ et de retour ?</h3>
 <p>Oui, chaque navette événement est organisée sur mesure selon votre programme, y compris pour des retours tardifs après les sets de clôture.</p>
@@ -1483,7 +1483,7 @@ const newPosts: BlogPost[] = [
 
 <h3>Location autocar pour grands groupes</h3>
 
-<p>Pour les bandes d'amis, associations étudiantes ou comités de festival, nos autocars de 40 à 55 places offrent la solution idéale pour un <strong>transport de groupe</strong> confortable, avec espace bagages adapté au matériel de camping.</p>
+<p>Pour les bandes d'amis, associations étudiantes ou comités de festival, nos autocars de 40 à 60 places offrent la solution idéale pour un <strong>transport de groupe</strong> confortable, avec espace bagages adapté au matériel de camping.</p>
 
 <h3>Location minibus pour petits groupes</h3>
 
@@ -1552,7 +1552,7 @@ const newPosts: BlogPost[] = [
     tags: ["Dour Festival", "Transport professionnel", "Navette entreprise", "Transport VIP", "Chauffeur privé"],
     readTime: "8 min",
     faqs: [
-      { question: "À partir de combien de personnes peut-on réserver une navette ?", reponse: "Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 55 places pour un grand groupe d'entreprise." },
+      { question: "À partir de combien de personnes peut-on réserver une navette ?", reponse: "Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 60 places pour un grand groupe d'entreprise." },
       { question: "Peut-on personnaliser les horaires de départ et de retour ?", reponse: "Oui, chaque navette événement est organisée sur mesure selon votre programme, y compris pour des horaires de montage ou de démontage tôt le matin." },
       { question: "Proposez-vous un service pour les invités VIP uniquement ?", reponse: "Oui, notre offre de transport VIP avec chauffeur privé est spécialement pensée pour l'accueil de partenaires, artistes ou clients prestigieux." },
       { question: "Le devis pour un transport séminaire est-il gratuit ?", reponse: "Oui, chaque demande fait l'objet d'un devis personnalisé et gratuit, sans engagement, sous 24h." },
@@ -1629,7 +1629,7 @@ const newPosts: BlogPost[] = [
 <h2>FAQ : Transport professionnel pour Dour Festival Belgium 2026</h2>
 
 <h3>À partir de combien de personnes peut-on réserver une navette ?</h3>
-<p>Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 55 places pour un grand groupe d'entreprise.</p>
+<p>Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 60 places pour un grand groupe d'entreprise.</p>
 
 <h3>Peut-on personnaliser les horaires de départ et de retour ?</h3>
 <p>Oui, chaque navette événement est organisée sur mesure selon votre programme, y compris pour des horaires de montage ou de démontage tôt le matin.</p>
@@ -1706,7 +1706,7 @@ const newPosts: BlogPost[] = [
 <ul>
   <li><strong>Minibus (8 à 16 places)</strong> : idéal pour les petits groupes, transferts ou sorties entre amis.</li>
   <li><strong>Bus (20 à 35 places)</strong> : parfait pour les groupes scolaires ou associatifs de taille moyenne.</li>
-  <li><strong>Autocar grand tourisme (40 à 55 places)</strong> : le plus adapté pour les longs trajets et les grands groupes, avec toilettes et espace bagages.</li>
+  <li><strong>Autocar grand tourisme (40 à 60 places)</strong> : le plus adapté pour les longs trajets et les grands groupes, avec toilettes et espace bagages.</li>
 </ul>
 
 <p>Consultez notre <a href="/notre-flotte/minibus" class="text-blue-600 hover:text-blue-700 font-semibold">gamme de minibus</a>, nos <a href="/notre-flotte/bus" class="text-blue-600 hover:text-blue-700 font-semibold">bus</a> ou nos <a href="/notre-flotte/autocars" class="text-blue-600 hover:text-blue-700 font-semibold">autocars</a> pour comparer les capacités.</p>
@@ -1770,7 +1770,7 @@ const newPosts: BlogPost[] = [
     tags: ["Location bus", "Autocar mariage", "Séminaire entreprise", "EVJF EVG", "Transport événement Bruxelles"],
     readTime: "6 min",
     faqs: [
-      { question: "Combien de personnes peut transporter le bus pour un mariage ?", reponse: "Selon le nombre d'invités, nous proposons des minibus de 8 à 16 places jusqu'à des autocars de 40 à 55 places, avec la possibilité de combiner plusieurs véhicules." },
+      { question: "Combien de personnes peut transporter le bus pour un mariage ?", reponse: "Selon le nombre d'invités, nous proposons des minibus de 8 à 16 places jusqu'à des autocars de 40 à 60 places, avec la possibilité de combiner plusieurs véhicules." },
       { question: "Le chauffeur peut-il faire plusieurs allers-retours le même jour ?", reponse: "Oui, c'est une formule courante pour les mariages : une navette entre le lieu de cérémonie, la salle de réception et l'hôtel, avec plusieurs rotations dans la soirée." },
       { question: "Proposez-vous des formules pour les EVJF et EVG ?", reponse: "Oui, nos minibus et bus conviennent parfaitement pour un EVJF ou un EVG, avec la possibilité de plusieurs arrêts dans la journée ou la soirée." },
       { question: "Le transport pour un séminaire d'entreprise peut-il inclure plusieurs sites ?", reponse: "Oui, notre offre de navette entreprise s'adapte à un programme avec plusieurs lieux : hôtel, lieu de séminaire, restaurant, activité de team building." },
@@ -1804,7 +1804,7 @@ const newPosts: BlogPost[] = [
 <ul>
   <li><strong>Minibus (8 à 16 places)</strong> : idéal pour un EVJF/EVG ou un petit comité de mariage.</li>
   <li><strong>Bus (20 à 35 places)</strong> : adapté à la plupart des mariages et séminaires de taille moyenne.</li>
-  <li><strong>Autocar (40 à 55 places)</strong> : pour les grands mariages ou séminaires d'entreprise avec de nombreux invités.</li>
+  <li><strong>Autocar (40 à 60 places)</strong> : pour les grands mariages ou séminaires d'entreprise avec de nombreux invités.</li>
 </ul>
 
 <p>Comparez les capacités sur notre page <a href="/nos-services/location-bus-groupe" class="text-blue-600 hover:text-blue-700 font-semibold">location bus pour groupes</a> ou notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte complète</a>.</p>
@@ -1825,7 +1825,7 @@ const newPosts: BlogPost[] = [
 <h2>FAQ : location de bus avec chauffeur pour événements privés</h2>
 
 <h3>Combien de personnes peut transporter le bus pour un mariage ?</h3>
-<p>Selon le nombre d'invités, nous proposons des minibus de 8 à 16 places jusqu'à des autocars de 40 à 55 places, avec la possibilité de combiner plusieurs véhicules.</p>
+<p>Selon le nombre d'invités, nous proposons des minibus de 8 à 16 places jusqu'à des autocars de 40 à 60 places, avec la possibilité de combiner plusieurs véhicules.</p>
 
 <h3>Le chauffeur peut-il faire plusieurs allers-retours le même jour ?</h3>
 <p>Oui, c'est une formule courante pour les mariages : une navette entre le lieu de cérémonie, la salle de réception et l'hôtel, avec plusieurs rotations dans la soirée.</p>
