@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: '¿Cuánto cuesta una excursión a Brujas en autocar desde Bruselas?',
-    a: 'Como referencia, ida y vuelta en el día: desde 400 € en minibús (8–16 plazas), 550 € en autobús (20–35 plazas) y 700 € en autocar (40–55 plazas), con conductor y combustible incluidos. El precio final depende del itinerario.',
+    a: 'Como referencia, ida y vuelta en el día: desde 400 € en minibús (8–16 plazas), 550 € en autobús (20–35 plazas) y 700 € en autocar (40–60 plazas), con conductor y combustible incluidos. El precio final depende del itinerario.',
   },
   {
     q: '¿Dónde aparca el autocar en Brujas?',
@@ -71,7 +71,7 @@ export default function Page() {
           bullets: [
             'Minibús, 8–16 plazas: desde 400 €.',
             'Autobús, 20–35 plazas: desde 550 €.',
-            'Autocar, 40–55 plazas: desde 700 €.',
+            'Autocar, 40–60 plazas: desde 700 €.',
             'Conductor y combustible incluidos. Presupuesto personalizado bajo petición.',
           ],
         },

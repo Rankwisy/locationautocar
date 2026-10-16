@@ -43,7 +43,7 @@ export default function Page() {
           bullets: [
             'Conductor profesional que recoge a su grupo en el punto acordado.',
             'Seguimiento del vuelo para ajustar la recogida a la hora real de llegada.',
-            'Vehículos de 8 a 55 plazas con espacio para el equipaje.',
+            'Vehículos de 8 a 60 plazas con espacio para el equipaje.',
             'Traslados de ida, de vuelta o ida y vuelta.',
           ],
         },

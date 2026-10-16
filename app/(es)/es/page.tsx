@@ -41,7 +41,7 @@ export default function EsHome() {
           title: 'Por qué elegirnos',
           bullets: [
             'Más de 15 años de experiencia transportando grupos en Bélgica y Europa.',
-            'Vehículos de 8 a 55 plazas, adaptados al tamaño de su grupo.',
+            'Vehículos de 8 a 60 plazas, adaptados al tamaño de su grupo.',
             'Conductores profesionales que conocen Bruselas y sus zonas de bajas emisiones (LEZ).',
             'Presupuesto gratuito y sin compromiso en 24 horas.',
           ],

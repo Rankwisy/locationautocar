@@ -8,13 +8,13 @@ export const metadata = esMetadata({
   frPath: '/location-autocar-bruxelles',
   title: 'Alquiler de autocar y minibús con conductor en Bruselas | Presupuesto',
   description:
-    'Alquile un autocar, autobús o minibús con conductor en Bruselas para su grupo: 8 a 55 plazas, por horas o por día. Presupuesto gratuito en 24 horas.',
+    'Alquile un autocar, autobús o minibús con conductor en Bruselas para su grupo: 8 a 60 plazas, por horas o por día. Presupuesto gratuito en 24 horas.',
 });
 
 const faqs = [
   {
     q: '¿Cuánto cuesta alquilar un autocar con conductor en Bruselas?',
-    a: 'El precio depende del vehículo, la duración y el recorrido. Como referencia, una excursión de un día con ida y vuelta desde Bruselas parte de unos 400 € en minibús (8–16 plazas), 550 € en autobús (20–35 plazas) y 700 € en autocar (40–55 plazas), con conductor y combustible incluidos. Le enviamos un presupuesto exacto sin compromiso.',
+    a: 'El precio depende del vehículo, la duración y el recorrido. Como referencia, una excursión de un día con ida y vuelta desde Bruselas parte de unos 400 € en minibús (8–16 plazas), 550 € en autobús (20–35 plazas) y 700 € en autocar (40–60 plazas), con conductor y combustible incluidos. Le enviamos un presupuesto exacto sin compromiso.',
   },
   {
     q: '¿El alquiler incluye al conductor?',
@@ -43,7 +43,7 @@ export default function Page() {
           cards: [
             { title: 'Minibús', text: '8 a 16 plazas. Ideal para familias numerosas y grupos pequeños.' },
             { title: 'Autobús', text: '20 a 35 plazas. Perfecto para excursiones y eventos de empresa.' },
-            { title: 'Autocar', text: '40 a 55 plazas. Para grupos grandes, viajes largos y circuitos.' },
+            { title: 'Autocar', text: '40 a 60 plazas. Para grupos grandes, viajes largos y circuitos.' },
           ],
         },
         {
@@ -64,7 +64,7 @@ export default function Page() {
         },
       ]}
       faqs={faqs}
-      image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/comfortable-tourist-bus-traveling-sunset.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Autocar de turismo para grupos' }}
+      image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/white-tourist-bus-road-poland-travel-concept.jpg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Autocar de turismo para grupos' }}
     />
   );
 }
