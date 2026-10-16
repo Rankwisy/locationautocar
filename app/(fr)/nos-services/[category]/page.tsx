@@ -7,6 +7,8 @@ import { semanticKeywords, conversionCopy } from '@/data/seoData';
 import { priceFaq } from '@/data/faqData';
 import { buildBreadcrumbSchema, buildServiceSchema, buildPriceSpecificationSchema } from '@/seo/schema';
 import { toCanonicalUrl } from '@/data/canonicalRoutes';
+import ExtraContent from '@/components/SEO/ExtraContent';
+import { SERVICE_EXTRA } from '@/data/extraContent';
 import type { Metadata } from 'next';
 
 const SERVICES = [
@@ -633,6 +635,8 @@ export default async function ServicesCategoryPage({
             </div>
           </div>
         )}
+
+        {SERVICE_EXTRA[category] && <ExtraContent {...SERVICE_EXTRA[category]} />}
 
         {relatedServices.length > 0 && (
           <div className="mt-20">

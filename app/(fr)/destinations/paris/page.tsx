@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { conversionCopy } from '@/data/seoData';
+import ExtraContent from '@/components/SEO/ExtraContent';
+import { DESTINATION_EXTRA } from '@/data/extraContent';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -75,6 +77,7 @@ export default function ParisPage() {
             </Link>
           </div>
         </div>
+        <ExtraContent {...DESTINATION_EXTRA.paris} />
       </div>
     </div>
   );

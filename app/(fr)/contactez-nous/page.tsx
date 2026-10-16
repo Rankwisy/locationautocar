@@ -7,6 +7,8 @@ import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import EnhancedContactForm from '@/components/Forms/EnhancedContactForm';
 import { ROUTES, toCanonicalUrl } from '@/data/canonicalRoutes';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
+import ExtraContent from '@/components/SEO/ExtraContent';
+import { CONTACT_EXTRA } from '@/data/extraContent';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/seo/schema';
 
 // useSearchParams must live under <Suspense>, otherwise the whole page bails out to
@@ -206,6 +208,10 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 pb-12">
+        <ExtraContent {...CONTACT_EXTRA} />
       </div>
 
       <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden style={{ display: 'none' }}>

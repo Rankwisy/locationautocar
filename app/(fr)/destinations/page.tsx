@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { MapPin, Clock, Users, Globe, Camera, CheckCircle, ArrowRight, Phone, Mail, Calendar } from 'lucide-react';
 import { pageMeta, semanticKeywords } from '@/data/seoData';
+import ExtraContent from '@/components/SEO/ExtraContent';
+import { DESTINATIONS_INDEX_EXTRA } from '@/data/extraContent';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -162,6 +164,7 @@ export default function DestinationsPage() {
             </a>
           </div>
         </div>
+        <ExtraContent {...DESTINATIONS_INDEX_EXTRA} />
       </div>
     </div>
   );
