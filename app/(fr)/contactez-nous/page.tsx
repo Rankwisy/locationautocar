@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { Suspense, useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Phone, Mail, MapPin, Clock, CheckCircle, Home } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
@@ -9,21 +9,23 @@ import { ROUTES, toCanonicalUrl } from '@/data/canonicalRoutes';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/seo/schema';
 
-export default function ContactPage() {
+// useSearchParams must live under <Suspense>, otherwise the whole page bails out to
+// client-side rendering and the server HTML has no <h1>/content for crawlers.
+function SuccessFromQuery({ onSuccess }: { onSuccess: () => void }) {
   const searchParams = useSearchParams();
+  useEffect(() => {
+    if (searchParams?.get('success') === 'true') onSuccess();
+  }, [searchParams, onSuccess]);
+  return null;
+}
+
+export default function ContactPage() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  useEffect(() => {
-    if (searchParams?.get('success') === 'true') {
-      setShowSuccessMessage(true);
-      setTimeout(() => setShowSuccessMessage(false), 10000);
-    }
-  }, [searchParams]);
-
-  const handleSubmissionSuccess = () => {
+  const handleSubmissionSuccess = React.useCallback(() => {
     setShowSuccessMessage(true);
     setTimeout(() => setShowSuccessMessage(false), 10000);
-  };
+  }, []);
 
   const handleSubmissionError = (error: string) => {
     console.error('Form submission error:', error);
@@ -42,6 +44,9 @@ export default function ContactPage() {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <SuccessFromQuery onSuccess={handleSubmissionSuccess} />
+      </Suspense>
       {contactSchemas.map((schema, i) => (
         <script
           key={i}
