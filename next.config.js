@@ -78,10 +78,12 @@ const nextConfig = {
       { source: '/destinations/location-autocar-amesterdam/', destination: '/destinations/amsterdam', permanent: true },
       // /index.php → homepage
       { source: '/index.php', destination: '/', permanent: true },
-      // /nl/ (Dutch locale, non-existent) → French canonical
-      { source: '/nl', destination: '/', permanent: true },
-      { source: '/nl/', destination: '/', permanent: true },
-      { source: '/nl/:path*', destination: '/:path*', permanent: true },
+      // Legacy /nl/* URLs → French canonical, except the real Dutch pages (keep in sync with LANG_GROUPS in src/data/i18n.ts)
+      {
+        source: '/nl/:path((?!autocar-huren-brussel|minibus-huren-brussel|bus-met-chauffeur|uitstappen-vanuit-brussel|uitstap-gent-antwerpen|luchthavenvervoer-brussel|contact).+)',
+        destination: '/:path',
+        permanent: true,
+      },
       // /en/ (non-existent locale) → French canonical
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/', destination: '/', permanent: true },
