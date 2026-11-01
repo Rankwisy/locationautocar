@@ -23,6 +23,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [status, setStatus] = useState<'success' | 'error' | null>(null);
 
   const services = [
     { value: 'transfert', label: 'Transfert aéroport/gare' },
@@ -68,6 +69,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
     }
 
     setIsSubmitting(true);
+    setStatus(null);
 
     try {
       const response = await fetch('/__forms.html', {
@@ -92,12 +94,14 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
           message: ''
         });
         setErrors({});
+        setStatus('success');
         onSubmissionSuccess?.();
       } else {
         throw new Error('Erreur lors de l\'envoi du formulaire');
       }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue';
+      setStatus('error');
       onSubmissionError?.(errorMessage);
     } finally {
       setIsSubmitting(false);
@@ -310,6 +314,25 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             </>
           )}
         </button>
+
+        <div aria-live="polite">
+          {status === 'success' && (
+            <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-4">
+              <p className="font-semibold">Merci ! Votre demande a bien été envoyée.</p>
+              <p className="text-sm text-green-700">Nous vous contacterons dans les plus brefs délais avec votre devis personnalisé.</p>
+            </div>
+          )}
+          {status === 'error' && (
+            <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4">
+              <p className="font-semibold">L&apos;envoi a échoué.</p>
+              <p className="text-sm">
+                Réessayez ou contactez-nous au{' '}
+                <a href="tel:+3225800325" className="underline">+32 2 580 03 25</a> ou par{' '}
+                <a href="mailto:info@locationautocar.be" className="underline">info@locationautocar.be</a>.
+              </p>
+            </div>
+          )}
+        </div>
 
         <p className="text-sm text-gray-500 text-center">
           * Champs obligatoires. Réponse sous 24h garantie.
