@@ -15,8 +15,8 @@ export const organizationSchema = {
   "foundingDate": "2007",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rue du Poinçon 43",
-    "addressLocality": "Bruxelles",
+    "streetAddress": "Priemstraat 43 bus",
+    "addressLocality": "Brussel",
     "postalCode": "1000",
     "addressCountry": "BE",
     "addressRegion": "Brussels-Capital Region"
@@ -54,7 +54,8 @@ export const organizationSchema = {
   "email": "info@locationautocar.be",
   "telephone": "+32 2 580 03 25",
   "faxNumber": "+32 2 580 03 26",
-  "legalName": "Transport & Events",
+  "legalName": "Location Autocar",
+  "vatID": "BE0888881670",
   "slogan": "Votre partenaire transport depuis 2007",
   "keywords": "location autocar, bus chauffeur, minibus bruxelles, transport groupe, excursions europe",
   "serviceArea": {
@@ -104,7 +105,8 @@ export const organizationSchema = {
   "sameAs": [
     "https://www.facebook.com/locationautocar",
     "https://www.instagram.com/locationautocar",
-    "https://www.linkedin.com/company/location-autocar-bruxelles"
+    "https://www.linkedin.com/company/location-autocar-bruxelles",
+    "https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek"
   ]
 };
 
@@ -122,8 +124,8 @@ export const localBusinessSchema = {
   "description": "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rue du Poinçon 43",
-    "addressLocality": "Bruxelles",
+    "streetAddress": "Priemstraat 43 bus",
+    "addressLocality": "Brussel",
     "postalCode": "1000",
     "addressCountry": "BE"
   },
@@ -705,8 +707,8 @@ export const contactSchema = {
     "email": "info@locationautocar.be",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Rue du Poinçon 43",
-      "addressLocality": "Bruxelles",
+      "streetAddress": "Priemstraat 43 bus",
+      "addressLocality": "Brussel",
       "postalCode": "1000",
       "addressCountry": "BE"
     },

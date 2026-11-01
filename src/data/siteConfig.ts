@@ -13,14 +13,14 @@ export const siteConfig: SiteConfig = {
   contact: {
     phone: "+32 2 580 03 25",
     email: "info@locationautocar.be",
-    address: "Rue du Poinçon 43, 1000 Bruxelles"
+    address: "Priemstraat 43 bus, 1000 Brussel"
   },
   business: {
     name: "Location Autocar Bruxelles",
     type: "Bus Rental Service",
     location: {
-      street: "Rue du Poinçon 43",
-      city: "Bruxelles",
+      street: "Priemstraat 43 bus",
+      city: "Brussel",
       postalCode: "1000",
       country: "BE"
     }

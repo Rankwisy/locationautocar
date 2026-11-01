@@ -201,9 +201,20 @@ const FooterNext: React.FC = () => {
             ))}
           </nav>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-800 pt-6">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Location Autocar Bruxelles. Tous droits réservés.
-            </p>
+            <div className="text-gray-400 text-sm text-center md:text-left">
+              <p>© {currentYear} Location Autocar Bruxelles. Tous droits réservés.</p>
+              <p className="mt-1">
+                N° d&apos;unité d&apos;établissement BCE/KBO :{' '}
+                <a
+                  href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white underline"
+                >
+                  2.324.592.033
+                </a>
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mt-4 md:mt-0">
               <Link href={ROUTES.MENTIONS_LEGALES} className="text-gray-400 hover:text-white text-sm">
                 Mentions Légales

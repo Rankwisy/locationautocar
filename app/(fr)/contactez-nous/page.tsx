@@ -150,6 +150,17 @@ export default function ContactPage() {
                     1000 Brussel<br />
                     Belgique
                   </p>
+                  <p className="text-gray-600 mt-2 text-sm">
+                    N° d&apos;unité d&apos;établissement BCE/KBO :{' '}
+                    <a
+                      href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      2.324.592.033
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

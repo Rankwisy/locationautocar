@@ -56,9 +56,9 @@ export function buildLocalBusinessSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Rue du Poinçon 43',
+      streetAddress: 'Priemstraat 43 bus',
       postalCode: '1000',
-      addressLocality: 'Bruxelles',
+      addressLocality: 'Brussel',
       addressCountry: 'BE',
       addressRegion: 'Région de Bruxelles-Capitale',
     },
@@ -72,7 +72,8 @@ export function buildLocalBusinessSchema() {
       { '@type': 'Country', name: 'Belgique' },
       { '@type': 'Continent', name: 'Europe' },
     ],
-    hasMap: 'https://maps.google.com/?q=Rue+du+Poinçon+43,+1000+Bruxelles',
+    sameAs: ['https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek'],
+    hasMap: 'https://maps.google.com/?q=Priemstraat+43,+1000+Brussel',
     inLanguage: 'fr-BE',
   };
 }
