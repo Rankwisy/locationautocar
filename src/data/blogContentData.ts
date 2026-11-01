@@ -1216,215 +1216,225 @@ const newPosts: BlogPost[] = [
   },
   {
     id: 19,
-    title: "Grand Prix automobile de Belgique 2026 : le guide transport vers Spa-Francorchamps",
-    metaTitle: "Grand Prix Belgique 2026 : Autocar vers Spa-Francorchamps",
-    metaDescription: "Le Grand Prix de Belgique 2026 approche : découvrez comment réserver votre location autocar avec chauffeur vers Spa-Francorchamps, en toute sérénité.",
-    slug: "grand-prix-belgique-2026-spa-francorchamps-autocar",
-    excerpt: "Le Grand Prix de Belgique 2026 approche ! Découvrez comment organiser votre location autocar avec chauffeur vers le circuit de Spa-Francorchamps, en toute simplicité.",
+    title: "Grand Prix de Belgique F1 2027 (23-25 juillet) : le guide transport en autocar vers Spa-Francorchamps",
+    metaTitle: "Grand Prix Belgique 2027 : Autocar vers Spa (23-25 juillet)",
+    metaDescription: "Grand Prix de Belgique F1 du 23 au 25 juillet 2027 à Spa-Francorchamps : réservez votre autocar ou minibus avec chauffeur au départ de Bruxelles. Devis gratuit.",
+    slug: "grand-prix-belgique-2027-spa-francorchamps-autocar",
+    excerpt: "Le Grand Prix de Belgique de Formule 1 se tiendra du 23 au 25 juillet 2027 à Spa-Francorchamps. Découvrez comment organiser le transport de votre groupe en autocar avec chauffeur, sans bouchons ni parking.",
     featuredImage: "/images/blog/grand-prix-belgique-2026-autocar.jpg",
-    featuredImageAlt: "Autocar de tourisme avec passagers au circuit de Spa-Francorchamps pour le Grand Prix de Belgique",
-    publishedAt: "2026-07-09T09:00:00.000Z",
+    featuredImageAlt: "Autocar de tourisme avec passagers au circuit de Spa-Francorchamps pour le Grand Prix de Belgique 2027",
+    publishedAt: "2026-11-01T09:00:00.000Z",
     author: "Location Autocar Bruxelles",
     authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Événements",
-    tags: ["Grand Prix Belgique", "Spa-Francorchamps", "Location autocar", "Transport événementiel", "Autocar Belgique"],
+    tags: ["Grand Prix Belgique 2027", "Spa-Francorchamps", "Formule 1", "Location autocar", "Transport événementiel"],
     readTime: "7 min",
-    content: `<p>Le <strong>Grand Prix de Belgique 2026</strong> approche, et avec lui le traditionnel pèlerinage vers le circuit de <strong>Spa-Francorchamps</strong>, l'un des tracés les plus mythiques du championnat du monde de Formule 1. Chaque année, des dizaines de milliers de passionnés convergent vers les Ardennes belges pour vivre ce rendez-vous unique. Mais entre les routes saturées, le parking limité et la fatigue du trajet, l'organisation du transport reste souvent le plus grand casse-tête pour les groupes, les entreprises et les clubs automobiles.</p>
+    content: `<p>C'est officiel : le <strong>Grand Prix de Belgique de Formule 1 2027</strong> aura lieu <strong>du vendredi 23 au dimanche 25 juillet 2027</strong> sur le circuit de <strong>Spa-Francorchamps</strong>. Comme chaque édition, des dizaines de milliers de passionnés vont converger vers les Ardennes belges. Et comme chaque année, la vraie difficulté pour les groupes, les entreprises et les clubs automobiles sera la même : arriver au circuit et en repartir sans passer des heures dans les embouteillages.</p>
 
-<p>Chez Location Autocar Bruxelles, nous accompagnons chaque saison des groupes entiers vers Spa-Francorchamps grâce à notre service de <strong>location autocar avec chauffeur</strong>. Dans ce guide, découvrez comment organiser sereinement votre transport de groupe pour le Grand Prix de Belgique 2026.</p>
+<p>Chez Location Autocar Bruxelles, nous transportons chaque saison des groupes entiers vers Spa-Francorchamps grâce à notre service de <strong>location autocar avec chauffeur</strong>. Voici notre guide pour préparer dès maintenant le transport de votre groupe pour le Grand Prix de Belgique 2027.</p>
 
-<h2>Le Grand Prix de Belgique 2026 : un rendez-vous incontournable</h2>
-
-<p>Chaque été, le circuit de Spa-Francorchamps accueille l'une des étapes les plus attendues du calendrier de Formule 1. Ses lignes droites vertigineuses, son relief unique et l'ambiance électrique des tribunes en font un événement à part pour tous les amateurs de sport automobile.</p>
-
-<h3>Un site difficile d'accès en voiture individuelle</h3>
-
-<p>Le circuit est situé dans une zone rurale des Ardennes, avec une capacité routière et un nombre de places de parking limités. Les jours de course, les accès principaux sont rapidement saturés, et les automobilistes isolés perdent souvent plusieurs heures avant de rejoindre le site ou de rentrer chez eux.</p>
-
-<h3>La solution : voyager groupé en autocar</h3>
-
-<p>C'est précisément pour cette raison que de plus en plus de groupes, d'entreprises et d'associations optent pour un <strong>autocar Belgique</strong> affrété spécialement pour l'événement. Un seul véhicule remplace des dizaines de voitures, avec un accès facilité aux zones de dépose réservées aux autocars, souvent bien plus proches des tribunes que les parkings visiteurs classiques.</p>
-
-<h2>Pourquoi choisir la location autocar avec chauffeur pour le Grand Prix</h2>
-
-<h3>Confort et détente avant et après la course</h3>
-
-<p>Après une journée intense sous le soleil des Ardennes, rien ne vaut un trajet de retour confortable, assis, sans avoir à conduire. Nos autocars modernes offrent sièges inclinables, climatisation et espace pour se détendre pendant que notre chauffeur professionnel gère la route.</p>
-
-<h3>Sécurité et tranquillité d'esprit</h3>
-
-<p>Avec l'ambiance festive qui entoure souvent le week-end du Grand Prix, laisser la conduite à un chauffeur expérimenté est un choix de bon sens. Aucun risque lié à la fatigue ou à un verre de trop après la course : notre équipe s'occupe de tout.</p>
-
-<h3>Un budget maîtrisé pour les groupes</h3>
-
-<p>En répartissant le coût de la <strong>location bus</strong> entre tous les participants, le trajet vers Spa-Francorchamps devient souvent plus économique que plusieurs voitures individuelles, sans compter les frais de parking et de carburant.</p>
-
-<h2>Nos solutions de transport pour le Grand Prix de Belgique</h2>
-
-<h3>Location autocar pour grands groupes</h3>
-
-<p>Pour les groupes d'entreprise, les comités d'événements ou les associations de passionnés, nos autocars de 40 à 60 places offrent la solution idéale pour un <strong>transport de groupe</strong> confortable, avec Wi-Fi et système audio/vidéo à bord.</p>
-
-<h3>Location minibus pour comités restreints ou VIP</h3>
-
-<p>Vous êtes un groupe plus restreint, une entreprise qui invite ses clients privilégiés en tribune VIP ? Notre offre de <strong>location minibus</strong> (8 à 16 places) permet un déplacement plus intimiste, avec la même exigence de confort et de ponctualité.</p>
-
-<h3>Transport événementiel sur mesure</h3>
-
-<p>Chaque groupe a ses propres contraintes : départ à l'aube, retour tardif après le podium, arrêt intermédiaire pour un déjeuner ou une soirée. Notre service de <strong>transport événementiel</strong> s'adapte entièrement à votre programme, avec des horaires flexibles et un accompagnement personnalisé du devis jusqu'au retour.</p>
-
-<h2>Comment réserver votre autocar pour le Grand Prix de Belgique</h2>
-
-<p>La réservation d'un autocar pour un événement aussi couru que le Grand Prix de Belgique demande un peu d'anticipation, car les disponibilités partent vite dès l'annonce des dates officielles. Voici la marche à suivre :</p>
+<h2>Grand Prix de Belgique 2027 : dates et programme du week-end</h2>
 
 <ul>
-  <li>Contactez-nous avec le nombre de passagers, votre point de départ (Bruxelles, Liège, Namur ou ailleurs) et vos horaires souhaités.</li>
-  <li>Recevez un devis détaillé et gratuit sous 24h.</li>
-  <li>Confirmez votre réservation dès que les dates officielles du Grand Prix sont publiées.</li>
-  <li>Profitez de la course l'esprit tranquille : nous gérons le trajet aller-retour dans son intégralité.</li>
+  <li><strong>Vendredi 23 juillet 2027</strong> : essais libres</li>
+  <li><strong>Samedi 24 juillet 2027</strong> : essais et qualifications</li>
+  <li><strong>Dimanche 25 juillet 2027</strong> : la course</li>
 </ul>
 
-<p>👉 <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Demandez votre devis gratuit pour le Grand Prix de Belgique 2026</a></p>
+<p>Les horaires détaillés de chaque session sont publiés par la Formule 1 et le circuit quelques semaines avant l'événement. Nous calons ensuite les heures de départ et de retour de votre autocar sur le programme officiel.</p>
+
+<h3>Une édition à ne pas manquer</h3>
+
+<p>Spa-Francorchamps ne figure plus automatiquement chaque année au calendrier de la Formule 1 : le circuit accueille désormais le championnat en alternance, dans le cadre de son contrat jusqu'en 2031. Raison de plus pour ne pas laisser passer l'édition 2027 et pour organiser votre déplacement à l'avance.</p>
+
+<h2>Pourquoi se rendre au Grand Prix en autocar</h2>
+
+<h3>Un circuit difficile d'accès en voiture</h3>
+
+<p>Le circuit se trouve en pleine zone rurale, entre Stavelot, Francorchamps et Malmedy, à environ 1h30 de Bruxelles. Les routes d'accès et les parkings ont une capacité limitée : les jours de course, les automobilistes isolés perdent souvent plusieurs heures à l'aller comme au retour.</p>
+
+<h3>Un seul véhicule pour tout le groupe</h3>
+
+<p>Un <strong>autocar Belgique</strong> affrété pour l'événement remplace des dizaines de voitures. Votre groupe voyage ensemble, arrive en même temps et repart à l'heure convenue, avec un chauffeur qui connaît les accès et les zones de dépose autocars du circuit.</p>
+
+<h3>Confort, sécurité et budget maîtrisé</h3>
+
+<ul>
+  <li><strong>Confort</strong> : sièges inclinables, climatisation et espace pour se reposer après une longue journée dans les tribunes.</li>
+  <li><strong>Sécurité</strong> : personne n'a à conduire fatigué après la course, notre chauffeur professionnel s'occupe de la route.</li>
+  <li><strong>Budget</strong> : le coût de la <strong>location bus</strong> se partage entre tous les participants, sans frais de parking ni de carburant individuels.</li>
+</ul>
+
+<h2>Nos formules de transport pour le Grand Prix de Belgique 2027</h2>
+
+<h3>Autocar pour grands groupes</h3>
+
+<p>Pour les entreprises, les comités d'événements et les clubs de passionnés, nos autocars de 40 à 60 places sont la solution idéale pour un <strong>transport de groupe</strong> confortable vers Spa-Francorchamps.</p>
+
+<h3>Minibus pour petits groupes et invités VIP</h3>
+
+<p>Vous invitez quelques clients en tribune ou en hospitalité ? Notre offre de <strong>location minibus</strong> (8 à 16 places) permet un déplacement plus discret, avec la même exigence de ponctualité.</p>
+
+<h3>Aller-retour sur la journée ou formule week-end</h3>
+
+<p>Aller-retour le dimanche pour la course uniquement, navettes quotidiennes du vendredi au dimanche depuis votre hôtel, arrêt pour un déjeuner ou une soirée d'entreprise : notre service de <strong>transport événementiel</strong> s'adapte entièrement à votre programme.</p>
+
+<h2>Comment réserver votre autocar pour le Grand Prix 2027</h2>
+
+<p>Les dates étant déjà officielles, c'est le bon moment pour bloquer votre véhicule : les autocars partent vite pour le week-end du Grand Prix.</p>
+
+<ol>
+  <li>Envoyez-nous le nombre de passagers, votre point de départ (Bruxelles, Liège, Namur, Charleroi ou ailleurs) et le ou les jours souhaités.</li>
+  <li>Recevez un devis détaillé et gratuit sous 24h.</li>
+  <li>Confirmez votre réservation et indiquez vos billets ou zones de tribune.</li>
+  <li>Profitez du Grand Prix : nous gérons l'aller et le retour.</li>
+</ol>
+
+<p>👉 <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Demandez votre devis gratuit pour le Grand Prix de Belgique 2027</a></p>
 
 <h2>Pourquoi choisir Location Autocar Bruxelles</h2>
 
-<p>Depuis 2007, nous accompagnons entreprises, clubs et particuliers pour tous types de <strong>transport événementiel</strong> en Belgique et en Europe. Découvrez notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte complète de véhicules</a>, du minibus à l'autocar grand tourisme, ou consultez notre offre dédiée de <a href="/nos-services/location-bus-groupe" class="text-blue-600 hover:text-blue-700 font-semibold">location bus pour groupes</a>.</p>
+<p>Depuis 2007, nous accompagnons entreprises, clubs et particuliers pour tous types de <strong>transport événementiel</strong> en Belgique et en Europe. Découvrez notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte de véhicules</a>, du minibus à l'autocar grand tourisme, ou notre offre de <a href="/nos-services/location-bus-groupe" class="text-blue-600 hover:text-blue-700 font-semibold">location bus pour groupes</a>.</p>
 
-<p>Pour tout autre déplacement en Belgique, n'hésitez pas à consulter également nos <a href="/destinations/belgique" class="text-blue-600 hover:text-blue-700 font-semibold">destinations en Belgique</a> ou notre page <a href="/nos-services/prix" class="text-blue-600 hover:text-blue-700 font-semibold">tarifs et devis</a>.</p>
+<p>Pour vos autres déplacements, consultez nos <a href="/destinations/belgique" class="text-blue-600 hover:text-blue-700 font-semibold">destinations en Belgique</a> ou notre page <a href="/nos-services/prix" class="text-blue-600 hover:text-blue-700 font-semibold">tarifs et devis</a>.</p>
 
-<h2>FAQ : Location autocar pour le Grand Prix de Belgique 2026</h2>
+<h2>FAQ : autocar pour le Grand Prix de Belgique 2027</h2>
 
-<h3>Où se trouve le circuit du Grand Prix de Belgique ?</h3>
-<p>Le Grand Prix de Belgique se déroule sur le circuit de Spa-Francorchamps, situé dans la région de Stavelot, dans les Ardennes belges, à environ 1h30 de Bruxelles.</p>
+<h3>Quelles sont les dates du Grand Prix de Belgique 2027 ?</h3>
+<p>Le Grand Prix de Belgique de Formule 1 se déroule du vendredi 23 au dimanche 25 juillet 2027, avec la course le dimanche 25 juillet.</p>
 
-<h3>Combien de temps à l'avance faut-il réserver son autocar ?</h3>
-<p>Nous recommandons de réserver dès que possible, idéalement plusieurs semaines avant l'événement, car la demande est particulièrement forte durant le week-end du Grand Prix.</p>
+<h3>Où se trouve le circuit de Spa-Francorchamps ?</h3>
+<p>Le circuit est situé dans les Ardennes belges, entre Stavelot, Francorchamps et Malmedy, à environ 1h30 de route de Bruxelles.</p>
 
-<h3>Peut-on louer un autocar pour la journée uniquement ?</h3>
-<p>Oui, la majorité de nos clients optent pour un aller-retour sur la journée. Nous proposons également des formules avec attente sur place ou retour en soirée selon le programme de la course.</p>
+<h3>Quand faut-il réserver son autocar ?</h3>
+<p>Le plus tôt possible. Les dates étant connues, nous conseillons de réserver plusieurs mois à l'avance, car la demande d'autocars est très forte ce week-end-là.</p>
 
-<h3>Le prix inclut-il le stationnement de l'autocar sur le site ?</h3>
-<p>Les zones de dépose et certains parkings autocars sont généralement inclus dans l'organisation de l'événement. Nous vous conseillons sur les meilleures options selon votre point de chute.</p>
+<h3>Peut-on louer un autocar uniquement pour le dimanche ?</h3>
+<p>Oui, la plupart de nos clients choisissent un aller-retour sur la journée de course. Nous proposons aussi des navettes sur les trois jours.</p>
 
 <h3>Proposez-vous des minibus pour les petits groupes VIP ?</h3>
-<p>Oui, notre <a href="/notre-flotte/minibus" class="text-blue-600 hover:text-blue-700 font-semibold">gamme de minibus</a> convient parfaitement aux groupes restreints ou aux invités VIP d'entreprise.</p>
+<p>Oui, notre <a href="/notre-flotte/minibus" class="text-blue-600 hover:text-blue-700 font-semibold">gamme de minibus</a> convient parfaitement aux petits groupes et aux invités d'entreprise.</p>
 
-<h3>Le transport est-il disponible depuis toute la Belgique ?</h3>
+<h3>Le transport est-il possible depuis toute la Belgique ?</h3>
 <p>Oui, nous organisons des départs depuis Bruxelles, Liège, Namur, Charleroi et la plupart des grandes villes belges vers Spa-Francorchamps.</p>
 
-<h2>Conclusion : vivez le Grand Prix de Belgique 2026 sans stress</h2>
+<h2>Conclusion : réservez dès maintenant pour le Grand Prix 2027</h2>
 
-<p>Entre les embouteillages, le stationnement limité et la fatigue du trajet, se rendre à Spa-Francorchamps en voiture individuelle peut vite gâcher le plaisir de la course. En optant pour une <strong>location autocar avec chauffeur</strong>, vous transformez le trajet en une expérience détendue et conviviale, digne du spectacle qui vous attend sur le circuit.</p>
+<p>Le Grand Prix de Belgique 2027 aura lieu du 23 au 25 juillet. Pour éviter les bouchons, le stationnement limité et la fatigue du retour, la <strong>location autocar avec chauffeur</strong> reste la solution la plus simple pour un groupe.</p>
 
-<p>Que vous soyez une entreprise, un club automobile ou un groupe d'amis passionnés, notre équipe est prête à organiser votre <strong>transport de groupe</strong> vers le Grand Prix de Belgique 2026. <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Contactez-nous dès aujourd'hui</a> pour recevoir votre devis gratuit et réserver votre autocar en toute simplicité.</p>`,
+<p>Entreprise, club automobile ou groupe d'amis passionnés : <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">contactez-nous dès aujourd'hui</a> pour recevoir votre devis gratuit et réserver votre autocar vers Spa-Francorchamps.</p>`,
   },
   {
     id: 20,
-    title: "Tomorrowland Belgium 2026 : transport professionnel et navette pour groupes et entreprises",
-    metaTitle: "Tomorrowland 2026 : Transport Groupe & Navette VIP",
-    metaDescription: "Organisez le transport de votre équipe pour Tomorrowland 2026 : navette événement, transport VIP et chauffeur privé. Devis gratuit pour votre entreprise.",
-    slug: "tomorrowland-belgium-2026-transport-professionnel-groupe",
-    excerpt: "Tomorrowland Belgium 2026 approche : découvrez nos solutions de transport professionnel, navette événement et transport VIP pour les entreprises et groupes.",
+    title: "Tomorrowland Belgium 2027 : transport professionnel et navette pour groupes et entreprises",
+    metaTitle: "Tomorrowland 2027 : Transport Groupe & Navette vers Boom",
+    metaDescription: "Préparez le transport de votre groupe ou entreprise pour Tomorrowland Belgium 2027 à Boom : navette, autocar et transport VIP avec chauffeur. Devis gratuit.",
+    slug: "tomorrowland-belgium-2027-transport-professionnel-groupe",
+    excerpt: "Tomorrowland Belgium revient à Boom en juillet 2027. Découvrez nos solutions de navette, autocar et transport VIP avec chauffeur pour les entreprises et les groupes.",
     featuredImage: "/images/blog/tomorrowland-2026-transport-groupe.jpg",
-    featuredImageAlt: "Autocar de luxe transportant des professionnels vers un événement d'entreprise pour Tomorrowland",
-    publishedAt: "2026-07-09T10:00:00.000Z",
+    featuredImageAlt: "Autocar transportant un groupe vers le festival Tomorrowland Belgium 2027 à Boom",
+    publishedAt: "2026-11-01T10:00:00.000Z",
     author: "Location Autocar Bruxelles",
     authorUrl: "https://www.locationautocar.be/a-propos",
     category: "Événements",
-    tags: ["Tomorrowland", "Transport professionnel", "Navette entreprise", "Transport VIP", "Chauffeur privé"],
-    readTime: "8 min",
-    content: `<p><strong>Tomorrowland</strong> transforme chaque été la petite commune de Boom, en province d'Anvers, en capitale mondiale de la musique électronique. Plus de 400 000 festivaliers venus de plus de 200 pays s'y retrouvent le temps d'un week-end hors du commun. Pour les entreprises, agences événementielles et groupes qui organisent ce déplacement, la question du <strong>transport professionnel</strong> devient vite stratégique : comment acheminer ses équipes, ses clients ou ses invités VIP dans les meilleures conditions ?</p>
+    tags: ["Tomorrowland 2027", "Transport professionnel", "Navette entreprise", "Transport VIP", "Chauffeur privé"],
+    readTime: "7 min",
+    content: `<p><strong>Tomorrowland Belgium</strong> revient en <strong>2027</strong> sur le site de De Schorre, à <strong>Boom</strong>, en province d'Anvers. Chaque été, le festival accueille environ 400 000 festivaliers venus du monde entier, répartis sur deux week-ends. Pour les entreprises, les agences événementielles et les groupes qui prévoient d'y aller, une question se pose très tôt : comment transporter ses équipes, ses clients ou ses invités dans de bonnes conditions ?</p>
 
-<h2>Tomorrowland Belgium 2026 : un défi logistique pour les groupes</h2>
+<h2>Tomorrowland Belgium 2027 : quand a lieu le festival ?</h2>
 
-<p>Avec des dizaines de milliers de visiteurs qui convergent vers Boom sur un temps très court, les accès routiers et les parkings saturent rapidement. Pour les entreprises qui organisent des sorties ou des opérations d'incentive autour du festival, improviser le transport au dernier moment est risqué.</p>
+<p>Au moment où nous écrivons ces lignes, <strong>Tomorrowland n'a pas encore annoncé les dates officielles de l'édition belge 2027</strong>. Le festival se déroule traditionnellement sur <strong>les deux derniers week-ends de juillet</strong>, ce qui laisse attendre une édition à la mi-juillet et fin juillet 2027. Vérifiez toujours les dates sur le site officiel de Tomorrowland avant de réserver.</p>
 
-<p>C'est là qu'intervient notre offre de <strong>location autocar entreprise</strong> : un service pensé pour les groupes professionnels, avec toute la fiabilité et le confort attendus pour un événement de cette envergure.</p>
+<p>Bon à savoir : la vente des billets démarre généralement plusieurs mois avant le festival, avec une préinscription obligatoire. Une fois vos billets obtenus, réservez votre transport sans attendre, car les autocars sont très demandés pendant ces deux week-ends.</p>
 
-<h2>Nos solutions de transport pour Tomorrowland</h2>
+<h2>Un défi logistique pour les groupes</h2>
+
+<p>Avec des dizaines de milliers de visiteurs qui arrivent à Boom sur quelques heures, les accès routiers et les parkings saturent vite. Pour une entreprise qui organise une sortie, un incentive ou l'accueil de clients autour du festival, improviser le transport au dernier moment est risqué.</p>
+
+<p>C'est là qu'intervient notre offre de <strong>location autocar entreprise</strong> : un service pensé pour les groupes, avec la fiabilité et le confort attendus pour un événement de cette taille.</p>
+
+<h2>Nos solutions de transport pour Tomorrowland 2027</h2>
 
 <h3>Navette événement au départ des grandes villes belges</h3>
 
-<p>Notre service de <strong>navette événement</strong> relie Bruxelles, Anvers, Gand ou Liège directement aux abords du site de Boom, avec des horaires calés sur le programme du festival :</p>
+<p>Notre service de <strong>navette événement</strong> relie Bruxelles, Anvers, Gand ou Liège aux abords du site de Boom, avec des horaires calés sur votre programme :</p>
 
 <ul>
-  <li>Départs le matin ou en début d'après-midi selon votre programme</li>
-  <li>Retours organisés en soirée ou en fin de festival</li>
-  <li>Points de prise en charge flexibles, adaptés à votre entreprise ou point de rassemblement</li>
-  <li>Suivi en temps réel et coordination avec votre équipe organisatrice</li>
+  <li>Départs le matin ou en début d'après-midi</li>
+  <li>Retours en soirée ou après les derniers sets</li>
+  <li>Points de prise en charge au choix : bureau, hôtel, gare ou point de rassemblement</li>
+  <li>Coordination directe avec votre équipe organisatrice</li>
 </ul>
 
-<h3>Transport séminaire et opérations d'incentive</h3>
+<h3>Séminaires et opérations d'incentive</h3>
 
-<p>De nombreuses entreprises profitent de Tomorrowland pour organiser un <strong>transport séminaire</strong> ou une opération de motivation commerciale à destination de leurs meilleurs clients ou collaborateurs. Nous adaptons notre prestation à ces formats spécifiques :</p>
+<p>De nombreuses entreprises profitent de Tomorrowland pour inviter leurs meilleurs clients ou récompenser leurs équipes. Nous adaptons notre <strong>transport séminaire</strong> à ces formats :</p>
 
 <ul>
-  <li>Autocar dédié pour toute la durée du déplacement</li>
-  <li>Étapes intermédiaires possibles (dîner d'entreprise, hôtel, activité team building)</li>
-  <li>Habillage discret ou personnalisation du véhicule sur demande</li>
+  <li>Autocar dédié pendant toute la durée du déplacement</li>
+  <li>Étapes possibles : dîner d'entreprise, hôtel, activité de team building</li>
   <li>Un seul interlocuteur pour toute la logistique transport</li>
 </ul>
 
 <h3>Transport VIP avec chauffeur privé</h3>
 
-<p>Pour vos invités les plus prestigieux, nous proposons également un service de <strong>transport VIP</strong> avec <strong>chauffeur privé</strong> : véhicules haut de gamme, discrétion, ponctualité irréprochable et accueil personnalisé dès la descente d'avion ou de train.</p>
+<p>Pour vos invités les plus importants, nous proposons un service de <strong>transport VIP</strong> avec <strong>chauffeur privé</strong> : véhicule haut de gamme, discrétion et accueil à l'aéroport de Bruxelles ou à la gare.</p>
 
 <h2>Ce qui est inclus dans notre prestation</h2>
 
 <ul>
-  <li>Un autocar ou minibus récent, climatisé et conforme aux normes Euro 6</li>
-  <li>Un chauffeur professionnel, ponctuel et habitué aux grands événements</li>
-  <li>Une assurance complète incluse dans le prix</li>
+  <li>Un autocar ou minibus récent, climatisé et conforme à la norme Euro 6</li>
+  <li>Un chauffeur professionnel, habitué aux grands événements</li>
+  <li>L'assurance incluse dans le prix</li>
   <li>Un devis gratuit et personnalisé sous 24h</li>
-  <li>Une disponibilité 24h/24 pendant toute la durée du festival</li>
 </ul>
 
-<h3>Un engagement écologique et responsable</h3>
+<h3>Un choix plus responsable</h3>
 
-<p>Notre flotte est 100% conforme à la norme Euro 6, ce qui garantit un accès sans restriction aux zones à faibles émissions et un impact environnemental réduit par rapport à des dizaines de véhicules individuels. Un argument que vos équipes RSE apprécieront lors du bilan de l'événement.</p>
+<p>Notre flotte est 100% conforme à la norme Euro 6 : un seul autocar remplace des dizaines de voitures, avec un impact environnemental réduit. Un argument apprécié par vos équipes RSE.</p>
 
-<h2>Comment organiser le transport professionnel de votre groupe</h2>
+<h2>Comment organiser le transport de votre groupe</h2>
 
 <ol>
-  <li>Contactez notre équipe avec le nombre de participants et vos dates de déplacement</li>
-  <li>Précisez le format souhaité : navette simple, séminaire, ou transport VIP</li>
+  <li>Contactez-nous avec le nombre de participants et le week-end prévu</li>
+  <li>Précisez le format : navette simple, séminaire ou transport VIP</li>
   <li>Recevez votre devis détaillé sous 24h</li>
-  <li>Validez la réservation, nous nous occupons du reste</li>
+  <li>Confirmez dès que vos billets sont achetés, nous nous occupons du reste</li>
 </ol>
 
-<p>👉 <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Demandez votre devis gratuit pour Tomorrowland 2026</a></p>
+<p>👉 <a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Demandez votre devis gratuit pour Tomorrowland 2027</a></p>
 
 <h2>Pourquoi les entreprises nous font confiance</h2>
 
-<p>Depuis 2007, Location Autocar Bruxelles accompagne les entreprises belges dans l'organisation de leurs déplacements de <strong>transport groupe</strong>, qu'il s'agisse de <a href="/nos-services/navette-entreprise" class="text-blue-600 hover:text-blue-700 font-semibold">navettes d'entreprise</a>, de <a href="/nos-services/voyages-affaires" class="text-blue-600 hover:text-blue-700 font-semibold">voyages d'affaires</a> ou de <a href="/nos-services/mise-a-disposition" class="text-blue-600 hover:text-blue-700 font-semibold">mise à disposition de véhicules avec chauffeur</a>.</p>
+<p>Depuis 2007, Location Autocar Bruxelles accompagne les entreprises belges pour leur <strong>transport groupe</strong> : <a href="/nos-services/navette-entreprise" class="text-blue-600 hover:text-blue-700 font-semibold">navettes d'entreprise</a>, <a href="/nos-services/voyages-affaires" class="text-blue-600 hover:text-blue-700 font-semibold">voyages d'affaires</a> ou <a href="/nos-services/mise-a-disposition" class="text-blue-600 hover:text-blue-700 font-semibold">mise à disposition de véhicules avec chauffeur</a>.</p>
 
-<p>Consultez notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte de véhicules</a> ou notre page <a href="/nos-services/prix" class="text-blue-600 hover:text-blue-700 font-semibold">tarifs et devis</a> pour préparer votre budget en amont.</p>
+<p>Consultez notre <a href="/notre-flotte" class="text-blue-600 hover:text-blue-700 font-semibold">flotte de véhicules</a> ou notre page <a href="/nos-services/prix" class="text-blue-600 hover:text-blue-700 font-semibold">tarifs et devis</a> pour préparer votre budget.</p>
 
-<h2>FAQ : Transport professionnel pour Tomorrowland Belgium 2026</h2>
+<h2>FAQ : transport pour Tomorrowland Belgium 2027</h2>
+
+<h3>Quand a lieu Tomorrowland Belgium 2027 ?</h3>
+<p>Les dates officielles n'ont pas encore été annoncées. Le festival a traditionnellement lieu les deux derniers week-ends de juillet à Boom. Nous mettrons cet article à jour dès l'annonce officielle.</p>
 
 <h3>À partir de combien de personnes peut-on réserver une navette ?</h3>
-<p>Notre offre s'adapte à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 60 places pour un grand groupe d'entreprise.</p>
+<p>Nous nous adaptons à tous les formats, du minibus de 8 places pour un petit comité VIP jusqu'à l'autocar de 60 places pour un grand groupe.</p>
 
 <h3>Peut-on personnaliser les horaires de départ et de retour ?</h3>
-<p>Oui, chaque navette événement est organisée sur mesure selon votre programme, y compris pour des retours tardifs après les sets de clôture.</p>
+<p>Oui, chaque navette est organisée sur mesure, y compris pour un retour tardif après les sets de clôture.</p>
 
-<h3>Proposez-vous un service pour les invités VIP uniquement ?</h3>
-<p>Oui, notre offre de transport VIP avec chauffeur privé est spécialement pensée pour l'accueil de clients ou partenaires prestigieux.</p>
+<h3>Proposez-vous un service uniquement pour les invités VIP ?</h3>
+<p>Oui, notre transport VIP avec chauffeur privé est pensé pour l'accueil de clients et partenaires.</p>
 
-<h3>Le devis pour un transport séminaire est-il gratuit ?</h3>
-<p>Oui, chaque demande fait l'objet d'un devis personnalisé et gratuit, sans engagement, sous 24h.</p>
+<h3>Peut-on prévoir un arrêt à l'hôtel ou au restaurant ?</h3>
+<p>Oui, nous organisons des itinéraires avec plusieurs arrêts, avant ou après le festival.</p>
 
-<h3>Peut-on prévoir une étape supplémentaire (hôtel, restaurant) ?</h3>
-<p>Tout à fait, notre service de transport professionnel s'adapte à un itinéraire avec plusieurs arrêts, avant ou après le festival.</p>
+<h3>Le devis est-il gratuit ?</h3>
+<p>Oui, chaque demande reçoit un devis personnalisé, gratuit et sans engagement sous 24h.</p>
 
-<h3>Les chauffeurs connaissent-ils bien la zone de Boom pendant le festival ?</h3>
-<p>Oui, nos chauffeurs sont expérimentés sur les grands événements belges et connaissent les meilleurs itinéraires et zones de dépose autour du site.</p>
+<h2>Conclusion : préparez dès maintenant votre transport pour Tomorrowland 2027</h2>
 
-<h2>Conclusion : simplifiez le transport de votre entreprise pour Tomorrowland 2026</h2>
+<p>Entre l'affluence, les accès limités et l'image que vous donnez à vos invités, le <strong>transport professionnel</strong> vers Tomorrowland se prépare avec un partenaire fiable. Notre équipe met son savoir-faire en <strong>transport groupe</strong>, navette événement et transport VIP au service de votre entreprise.</p>
 
-<p>Entre l'affluence, les accès limités et les enjeux d'image pour vos invités, le <strong>transport professionnel</strong> vers Tomorrowland mérite d'être préparé avec un partenaire fiable. Notre équipe met à votre disposition tout son savoir-faire en <strong>transport groupe</strong>, navette événement et transport VIP pour que votre entreprise vive ce rendez-vous exceptionnel sans aucune contrainte logistique.</p>
-
-<p><a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Contactez notre équipe dès maintenant</a> pour organiser le transport de votre groupe vers Tomorrowland Belgium 2026.</p>`,
+<p><a href="/contactez-nous" class="text-blue-600 hover:text-blue-700 font-semibold">Contactez notre équipe</a> pour organiser le transport de votre groupe vers Tomorrowland Belgium 2027.</p>`,
   },
   {
     id: 21,

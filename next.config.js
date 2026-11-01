@@ -76,6 +76,9 @@ const nextConfig = {
       // Old typo: amesterdam → canonical Amsterdam page
       { source: '/destinations/location-autocar-amesterdam', destination: '/destinations/amsterdam', permanent: true },
       { source: '/destinations/location-autocar-amesterdam/', destination: '/destinations/amsterdam', permanent: true },
+      // Event posts rewritten for 2027 → new slugs
+      { source: '/blog/grand-prix-belgique-2026-spa-francorchamps-autocar', destination: '/blog/grand-prix-belgique-2027-spa-francorchamps-autocar', permanent: true },
+      { source: '/blog/tomorrowland-belgium-2026-transport-professionnel-groupe', destination: '/blog/tomorrowland-belgium-2027-transport-professionnel-groupe', permanent: true },
       // /index.php → homepage
       { source: '/index.php', destination: '/', permanent: true },
       // Legacy /nl/* URLs → French canonical, except the real Dutch pages (keep in sync with LANG_GROUPS in src/data/i18n.ts)
