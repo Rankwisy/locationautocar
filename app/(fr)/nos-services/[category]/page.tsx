@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { Plane, Camera, Building, Clock, ArrowRight, CheckCircle, DollarSign, Bus, Heart } from 'lucide-react';
 import InternalLinkNext from '@/components/SEO/InternalLinkNext';
 import { semanticKeywords, conversionCopy } from '@/data/seoData';
+import { languagesFor } from '@/data/i18n';
 import { priceFaq } from '@/data/faqData';
 import { buildBreadcrumbSchema, buildServiceSchema, buildPriceSpecificationSchema } from '@/seo/schema';
 import { toCanonicalUrl } from '@/data/canonicalRoutes';
@@ -195,13 +196,7 @@ export async function generateMetadata({
     keywords: semanticKeywords.services.join(', '),
     alternates: {
       canonical: `https://www.locationautocar.be/nos-services/${category}`,
-      ...(category === 'transferts-aeroports' && {
-        languages: {
-          fr: 'https://www.locationautocar.be/nos-services/transferts-aeroports',
-          es: 'https://www.locationautocar.be/es/transfer-aeropuerto-bruselas',
-          'x-default': 'https://www.locationautocar.be/nos-services/transferts-aeroports',
-        },
-      }),
+      languages: languagesFor(`/nos-services/${category}`),
     },
     openGraph: {
       title: `${service.seoTitle} | Chauffeur Professionnel Belgique`,

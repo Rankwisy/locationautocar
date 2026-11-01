@@ -1,11 +1,10 @@
-import EsPageTemplate from '@/components/Layout/EsPageTemplate';
-import { esMetadata } from '@/data/esSeo';
+import LangPageTemplate from '@/components/Layout/LangPageTemplate';
+import { ES, esMetadata } from '@/data/esSeo';
 
 const PATH = '/es/excursiones-desde-bruselas';
 
 export const metadata = esMetadata({
   path: PATH,
-  frPath: '/destinations/bruges',
   title: 'Excursión a Brujas y Gante desde Bruselas en autocar | Grupos',
   description:
     'Excursiones en autocar con conductor desde Bruselas a Brujas, Gante y Ámsterdam. Itinerarios, precios orientativos y consejos para grupos. Presupuesto gratuito.',
@@ -32,7 +31,8 @@ const faqs = [
 
 export default function Page() {
   return (
-    <EsPageTemplate
+    <LangPageTemplate
+      locale={ES}
       path={PATH}
       crumb="Excursiones desde Bruselas"
       h1="Excursiones en autocar desde Bruselas: Brujas, Gante y más"

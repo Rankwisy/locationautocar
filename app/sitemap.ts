@@ -1,36 +1,34 @@
 import { MetadataRoute } from 'next';
 import { CANONICAL_BASE, CANONICAL_PATHS } from '../scripts/canonical-sitemap.config.js';
 import { blogPosts } from '@/data/blogContentData';
-
-// Spanish page -> its French equivalent (hreflang pairs, see src/data/esSeo.ts)
-const ES_PAGES = [
-  { es: '/es', fr: '/' },
-  { es: '/es/alquiler-autocar-bruselas', fr: '/location-autocar-bruxelles' },
-  { es: '/es/excursiones-desde-bruselas', fr: '/destinations/bruges' },
-  { es: '/es/transfer-aeropuerto-bruselas', fr: '/nos-services/transferts-aeroports' },
-];
+import { LANG_GROUPS, languagesFor } from '@/data/i18n';
 
 const toUrl = (path: string) => `${CANONICAL_BASE}${path === '/' ? '' : path}`;
-const esOf = new Map(ES_PAGES.map((p) => [p.fr, p.es]));
+
+// hreflang alternates for a path (minus x-default, which sitemaps don't need)
+function alternatesFor(path: string) {
+  const langs = languagesFor(path);
+  if (!langs) return undefined;
+  const { 'x-default': _xDefault, ...languages } = langs;
+  return { languages };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticEntries: MetadataRoute.Sitemap = CANONICAL_PATHS.map(({ path, priority, changefreq }) => {
-    const es = esOf.get(path);
-    return {
-      url: toUrl(path),
-      lastModified: new Date(),
-      changeFrequency: changefreq as 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never',
-      priority: parseFloat(priority),
-      ...(es && { alternates: { languages: { fr: toUrl(path), es: toUrl(es) } } }),
-    };
-  });
+  const staticEntries: MetadataRoute.Sitemap = CANONICAL_PATHS.map(({ path, priority, changefreq }) => ({
+    url: toUrl(path),
+    lastModified: new Date(),
+    changeFrequency: changefreq as 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never',
+    priority: parseFloat(priority),
+    alternates: alternatesFor(path),
+  }));
 
-  const esEntries: MetadataRoute.Sitemap = ES_PAGES.map(({ es, fr }) => ({
-    url: toUrl(es),
+  const translatedPaths = LANG_GROUPS.flatMap((g) => [g.es, g.nl]).filter((p): p is string => Boolean(p));
+  const translatedEntries: MetadataRoute.Sitemap = translatedPaths.map((path) => ({
+    url: toUrl(path),
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: es === '/es' ? 0.8 : 0.7,
-    alternates: { languages: { es: toUrl(es), fr: toUrl(fr) } },
+    priority: path === '/es' || path === '/nl' ? 0.8 : 0.7,
+    alternates: alternatesFor(path),
   }));
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -40,5 +38,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...esEntries, ...blogEntries];
+  return [...staticEntries, ...translatedEntries, ...blogEntries];
 }

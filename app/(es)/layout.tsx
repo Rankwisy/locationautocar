@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import '../globals.css';
-import { EsHeader, EsFooter } from '@/components/Layout/EsChrome';
-import { BASE } from '@/data/esSeo';
+import { LangHeader, LangFooter } from '@/components/Layout/LangChrome';
+import { BASE } from '@/data/i18n';
+import { ES } from '@/data/esSeo';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -19,13 +20,13 @@ export default function EsRootLayout({ children }: { children: React.ReactNode }
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg"
         >
-          Ir al contenido principal
+          {ES.skipLink}
         </a>
-        <EsHeader />
+        <LangHeader locale={ES} />
         <main id="main-content" className="flex-1 min-h-screen" role="main">
           {children}
         </main>
-        <EsFooter />
+        <LangFooter locale={ES} />
       </body>
     </html>
   );

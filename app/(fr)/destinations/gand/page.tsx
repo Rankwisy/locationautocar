@@ -1,3 +1,4 @@
+import { languagesFor } from '@/data/i18n';
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Clock } from 'lucide-react';
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Excursion Gand depuis Bruxelles en Autocar | Guide Groupes 2026',
   description:
     "Organisez votre excursion à Gand depuis Bruxelles en autocar avec chauffeur. Cité médiévale, Gravensteen, Van Eyck. Guide complet groupes. Devis gratuit.",
-  alternates: { canonical: 'https://www.locationautocar.be/destinations/gand' },
+  alternates: { canonical: 'https://www.locationautocar.be/destinations/gand', languages: languagesFor('/destinations/gand') },
   openGraph: {
     title: 'Excursion Gand depuis Bruxelles en Autocar | Guide Groupes 2026',
     description:

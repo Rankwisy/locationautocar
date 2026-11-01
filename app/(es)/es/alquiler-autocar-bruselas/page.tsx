@@ -1,11 +1,10 @@
-import EsPageTemplate from '@/components/Layout/EsPageTemplate';
-import { esMetadata } from '@/data/esSeo';
+import LangPageTemplate from '@/components/Layout/LangPageTemplate';
+import { ES, esMetadata } from '@/data/esSeo';
 
 const PATH = '/es/alquiler-autocar-bruselas';
 
 export const metadata = esMetadata({
   path: PATH,
-  frPath: '/location-autocar-bruxelles',
   title: 'Alquiler de autocar y minibús con conductor en Bruselas | Presupuesto',
   description:
     'Alquile un autocar, autobús o minibús con conductor en Bruselas para su grupo: 8 a 60 plazas, por horas o por día. Presupuesto gratuito en 24 horas.',
@@ -32,7 +31,8 @@ const faqs = [
 
 export default function Page() {
   return (
-    <EsPageTemplate
+    <LangPageTemplate
+      locale={ES}
       path={PATH}
       crumb="Alquiler de autocar en Bruselas"
       h1="Alquiler de autocar con conductor en Bruselas"

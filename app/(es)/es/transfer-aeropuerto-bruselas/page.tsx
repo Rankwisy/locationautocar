@@ -1,11 +1,10 @@
-import EsPageTemplate from '@/components/Layout/EsPageTemplate';
-import { esMetadata } from '@/data/esSeo';
+import LangPageTemplate from '@/components/Layout/LangPageTemplate';
+import { ES, esMetadata } from '@/data/esSeo';
 
 const PATH = '/es/transfer-aeropuerto-bruselas';
 
 export const metadata = esMetadata({
   path: PATH,
-  frPath: '/nos-services/transferts-aeroports',
   title: 'Traslado aeropuerto de Bruselas para grupos | Zaventem y Charleroi',
   description:
     'Traslado en autocar o minibús con conductor desde el aeropuerto de Bruselas-Zaventem o Charleroi hasta su hotel. Seguimiento del vuelo y presupuesto gratuito.',
@@ -32,7 +31,8 @@ const faqs = [
 
 export default function Page() {
   return (
-    <EsPageTemplate
+    <LangPageTemplate
+      locale={ES}
       path={PATH}
       crumb="Traslado aeropuerto de Bruselas"
       h1="Traslado en autocar desde el aeropuerto de Bruselas"

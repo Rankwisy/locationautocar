@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { CheckCircle, Phone, Mail } from 'lucide-react';
-import { BASE, ES_CONTACT } from '@/data/esSeo';
+import { CheckCircle, Phone, Mail, Send } from 'lucide-react';
+import { BASE, type Locale } from '@/data/i18n';
 
-export interface EsSection {
+export interface LangSection {
   title: string;
   paragraphs?: string[];
   bullets?: string[];
@@ -11,22 +11,25 @@ export interface EsSection {
 }
 
 interface Props {
+  locale: Locale;
   path: string;
   crumb?: string;
   h1: string;
   intro: string;
-  sections: EsSection[];
+  sections: LangSection[];
   faqs?: { q: string; a: string }[];
   image?: { src: string; alt: string };
+  children?: React.ReactNode;
 }
 
-export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs = [], image }: Props) {
+export default function LangPageTemplate({ locale, path, crumb, h1, intro, sections, faqs = [], image, children }: Props) {
+  const { contact } = locale;
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${BASE}/es` },
+        { '@type': 'ListItem', position: 1, name: locale.homeLabel, item: `${BASE}${locale.home}` },
         ...(crumb ? [{ '@type': 'ListItem', position: 2, name: crumb, item: `${BASE}${path}` }] : []),
       ],
     },
@@ -34,19 +37,19 @@ export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs 
       '@context': 'https://schema.org',
       '@type': 'Service',
       name: h1,
-      inLanguage: 'es',
-      areaServed: ['Bruselas', 'Bélgica', 'Europa'],
+      inLanguage: locale.lang,
+      areaServed: locale.areaServed,
       provider: {
         '@type': 'LocalBusiness',
         name: 'Location Autocar Bruxelles',
         url: BASE,
-        telephone: ES_CONTACT.phone,
-        email: ES_CONTACT.email,
+        telephone: contact.phone,
+        email: contact.email,
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Priemstraat 43 bus',
           postalCode: '1000',
-          addressLocality: 'Bruselas',
+          addressLocality: contact.city,
           addressCountry: 'BE',
         },
       },
@@ -56,7 +59,7 @@ export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs 
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      inLanguage: 'es',
+      inLanguage: locale.lang,
       mainEntity: faqs.map((f) => ({
         '@type': 'Question',
         name: f.q,
@@ -72,8 +75,8 @@ export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs 
       ))}
       <div className="container mx-auto px-4">
         {crumb && (
-          <nav className="mb-8 text-sm text-gray-500" aria-label="Ruta de navegación">
-            <Link href="/es" className="hover:text-blue-600">Inicio</Link> /{' '}
+          <nav className="mb-8 text-sm text-gray-500" aria-label={locale.breadcrumbAria}>
+            <Link href={locale.home} className="hover:text-blue-600">{locale.homeLabel}</Link> /{' '}
             <span className="text-gray-900 font-semibold">{crumb}</span>
           </nav>
         )}
@@ -127,9 +130,11 @@ export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs 
           </section>
         ))}
 
+        {children}
+
         {faqs.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">{locale.faqTitle}</h2>
             <div className="space-y-6 max-w-3xl">
               {faqs.map((f) => (
                 <div key={f.q} className="border-b border-gray-200 pb-6">
@@ -142,19 +147,22 @@ export default function EsPageTemplate({ path, crumb, h1, intro, sections, faqs 
         )}
 
         <section className="bg-blue-50 rounded-2xl p-8 max-w-3xl">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Solicite su presupuesto gratuito</h2>
-          <p className="text-gray-700 mb-5">
-            Indíquenos fecha, número de personas y recorrido. Le respondemos en 24 horas.
-          </p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">{locale.ctaTitle}</h2>
+          <p className="text-gray-700 mb-5">{locale.ctaText}</p>
           <div className="flex flex-wrap gap-3">
-            <a href={ES_CONTACT.phoneHref} className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700">
-              <Phone className="w-4 h-4" aria-hidden="true" /> {ES_CONTACT.phone}
+            {locale.ctaForm && path !== locale.ctaForm.href && (
+              <Link href={locale.ctaForm.href} className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-lg hover:bg-green-700">
+                <Send className="w-4 h-4" aria-hidden="true" /> {locale.ctaForm.label}
+              </Link>
+            )}
+            <a href={contact.phoneHref} className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700">
+              <Phone className="w-4 h-4" aria-hidden="true" /> {contact.phone}
             </a>
-            <a href={`mailto:${ES_CONTACT.email}`} className="inline-flex items-center gap-2 bg-white text-blue-700 border border-blue-200 px-5 py-2.5 rounded-lg hover:bg-blue-100">
-              <Mail className="w-4 h-4" aria-hidden="true" /> {ES_CONTACT.email}
+            <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-2 bg-white text-blue-700 border border-blue-200 px-5 py-2.5 rounded-lg hover:bg-blue-100">
+              <Mail className="w-4 h-4" aria-hidden="true" /> {contact.email}
             </a>
           </div>
-          <p className="text-xs text-gray-500 mt-4">{ES_CONTACT.hours} · {ES_CONTACT.address}</p>
+          <p className="text-xs text-gray-500 mt-4">{contact.hours} · {contact.address}</p>
         </section>
       </div>
     </div>

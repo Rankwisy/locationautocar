@@ -1,3 +1,4 @@
+import { languagesFor } from '@/data/i18n';
 import React from 'react';
 import Link from 'next/link';
 import { Users, Shield, Wifi, Award, CheckCircle, ArrowRight, Phone } from 'lucide-react';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: pageMeta.fleetMinibus.title,
   description: pageMeta.fleetMinibus.description,
   keywords: semanticKeywords.fleetMinibus.join(', '),
-  alternates: { canonical: 'https://www.locationautocar.be/notre-flotte/minibus' },
+  alternates: { canonical: 'https://www.locationautocar.be/notre-flotte/minibus', languages: languagesFor('/notre-flotte/minibus') },
   openGraph: {
     title: 'Location Minibus Bruxelles | 8-16 Places Mercedes',
     description: pageMeta.fleetMinibus.description,

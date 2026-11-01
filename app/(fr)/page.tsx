@@ -1,3 +1,4 @@
+import { languagesFor } from '@/data/i18n';
 import React from 'react';
 import Link from 'next/link';
 import { Shield, Clock, Star, CheckCircle, ArrowRight, Users, MapPin, Calendar } from 'lucide-react';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   keywords: semanticKeywords.home.join(', '),
   alternates: {
     canonical: 'https://www.locationautocar.be/',
-    languages: { fr: 'https://www.locationautocar.be/', es: 'https://www.locationautocar.be/es', 'x-default': 'https://www.locationautocar.be/' },
+    languages: languagesFor('/'),
   },
   openGraph: {
     title: 'Location Autocar Bruxelles | Chauffeur depuis 2007',

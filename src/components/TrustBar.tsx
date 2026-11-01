@@ -22,6 +22,16 @@ export default function TrustBar() {
           ))}
           <li>
             <Link
+              href="/nl"
+              hrefLang="nl-BE"
+              lang="nl-BE"
+              className="text-sm font-semibold text-blue-700 underline hover:text-blue-900"
+            >
+              🇧🇪 Nederlands
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/es"
               hrefLang="es"
               lang="es"

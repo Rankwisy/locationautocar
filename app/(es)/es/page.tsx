@@ -1,9 +1,8 @@
-import EsPageTemplate from '@/components/Layout/EsPageTemplate';
-import { esMetadata } from '@/data/esSeo';
+import LangPageTemplate from '@/components/Layout/LangPageTemplate';
+import { ES, esMetadata } from '@/data/esSeo';
 
 export const metadata = esMetadata({
   path: '/es',
-  frPath: '/',
   title: 'Alquiler de autocar con conductor en Bruselas | Grupos desde 2007',
   description:
     'Alquiler de autocar, autobús y minibús con conductor en Bruselas para grupos: excursiones a Brujas y Gante, traslados al aeropuerto y viajes de empresa. Presupuesto gratis en 24 h.',
@@ -11,7 +10,8 @@ export const metadata = esMetadata({
 
 export default function EsHome() {
   return (
-    <EsPageTemplate
+    <LangPageTemplate
+      locale={ES}
       path="/es"
       image={{ src: 'https://ik.imagekit.io/by733ltn6/locationautocar/location-bus-bruxelles2-1-scaled.jpeg?tr=w-1200,h-630,c-maintain_ratio,f-webp,q-85', alt: 'Autocar con conductor para grupos en Bruselas' }}
       h1="Alquiler de autocar con conductor en Bruselas"

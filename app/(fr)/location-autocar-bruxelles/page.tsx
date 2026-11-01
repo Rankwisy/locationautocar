@@ -1,3 +1,4 @@
+import { languagesFor } from '@/data/i18n';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     'location autocar Bruxelles, location bus Bruxelles, autocar avec chauffeur Bruxelles, bus groupe Bruxelles, transport groupe Bruxelles',
   alternates: {
     canonical: 'https://www.locationautocar.be/location-autocar-bruxelles',
-    languages: { fr: 'https://www.locationautocar.be/location-autocar-bruxelles', es: 'https://www.locationautocar.be/es/alquiler-autocar-bruselas', 'x-default': 'https://www.locationautocar.be/location-autocar-bruxelles' },
+    languages: languagesFor('/location-autocar-bruxelles'),
   },
   openGraph: {
     title: 'Location autocar Bruxelles | Bus avec chauffeur pour groupes',

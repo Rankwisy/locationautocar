@@ -1,3 +1,4 @@
+import { languagesFor } from '@/data/i18n';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { semanticKeywords } from '@/data/seoData';
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Demandez un devis gratuit pour votre location d'autocar à Bruxelles. Réponse sous 24h. Appelez le +32 2 580 03 25 ou écrivez-nous.",
   keywords: semanticKeywords.contact.join(', '),
-  alternates: { canonical: 'https://www.locationautocar.be/contactez-nous' },
+  alternates: { canonical: 'https://www.locationautocar.be/contactez-nous', languages: languagesFor('/contactez-nous') },
   openGraph: {
     title: 'Contactez-nous | Devis Gratuit Autocar Bruxelles',
     description:
