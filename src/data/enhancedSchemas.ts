@@ -15,9 +15,9 @@ export const organizationSchema = {
   "foundingDate": "2007",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bd Industriel 9",
-    "addressLocality": "Bruxelles",
-    "postalCode": "1070",
+    "streetAddress": "Priemstraat 43",
+    "addressLocality": "Brussel",
+    "postalCode": "1000",
     "addressCountry": "BE",
     "addressRegion": "Brussels-Capital Region"
   },
@@ -45,10 +45,9 @@ export const organizationSchema = {
   "email": "info@locationautocar.be",
   "telephone": "+32 2 580 03 25",
   "faxNumber": "+32 2 580 03 26",
-  "vatID": "BE0123456789",
-  "taxID": "BE0123456789",
-  "duns": "123456789",
-  "legalName": "Location Autocar Bruxelles SPRL",
+  "vatID": "BE0888881670",
+  "taxID": "BE0888881670",
+  "legalName": "Location Autocar",
   "slogan": "Votre partenaire transport depuis 2007",
   "keywords": "location autocar, bus chauffeur, minibus bruxelles, transport groupe, excursions europe",
   "serviceArea": {
@@ -98,7 +97,8 @@ export const organizationSchema = {
   "sameAs": [
     "https://www.facebook.com/locationautocar",
     "https://www.instagram.com/locationautocar",
-    "https://www.linkedin.com/company/location-autocar-bruxelles"
+    "https://www.linkedin.com/company/location-autocar-bruxelles",
+    "https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek"
   ]
 };
 
@@ -116,9 +116,9 @@ export const localBusinessSchema = {
   "description": "Location d'autocar avec chauffeur à Bruxelles depuis 2007. Services de transferts, excursions, voyages d'affaires en Europe.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bd Industriel 9",
-    "addressLocality": "Bruxelles",
-    "postalCode": "1070",
+    "streetAddress": "Priemstraat 43",
+    "addressLocality": "Brussel",
+    "postalCode": "1000",
     "addressCountry": "BE"
   },
   "telephone": "+32 2 580 03 25",
@@ -629,9 +629,9 @@ export const contactSchema = {
     "email": "info@locationautocar.be",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Bd Industriel 9",
-      "addressLocality": "Bruxelles",
-      "postalCode": "1070",
+      "streetAddress": "Priemstraat 43",
+      "addressLocality": "Brussel",
+      "postalCode": "1000",
       "addressCountry": "BE"
     },
     "openingHours": [

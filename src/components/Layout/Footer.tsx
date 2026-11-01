@@ -86,8 +86,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 text-blue-400" />
                 <div>
-                  <p className="text-gray-300">Bd Industriel 9</p>
-                  <p className="text-gray-300">1070 Bruxelles</p>
+                  <p className="text-gray-300">Priemstraat 43</p>
+                  <p className="text-gray-300">1000 Brussel</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -115,9 +115,20 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Location Autocar Bruxelles. Tous droits réservés.
-            </p>
+            <div className="text-gray-400 text-sm text-center md:text-left">
+              <p>© {currentYear} Location Autocar Bruxelles. Tous droits réservés.</p>
+              <p className="mt-1">
+                BCE 0888.881.670 · Unité d'établissement{' '}
+                <a
+                  href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white underline"
+                >
+                  2.324.592.033
+                </a>
+              </p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/mentions-legales" className="text-gray-400 hover:text-white text-sm">
                 Mentions Légales

@@ -13,15 +13,15 @@ export const siteConfig: SiteConfig = {
   contact: {
     phone: "+32 2 580 03 25",
     email: "info@locationautocar.be",
-    address: "Bd Industriel 9, 1070 Bruxelles"
+    address: "Priemstraat 43, 1000 Brussel"
   },
   business: {
     name: "Location Autocar Bruxelles",
     type: "Bus Rental Service",
     location: {
-      street: "Bd Industriel 9",
-      city: "Bruxelles",
-      postalCode: "1070",
+      street: "Priemstraat 43",
+      city: "Brussel",
+      postalCode: "1000",
       country: "BE"
     }
   }

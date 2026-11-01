@@ -43,7 +43,7 @@ const ContactPage: React.FC = () => {
       <SEOHead
         title="Contactez Nous - Location Autocar Bruxelles"
         metaTitle="Contact Location Autocar Bruxelles | Devis Gratuit | Service 24/7"
-        description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Bd Industriel 9, 1070 Bruxelles."
+        description="Contactez Location Autocar Bruxelles pour vos besoins de transport en autocar avec chauffeur. Devis gratuit, service 24/7. Priemstraat 43, 1000 Brussel."
         keywords="contact autocar bruxelles, devis gratuit transport, service 24/7, bd industriel bruxelles"
         canonical="https://www.locationautocar.be/contactez-nous"
         schema={contactSchema}
@@ -130,9 +130,20 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Adresse</h3>
                     <p className="text-gray-600">
-                      Bd Industriel 9<br />
-                      1070 Bruxelles<br />
+                      Priemstraat 43<br />
+                      1000 Brussel<br />
                       Belgique
+                    </p>
+                    <p className="text-gray-600 mt-2 text-sm">
+                      BCE 0888.881.670 · Unité d'établissement{' '}
+                      <a
+                        href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=2324592033&actionLu=Zoek"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        2.324.592.033
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -194,7 +205,7 @@ const ContactPage: React.FC = () => {
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
                 <p className="text-gray-600">
-                  Bd Industriel 9, 1070 Bruxelles
+                  Priemstraat 43, 1000 Brussel
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
                   Carte interactive disponible prochainement

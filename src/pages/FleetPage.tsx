@@ -576,7 +576,7 @@ const FleetPage: React.FC = () => {
                 <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />
                 <div>
                   <div className="font-semibold">Adresse</div>
-                  <div className="text-sm">Bd Industriel 9, 1070 Bruxelles</div>
+                  <div className="text-sm">Priemstraat 43, 1000 Brussel</div>
                 </div>
               </div>
             </div>
