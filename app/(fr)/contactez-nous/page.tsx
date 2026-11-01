@@ -224,23 +224,6 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 pb-12">
         <ExtraContent {...CONTACT_EXTRA} />
       </div>
-
-      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden style={{ display: 'none' }}>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="tel" name="phone" />
-        <select name="service">
-          <option value="transfert">Transfert aéroport/gare</option>
-          <option value="excursion">Excursion touristique</option>
-          <option value="business">Voyage d&apos;affaires</option>
-          <option value="disposition">Mise à disposition</option>
-        </select>
-        <input type="date" name="date" />
-        <input type="number" name="passengers" />
-        <input type="text" name="destination" />
-        <textarea name="message"></textarea>
-        <input type="hidden" name="form-name" value="contact" />
-      </form>
     </div>
     </>
   );
