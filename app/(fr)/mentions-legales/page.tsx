@@ -34,7 +34,7 @@ export default function MentionsLegalesPage() {
                 Le site <strong>www.locationautocar.be</strong> est édité par :
               </p>
               <div className="bg-gray-50 rounded-lg p-6 mb-4">
-                <p className="text-gray-700 mb-2"><strong>Raison sociale :</strong> Transport &amp; Events</p>
+                <p className="text-gray-700 mb-2"><strong>Raison sociale :</strong> Location Autocar</p>
                 <p className="text-gray-700 mb-2"><strong>Nom commercial :</strong> Location Autocar Bruxelles</p>
                 <p className="text-gray-700 mb-2">
                   <strong>Numéro d&apos;unité d&apos;établissement :</strong>{' '}
