@@ -1,4 +1,5 @@
 import { localeMetadata, type Locale } from './i18n';
+import type { FormStrings } from '@/components/Forms/LangContactForm';
 
 export const NL: Locale = {
   lang: 'nl-BE',
@@ -37,5 +38,32 @@ export const NL: Locale = {
   ctaForm: { href: '/nl/contact', label: 'Offerteformulier' },
 };
 
-export const nlMetadata = (opts: { path: string; title: string; description: string }) =>
+export const NL_FORM: FormStrings = {
+  name: 'Naam',
+  email: 'E-mail',
+  phone: 'Telefoon',
+  service: 'Dienst',
+  servicePlaceholder: 'Kies een dienst',
+  services: {
+    transfert: 'Luchthaven- of stationstransfer',
+    excursion: 'Toeristische uitstap',
+    business: 'Zakenreis of bedrijfsevent',
+    disposition: 'Terbeschikkingstelling',
+  },
+  date: 'Datum',
+  passengers: 'Aantal personen',
+  destination: 'Vertrek en bestemming',
+  destinationPlaceholder: 'Bijv. Brussel – Brugge',
+  message: 'Bericht',
+  submit: 'Verstuur mijn aanvraag',
+  submitting: 'Bezig met verzenden...',
+  successTitle: 'Bedankt! Uw aanvraag is goed verzonden.',
+  successText: 'Wij nemen zo snel mogelijk contact met u op met uw persoonlijke offerte.',
+  errorTitle: 'Verzenden mislukt.',
+  errorText: 'Probeer opnieuw of contacteer ons via',
+  or: 'of',
+  required: '* Verplichte velden. Antwoord binnen 24 uur.',
+};
+
+export const nlMetadata =(opts: { path: string; title: string; description: string }) =>
   localeMetadata(NL, opts);

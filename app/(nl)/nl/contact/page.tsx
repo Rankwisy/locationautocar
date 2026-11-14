@@ -1,6 +1,6 @@
 import LangPageTemplate from '@/components/Layout/LangPageTemplate';
-import NlContactForm from '@/components/Forms/NlContactForm';
-import { NL, nlMetadata } from '@/data/nlSeo';
+import LangContactForm from '@/components/Forms/LangContactForm';
+import { NL, NL_FORM, nlMetadata } from '@/data/nlSeo';
 
 const PATH = '/nl/contact';
 
@@ -22,7 +22,7 @@ export default function Page() {
       sections={[]}
     >
       <section className="mb-12 max-w-3xl">
-        <NlContactForm />
+        <LangContactForm t={NL_FORM} />
       </section>
     </LangPageTemplate>
   );

@@ -8,26 +8,29 @@ export const OG_IMAGE =
  * Equivalent pages across languages. Single source for hreflang (page metadata + sitemap):
  * every page in a group declares the same `languages`, which keeps them reciprocal.
  */
-export const LANG_GROUPS: { fr: string; es?: string; nl?: string }[] = [
-  { fr: '/', es: '/es', nl: '/nl' },
-  { fr: '/location-autocar-bruxelles', es: '/es/alquiler-autocar-bruselas', nl: '/nl/autocar-huren-brussel' },
-  { fr: '/destinations/bruges', es: '/es/excursiones-desde-bruselas', nl: '/nl/uitstappen-vanuit-brussel' },
-  { fr: '/nos-services/transferts-aeroports', es: '/es/transfer-aeropuerto-bruselas', nl: '/nl/luchthavenvervoer-brussel' },
-  { fr: '/notre-flotte/minibus', nl: '/nl/minibus-huren-brussel' },
-  { fr: '/nos-services/location-bus-groupe', nl: '/nl/bus-met-chauffeur' },
-  { fr: '/destinations/gand', nl: '/nl/uitstap-gent-antwerpen' },
-  { fr: '/contactez-nous', nl: '/nl/contact' },
+export const LANG_GROUPS: { fr: string; es?: string; nl?: string; en?: string }[] = [
+  { fr: '/', es: '/es', nl: '/nl', en: '/en' },
+  { fr: '/location-autocar-bruxelles', es: '/es/alquiler-autocar-bruselas', nl: '/nl/autocar-huren-brussel', en: '/en/coach-hire-brussels' },
+  { fr: '/destinations/bruges', es: '/es/excursiones-desde-bruselas', nl: '/nl/uitstappen-vanuit-brussel', en: '/en/day-trips-from-brussels' },
+  { fr: '/nos-services/transferts-aeroports', es: '/es/transfer-aeropuerto-bruselas', nl: '/nl/luchthavenvervoer-brussel', en: '/en/airport-transfers-brussels' },
+  { fr: '/notre-flotte/minibus', nl: '/nl/minibus-huren-brussel', en: '/en/minibus-hire-brussels' },
+  { fr: '/nos-services/location-bus-groupe', nl: '/nl/bus-met-chauffeur', en: '/en/bus-hire-with-driver' },
+  { fr: '/destinations/gand', nl: '/nl/uitstap-gent-antwerpen', en: '/en/bruges-ghent-day-trip' },
+  { fr: '/contactez-nous', nl: '/nl/contact', en: '/en/contact' },
+  { fr: '/nos-services/navette-entreprise', en: '/en/corporate-event-transport-brussels' },
+  { fr: '/nos-services/autocar-mariage', en: '/en/wedding-coach-hire' },
 ];
 
 const url = (path: string) => `${BASE}${path}`;
 
 export function languagesFor(path: string): Record<string, string> | undefined {
-  const g = LANG_GROUPS.find((x) => x.fr === path || x.es === path || x.nl === path);
+  const g = LANG_GROUPS.find((x) => x.fr === path || x.es === path || x.nl === path || x.en === path);
   if (!g) return undefined;
   return {
     fr: url(g.fr),
     ...(g.es && { es: url(g.es) }),
     ...(g.nl && { 'nl-BE': url(g.nl) }),
+    ...(g.en && { en: url(g.en) }),
     'x-default': url(g.fr),
   };
 }

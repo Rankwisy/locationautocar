@@ -87,10 +87,12 @@ const nextConfig = {
         destination: '/:path',
         permanent: true,
       },
-      // /en/ (non-existent locale) → French canonical
-      { source: '/en', destination: '/', permanent: true },
-      { source: '/en/', destination: '/', permanent: true },
-      { source: '/en/:path*', destination: '/:path*', permanent: true },
+      // Legacy /en/* URLs → French canonical, except the real English pages (keep in sync with LANG_GROUPS in src/data/i18n.ts)
+      {
+        source: '/en/:path((?!coach-hire-brussels|minibus-hire-brussels|bus-hire-with-driver|corporate-event-transport-brussels|day-trips-from-brussels|bruges-ghent-day-trip|airport-transfers-brussels|wedding-coach-hire|contact).+)',
+        destination: '/:path',
+        permanent: true,
+      },
       // Legacy: liste-des-destinations → destinations
       { source: '/liste-des-destinations', destination: '/destinations', permanent: true },
       { source: '/liste-des-destinations/', destination: '/destinations', permanent: true },

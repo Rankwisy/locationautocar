@@ -22,12 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: alternatesFor(path),
   }));
 
-  const translatedPaths = LANG_GROUPS.flatMap((g) => [g.es, g.nl]).filter((p): p is string => Boolean(p));
+  const translatedPaths = LANG_GROUPS.flatMap((g) => [g.es, g.nl, g.en]).filter((p): p is string => Boolean(p));
   const translatedEntries: MetadataRoute.Sitemap = translatedPaths.map((path) => ({
     url: toUrl(path),
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: path === '/es' || path === '/nl' ? 0.8 : 0.7,
+    priority: path === '/es' || path === '/nl' || path === '/en' ? 0.8 : 0.7,
     alternates: alternatesFor(path),
   }));
 
